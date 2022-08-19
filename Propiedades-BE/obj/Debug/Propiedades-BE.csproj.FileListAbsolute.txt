@@ -1,0 +1,6 @@
+C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Propiedades-BE\bin\Debug\Propiedades-BE.dll
+C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Propiedades-BE\bin\Debug\Propiedades-BE.pdb
+C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Propiedades-BE\obj\Debug\Propiedades-BE.csproj.CoreCompileInputs.cache
+C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Propiedades-BE\obj\Debug\Propiedades-BE.dll
+C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Propiedades-BE\obj\Debug\Propiedades-BE.pdb
+C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Propiedades-BE\obj\Debug\Propiedades-BE.csprojAssemblyReference.cache

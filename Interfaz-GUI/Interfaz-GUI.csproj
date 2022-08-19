@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8CCA6A63-F804-4512-A865-1592CDEB330D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Interfaz_GUI</RootNamespace>
+    <AssemblyName>Interfaz-GUI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Administrar_Familia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrar_Familia.Designer.cs">
+      <DependentUpon>Administrar_Familia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrar_Idioma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrar_Idioma.Designer.cs">
+      <DependentUpon>Administrar_Idioma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrar_Patente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrar_Patente.Designer.cs">
+      <DependentUpon>Administrar_Patente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrar_Permisos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrar_Permisos.Designer.cs">
+      <DependentUpon>Administrar_Permisos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrar_Traduccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrar_Traduccion.Designer.cs">
+      <DependentUpon>Administrar_Traduccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrar_Usuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrar_Usuario.Designer.cs">
+      <DependentUpon>Administrar_Usuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Administrar_Usu_Fam_Pat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrar_Usu_Fam_Pat.Designer.cs">
+      <DependentUpon>Administrar_Usu_Fam_Pat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CambiarIdioma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CambiarIdioma.Designer.cs">
+      <DependentUpon>CambiarIdioma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConexionBD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConexionBD.Designer.cs">
+      <DependentUpon>ConexionBD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Generar_Contraseña.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Generar_Contraseña.Designer.cs">
+      <DependentUpon>Generar_Contraseña.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IObserver.cs" />
+    <Compile Include="ISubject.cs" />
+    <Compile Include="LogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogIn.Designer.cs">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PatenteFamilias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatenteFamilias.Designer.cs">
+      <DependentUpon>PatenteFamilias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recalcular_Digitos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recalcular_Digitos.Designer.cs">
+      <DependentUpon>Recalcular_Digitos.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Administrar_Familia.resx">
+      <DependentUpon>Administrar_Familia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrar_Idioma.resx">
+      <DependentUpon>Administrar_Idioma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrar_Patente.resx">
+      <DependentUpon>Administrar_Patente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrar_Permisos.resx">
+      <DependentUpon>Administrar_Permisos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrar_Traduccion.resx">
+      <DependentUpon>Administrar_Traduccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrar_Usuario.resx">
+      <DependentUpon>Administrar_Usuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Administrar_Usu_Fam_Pat.resx">
+      <DependentUpon>Administrar_Usu_Fam_Pat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CambiarIdioma.resx">
+      <DependentUpon>CambiarIdioma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConexionBD.resx">
+      <DependentUpon>ConexionBD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generar_Contraseña.resx">
+      <DependentUpon>Generar_Contraseña.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogIn.resx">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatenteFamilias.resx">
+      <DependentUpon>PatenteFamilias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Recalcular_Digitos.resx">
+      <DependentUpon>Recalcular_Digitos.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Negocio-BLL\Negocio-BLL.csproj">
+      <Project>{783b849e-b129-4194-8e46-479d48be92cd}</Project>
+      <Name>Negocio-BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Propiedades-BE\Propiedades-BE.csproj">
+      <Project>{b4612720-7e68-41a2-ac21-72aa3d178e20}</Project>
+      <Name>Propiedades-BE</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

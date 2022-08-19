@@ -1,0 +1,9 @@
+C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Acceso-DAL\bin\Debug\Acceso-DAL.dll
+C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Acceso-DAL\bin\Debug\Acceso-DAL.pdb
+C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Acceso-DAL\bin\Debug\Propiedades-BE.dll
+C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Acceso-DAL\bin\Debug\Propiedades-BE.pdb
+C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Acceso-DAL\obj\Debug\Acceso-DAL.csprojAssemblyReference.cache
+C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Acceso-DAL\obj\Debug\Acceso-DAL.csproj.CoreCompileInputs.cache
+C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Acceso-DAL\obj\Debug\Acceso-DAL.csproj.CopyComplete
+C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Acceso-DAL\obj\Debug\Acceso-DAL.dll
+C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Acceso-DAL\obj\Debug\Acceso-DAL.pdb
