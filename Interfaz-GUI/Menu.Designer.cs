@@ -168,6 +168,7 @@ namespace Interfaz_GUI
             this.backupToolStripMenuItem.Size = new System.Drawing.Size(237, 26);
             this.backupToolStripMenuItem.Tag = "BackUp";
             this.backupToolStripMenuItem.Text = "Backup";
+            this.backupToolStripMenuItem.Click += new System.EventHandler(this.backupToolStripMenuItem_Click);
             // 
             // restoreToolStripMenuItem
             // 

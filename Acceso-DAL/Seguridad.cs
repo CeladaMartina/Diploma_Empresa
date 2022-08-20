@@ -360,8 +360,8 @@ namespace Acceso_DAL
 
         public string GenerarBackup(string Nombre, string ruta, int CantVol)
         {
-            string query = "USE MASTER; BACKUP DATABASE [Diploma_Empresa_de_Ropa] TO ";
-            //string query = "USE MASTER; BACKUP DATABASE [Diploma_Trabajo_Final] TO "; 
+            //string query = "USE MASTER; BACKUP DATABASE [Diploma_Empresa_de_Ropa] TO ";
+            string query = "USE MASTER; BACKUP DATABASE [Diploma_Empresa] TO "; 
             for (int i = 1; i < CantVol + 1; i++)
             {
                 if (i > 1)

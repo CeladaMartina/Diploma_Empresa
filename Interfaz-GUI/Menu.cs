@@ -222,5 +222,13 @@ namespace Interfaz_GUI
             GC.MdiParent = this;
             GC.Show();
         }
+
+        private void backupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Backup BU = Backup.ObtenerInstancia();
+            BU.MdiParent = this;
+            BU.Show();
+                
+        }
     }
 }

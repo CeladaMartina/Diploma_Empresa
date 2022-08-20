@@ -88,6 +88,12 @@
     <Compile Include="Administrar_Usu_Fam_Pat.Designer.cs">
       <DependentUpon>Administrar_Usu_Fam_Pat.cs</DependentUpon>
     </Compile>
+    <Compile Include="Backup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Backup.Designer.cs">
+      <DependentUpon>Backup.cs</DependentUpon>
+    </Compile>
     <Compile Include="CambiarIdioma.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Administrar_Usu_Fam_Pat.resx">
       <DependentUpon>Administrar_Usu_Fam_Pat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Backup.resx">
+      <DependentUpon>Backup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CambiarIdioma.resx">
       <DependentUpon>CambiarIdioma.cs</DependentUpon>

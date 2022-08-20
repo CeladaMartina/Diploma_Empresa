@@ -28,3 +28,4 @@ C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\obj\Debug\Inter
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\obj\Debug\Interfaz_GUI.Administrar_Traduccion.resources
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\obj\Debug\Interfaz_GUI.PatenteFamilias.resources
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\obj\Debug\Interfaz_GUI.Generar_Contraseña.resources
+C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\obj\Debug\Interfaz_GUI.Backup.resources
