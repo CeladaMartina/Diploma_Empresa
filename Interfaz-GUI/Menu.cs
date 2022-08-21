@@ -230,5 +230,12 @@ namespace Interfaz_GUI
             BU.Show();
                 
         }
+
+        private void restoreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Restore R = Restore.ObtenerInstancia();
+            R.MdiParent = this;
+            R.Show();
+        }
     }
 }

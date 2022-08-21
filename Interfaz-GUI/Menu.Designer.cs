@@ -68,7 +68,7 @@ namespace Interfaz_GUI
             this.salirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1065, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1065, 30);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Tag = "";
             this.menuStrip1.Text = "menuStrip1";
@@ -158,7 +158,7 @@ namespace Interfaz_GUI
             this.generarContraseñaToolStripMenuItem,
             this.recalcularDigitosToolStripMenuItem});
             this.seguridadToolStripMenuItem.Name = "seguridadToolStripMenuItem";
-            this.seguridadToolStripMenuItem.Size = new System.Drawing.Size(91, 24);
+            this.seguridadToolStripMenuItem.Size = new System.Drawing.Size(91, 26);
             this.seguridadToolStripMenuItem.Tag = "Seguridad";
             this.seguridadToolStripMenuItem.Text = "Seguridad";
             // 
@@ -176,6 +176,7 @@ namespace Interfaz_GUI
             this.restoreToolStripMenuItem.Size = new System.Drawing.Size(237, 26);
             this.restoreToolStripMenuItem.Tag = "Restore";
             this.restoreToolStripMenuItem.Text = "Restore";
+            this.restoreToolStripMenuItem.Click += new System.EventHandler(this.restoreToolStripMenuItem_Click);
             // 
             // adminisitrarPermisosToolStripMenuItem
             // 

@@ -377,9 +377,8 @@ namespace Acceso_DAL
 
         public string Restaurar(List<string> archivos)
         {
-            archivos.Sort();
-            string query = "USE MASTER; ALTER DATABASE [Diploma_Empresa_de_Ropa] SET Single_User WITH Rollback Immediate; RESTORE DATABASE [Diploma_Empresa_de_Ropa] FROM ";
-            //string query = "USE MASTER; ALTER DATABASE [Diploma_Trabajo_Final] SET Single_User WITH Rollback Immediate; RESTORE DATABASE [Diploma_Trabajo_Final] FROM ";
+            archivos.Sort();            
+            string query = "USE MASTER; ALTER DATABASE [Diploma_Empresa] SET Single_User WITH Rollback Immediate; RESTORE DATABASE [Diploma_Empresa] FROM ";
             for (int i = 0; i <= archivos.Count - 1; i++)
             {
                 if (i >= 1)
@@ -388,8 +387,7 @@ namespace Acceso_DAL
                 }
                 query += " DISK = '" + archivos[i] + "'";
             }
-            query += " WITH REPLACE; ALTER DATABASE [Diploma_Empresa_de_Ropa] SET Multi_User";
-            //query += " WITH REPLACE; ALTER DATABASE [Diploma_Trabajo_Final] SET Multi_User";
+            query += " WITH REPLACE; ALTER DATABASE [Diploma_Empresa] SET Multi_User";           
             return Ejecutar(query, null);
         }
 

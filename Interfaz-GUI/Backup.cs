@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace Interfaz_GUI
 {
-    public partial class Backup : Form
+    public partial class Backup : Form, IObserver
     {
         Negocio_BLL.Seguridad Seguridad = new Negocio_BLL.Seguridad();
 

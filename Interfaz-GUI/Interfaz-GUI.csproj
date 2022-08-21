@@ -140,6 +140,12 @@
     <Compile Include="Recalcular_Digitos.Designer.cs">
       <DependentUpon>Recalcular_Digitos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Restore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Restore.Designer.cs">
+      <DependentUpon>Restore.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Administrar_Familia.resx">
       <DependentUpon>Administrar_Familia.cs</DependentUpon>
     </EmbeddedResource>
@@ -193,6 +199,9 @@
     </Compile>
     <EmbeddedResource Include="Recalcular_Digitos.resx">
       <DependentUpon>Recalcular_Digitos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Restore.resx">
+      <DependentUpon>Restore.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
