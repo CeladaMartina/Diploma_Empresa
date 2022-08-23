@@ -237,5 +237,12 @@ namespace Interfaz_GUI
             R.MdiParent = this;
             R.Show();
         }
+
+        private void bitacoraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Bitacora B = Bitacora.ObtenerInstancia();
+            B.MdiParent = this;
+            B.Show();
+        }
     }
 }
