@@ -78,7 +78,7 @@ namespace Interfaz_GUI
             BtnFiltrar.Text = Sujeto.TraducirObserver(BtnFiltrar.Tag.ToString()) ?? BtnFiltrar.Tag.ToString();
             BtnRestaurar.Text = Sujeto.TraducirObserver(BtnRestaurar.Tag.ToString()) ?? BtnRestaurar.Tag.ToString();
             BtnVolver.Text = Sujeto.TraducirObserver(BtnVolver.Tag.ToString()) ?? BtnVolver.Tag.ToString();
-            this.Text = Sujeto.TraducirObserver(this.Tag.ToString()) ?? this.Tag.ToString();
+            //this.Text = Sujeto.TraducirObserver(this.Tag.ToString()) ?? this.Tag.ToString();
         }
 
         public void Traducir()
@@ -88,7 +88,7 @@ namespace Interfaz_GUI
             BtnFiltrar.Text = CambiarIdioma.TraducirGlobal(BtnFiltrar.Tag.ToString()) ?? BtnFiltrar.Tag.ToString();
             BtnRestaurar.Text = CambiarIdioma.TraducirGlobal(BtnRestaurar.Tag.ToString()) ?? BtnRestaurar.Tag.ToString();
             BtnVolver.Text = CambiarIdioma.TraducirGlobal(BtnVolver.Tag.ToString()) ?? BtnVolver.Tag.ToString();
-            this.Text = CambiarIdioma.TraducirGlobal(this.Tag.ToString()) ?? this.Tag.ToString();
+            //this.Text = CambiarIdioma.TraducirGlobal(this.Tag.ToString()) ?? this.Tag.ToString();
         }
 
 
@@ -160,6 +160,26 @@ namespace Interfaz_GUI
         {
             ListarCambios();
             Traducir();
+        }
+
+        private void dataGridViewControlCambio_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                ProveedorTemp.IdProveedor = int.Parse(Convert.ToString(dataGridViewControlCambio.Rows[e.RowIndex].Cells[0].Value.ToString()));
+                txtCUIT.Text = Convert.ToString(dataGridViewControlCambio.Rows[e.RowIndex].Cells[1].Value.ToString());
+                ProveedorTemp.CUIT = Seguridad.EncriptarAES(txtCUIT.Text);
+                ProveedorTemp.Nombre = Convert.ToString(dataGridViewControlCambio.Rows[e.RowIndex].Cells[2].Value.ToString());
+                ProveedorTemp.Apellido = Convert.ToString(dataGridViewControlCambio.Rows[e.RowIndex].Cells[3].Value.ToString());
+                ProveedorTemp.FechaNac = DateTime.Parse(Convert.ToString(dataGridViewControlCambio.Rows[e.RowIndex].Cells[4].Value.ToString()));
+                ProveedorTemp.Tel = int.Parse(Convert.ToString(dataGridViewControlCambio.Rows[e.RowIndex].Cells[5].Value.ToString()));
+                ProveedorTemp.Mail = Convert.ToString(dataGridViewControlCambio.Rows[e.RowIndex].Cells[6].Value.ToString());
+                ProveedorTemp.BajaLogica = bool.Parse(dataGridViewControlCambio.Rows[e.RowIndex].Cells[7].Value.ToString());
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(CambiarIdioma.TraducirGlobal("Error") ?? "Error");
+            }
         }
     }
 }

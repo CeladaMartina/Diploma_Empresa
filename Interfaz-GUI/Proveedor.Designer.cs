@@ -30,18 +30,18 @@ namespace Interfaz_GUI
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.LblCUIT = new System.Windows.Forms.Label();
-            this.LblNombre = new System.Windows.Forms.Label();
-            this.LblApellido = new System.Windows.Forms.Label();
-            this.LblFechaNac = new System.Windows.Forms.Label();
-            this.LblTelefono = new System.Windows.Forms.Label();
-            this.LblMail = new System.Windows.Forms.Label();
-            this.txtCUIT = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtApellido = new System.Windows.Forms.TextBox();
-            this.dateTimePickerFecNac = new System.Windows.Forms.DateTimePicker();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.txtMail = new System.Windows.Forms.TextBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.dateTimePickerFecNac = new System.Windows.Forms.DateTimePicker();
+            this.txtApellido = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtCUIT = new System.Windows.Forms.TextBox();
+            this.LblMail = new System.Windows.Forms.Label();
+            this.LblTelefono = new System.Windows.Forms.Label();
+            this.LblFechaNac = new System.Windows.Forms.Label();
+            this.LblApellido = new System.Windows.Forms.Label();
+            this.LblNombre = new System.Windows.Forms.Label();
+            this.LblCUIT = new System.Windows.Forms.Label();
             this.dataGridViewProveedor = new System.Windows.Forms.DataGridView();
             this.BtnAlta = new System.Windows.Forms.Button();
             this.BtnModificar = new System.Windows.Forms.Button();
@@ -73,55 +73,47 @@ namespace Interfaz_GUI
             this.groupBox1.Text = "Datos";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // LblCUIT
+            // txtMail
             // 
-            this.LblCUIT.AutoSize = true;
-            this.LblCUIT.Location = new System.Drawing.Point(32, 46);
-            this.LblCUIT.Name = "LblCUIT";
-            this.LblCUIT.Size = new System.Drawing.Size(39, 17);
-            this.LblCUIT.TabIndex = 0;
-            this.LblCUIT.Tag = "CUIT";
-            this.LblCUIT.Text = "CUIT";
+            this.txtMail.Location = new System.Drawing.Point(142, 315);
+            this.txtMail.Name = "txtMail";
+            this.txtMail.Size = new System.Drawing.Size(185, 22);
+            this.txtMail.TabIndex = 11;
             // 
-            // LblNombre
+            // txtTelefono
             // 
-            this.LblNombre.AutoSize = true;
-            this.LblNombre.Location = new System.Drawing.Point(32, 96);
-            this.LblNombre.Name = "LblNombre";
-            this.LblNombre.Size = new System.Drawing.Size(58, 17);
-            this.LblNombre.TabIndex = 1;
-            this.LblNombre.Tag = "Nombre";
-            this.LblNombre.Text = "Nombre";
+            this.txtTelefono.Location = new System.Drawing.Point(142, 266);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(185, 22);
+            this.txtTelefono.TabIndex = 10;
             // 
-            // LblApellido
+            // dateTimePickerFecNac
             // 
-            this.LblApellido.AutoSize = true;
-            this.LblApellido.Location = new System.Drawing.Point(32, 149);
-            this.LblApellido.Name = "LblApellido";
-            this.LblApellido.Size = new System.Drawing.Size(58, 17);
-            this.LblApellido.TabIndex = 2;
-            this.LblApellido.Tag = "Apellido";
-            this.LblApellido.Text = "Apellido";
+            this.dateTimePickerFecNac.Location = new System.Drawing.Point(196, 207);
+            this.dateTimePickerFecNac.Name = "dateTimePickerFecNac";
+            this.dateTimePickerFecNac.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePickerFecNac.TabIndex = 9;
             // 
-            // LblFechaNac
+            // txtApellido
             // 
-            this.LblFechaNac.AutoSize = true;
-            this.LblFechaNac.Location = new System.Drawing.Point(32, 212);
-            this.LblFechaNac.Name = "LblFechaNac";
-            this.LblFechaNac.Size = new System.Drawing.Size(141, 17);
-            this.LblFechaNac.TabIndex = 3;
-            this.LblFechaNac.Tag = "Fecha de Nacimiento";
-            this.LblFechaNac.Text = "Fecha de Nacimiento";
+            this.txtApellido.Location = new System.Drawing.Point(142, 144);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(185, 22);
+            this.txtApellido.TabIndex = 8;
             // 
-            // LblTelefono
+            // txtNombre
             // 
-            this.LblTelefono.AutoSize = true;
-            this.LblTelefono.Location = new System.Drawing.Point(32, 271);
-            this.LblTelefono.Name = "LblTelefono";
-            this.LblTelefono.Size = new System.Drawing.Size(64, 17);
-            this.LblTelefono.TabIndex = 4;
-            this.LblTelefono.Tag = "Telefono";
-            this.LblTelefono.Text = "Telefono";
+            this.txtNombre.Location = new System.Drawing.Point(142, 93);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(185, 22);
+            this.txtNombre.TabIndex = 7;
+            // 
+            // txtCUIT
+            // 
+            this.txtCUIT.Location = new System.Drawing.Point(142, 46);
+            this.txtCUIT.Name = "txtCUIT";
+            this.txtCUIT.Size = new System.Drawing.Size(185, 22);
+            this.txtCUIT.TabIndex = 6;
             // 
             // LblMail
             // 
@@ -133,47 +125,55 @@ namespace Interfaz_GUI
             this.LblMail.Tag = "Mail";
             this.LblMail.Text = "Mail";
             // 
-            // txtCUIT
+            // LblTelefono
             // 
-            this.txtCUIT.Location = new System.Drawing.Point(142, 46);
-            this.txtCUIT.Name = "txtCUIT";
-            this.txtCUIT.Size = new System.Drawing.Size(185, 22);
-            this.txtCUIT.TabIndex = 6;
+            this.LblTelefono.AutoSize = true;
+            this.LblTelefono.Location = new System.Drawing.Point(32, 271);
+            this.LblTelefono.Name = "LblTelefono";
+            this.LblTelefono.Size = new System.Drawing.Size(64, 17);
+            this.LblTelefono.TabIndex = 4;
+            this.LblTelefono.Tag = "Telefono";
+            this.LblTelefono.Text = "Telefono";
             // 
-            // txtNombre
+            // LblFechaNac
             // 
-            this.txtNombre.Location = new System.Drawing.Point(142, 93);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(185, 22);
-            this.txtNombre.TabIndex = 7;
+            this.LblFechaNac.AutoSize = true;
+            this.LblFechaNac.Location = new System.Drawing.Point(32, 212);
+            this.LblFechaNac.Name = "LblFechaNac";
+            this.LblFechaNac.Size = new System.Drawing.Size(141, 17);
+            this.LblFechaNac.TabIndex = 3;
+            this.LblFechaNac.Tag = "Fecha de Nacimiento";
+            this.LblFechaNac.Text = "Fecha de Nacimiento";
             // 
-            // txtApellido
+            // LblApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(142, 144);
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(185, 22);
-            this.txtApellido.TabIndex = 8;
+            this.LblApellido.AutoSize = true;
+            this.LblApellido.Location = new System.Drawing.Point(32, 149);
+            this.LblApellido.Name = "LblApellido";
+            this.LblApellido.Size = new System.Drawing.Size(58, 17);
+            this.LblApellido.TabIndex = 2;
+            this.LblApellido.Tag = "Apellido";
+            this.LblApellido.Text = "Apellido";
             // 
-            // dateTimePickerFecNac
+            // LblNombre
             // 
-            this.dateTimePickerFecNac.Location = new System.Drawing.Point(196, 207);
-            this.dateTimePickerFecNac.Name = "dateTimePickerFecNac";
-            this.dateTimePickerFecNac.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePickerFecNac.TabIndex = 9;
+            this.LblNombre.AutoSize = true;
+            this.LblNombre.Location = new System.Drawing.Point(32, 96);
+            this.LblNombre.Name = "LblNombre";
+            this.LblNombre.Size = new System.Drawing.Size(58, 17);
+            this.LblNombre.TabIndex = 1;
+            this.LblNombre.Tag = "Nombre";
+            this.LblNombre.Text = "Nombre";
             // 
-            // txtTelefono
+            // LblCUIT
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(142, 266);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(185, 22);
-            this.txtTelefono.TabIndex = 10;
-            // 
-            // txtMail
-            // 
-            this.txtMail.Location = new System.Drawing.Point(142, 315);
-            this.txtMail.Name = "txtMail";
-            this.txtMail.Size = new System.Drawing.Size(185, 22);
-            this.txtMail.TabIndex = 11;
+            this.LblCUIT.AutoSize = true;
+            this.LblCUIT.Location = new System.Drawing.Point(32, 46);
+            this.LblCUIT.Name = "LblCUIT";
+            this.LblCUIT.Size = new System.Drawing.Size(39, 17);
+            this.LblCUIT.TabIndex = 0;
+            this.LblCUIT.Tag = "CUIT";
+            this.LblCUIT.Text = "CUIT";
             // 
             // dataGridViewProveedor
             // 
@@ -242,6 +242,7 @@ namespace Interfaz_GUI
             this.Controls.Add(this.dataGridViewProveedor);
             this.Controls.Add(this.groupBox1);
             this.Name = "Proveedor";
+            this.Tag = "Proveedor";
             this.Text = "Proveedor";
             this.Load += new System.EventHandler(this.Proveedor_Load);
             this.groupBox1.ResumeLayout(false);

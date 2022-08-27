@@ -87,6 +87,7 @@ namespace Interfaz_GUI
             this.dataGridViewControlCambio.RowTemplate.Height = 24;
             this.dataGridViewControlCambio.Size = new System.Drawing.Size(993, 335);
             this.dataGridViewControlCambio.TabIndex = 4;
+            this.dataGridViewControlCambio.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewControlCambio_CellClick);
             // 
             // BtnVolver
             // 
