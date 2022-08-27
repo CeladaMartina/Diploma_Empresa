@@ -39,23 +39,23 @@ namespace Interfaz_GUI
             this.txtCUIT = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
-            this.dateTimePickerFechaNac = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerFecNac = new System.Windows.Forms.DateTimePicker();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.txtMail = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewProveedor = new System.Windows.Forms.DataGridView();
             this.BtnAlta = new System.Windows.Forms.Button();
-            this.BtnModificacion = new System.Windows.Forms.Button();
+            this.BtnModificar = new System.Windows.Forms.Button();
             this.BtnBaja = new System.Windows.Forms.Button();
             this.BtnControlCambio = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProveedor)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txtMail);
             this.groupBox1.Controls.Add(this.txtTelefono);
-            this.groupBox1.Controls.Add(this.dateTimePickerFechaNac);
+            this.groupBox1.Controls.Add(this.dateTimePickerFecNac);
             this.groupBox1.Controls.Add(this.txtApellido);
             this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Controls.Add(this.txtCUIT);
@@ -71,6 +71,7 @@ namespace Interfaz_GUI
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // LblCUIT
             // 
@@ -153,12 +154,12 @@ namespace Interfaz_GUI
             this.txtApellido.Size = new System.Drawing.Size(185, 22);
             this.txtApellido.TabIndex = 8;
             // 
-            // dateTimePickerFechaNac
+            // dateTimePickerFecNac
             // 
-            this.dateTimePickerFechaNac.Location = new System.Drawing.Point(196, 207);
-            this.dateTimePickerFechaNac.Name = "dateTimePickerFechaNac";
-            this.dateTimePickerFechaNac.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePickerFechaNac.TabIndex = 9;
+            this.dateTimePickerFecNac.Location = new System.Drawing.Point(196, 207);
+            this.dateTimePickerFecNac.Name = "dateTimePickerFecNac";
+            this.dateTimePickerFecNac.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePickerFecNac.TabIndex = 9;
             // 
             // txtTelefono
             // 
@@ -174,15 +175,16 @@ namespace Interfaz_GUI
             this.txtMail.Size = new System.Drawing.Size(185, 22);
             this.txtMail.TabIndex = 11;
             // 
-            // dataGridView1
+            // dataGridViewProveedor
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(467, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(736, 361);
-            this.dataGridView1.TabIndex = 1;
+            this.dataGridViewProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewProveedor.Location = new System.Drawing.Point(467, 12);
+            this.dataGridViewProveedor.Name = "dataGridViewProveedor";
+            this.dataGridViewProveedor.RowHeadersWidth = 51;
+            this.dataGridViewProveedor.RowTemplate.Height = 24;
+            this.dataGridViewProveedor.Size = new System.Drawing.Size(736, 361);
+            this.dataGridViewProveedor.TabIndex = 1;
+            this.dataGridViewProveedor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewProveedor_CellClick);
             // 
             // BtnAlta
             // 
@@ -193,16 +195,18 @@ namespace Interfaz_GUI
             this.BtnAlta.Tag = "Alta";
             this.BtnAlta.Text = "Alta";
             this.BtnAlta.UseVisualStyleBackColor = true;
+            this.BtnAlta.Click += new System.EventHandler(this.BtnAlta_Click);
             // 
-            // BtnModificacion
+            // BtnModificar
             // 
-            this.BtnModificacion.Location = new System.Drawing.Point(185, 389);
-            this.BtnModificacion.Name = "BtnModificacion";
-            this.BtnModificacion.Size = new System.Drawing.Size(110, 32);
-            this.BtnModificacion.TabIndex = 3;
-            this.BtnModificacion.Tag = "Modificacion";
-            this.BtnModificacion.Text = "Modificacion";
-            this.BtnModificacion.UseVisualStyleBackColor = true;
+            this.BtnModificar.Location = new System.Drawing.Point(185, 389);
+            this.BtnModificar.Name = "BtnModificar";
+            this.BtnModificar.Size = new System.Drawing.Size(110, 32);
+            this.BtnModificar.TabIndex = 3;
+            this.BtnModificar.Tag = "Modificacion";
+            this.BtnModificar.Text = "Modificacion";
+            this.BtnModificar.UseVisualStyleBackColor = true;
+            this.BtnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
             // 
             // BtnBaja
             // 
@@ -213,6 +217,7 @@ namespace Interfaz_GUI
             this.BtnBaja.Tag = "Baja";
             this.BtnBaja.Text = "Baja";
             this.BtnBaja.UseVisualStyleBackColor = true;
+            this.BtnBaja.Click += new System.EventHandler(this.BtnBaja_Click);
             // 
             // BtnControlCambio
             // 
@@ -223,6 +228,7 @@ namespace Interfaz_GUI
             this.BtnControlCambio.Tag = "Control de cambios";
             this.BtnControlCambio.Text = "Control de cambios";
             this.BtnControlCambio.UseVisualStyleBackColor = true;
+            this.BtnControlCambio.Click += new System.EventHandler(this.BtnControlCambio_Click);
             // 
             // Proveedor
             // 
@@ -231,15 +237,16 @@ namespace Interfaz_GUI
             this.ClientSize = new System.Drawing.Size(1215, 448);
             this.Controls.Add(this.BtnControlCambio);
             this.Controls.Add(this.BtnBaja);
-            this.Controls.Add(this.BtnModificacion);
+            this.Controls.Add(this.BtnModificar);
             this.Controls.Add(this.BtnAlta);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewProveedor);
             this.Controls.Add(this.groupBox1);
             this.Name = "Proveedor";
             this.Text = "Proveedor";
+            this.Load += new System.EventHandler(this.Proveedor_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProveedor)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -249,7 +256,7 @@ namespace Interfaz_GUI
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtMail;
         private System.Windows.Forms.TextBox txtTelefono;
-        private System.Windows.Forms.DateTimePicker dateTimePickerFechaNac;
+        private System.Windows.Forms.DateTimePicker dateTimePickerFecNac;
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtCUIT;
@@ -259,9 +266,9 @@ namespace Interfaz_GUI
         private System.Windows.Forms.Label LblApellido;
         private System.Windows.Forms.Label LblNombre;
         private System.Windows.Forms.Label LblCUIT;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewProveedor;
         private System.Windows.Forms.Button BtnAlta;
-        private System.Windows.Forms.Button BtnModificacion;
+        private System.Windows.Forms.Button BtnModificar;
         private System.Windows.Forms.Button BtnBaja;
         private System.Windows.Forms.Button BtnControlCambio;
     }

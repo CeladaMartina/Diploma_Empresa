@@ -65,6 +65,7 @@ namespace Interfaz_GUI
             this.BtnFiltrar.Tag = "Filtrar";
             this.BtnFiltrar.Text = "Filtrar";
             this.BtnFiltrar.UseVisualStyleBackColor = true;
+            this.BtnFiltrar.Click += new System.EventHandler(this.BtnFiltrar_Click);
             // 
             // BtnCancelarFiltro
             // 
@@ -75,6 +76,7 @@ namespace Interfaz_GUI
             this.BtnCancelarFiltro.Tag = "Cancelar Filtro";
             this.BtnCancelarFiltro.Text = "Cancelar Filtro";
             this.BtnCancelarFiltro.UseVisualStyleBackColor = true;
+            this.BtnCancelarFiltro.Click += new System.EventHandler(this.BtnCancelarFiltro_Click);
             // 
             // dataGridViewControlCambio
             // 
@@ -95,6 +97,7 @@ namespace Interfaz_GUI
             this.BtnVolver.Tag = "Volver";
             this.BtnVolver.Text = "Volver";
             this.BtnVolver.UseVisualStyleBackColor = true;
+            this.BtnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
             // 
             // BtnRestaurar
             // 
@@ -105,6 +108,7 @@ namespace Interfaz_GUI
             this.BtnRestaurar.Tag = "Restaurar Cambio";
             this.BtnRestaurar.Text = "Restaurar Cambio";
             this.BtnRestaurar.UseVisualStyleBackColor = true;
+            this.BtnRestaurar.Click += new System.EventHandler(this.BtnRestaurar_Click);
             // 
             // ControlCambioProveedor
             // 
@@ -120,6 +124,7 @@ namespace Interfaz_GUI
             this.Controls.Add(this.LblCUIT);
             this.Name = "ControlCambioProveedor";
             this.Text = "ControlCambioProveedor";
+            this.Load += new System.EventHandler(this.ControlCambioProveedor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewControlCambio)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

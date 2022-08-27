@@ -41,10 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ControlCambioProveedor.cs" />
     <Compile Include="Detalle_Venta.cs" />
     <Compile Include="Idioma.cs" />
     <Compile Include="Permisos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proveedor.cs" />
     <Compile Include="Seguridad.cs" />
     <Compile Include="Traduccion.cs" />
     <Compile Include="Usuario.cs" />

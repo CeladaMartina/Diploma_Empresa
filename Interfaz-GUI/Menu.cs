@@ -47,6 +47,7 @@ namespace Interfaz_GUI
                 this.recalcularDigitosToolStripMenuItem.Visible = (Propiedades_BE.SingletonLogIn.GetInstance.IsInRole(Propiedades_BE.TipoPermiso.Recalcular_Digitos));
                 this.restoreToolStripMenuItem.Visible = (Propiedades_BE.SingletonLogIn.GetInstance.IsInRole(Propiedades_BE.TipoPermiso.Realizar_Restore));
                 this.ventaToolStripMenuItem.Visible = (Propiedades_BE.SingletonLogIn.GetInstance.IsInRole(Propiedades_BE.TipoPermiso.Modificar_Venta));
+                this.proveedorToolStripMenuItem.Visible = (Propiedades_BE.SingletonLogIn.GetInstance.IsInRole(Propiedades_BE.TipoPermiso.Modificar_Proveedor));
             }
             else
             {
@@ -62,6 +63,7 @@ namespace Interfaz_GUI
                 this.recalcularDigitosToolStripMenuItem.Visible = false;
                 this.restoreToolStripMenuItem.Visible = false;
                 this.ventaToolStripMenuItem.Visible = false;
+                this.proveedorToolStripMenuItem.Visible = false;
             }
         }
 
@@ -77,6 +79,7 @@ namespace Interfaz_GUI
                 this.administrarUsuarioToolStripMenuItem.Visible = false;
                 this.generarContraseñaToolStripMenuItem.Visible = false;
                 this.backupToolStripMenuItem.Visible = false;
+                this.proveedorToolStripMenuItem.Visible = false;
             }
         }
         #endregion
@@ -101,6 +104,7 @@ namespace Interfaz_GUI
             bitacoraToolStripMenuItem.Text = Subject.TraducirObserver(bitacoraToolStripMenuItem.Tag.ToString()) ?? bitacoraToolStripMenuItem.Tag.ToString();
             generarContraseñaToolStripMenuItem.Text = Subject.TraducirObserver(generarContraseñaToolStripMenuItem.Tag.ToString()) ?? generarContraseñaToolStripMenuItem.Tag.ToString();
             recalcularDigitosToolStripMenuItem.Text = Subject.TraducirObserver(recalcularDigitosToolStripMenuItem.Tag.ToString()) ?? recalcularDigitosToolStripMenuItem.Tag.ToString();
+            proveedorToolStripMenuItem.Text = Subject.TraducirObserver(proveedorToolStripMenuItem.Tag.ToString()) ?? proveedorToolStripMenuItem.Tag.ToString();
         }
 
         public void Traducir()
@@ -123,6 +127,7 @@ namespace Interfaz_GUI
             bitacoraToolStripMenuItem.Text = CambiarIdioma.TraducirGlobal(bitacoraToolStripMenuItem.Tag.ToString()) ?? bitacoraToolStripMenuItem.Tag.ToString();
             generarContraseñaToolStripMenuItem.Text = CambiarIdioma.TraducirGlobal(generarContraseñaToolStripMenuItem.Tag.ToString()) ?? generarContraseñaToolStripMenuItem.Tag.ToString();
             recalcularDigitosToolStripMenuItem.Text = CambiarIdioma.TraducirGlobal(recalcularDigitosToolStripMenuItem.Tag.ToString()) ?? recalcularDigitosToolStripMenuItem.Tag.ToString();
+            proveedorToolStripMenuItem.Text = CambiarIdioma.TraducirGlobal(proveedorToolStripMenuItem.Tag.ToString()) ?? proveedorToolStripMenuItem.Tag.ToString();
         }
 
         #endregion
@@ -243,6 +248,13 @@ namespace Interfaz_GUI
             Bitacora B = Bitacora.ObtenerInstancia();
             B.MdiParent = this;
             B.Show();
+        }
+
+        private void proveedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Proveedor P = Proveedor.ObtenerInstancia();
+            P.MdiParent = this;
+            P.Show();
         }
     }
 }
