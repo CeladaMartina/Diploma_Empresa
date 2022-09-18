@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,23 +20,26 @@ namespace Interfaz_GUI
         }
 
         private void ConexionBD_Load(object sender, EventArgs e)
-        {
-            //Traducir();
+        {          
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             try
             {
-                GestorUsuario.GenerarConexion(UsuarioServidor.Text, UsuarioBase.Text);
-                MessageBox.Show("La conexion funciona correctamente");
+                SqlConnection Conexion = new SqlConnection();
+                GestorUsuario.GenerarConexion(UsuarioServidor.Text, UsuarioBase.Text);                
+                Conexion.ConnectionString = GestorUsuario.GetConexion();
+                Conexion.Open();
+                MessageBox.Show(CambiarIdioma.TraducirGlobal("La conexion funciona correctamente") ?? "La conexion funciona correctamente");
+                
                 LogIn formLogIn = new LogIn();
                 this.Hide();
                 formLogIn.Show();
             }
             catch (Exception)
             {
-                MessageBox.Show("La conexion no funciona correctamente.");
+                MessageBox.Show(CambiarIdioma.TraducirGlobal("La conexion no funciona correctamente.") ?? "La conexion no funciona correctamente.");
             }
         }
 
