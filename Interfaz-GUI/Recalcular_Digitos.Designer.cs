@@ -30,18 +30,24 @@ namespace Interfaz_GUI
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.LblUsuario = new System.Windows.Forms.Label();
-            this.LblDV = new System.Windows.Forms.Label();
-            this.TxtUsuario = new System.Windows.Forms.TextBox();
-            this.TxtDV = new System.Windows.Forms.TextBox();
-            this.BtnUsuario = new System.Windows.Forms.Button();
+            this.BtnBitacora = new System.Windows.Forms.Button();
+            this.TxtBitacora = new System.Windows.Forms.TextBox();
+            this.LblBitacora = new System.Windows.Forms.Label();
             this.BtnDV = new System.Windows.Forms.Button();
+            this.BtnUsuario = new System.Windows.Forms.Button();
+            this.TxtDV = new System.Windows.Forms.TextBox();
+            this.TxtUsuario = new System.Windows.Forms.TextBox();
+            this.LblDV = new System.Windows.Forms.Label();
+            this.LblUsuario = new System.Windows.Forms.Label();
             this.BtnRecalcularDVV = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.BtnBitacora);
+            this.groupBox1.Controls.Add(this.TxtBitacora);
+            this.groupBox1.Controls.Add(this.LblBitacora);
             this.groupBox1.Controls.Add(this.BtnDV);
             this.groupBox1.Controls.Add(this.BtnUsuario);
             this.groupBox1.Controls.Add(this.TxtDV);
@@ -50,57 +56,40 @@ namespace Interfaz_GUI
             this.groupBox1.Controls.Add(this.LblUsuario);
             this.groupBox1.Location = new System.Drawing.Point(49, 45);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(438, 278);
+            this.groupBox1.Size = new System.Drawing.Size(438, 387);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tablas";
             // 
-            // LblUsuario
+            // BtnBitacora
             // 
-            this.LblUsuario.AutoSize = true;
-            this.LblUsuario.Location = new System.Drawing.Point(18, 47);
-            this.LblUsuario.Name = "LblUsuario";
-            this.LblUsuario.Size = new System.Drawing.Size(97, 17);
-            this.LblUsuario.TabIndex = 0;
-            this.LblUsuario.Tag = "Tabla Usuario";
-            this.LblUsuario.Text = "Tabla Usuario";
+            this.BtnBitacora.Location = new System.Drawing.Point(234, 302);
+            this.BtnBitacora.Name = "BtnBitacora";
+            this.BtnBitacora.Size = new System.Drawing.Size(144, 25);
+            this.BtnBitacora.TabIndex = 8;
+            this.BtnBitacora.Tag = "Recalcular DVH";
+            this.BtnBitacora.Text = "Recalcular DVH";
+            this.BtnBitacora.UseVisualStyleBackColor = true;
+            this.BtnBitacora.Click += new System.EventHandler(this.BtnBitacora_Click);
             // 
-            // LblDV
+            // TxtBitacora
             // 
-            this.LblDV.AutoSize = true;
-            this.LblDV.Location = new System.Drawing.Point(18, 145);
-            this.LblDV.Name = "LblDV";
-            this.LblDV.Size = new System.Drawing.Size(133, 17);
-            this.LblDV.TabIndex = 1;
-            this.LblDV.Tag = "Tabla Detalle Venta";
-            this.LblDV.Text = "Tabla Detalle Venta";
+            this.TxtBitacora.Location = new System.Drawing.Point(21, 302);
+            this.TxtBitacora.Name = "TxtBitacora";
+            this.TxtBitacora.Size = new System.Drawing.Size(148, 22);
+            this.TxtBitacora.TabIndex = 7;
+            this.TxtBitacora.Tag = "TxtBitacora";
             // 
-            // TxtUsuario
+            // LblBitacora
             // 
-            this.TxtUsuario.Location = new System.Drawing.Point(21, 81);
-            this.TxtUsuario.Name = "TxtUsuario";
-            this.TxtUsuario.Size = new System.Drawing.Size(148, 22);
-            this.TxtUsuario.TabIndex = 2;
-            this.TxtUsuario.Tag = "TxtUsuario";
-            // 
-            // TxtDV
-            // 
-            this.TxtDV.Location = new System.Drawing.Point(21, 189);
-            this.TxtDV.Name = "TxtDV";
-            this.TxtDV.Size = new System.Drawing.Size(148, 22);
-            this.TxtDV.TabIndex = 3;
-            this.TxtDV.Tag = "TxtDV";
-            // 
-            // BtnUsuario
-            // 
-            this.BtnUsuario.Location = new System.Drawing.Point(234, 81);
-            this.BtnUsuario.Name = "BtnUsuario";
-            this.BtnUsuario.Size = new System.Drawing.Size(144, 25);
-            this.BtnUsuario.TabIndex = 4;
-            this.BtnUsuario.Tag = "Recalcular DVH";
-            this.BtnUsuario.Text = "Recalcular DVH";
-            this.BtnUsuario.UseVisualStyleBackColor = true;
-            this.BtnUsuario.Click += new System.EventHandler(this.BtnUsuario_Click);
+            this.LblBitacora.AutoSize = true;
+            this.LblBitacora.Location = new System.Drawing.Point(18, 258);
+            this.LblBitacora.Name = "LblBitacora";
+            this.LblBitacora.Size = new System.Drawing.Size(100, 17);
+            this.LblBitacora.TabIndex = 6;
+            this.LblBitacora.Tag = "Tabla Bitacora";
+            this.LblBitacora.Text = "Tabla Bitacora";
+            this.LblBitacora.Click += new System.EventHandler(this.label1_Click);
             // 
             // BtnDV
             // 
@@ -113,9 +102,56 @@ namespace Interfaz_GUI
             this.BtnDV.UseVisualStyleBackColor = true;
             this.BtnDV.Click += new System.EventHandler(this.BtnDV_Click);
             // 
+            // BtnUsuario
+            // 
+            this.BtnUsuario.Location = new System.Drawing.Point(234, 81);
+            this.BtnUsuario.Name = "BtnUsuario";
+            this.BtnUsuario.Size = new System.Drawing.Size(144, 25);
+            this.BtnUsuario.TabIndex = 4;
+            this.BtnUsuario.Tag = "Recalcular DVH";
+            this.BtnUsuario.Text = "Recalcular DVH";
+            this.BtnUsuario.UseVisualStyleBackColor = true;
+            this.BtnUsuario.Click += new System.EventHandler(this.BtnUsuario_Click);
+            // 
+            // TxtDV
+            // 
+            this.TxtDV.Location = new System.Drawing.Point(21, 189);
+            this.TxtDV.Name = "TxtDV";
+            this.TxtDV.Size = new System.Drawing.Size(148, 22);
+            this.TxtDV.TabIndex = 3;
+            this.TxtDV.Tag = "TxtDV";
+            // 
+            // TxtUsuario
+            // 
+            this.TxtUsuario.Location = new System.Drawing.Point(21, 81);
+            this.TxtUsuario.Name = "TxtUsuario";
+            this.TxtUsuario.Size = new System.Drawing.Size(148, 22);
+            this.TxtUsuario.TabIndex = 2;
+            this.TxtUsuario.Tag = "TxtUsuario";
+            // 
+            // LblDV
+            // 
+            this.LblDV.AutoSize = true;
+            this.LblDV.Location = new System.Drawing.Point(18, 145);
+            this.LblDV.Name = "LblDV";
+            this.LblDV.Size = new System.Drawing.Size(133, 17);
+            this.LblDV.TabIndex = 1;
+            this.LblDV.Tag = "Tabla Detalle Venta";
+            this.LblDV.Text = "Tabla Detalle Venta";
+            // 
+            // LblUsuario
+            // 
+            this.LblUsuario.AutoSize = true;
+            this.LblUsuario.Location = new System.Drawing.Point(18, 47);
+            this.LblUsuario.Name = "LblUsuario";
+            this.LblUsuario.Size = new System.Drawing.Size(97, 17);
+            this.LblUsuario.TabIndex = 0;
+            this.LblUsuario.Tag = "Tabla Usuario";
+            this.LblUsuario.Text = "Tabla Usuario";
+            // 
             // BtnRecalcularDVV
             // 
-            this.BtnRecalcularDVV.Location = new System.Drawing.Point(540, 187);
+            this.BtnRecalcularDVV.Location = new System.Drawing.Point(518, 227);
             this.BtnRecalcularDVV.Name = "BtnRecalcularDVV";
             this.BtnRecalcularDVV.Size = new System.Drawing.Size(138, 37);
             this.BtnRecalcularDVV.TabIndex = 1;
@@ -128,7 +164,7 @@ namespace Interfaz_GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(723, 369);
+            this.ClientSize = new System.Drawing.Size(703, 451);
             this.Controls.Add(this.BtnRecalcularDVV);
             this.Controls.Add(this.groupBox1);
             this.Name = "Recalcular_Digitos";
@@ -150,5 +186,8 @@ namespace Interfaz_GUI
         private System.Windows.Forms.Label LblDV;
         private System.Windows.Forms.Label LblUsuario;
         private System.Windows.Forms.Button BtnRecalcularDVV;
+        private System.Windows.Forms.Button BtnBitacora;
+        private System.Windows.Forms.TextBox TxtBitacora;
+        private System.Windows.Forms.Label LblBitacora;
     }
 }

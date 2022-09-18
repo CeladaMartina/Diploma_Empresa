@@ -26,6 +26,8 @@ namespace Acceso_DAL
             Seguridad.ActualizarDVV("Usuario", Seguridad.SumaDVV("Usuario"));
         }
 
+
+        //NO USO
         public List<string> NombreUsuariosSistema()
         {
             List<string> NomUs = new List<string>();

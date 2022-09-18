@@ -139,6 +139,53 @@ namespace Acceso_DAL
             return ListaBitacora;
         }
 
+        public void RecalcularDVH()
+        {
+            long suma = 0;
+
+            List<Propiedades_BE.Bitacora> DV = ListaVerificacion();
+            foreach (Propiedades_BE.Bitacora bitacora in DV.ToList())
+            {
+                suma = 0;
+                string IdBitacora = bitacora.IdBitacora.ToString();
+                string IdUsuario = bitacora.IdUsuario.ToString();
+                string Fecha = bitacora.Fecha.ToString();
+                string Descripcion = bitacora.Descripcion.ToString();
+                string Criticidad = bitacora.Criticidad.ToString();
+                string dvh = bitacora.DVH.ToString();
+
+                long IdBitacoraB = ObtenerAscii(IdBitacora);
+                long IdUsuarioB = ObtenerAscii(IdUsuario);
+                long FechaB = ObtenerAscii(Fecha);
+                long DescripcionB = ObtenerAscii(Descripcion);
+                long CriticidadB = ObtenerAscii(Criticidad);
+                long dvhDv = long.Parse(dvh);
+
+                suma = IdBitacoraB + IdUsuarioB + FechaB + DescripcionB + CriticidadB;
+                Acceso.EjecutarConsulta("Update Bitacora set DVH = " + suma + " where IdBitacora = " + IdBitacora + "");
+            }
+        }
+
+        public List<Propiedades_BE.Bitacora> ListaVerificacion()
+        {
+            List<Propiedades_BE.Bitacora> Lista = new List<Propiedades_BE.Bitacora>();
+            //hacer procedimiento almacenado 
+            DataTable Tabla = Acceso.Leer("ListarBitacoraVerificacion", null);
+
+            foreach (DataRow R in Tabla.Rows)
+            {
+                Propiedades_BE.Bitacora DV = new Propiedades_BE.Bitacora();
+                DV.IdBitacora = int.Parse(R["IdBitacora"].ToString());
+                DV.IdUsuario = int.Parse(R["IdUsuario"].ToString());
+                DV.Fecha = DateTime.Parse(R["Fecha"].ToString()); 
+                DV.Descripcion = R["Descripcion"].ToString();
+                DV.Criticidad = R["Criticidad"].ToString();
+                DV.DVH = int.Parse(R["DVH"].ToString());
+                Lista.Add(DV);
+            }
+            return Lista;
+        }
+
         #endregion
 
         #region DigitoVerificador

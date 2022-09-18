@@ -15,7 +15,7 @@ namespace Interfaz_GUI
     {
         Negocio_BLL.Seguridad Seguridad = new Negocio_BLL.Seguridad();
         Negocio_BLL.Usuario GestorUsuario = new Negocio_BLL.Usuario();       
-        Negocio_BLL.Detalle_Venta GestorDetalleVenta = new Negocio_BLL.Detalle_Venta();
+        Negocio_BLL.Detalle_Venta GestorDetalleVenta = new Negocio_BLL.Detalle_Venta();       
 
         private static Recalcular_Digitos _instancia;
         public static Recalcular_Digitos ObtenerInstancia()
@@ -96,6 +96,14 @@ namespace Interfaz_GUI
             ChequearRecalcularDVV();
         }
 
+        void RBitacora()
+        {
+            Seguridad.RecalcularDVH();
+            MessageBox.Show(CambiarIdioma.TraducirGlobal("Se han calculado los digitos verificadores de la Bitacora.") ?? "Se han calculado los digitos verificadores de la Bitacora.");
+            Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Digitos DVV recalculados", "Alta");
+            BtnRecalcularDVV.Enabled = false;
+        }
+
         #endregion
 
         #region Metodos Traduccion
@@ -156,6 +164,30 @@ namespace Interfaz_GUI
             {
                 Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Error DVH DVV", "Alta");
                 MessageBox.Show(CambiarIdioma.TraducirGlobal("Error calculando los digitos verificadores verticales") ?? "Error calculando los digitos verificadores verticales");
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnBitacora_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                
+                
+                //RBitacora();
+                long Dv;
+                string QueryDv = "select * from Bitacora where IdBitacora = " + TxtBitacora.Text+ " ";
+                Dv = Seguridad.CalcularDVH(QueryDv, "Bitacora");
+                Seguridad.EjecutarConsulta("Update Bitacora set DVH = " + Dv + " where IdBitacora = " + TxtBitacora.Text + "");
+            }
+            catch (Exception)
+            {
+                Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Error DVH DV", "Alta");
+                MessageBox.Show(CambiarIdioma.TraducirGlobal("Error calculando los digitos verificadores de la bitacora") ?? "Error calculando los digitos verificadores de la bitacora");
             }
         }
     }

@@ -53,5 +53,12 @@ namespace Propiedades_BE
             get { return _criticidad; }
             set { _criticidad = value; }
         }
+
+        private int _dvh;
+        public int DVH
+        {
+            get { return _dvh; }
+            set { _dvh = value; }
+        }
     }
 }

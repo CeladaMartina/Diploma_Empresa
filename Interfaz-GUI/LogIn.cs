@@ -97,6 +97,7 @@ namespace Interfaz_GUI
                     if (GestorUsuario.VerificarEstado(txtnick.Text) == false)
                     {
                         MessageBox.Show("Ingreso Correctamente");
+                        
                         GestorUsuario.ReiniciarIntentos(txtnick.Text);
 
                         try

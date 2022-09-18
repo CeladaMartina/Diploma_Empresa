@@ -147,12 +147,12 @@ namespace Interfaz_GUI
 
         private void recalcularDigitosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (Propiedades_BE.SingletonLogIn.GlobalIntegridad >= 1)
-            {
+            //if (Propiedades_BE.SingletonLogIn.GlobalIntegridad >= 1)
+            //{
                 Recalcular_Digitos RD = Recalcular_Digitos.ObtenerInstancia();
                 RD.MdiParent = this;
                 RD.Show();
-            }
+           // }
         }
 
         private void adminisitrarPermisosToolStripMenuItem_Click(object sender, EventArgs e)

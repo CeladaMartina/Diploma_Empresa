@@ -7,6 +7,7 @@ namespace Negocio_BLL
     public class Seguridad
     {
         Acceso_DAL.Seguridad Mapper = new Acceso_DAL.Seguridad();
+        Acceso_DAL.Acceso_BD Acceso = new Acceso_DAL.Acceso_BD();
 
         #region Bitacora
 
@@ -76,6 +77,12 @@ namespace Negocio_BLL
             return Mapper.ObtenerDVV(NombreTabla);
         }
 
+        public void EjecutarConsulta(string Consulta)
+        {
+            Acceso.EjecutarConsulta(Consulta);
+        }
+
+
         #endregion
 
         #region Encriptacion
@@ -120,6 +127,11 @@ namespace Negocio_BLL
         public bool ValidarClave(string clave)
         {
             return Mapper.ValidarClave(clave);
+        }
+
+        public void RecalcularDVH()
+        {
+            Mapper.RecalcularDVH();
         }
 
         #endregion
