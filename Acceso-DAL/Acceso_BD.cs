@@ -31,15 +31,13 @@ namespace Acceso_DAL
             try
             {
                 Conexion.ConnectionString = GlobalConexion;
-                //Conexion.ConnectionString = @"Data Source = GASGANO;Initial Catalog=Diploma_Empresa_de_Ropa;Integrated Security=True";
-                Conexion.Open();
+                 Conexion.Open();
             }
             catch (Exception)
             {
                 CerrarConexion();
                 Conexion.ConnectionString = GlobalConexion;
-                //Conexion.ConnectionString = @"Data Source = GASGANO;Initial Catalog=Diploma_Empresa_de_Ropa;Integrated Security=True";
-                //Conexion.Open();
+                Conexion.Open();
             }
         }
 

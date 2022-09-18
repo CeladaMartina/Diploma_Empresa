@@ -79,7 +79,7 @@ namespace Negocio_BLL
             DataSourceRaw = usuario;
             DataSourceRaw2 = basedatos;
             //string[] DataSourceFinal = DataSourceRaw.Split('\\');
-            Conexion = @"Data Source=" + DataSourceRaw + ";Initial Catalog=" + DataSourceRaw2 + ";Integrated Security=True";
+            Conexion = @"Data Source=" + DataSourceRaw + ";Initial Catalog=" + DataSourceRaw2 + ";Integrated Security=True; MultipleActiveResultSets=true";
             //Conexion = @"Data Source=" + DataSourceFinal[0] + ";Initial Catalog=Diploma_Trabajo_Final;Integrated Security=True";
             Mapper.GenerarConexion(Conexion);
         }
