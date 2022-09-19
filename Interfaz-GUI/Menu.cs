@@ -21,7 +21,7 @@ namespace Interfaz_GUI
             if (MessageBox.Show(CambiarIdioma.TraducirGlobal("Si continua se cerrara la sesion ¿Desea cerrar sesion?") ?? "Si continua se cerrara la sesion ¿Desea cerrar sesion?", CambiarIdioma.TraducirGlobal("Cerrar sesion") ?? "Cerrar sesion", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
             {
                 Negocio_BLL.Usuario GestorUsuario = new Negocio_BLL.Usuario();
-                //Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "LogOut", "Baja");
+                Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "LogOut", "Baja",0);
                 GestorUsuario.LogOut();
                 this.Close();
                 LogIn L = new LogIn();

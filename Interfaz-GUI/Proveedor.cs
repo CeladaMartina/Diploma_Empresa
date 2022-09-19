@@ -75,7 +75,7 @@ namespace Interfaz_GUI
         {
             GestorProveedor.Alta(IdProveedor, CUIT, Nombre, Apellido, FechaNac, Tel, Mail);
             CargarCambiosProveedor(CUIT, Nombre, Apellido, FechaNac, Tel, Mail, Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now);
-            //Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Alta Proveedor", "Media");
+            Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Alta Proveedor", "Media",0);
 
             Listar();
             LimpiarTxt();
@@ -86,7 +86,7 @@ namespace Interfaz_GUI
         {
             GestorProveedor.Modificar(IdProveedor, CUIT, Nombre, Apellido, FechaNac, Tel, Mail);
             CargarCambiosProveedor(CUIT, Nombre, Apellido, FechaNac, Tel, Mail, Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now);
-            //Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Modificar Proveedor", "Baja");
+            Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Modificar Proveedor", "Baja",0);
 
             Listar();
             LimpiarTxt();
@@ -97,7 +97,7 @@ namespace Interfaz_GUI
         {
             GestorProveedor.Baja(IdProveedor);
             CargarCambiosProveedor(CUIT, Nombre, Apellido, FechaNac, Tel, Mail, Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now);
-            //Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Baja Proveedor", "Baja");
+            Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Baja Proveedor", "Baja",0);
 
             Listar();
             LimpiarTxt();

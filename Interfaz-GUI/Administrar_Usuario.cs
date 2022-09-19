@@ -49,7 +49,7 @@ namespace Interfaz_GUI
         void Alta(string Nick, string Contraseña, string Nombre, string Mail, bool Estado, int Contador, string Idioma, int DVH)
         {
             GestorUsuario.Alta(Nick, Contraseña, Nombre, Mail, Estado, Contador, Idioma, DVH);
-            //Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Alta usuario", "Alta");
+            Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Alta usuario", "Alta",0);
             ListarUsuario();
             LimpiarTxt();
             IdUsuario = -1;
@@ -58,7 +58,7 @@ namespace Interfaz_GUI
         void Modificar(int IdUsuario, string Nick, string Nombre, string Mail, bool Estado, int Contador, string Idioma, int DVH)
         {           
             GestorUsuario.Modificar(IdUsuario, Nick, Nombre, Mail, Estado, Contador, Idioma, DVH);
-            //Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Modificar usuario", "Alta");
+            Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Modificar usuario", "Alta",0);
             ListarUsuario();
             IdUsuario = -1;
             LimpiarTxt();
@@ -67,7 +67,7 @@ namespace Interfaz_GUI
         void Baja(int IdUsuario, int DVH)
         {
             GestorUsuario.Baja(IdUsuario, DVH);
-            //Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Baja usuario", "Alta");
+            Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Baja usuario", "Alta",0);
             ListarUsuario();
             IdUsuario = -1;
             LimpiarTxt();
@@ -76,7 +76,7 @@ namespace Interfaz_GUI
         void DesbloquearUsuario(string Nick)
         {
             GestorUsuario.Desbloquear(Seguridad.EncriptarAES(Nick));
-            //Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Desbloqueo usuario", "Alta");
+            Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Desbloqueo usuario", "Alta",0);
         }
 
         void ListarUsuario()

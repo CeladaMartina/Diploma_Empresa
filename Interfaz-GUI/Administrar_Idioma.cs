@@ -82,7 +82,7 @@ namespace Interfaz_GUI
         void Alta(int IdIdioma, string Nombre)
         {
             GestorIdioma.Alta(IdIdioma, Nombre);
-            //Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Alta Idioma", "Media");
+            Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Alta Idioma", "Media",0);
 
             Listar();
             LimpiarTxt();
@@ -92,7 +92,7 @@ namespace Interfaz_GUI
         void Modificar(int IdIdioma, string Nombre)
         {
             GestorIdioma.Modificar(IdIdioma, Nombre);
-            //Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Modificar Idioma", "Baja");
+            Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Modificar Idioma", "Baja",0);
 
             Listar();
             LimpiarTxt();
@@ -102,7 +102,7 @@ namespace Interfaz_GUI
         void Baja(int IdIdioma)
         {
             GestorIdioma.Baja(IdIdioma);
-            //Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Baja Idioma", "Baja");
+            Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Baja Idioma", "Baja",0);
 
             Listar();
             LimpiarTxt();

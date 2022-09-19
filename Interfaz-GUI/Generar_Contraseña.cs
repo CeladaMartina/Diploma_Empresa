@@ -85,7 +85,7 @@ namespace Interfaz_GUI
                     if (Seguridad.ValidarClave(txtContraseña.Text) == true)
                     {
                         GestorUsuario.ConfirmarCambioContraseña(txtNick.Text, txtContraseña.Text, txtMail.Text);
-                        //Seguridad.CargarBitacora(GestorUsuario.SeleccionarIDNick(txtNick.Text), DateTime.Now, "Contraseña cambiada", "Alta");
+                        Seguridad.CargarBitacora(GestorUsuario.SeleccionarIDNick(txtNick.Text), DateTime.Now, "Contraseña cambiada", "Alta",0);
                         MessageBox.Show(CambiarIdioma.TraducirGlobal("Contraseña cambiada con exito") ?? "Contraseña cambiada con exito");
                         this.Close();
                     }

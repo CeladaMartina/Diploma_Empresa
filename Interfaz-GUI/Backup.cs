@@ -67,12 +67,12 @@ namespace Interfaz_GUI
             if (Backup == "ok")
             {
                 MessageBox.Show(CambiarIdioma.TraducirGlobal("Backup realizado correctamente") ?? "Backup realizado correctamente");
-                //Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "BackUp realizado", "Media");
+                Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "BackUp realizado", "Media",0);
             }
             else
             {
                 MessageBox.Show(CambiarIdioma.TraducirGlobal("Se produjo error al realizar el backup") ?? "Se produjo error al realizar el backup");
-                //Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "BackUp Fallo", "Alta");
+                Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "BackUp Fallo", "Alta",0);
             }
             LimpiarTxt();
         }

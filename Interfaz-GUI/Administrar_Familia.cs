@@ -59,7 +59,7 @@ namespace Interfaz_GUI
             Propiedades_BE.Familia Fam = new Propiedades_BE.Familia();
             Fam.Nombre = NombreFamilia;
             GestorPermisos.GuardarComponente(Fam, true);
-            //Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Alta familia", "Media");
+            Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Alta familia", "Media",0);
             ListarFamilia();
             LimpiarTxt();
         }
@@ -67,7 +67,7 @@ namespace Interfaz_GUI
         void ModificarFamilia(string NombreFamilia, string NombreModificado)
         {
             GestorPermisos.ModificarFamilia(NombreFamilia, NombreModificado);
-            //Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Modificar familia", "Baja");
+            Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Modificar familia", "Baja",0);
             ListarFamilia();
             //ListarAdmPermisos();
             LimpiarTxt();
@@ -80,7 +80,7 @@ namespace Interfaz_GUI
                 Propiedades_BE.Familia Fam = new Propiedades_BE.Familia();
                 Fam.Nombre = NombreFamilia;
                 GestorPermisos.EliminarComponente(Fam, true);
-                //Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Baja familia", "Baja");
+                Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Baja familia", "Baja",0);
                 ListarFamilia();
                 //ListarAdmPermisos();
                 LimpiarTxt();

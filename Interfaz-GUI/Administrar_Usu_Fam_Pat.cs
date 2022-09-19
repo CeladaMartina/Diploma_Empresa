@@ -227,7 +227,7 @@ namespace Interfaz_GUI
                         if (item.Id == Pat.Id)
                         {
                             TempUs.Permisos.Remove(item);
-                            //Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Patente eliminada de usuario", "Baja");
+                            Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Patente eliminada de usuario", "Baja",0);
                             MessageBox.Show(CambiarIdioma.TraducirGlobal("Patente eliminada de usuario") ?? "Patente eliminada de usuario");
                         }
                     }
@@ -290,7 +290,7 @@ namespace Interfaz_GUI
                         if (item.Id == Fam.Id)
                         {
                             TempUs.Permisos.Remove(item);
-                            //Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Familia eliminada de usuario", "Baja");
+                            Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Familia eliminada de usuario", "Baja",0);
                             MessageBox.Show(CambiarIdioma.TraducirGlobal("Familia eliminada de usuario") ?? "Familia eliminada de usuario");
                         }
                     }

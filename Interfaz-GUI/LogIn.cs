@@ -132,7 +132,7 @@ namespace Interfaz_GUI
                 else if (GestorUsuario.VerificarContador(txtnick.Text) >= 3)
                 {
                     MessageBox.Show("El usuario se encuentra bloqueado");
-                    //Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Bloqueo de usuario", "Alta");
+                    Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Bloqueo de usuario", "Alta",0);
                     GestorUsuario.BloquearUsuario(txtnick.Text);
                 }
             }
@@ -148,7 +148,7 @@ namespace Interfaz_GUI
 
                             GestorUsuario.LogIn(Usuario);
 
-                            //Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "LogIn. Falla de integridad", "Alta");
+                           /Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "LogIn. Falla de integridad", "Alta",0);
 
                             Menu M = new Menu();
                             this.Hide();

@@ -74,7 +74,7 @@ namespace Interfaz_GUI
             MessageBox.Show(CambiarIdioma.TraducirGlobal("Se ha recalculado el digito de usuarios") ?? "Se ha recalculado el digito de usuarios");
             BtnUsuario.Enabled = false;
             TxtUsuario.Text = "OK";
-            //Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "DVH Usu recalculado", "Alta");
+            Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "DVH Usu recalculado", "Alta",0);
             ChequearRecalcularDVV();
         }
 
@@ -82,7 +82,7 @@ namespace Interfaz_GUI
         {
             Seguridad.RecalcularDVV();
             MessageBox.Show(CambiarIdioma.TraducirGlobal("Se han calculado los digitos verificadores verticales correctamente") ?? "Se han calculado los digitos verificadores verticales correctamente");
-            //Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Digitos DVV recalculados", "Alta");
+            Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Digitos DVV recalculados", "Alta",0);
             BtnRecalcularDVV.Enabled = false;
         }
 
@@ -92,7 +92,7 @@ namespace Interfaz_GUI
             MessageBox.Show(CambiarIdioma.TraducirGlobal("Se ha recalculado el digito de detalle de venta") ?? "Se ha recalculado el digito de detalle de venta");
             BtnDV.Enabled = false;
             TxtDV.Text = "OK";
-            //Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "DVH DV recalculado", "Alta");
+            Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "DVH DV recalculado", "Alta",0);
             ChequearRecalcularDVV();
         }
 
@@ -100,7 +100,7 @@ namespace Interfaz_GUI
         {
             Seguridad.RecalcularDVH();
             MessageBox.Show(CambiarIdioma.TraducirGlobal("Se han calculado los digitos verificadores de la Bitacora.") ?? "Se han calculado los digitos verificadores de la Bitacora.");
-            //Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Digitos DVV recalculados", "Alta");
+            Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Digitos DVV recalculados", "Alta",0);
             BtnRecalcularDVV.Enabled = false;
         }
 
@@ -136,7 +136,7 @@ namespace Interfaz_GUI
             }
             catch (Exception)
             {
-                //Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Error DVH Usuario", "Alta");
+                Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Error DVH Usuario", "Alta",0);
                 MessageBox.Show(CambiarIdioma.TraducirGlobal("Error calculando los digitos verificadores de usuario") ?? "Error calculando los digitos verificadores de usuario");
             }
         }
@@ -149,7 +149,7 @@ namespace Interfaz_GUI
             }
             catch (Exception)
             {
-                //Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Error DVH DV", "Alta");
+                Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Error DVH DV", "Alta",0);
                 MessageBox.Show(CambiarIdioma.TraducirGlobal("Error calculando los digitos verificadores de detalle de venta") ?? "Error calculando los digitos verificadores de detalle de venta");
             }
         }
@@ -162,7 +162,7 @@ namespace Interfaz_GUI
             }
             catch (Exception)
             {
-                //Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Error DVH DVV", "Alta");
+                Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Error DVH DVV", "Alta",0);
                 MessageBox.Show(CambiarIdioma.TraducirGlobal("Error calculando los digitos verificadores verticales") ?? "Error calculando los digitos verificadores verticales");
             }
         }
@@ -182,7 +182,7 @@ namespace Interfaz_GUI
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                //Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Error DVH DV", "Alta");
+                Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Error DVH DV", "Alta",0);
                 MessageBox.Show(CambiarIdioma.TraducirGlobal("Error calculando los digitos verificadores de la bitacora") ?? "Error calculando los digitos verificadores de la bitacora");
             }
         }

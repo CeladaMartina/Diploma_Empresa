@@ -80,7 +80,7 @@ namespace Interfaz_GUI
             if (restore == "ok")
             {
                 MessageBox.Show(CambiarIdioma.TraducirGlobal("Restore realizado correctamente") ?? "Restore realizado correctamente");
-                //Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Restore exitoso", "Alta");
+                Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Restore exitoso", "Alta",0);
                 Negocio_BLL.Usuario GestorUsuario = new Negocio_BLL.Usuario();
                 GestorUsuario.LogOut();
 
@@ -91,7 +91,7 @@ namespace Interfaz_GUI
             }
             else
             {
-                //Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Restore fallido", "Alta");
+                Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Restore fallido", "Alta",0);
                 MessageBox.Show(CambiarIdioma.TraducirGlobal("Error al realizar el restore") ?? "Error al realizar el restore");
             }
         }

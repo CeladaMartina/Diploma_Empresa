@@ -56,6 +56,7 @@ namespace Acceso_DAL
                 Acceso.Escribir("CargarBitacora", P);
                 long DV = CalcularDVH("select * from Bitacora where Fecha = '" + Fecha + "'", "Bitacora");
                 EjecutarConsulta("Update Bitacora set DVH = " + DV + "where Fecha = '" + Fecha + "'");
+                ActualizarDVV("Bitacora", SumaDVV("Bitacora"));
 
                 o = 1;
             }

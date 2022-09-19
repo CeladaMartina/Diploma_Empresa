@@ -133,7 +133,7 @@ namespace Interfaz_GUI
                 RetomarEstadoProveedor();
                 ListarCambios();
                 LimpiarTxt();
-                //Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Cambio estado del proveedor", "Baja");
+                Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Cambio estado del proveedor", "Baja",0);
                 MessageBox.Show(CambiarIdioma.TraducirGlobal("El estado del proveedor fue restaurado exitosamente") ?? "El estado del proveedor fue restaurado exitosamente");
             }
             catch (Exception)
