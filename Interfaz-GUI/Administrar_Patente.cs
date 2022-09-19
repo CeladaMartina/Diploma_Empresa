@@ -71,7 +71,7 @@ namespace Interfaz_GUI
             Pat.Nombre = NombrePatente;
             Pat.Permiso = (Propiedades_BE.TipoPermiso)this.CmbPermisos.SelectedItem;
             GestorPermisos.EliminarComponente(Pat, false);
-           /Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Baja patente", "Baja",0);
+            Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Baja patente", "Baja",0);
             ListarPatente();
             LimpiarTxt();
         }

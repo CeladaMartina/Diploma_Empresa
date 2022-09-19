@@ -43,7 +43,7 @@ namespace Interfaz_GUI
 
         void ChequearRecalcularDVV()
         {
-            if (BtnUsuario.Enabled == false && BtnDV.Enabled == false)
+            if (BtnUsuario.Enabled == false && BtnDV.Enabled == false && BtnBitacora.Enabled == false)
             {
                 BtnRecalcularDVV.Enabled = true;
             }
@@ -64,6 +64,11 @@ namespace Interfaz_GUI
             if (GestorDetalleVenta.VerificarIntegridadDV(Propiedades_BE.SingletonLogIn.GlobalIdUsuario) != "")
             {
                 TxtDV.Text = "ERROR";
+                BtnDV.Enabled = true;
+            }
+            if (Seguridad.VerificarIntegridadDV(Propiedades_BE.SingletonLogIn.GlobalIdUsuario) != "")
+            {
+                TxtBitacora.Text = "ERROR";
                 BtnDV.Enabled = true;
             }
         }

@@ -134,6 +134,10 @@ namespace Negocio_BLL
             Mapper.RecalcularDVH();
         }
 
+        public string VerificarIntegridadDV(int GlobalIdUsuario)
+        {
+            return Mapper.VerificarIntegridadDV(GlobalIdUsuario);
+        }
         #endregion
     }
 }

@@ -173,8 +173,7 @@ namespace Acceso_DAL
 
         public List<Propiedades_BE.Bitacora> ListaVerificacion()
         {
-            List<Propiedades_BE.Bitacora> Lista = new List<Propiedades_BE.Bitacora>();
-            //hacer procedimiento almacenado 
+            List<Propiedades_BE.Bitacora> Lista = new List<Propiedades_BE.Bitacora>();           
             DataTable Tabla = Acceso.Leer("ListarBitacoraVerificacion", null);
 
             foreach (DataRow R in Tabla.Rows)
@@ -191,7 +190,66 @@ namespace Acceso_DAL
             return Lista;
         }
 
-        
+        public string VerificarIntegridadDV(int GlobalIdUsuario)
+        {
+            long Suma = 0;
+            long DVH = 0;
+            string msj = "";
+            string msj2 = "";
+
+            List<int> CamposFallidos = new List<int>();
+            List<Propiedades_BE.Bitacora> BitacoraB = ListaVerificacion();
+
+            foreach (Propiedades_BE.Bitacora Dv in BitacoraB.ToList())
+            {
+                string IdBitacora = Dv.IdBitacora.ToString();
+                string IdUsuario = Dv.IdUsuario.ToString();
+                string Fecha = Dv.Fecha.ToString();
+                string Descripcion = Dv.Descripcion.ToString();
+                string Criticidad = Dv.Criticidad.ToString();
+                string dvh = Dv.DVH.ToString();
+
+                long IdBitacoraB = ObtenerAscii(IdBitacora);
+                long IdUsuarioB = ObtenerAscii(IdUsuario);
+                long FechaB = ObtenerAscii(Fecha);
+                long DescripcionB = ObtenerAscii(Descripcion);
+                long CriticidadB = ObtenerAscii(Criticidad);
+                long dvhDv = long.Parse(dvh);
+
+                Suma = IdBitacoraB + IdUsuarioB + FechaB + DescripcionB + CriticidadB;
+                DVH += Suma;
+
+                if (dvhDv == Suma)
+                {
+                    BitacoraB.Remove(Dv);
+                }
+            }
+            if (DVH != VerificacionDVV("Bitacora"))
+            {
+                msj += "Se encontro un error en la tabla Bitacora \n";
+                CargarBitacora(GlobalIdUsuario, DateTime.Now, "Error en la tabla Bitacora", "Alta", 0);
+
+                if (DVH < VerificacionDVV("Bitacora"))
+                {
+                    msj += "Posibilidad de eliminacion de 1 o mas registros de Bitacora \n";
+                    CargarBitacora(GlobalIdUsuario, DateTime.Now, "Eliminacion registros Bitacora", "Alta", 0);
+                }
+            }
+            foreach (Propiedades_BE.Bitacora MalCampo in BitacoraB)
+            {
+                CamposFallidos.Add(MalCampo.IdBitacora);
+            }
+            foreach (var item in CamposFallidos)
+            {
+
+                msj += "Se encontro un fallo en la fila con Id Detalle: " + item + " \n";
+                msj2 = "Error Bitacora IdBitacora:" + item + "";
+                CargarBitacora(GlobalIdUsuario, DateTime.Now, msj2, "Alta", 0);
+                msj2 = "";
+            }
+            return msj;
+        }
+
         #endregion
 
         #region DigitoVerificador

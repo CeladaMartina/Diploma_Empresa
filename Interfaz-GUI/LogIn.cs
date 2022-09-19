@@ -148,7 +148,7 @@ namespace Interfaz_GUI
 
                             GestorUsuario.LogIn(Usuario);
 
-                           /Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "LogIn. Falla de integridad", "Alta",0);
+                           Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "LogIn. Falla de integridad", "Alta",0);
 
                             Menu M = new Menu();
                             this.Hide();
