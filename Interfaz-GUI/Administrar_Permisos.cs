@@ -103,7 +103,7 @@ namespace Interfaz_GUI
                     else
                     {
                         FamTemp.AgregarHijo(patente);
-                        Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Patente agregada a familia", "Baja");
+                        //Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Patente agregada a familia", "Baja");
                         MessageBox.Show(CambiarIdioma.TraducirGlobal("Patente agregada a familia") ?? "Patente agregada a familia");
                     }
                 }
@@ -193,7 +193,7 @@ namespace Interfaz_GUI
             Pat.Nombre = NombrePatente;
             Pat.Permiso = (Propiedades_BE.TipoPermiso)this.CmbPatenteP.SelectedItem;
             GestorPermisos.GuardarComponente(Pat, false);
-            Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Alta patente", "Baja");           
+            //Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Alta patente", "Baja");           
             CargarCombos();
         }
 
@@ -202,7 +202,7 @@ namespace Interfaz_GUI
             Propiedades_BE.Familia Fam = new Propiedades_BE.Familia();
             Fam.Nombre = NombreFamilia;
             GestorPermisos.GuardarComponente(Fam, true);
-            Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Alta familia", "Media");
+            //Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Alta familia", "Media");
             txtNombreFamilia.Clear();
             CargarCombos();
         }

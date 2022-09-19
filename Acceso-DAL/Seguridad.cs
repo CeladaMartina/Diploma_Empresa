@@ -41,18 +41,22 @@ namespace Acceso_DAL
             return ListarBitacora;
         }
 
-        public void CargarBitacora(int IdUsuario, DateTime Fecha, string Descripcion, string Criticidad)
+        public void CargarBitacora(int IdUsuario, DateTime Fecha, string Descripcion, string Criticidad, int DVH)
         {
             int o = 0;
 
             try
             {
-                SqlParameter[] P = new SqlParameter[4];
+                SqlParameter[] P = new SqlParameter[5];
                 P[0] = new SqlParameter("@IdUsuario", IdUsuario);
                 P[1] = new SqlParameter("@Fecha", Fecha);
                 P[2] = new SqlParameter("@Descripcion", EncriptarAES(Descripcion));
                 P[3] = new SqlParameter("@Criticidad", Criticidad);
+                P[4] = new SqlParameter("@DVH", DVH);
                 Acceso.Escribir("CargarBitacora", P);
+                long DV = CalcularDVH("select * from Bitacora where Fecha = '" + Fecha + "'", "Bitacora");
+                EjecutarConsulta("Update Bitacora set DVH = " + DV + "where Fecha = '" + Fecha + "'");
+
                 o = 1;
             }
             catch (Exception)
@@ -186,6 +190,7 @@ namespace Acceso_DAL
             return Lista;
         }
 
+        
         #endregion
 
         #region DigitoVerificador

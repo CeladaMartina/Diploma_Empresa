@@ -123,7 +123,7 @@ namespace Interfaz_GUI
         void Alta(string NombreIdioma, string Original, string Traducido)
         {
             GestorTraductor.Alta(NombreIdioma, Original, Traducido);
-            Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Alta Traduccion", "Baja");
+            //Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Alta Traduccion", "Baja");
             ListarTraducciones(NombreIdioma);
             LimpiarTxt();
         }
@@ -133,7 +133,7 @@ namespace Interfaz_GUI
             if (IdTraduccion != -1)
             {
                 GestorTraductor.Baja(IdTraduccion);
-                Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Baja Traduccion", "Baja");
+                //Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Baja Traduccion", "Baja");
                 ListarTraducciones(NombreIdioma);
                 LimpiarTxt();
             }
@@ -145,7 +145,7 @@ namespace Interfaz_GUI
             if (IdTraduccion != -1)
             {
                 GestorTraductor.Modificar(IdTraduccion, NombreIdioma, Original, Traducido);
-                Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Modificar Traduccion", "Baja");
+                //Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Modificar Traduccion", "Baja");
                 ListarTraducciones(NombreIdioma);
                 LimpiarTxt();
             }

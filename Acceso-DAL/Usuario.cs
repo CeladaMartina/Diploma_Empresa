@@ -283,12 +283,12 @@ namespace Acceso_DAL
             if (DVH != Seguridad.VerificacionDVV("Usuario"))
             {
                 msj += "Se encontro un error en la tabla USUARIO \n";
-                Seguridad.CargarBitacora(GlobalIdUsuario, DateTime.Now, "Error en la tabla Usuario", "Alta");
+                Seguridad.CargarBitacora(GlobalIdUsuario, DateTime.Now, "Error en la tabla Usuario", "Alta", 0);
 
                 if (DVH < Seguridad.VerificacionDVV("Usuario"))
                 {
                     msj += "Posibilidad de eliminacion de 1 o mas registros Usuario \n";
-                    Seguridad.CargarBitacora(GlobalIdUsuario, DateTime.Now, "Eliminacion registros Usuarios", "Alta");
+                    Seguridad.CargarBitacora(GlobalIdUsuario, DateTime.Now, "Eliminacion registros Usuarios", "Alta", 0);
                 }
             }
             foreach (Propiedades_BE.Usuario MalCampo in Us)
@@ -299,7 +299,7 @@ namespace Acceso_DAL
             {
                 msj += "Se encontro un fallo en la fila con ID: " + item + " \n";
                 msj2 = "Error usuario en fila " + item + " ";
-                Seguridad.CargarBitacora(GlobalIdUsuario, DateTime.Now, msj2, "Alta");
+                Seguridad.CargarBitacora(GlobalIdUsuario, DateTime.Now, msj2, "Alta", 0);
                 msj2 = "";
             }
             return msj;

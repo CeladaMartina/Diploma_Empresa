@@ -103,7 +103,7 @@ namespace Interfaz_GUI
                         try
                         {
                             GestorUsuario.LogIn(Usuario);
-                            Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Login", "Baja");
+                            Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Login", "Baja", 0);
 
                             Menu menu = new Menu();
                             this.Hide();
@@ -127,12 +127,12 @@ namespace Interfaz_GUI
                 else if (GestorUsuario.VerificarContador(txtnick.Text) < 3)
                 {
                     MessageBox.Show( "Usuarios y/o contraseña incorrectos");
-                    Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Falla de LogIn", "Alta");
+                    Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Falla de LogIn", "Alta",0);
                 }
                 else if (GestorUsuario.VerificarContador(txtnick.Text) >= 3)
                 {
                     MessageBox.Show("El usuario se encuentra bloqueado");
-                    Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Bloqueo de usuario", "Alta");
+                    //Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Bloqueo de usuario", "Alta");
                     GestorUsuario.BloquearUsuario(txtnick.Text);
                 }
             }
@@ -148,7 +148,7 @@ namespace Interfaz_GUI
 
                             GestorUsuario.LogIn(Usuario);
 
-                            Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "LogIn. Falla de integridad", "Alta");
+                            //Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "LogIn. Falla de integridad", "Alta");
 
                             Menu M = new Menu();
                             this.Hide();

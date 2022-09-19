@@ -167,7 +167,7 @@ namespace Interfaz_GUI
             try
             {
                 GestorUsuario.GuardarPermisos(TempUs);
-                Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Permisos usuario guardados", "Baja");
+                // Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Permisos usuario guardados", "Baja");
                 MessageBox.Show(CambiarIdioma.TraducirGlobal("Permisos de usuario guardados correctamente") ?? "Permisos de usuario guardados correctamente");
             }
             catch (Exception)
@@ -227,7 +227,7 @@ namespace Interfaz_GUI
                         if (item.Id == Pat.Id)
                         {
                             TempUs.Permisos.Remove(item);
-                            Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Patente eliminada de usuario", "Baja");
+                            //Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Patente eliminada de usuario", "Baja");
                             MessageBox.Show(CambiarIdioma.TraducirGlobal("Patente eliminada de usuario") ?? "Patente eliminada de usuario");
                         }
                     }
@@ -290,7 +290,7 @@ namespace Interfaz_GUI
                         if (item.Id == Fam.Id)
                         {
                             TempUs.Permisos.Remove(item);
-                            Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Familia eliminada de usuario", "Baja");
+                            //Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Familia eliminada de usuario", "Baja");
                             MessageBox.Show(CambiarIdioma.TraducirGlobal("Familia eliminada de usuario") ?? "Familia eliminada de usuario");
                         }
                     }

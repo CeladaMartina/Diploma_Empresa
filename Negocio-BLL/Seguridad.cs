@@ -16,9 +16,9 @@ namespace Negocio_BLL
             return Mapper.Listar();
         }
 
-        public void CargarBitacora(int IdUsuario, DateTime Fecha, string Descripcion, string Criticidad)
+        public void CargarBitacora(int IdUsuario, DateTime Fecha, string Descripcion, string Criticidad, int DVH)
         {
-            Mapper.CargarBitacora(IdUsuario, Fecha, Descripcion, Criticidad);
+            Mapper.CargarBitacora(IdUsuario, Fecha, Descripcion, Criticidad, DVH);
         }
 
         public List<Propiedades_BE.Bitacora> FiltrarCriticidadBitacora(string _Criticidad)
