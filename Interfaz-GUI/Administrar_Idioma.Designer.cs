@@ -42,7 +42,6 @@ namespace Interfaz_GUI
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dataGridViewIdioma);
             this.groupBox1.Controls.Add(this.BtnBaja);
             this.groupBox1.Controls.Add(this.BtnModificar);
             this.groupBox1.Controls.Add(this.BtnAlta);
@@ -50,7 +49,7 @@ namespace Interfaz_GUI
             this.groupBox1.Controls.Add(this.LblNombre);
             this.groupBox1.Location = new System.Drawing.Point(12, 28);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(631, 248);
+            this.groupBox1.Size = new System.Drawing.Size(460, 151);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Administrar";
@@ -58,17 +57,17 @@ namespace Interfaz_GUI
             // dataGridViewIdioma
             // 
             this.dataGridViewIdioma.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewIdioma.Location = new System.Drawing.Point(313, 21);
+            this.dataGridViewIdioma.Location = new System.Drawing.Point(12, 219);
             this.dataGridViewIdioma.Name = "dataGridViewIdioma";
             this.dataGridViewIdioma.RowHeadersWidth = 51;
             this.dataGridViewIdioma.RowTemplate.Height = 24;
-            this.dataGridViewIdioma.Size = new System.Drawing.Size(296, 206);
+            this.dataGridViewIdioma.Size = new System.Drawing.Size(460, 159);
             this.dataGridViewIdioma.TabIndex = 1;
             this.dataGridViewIdioma.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewIdioma_CellClick);
             // 
             // BtnBaja
             // 
-            this.BtnBaja.Location = new System.Drawing.Point(203, 132);
+            this.BtnBaja.Location = new System.Drawing.Point(309, 105);
             this.BtnBaja.Name = "BtnBaja";
             this.BtnBaja.Size = new System.Drawing.Size(88, 28);
             this.BtnBaja.TabIndex = 3;
@@ -79,7 +78,7 @@ namespace Interfaz_GUI
             // 
             // BtnModificar
             // 
-            this.BtnModificar.Location = new System.Drawing.Point(109, 132);
+            this.BtnModificar.Location = new System.Drawing.Point(167, 105);
             this.BtnModificar.Name = "BtnModificar";
             this.BtnModificar.Size = new System.Drawing.Size(88, 28);
             this.BtnModificar.TabIndex = 2;
@@ -90,7 +89,7 @@ namespace Interfaz_GUI
             // 
             // BtnAlta
             // 
-            this.BtnAlta.Location = new System.Drawing.Point(15, 132);
+            this.BtnAlta.Location = new System.Drawing.Point(20, 105);
             this.BtnAlta.Name = "BtnAlta";
             this.BtnAlta.Size = new System.Drawing.Size(88, 28);
             this.BtnAlta.TabIndex = 1;
@@ -101,15 +100,15 @@ namespace Interfaz_GUI
             // 
             // TxtNombreIdioma
             // 
-            this.TxtNombreIdioma.Location = new System.Drawing.Point(103, 79);
+            this.TxtNombreIdioma.Location = new System.Drawing.Point(103, 52);
             this.TxtNombreIdioma.Name = "TxtNombreIdioma";
-            this.TxtNombreIdioma.Size = new System.Drawing.Size(188, 22);
+            this.TxtNombreIdioma.Size = new System.Drawing.Size(222, 22);
             this.TxtNombreIdioma.TabIndex = 1;
             // 
             // LblNombre
             // 
             this.LblNombre.AutoSize = true;
-            this.LblNombre.Location = new System.Drawing.Point(18, 84);
+            this.LblNombre.Location = new System.Drawing.Point(18, 57);
             this.LblNombre.Name = "LblNombre";
             this.LblNombre.Size = new System.Drawing.Size(58, 17);
             this.LblNombre.TabIndex = 0;
@@ -120,7 +119,8 @@ namespace Interfaz_GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(659, 300);
+            this.ClientSize = new System.Drawing.Size(522, 416);
+            this.Controls.Add(this.dataGridViewIdioma);
             this.Controls.Add(this.groupBox1);
             this.Name = "Administrar_Idioma";
             this.Text = "Administrar Idioma";

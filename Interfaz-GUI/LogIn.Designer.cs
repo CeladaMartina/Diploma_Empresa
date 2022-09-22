@@ -102,6 +102,7 @@ namespace Interfaz_GUI
             this.txtcontraseña.Name = "txtcontraseña";
             this.txtcontraseña.Size = new System.Drawing.Size(173, 22);
             this.txtcontraseña.TabIndex = 1;
+            this.txtcontraseña.UseSystemPasswordChar = true;
             // 
             // txtnick
             // 
@@ -118,6 +119,7 @@ namespace Interfaz_GUI
             this.Controls.Add(this.groupBox1);
             this.Name = "LogIn";
             this.Text = "LogIn";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.LogIn_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

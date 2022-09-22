@@ -182,7 +182,7 @@ namespace Interfaz_GUI
             this.dataGridViewProveedor.Name = "dataGridViewProveedor";
             this.dataGridViewProveedor.RowHeadersWidth = 51;
             this.dataGridViewProveedor.RowTemplate.Height = 24;
-            this.dataGridViewProveedor.Size = new System.Drawing.Size(736, 361);
+            this.dataGridViewProveedor.Size = new System.Drawing.Size(1005, 361);
             this.dataGridViewProveedor.TabIndex = 1;
             this.dataGridViewProveedor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewProveedor_CellClick);
             // 
@@ -221,7 +221,7 @@ namespace Interfaz_GUI
             // 
             // BtnControlCambio
             // 
-            this.BtnControlCambio.Location = new System.Drawing.Point(1050, 389);
+            this.BtnControlCambio.Location = new System.Drawing.Point(1319, 389);
             this.BtnControlCambio.Name = "BtnControlCambio";
             this.BtnControlCambio.Size = new System.Drawing.Size(153, 32);
             this.BtnControlCambio.TabIndex = 5;
@@ -234,7 +234,7 @@ namespace Interfaz_GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1215, 448);
+            this.ClientSize = new System.Drawing.Size(1497, 448);
             this.Controls.Add(this.BtnControlCambio);
             this.Controls.Add(this.BtnBaja);
             this.Controls.Add(this.BtnModificar);

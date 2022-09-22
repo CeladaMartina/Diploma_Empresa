@@ -85,13 +85,13 @@ namespace Interfaz_GUI
             this.dataGridViewControlCambio.Name = "dataGridViewControlCambio";
             this.dataGridViewControlCambio.RowHeadersWidth = 51;
             this.dataGridViewControlCambio.RowTemplate.Height = 24;
-            this.dataGridViewControlCambio.Size = new System.Drawing.Size(993, 335);
+            this.dataGridViewControlCambio.Size = new System.Drawing.Size(1267, 469);
             this.dataGridViewControlCambio.TabIndex = 4;
             this.dataGridViewControlCambio.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewControlCambio_CellClick);
             // 
             // BtnVolver
             // 
-            this.BtnVolver.Location = new System.Drawing.Point(900, 427);
+            this.BtnVolver.Location = new System.Drawing.Point(1174, 552);
             this.BtnVolver.Name = "BtnVolver";
             this.BtnVolver.Size = new System.Drawing.Size(118, 29);
             this.BtnVolver.TabIndex = 6;
@@ -102,7 +102,7 @@ namespace Interfaz_GUI
             // 
             // BtnRestaurar
             // 
-            this.BtnRestaurar.Location = new System.Drawing.Point(25, 427);
+            this.BtnRestaurar.Location = new System.Drawing.Point(22, 552);
             this.BtnRestaurar.Name = "BtnRestaurar";
             this.BtnRestaurar.Size = new System.Drawing.Size(170, 29);
             this.BtnRestaurar.TabIndex = 5;
@@ -115,7 +115,7 @@ namespace Interfaz_GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1025, 468);
+            this.ClientSize = new System.Drawing.Size(1304, 593);
             this.Controls.Add(this.BtnVolver);
             this.Controls.Add(this.BtnRestaurar);
             this.Controls.Add(this.dataGridViewControlCambio);

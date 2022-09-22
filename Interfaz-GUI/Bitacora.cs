@@ -39,6 +39,7 @@ namespace Interfaz_GUI
             dataGridViewBitacora.DataSource = Seguridad.Listar();
             dataGridViewBitacora.Columns["IdUsuario"].Visible = false;
             dataGridViewBitacora.Columns["IdBitacora"].Visible = false;
+            dataGridViewBitacora.Columns["DVH"].Visible = false;
             dataGridViewBitacora.ReadOnly = true;
         }
 
@@ -104,6 +105,7 @@ namespace Interfaz_GUI
 
             dataGridViewBitacora.Columns["IdUsuario"].Visible = false;
             dataGridViewBitacora.Columns["IdBitacora"].Visible = false;
+            dataGridViewBitacora.Columns["DVH"].Visible = false;
             dataGridViewBitacora.ReadOnly = true;
         }
 

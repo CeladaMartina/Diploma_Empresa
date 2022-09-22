@@ -34,7 +34,7 @@ namespace Interfaz_GUI
             if (Propiedades_BE.SingletonLogIn.GetInstance.IsLoggedIn())
             {
                 this.administrarIdiomaToolStripMenuItem.Visible = (Propiedades_BE.SingletonLogIn.GetInstance.IsInRole(Propiedades_BE.TipoPermiso.Modificar_Idioma));
-                this.administrarPermisosToolStripMenuItem.Visible = (Propiedades_BE.SingletonLogIn.GetInstance.IsInRole(Propiedades_BE.TipoPermiso.Modificar_Familia)
+                this.adminisitrarPermisosToolStripMenuItem.Visible = (Propiedades_BE.SingletonLogIn.GetInstance.IsInRole(Propiedades_BE.TipoPermiso.Modificar_Familia)
                     || Propiedades_BE.SingletonLogIn.GetInstance.IsInRole(Propiedades_BE.TipoPermiso.Modificar_Patentes)
                     || Propiedades_BE.SingletonLogIn.GetInstance.IsInRole(Propiedades_BE.TipoPermiso.Modificar_Permisos));
                 this.administrarTraduccionToolStripMenuItem.Visible = (Propiedades_BE.SingletonLogIn.GetInstance.IsInRole(Propiedades_BE.TipoPermiso.Modificar_Traduccion));
@@ -53,7 +53,7 @@ namespace Interfaz_GUI
             {
                 this.administrarTraduccionToolStripMenuItem.Visible = false;
                 this.administrarIdiomaToolStripMenuItem.Visible = false;
-                this.administrarPermisosToolStripMenuItem.Visible = false;
+                this.adminisitrarPermisosToolStripMenuItem.Visible = false;
                 this.administrarTraduccionToolStripMenuItem.Visible = false;
                 this.administrarUsuarioToolStripMenuItem.Visible = false;
                 this.articuloToolStripMenuItem.Visible = false;
@@ -74,7 +74,7 @@ namespace Interfaz_GUI
                 this.articuloToolStripMenuItem.Visible = false;
                 this.clienteToolStripMenuItem.Visible = false;
                 this.administrarIdiomaToolStripMenuItem.Visible = false;
-                this.administrarPermisosToolStripMenuItem.Visible = false;
+                this.adminisitrarPermisosToolStripMenuItem.Visible = false;
                 this.administrarTraduccionToolStripMenuItem.Visible = false;
                 this.administrarUsuarioToolStripMenuItem.Visible = false;
                 this.generarContraseñaToolStripMenuItem.Visible = false;
@@ -147,12 +147,12 @@ namespace Interfaz_GUI
 
         private void recalcularDigitosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //if (Propiedades_BE.SingletonLogIn.GlobalIntegridad >= 1)
-            //{
+            if (Propiedades_BE.SingletonLogIn.GlobalIntegridad >= 1)
+            {
                 Recalcular_Digitos RD = Recalcular_Digitos.ObtenerInstancia();
                 RD.MdiParent = this;
                 RD.Show();
-           // }
+             }
         }
 
         private void adminisitrarPermisosToolStripMenuItem_Click(object sender, EventArgs e)

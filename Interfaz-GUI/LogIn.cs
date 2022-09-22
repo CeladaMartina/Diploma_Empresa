@@ -42,7 +42,8 @@ namespace Interfaz_GUI
         {
             if (MessageBox.Show("Cerrando la aplicacion ¿Desea cerrarla?", "Cerrar Aplicacion", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
             {
-                Environment.Exit(0);
+                Environment.ExitCode = 1;
+                Application.Exit();
             }
             else
             {
@@ -95,9 +96,7 @@ namespace Interfaz_GUI
                 if (GestorUsuario.VerificarUsuarioContraseña(txtnick.Text, txtcontraseña.Text, Propiedades_BE.SingletonLogIn.GlobalIntegridad) == 1)
                 {
                     if (GestorUsuario.VerificarEstado(txtnick.Text) == false)
-                    {
-                        MessageBox.Show("Ingreso Correctamente");
-                        
+                    {                        
                         GestorUsuario.ReiniciarIntentos(txtnick.Text);
 
                         try

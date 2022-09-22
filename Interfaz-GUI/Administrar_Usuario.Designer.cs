@@ -30,6 +30,9 @@ namespace Interfaz_GUI
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.BtnGenerarClave = new System.Windows.Forms.Button();
+            this.LblContraseña = new System.Windows.Forms.Label();
+            this.CmbIdioma = new System.Windows.Forms.ComboBox();
             this.BtnDesbloquear = new System.Windows.Forms.Button();
             this.BtnModificar = new System.Windows.Forms.Button();
             this.BtnBaja = new System.Windows.Forms.Button();
@@ -43,9 +46,6 @@ namespace Interfaz_GUI
             this.LblContraseñaLabel = new System.Windows.Forms.Label();
             this.LblNick = new System.Windows.Forms.Label();
             this.dataGridViewUsuario = new System.Windows.Forms.DataGridView();
-            this.CmbIdioma = new System.Windows.Forms.ComboBox();
-            this.LblContraseña = new System.Windows.Forms.Label();
-            this.BtnGenerarClave = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsuario)).BeginInit();
             this.SuspendLayout();
@@ -69,15 +69,42 @@ namespace Interfaz_GUI
             this.groupBox1.Controls.Add(this.LblNick);
             this.groupBox1.Location = new System.Drawing.Point(24, 27);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(729, 284);
+            this.groupBox1.Size = new System.Drawing.Size(1069, 284);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Usuario";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // BtnGenerarClave
+            // 
+            this.BtnGenerarClave.Location = new System.Drawing.Point(408, 84);
+            this.BtnGenerarClave.Name = "BtnGenerarClave";
+            this.BtnGenerarClave.Size = new System.Drawing.Size(150, 30);
+            this.BtnGenerarClave.TabIndex = 17;
+            this.BtnGenerarClave.Tag = "Generar Contraseña";
+            this.BtnGenerarClave.Text = "Generar Contraseña";
+            this.BtnGenerarClave.UseVisualStyleBackColor = true;
+            this.BtnGenerarClave.Click += new System.EventHandler(this.BtnGenerarClave_Click);
+            // 
+            // LblContraseña
+            // 
+            this.LblContraseña.AutoSize = true;
+            this.LblContraseña.Location = new System.Drawing.Point(164, 84);
+            this.LblContraseña.Name = "LblContraseña";
+            this.LblContraseña.Size = new System.Drawing.Size(0, 17);
+            this.LblContraseña.TabIndex = 16;
+            // 
+            // CmbIdioma
+            // 
+            this.CmbIdioma.FormattingEnabled = true;
+            this.CmbIdioma.Location = new System.Drawing.Point(167, 231);
+            this.CmbIdioma.Name = "CmbIdioma";
+            this.CmbIdioma.Size = new System.Drawing.Size(176, 24);
+            this.CmbIdioma.TabIndex = 15;
+            // 
             // BtnDesbloquear
             // 
-            this.BtnDesbloquear.Location = new System.Drawing.Point(618, 37);
+            this.BtnDesbloquear.Location = new System.Drawing.Point(945, 30);
             this.BtnDesbloquear.Name = "BtnDesbloquear";
             this.BtnDesbloquear.Size = new System.Drawing.Size(105, 35);
             this.BtnDesbloquear.TabIndex = 14;
@@ -88,7 +115,7 @@ namespace Interfaz_GUI
             // 
             // BtnModificar
             // 
-            this.BtnModificar.Location = new System.Drawing.Point(519, 238);
+            this.BtnModificar.Location = new System.Drawing.Point(951, 190);
             this.BtnModificar.Name = "BtnModificar";
             this.BtnModificar.Size = new System.Drawing.Size(99, 35);
             this.BtnModificar.TabIndex = 13;
@@ -99,7 +126,7 @@ namespace Interfaz_GUI
             // 
             // BtnBaja
             // 
-            this.BtnBaja.Location = new System.Drawing.Point(624, 238);
+            this.BtnBaja.Location = new System.Drawing.Point(951, 231);
             this.BtnBaja.Name = "BtnBaja";
             this.BtnBaja.Size = new System.Drawing.Size(99, 35);
             this.BtnBaja.TabIndex = 12;
@@ -110,7 +137,7 @@ namespace Interfaz_GUI
             // 
             // BtnAlta
             // 
-            this.BtnAlta.Location = new System.Drawing.Point(414, 238);
+            this.BtnAlta.Location = new System.Drawing.Point(951, 149);
             this.BtnAlta.Name = "BtnAlta";
             this.BtnAlta.Size = new System.Drawing.Size(99, 35);
             this.BtnAlta.TabIndex = 11;
@@ -197,42 +224,15 @@ namespace Interfaz_GUI
             this.dataGridViewUsuario.Name = "dataGridViewUsuario";
             this.dataGridViewUsuario.RowHeadersWidth = 51;
             this.dataGridViewUsuario.RowTemplate.Height = 24;
-            this.dataGridViewUsuario.Size = new System.Drawing.Size(729, 271);
+            this.dataGridViewUsuario.Size = new System.Drawing.Size(1069, 360);
             this.dataGridViewUsuario.TabIndex = 1;
             this.dataGridViewUsuario.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewUsuario_CellClick);
-            // 
-            // CmbIdioma
-            // 
-            this.CmbIdioma.FormattingEnabled = true;
-            this.CmbIdioma.Location = new System.Drawing.Point(167, 231);
-            this.CmbIdioma.Name = "CmbIdioma";
-            this.CmbIdioma.Size = new System.Drawing.Size(176, 24);
-            this.CmbIdioma.TabIndex = 15;
-            // 
-            // LblContraseña
-            // 
-            this.LblContraseña.AutoSize = true;
-            this.LblContraseña.Location = new System.Drawing.Point(164, 84);
-            this.LblContraseña.Name = "LblContraseña";
-            this.LblContraseña.Size = new System.Drawing.Size(0, 17);
-            this.LblContraseña.TabIndex = 16;
-            // 
-            // BtnGenerarClave
-            // 
-            this.BtnGenerarClave.Location = new System.Drawing.Point(408, 84);
-            this.BtnGenerarClave.Name = "BtnGenerarClave";
-            this.BtnGenerarClave.Size = new System.Drawing.Size(150, 30);
-            this.BtnGenerarClave.TabIndex = 17;
-            this.BtnGenerarClave.Tag = "Generar Contraseña";
-            this.BtnGenerarClave.Text = "Generar Contraseña";
-            this.BtnGenerarClave.UseVisualStyleBackColor = true;
-            this.BtnGenerarClave.Click += new System.EventHandler(this.BtnGenerarClave_Click);
             // 
             // Administrar_Usuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(769, 600);
+            this.ClientSize = new System.Drawing.Size(1116, 689);
             this.Controls.Add(this.dataGridViewUsuario);
             this.Controls.Add(this.groupBox1);
             this.Name = "Administrar_Usuario";

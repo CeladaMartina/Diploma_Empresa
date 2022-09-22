@@ -207,7 +207,7 @@ namespace Interfaz_GUI
             this.dataGridViewFiltrado.Name = "dataGridViewFiltrado";
             this.dataGridViewFiltrado.RowHeadersWidth = 51;
             this.dataGridViewFiltrado.RowTemplate.Height = 24;
-            this.dataGridViewFiltrado.Size = new System.Drawing.Size(362, 478);
+            this.dataGridViewFiltrado.Size = new System.Drawing.Size(440, 478);
             this.dataGridViewFiltrado.TabIndex = 14;
             this.dataGridViewFiltrado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewFiltrado_CellClick);
             // 
@@ -215,7 +215,7 @@ namespace Interfaz_GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1012, 524);
+            this.ClientSize = new System.Drawing.Size(1080, 524);
             this.Controls.Add(this.dataGridViewFiltrado);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridViewTraducciones);

@@ -44,9 +44,6 @@ namespace Interfaz_GUI
             this.backupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.restoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adminisitrarPermisosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.administrarFamiliaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.administrarPatenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.administrarPermisosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administrarUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administrarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administrarUsuarioFamiliaPatenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -190,35 +187,11 @@ namespace Interfaz_GUI
             // 
             // adminisitrarPermisosToolStripMenuItem
             // 
-            this.adminisitrarPermisosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.administrarFamiliaToolStripMenuItem,
-            this.administrarPatenteToolStripMenuItem,
-            this.administrarPermisosToolStripMenuItem});
             this.adminisitrarPermisosToolStripMenuItem.Name = "adminisitrarPermisosToolStripMenuItem";
             this.adminisitrarPermisosToolStripMenuItem.Size = new System.Drawing.Size(237, 26);
             this.adminisitrarPermisosToolStripMenuItem.Tag = "Adminisitrar Permisos";
             this.adminisitrarPermisosToolStripMenuItem.Text = "Adminisitrar permisos";
             this.adminisitrarPermisosToolStripMenuItem.Click += new System.EventHandler(this.adminisitrarPermisosToolStripMenuItem_Click);
-            // 
-            // administrarFamiliaToolStripMenuItem
-            // 
-            this.administrarFamiliaToolStripMenuItem.Name = "administrarFamiliaToolStripMenuItem";
-            this.administrarFamiliaToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
-            this.administrarFamiliaToolStripMenuItem.Text = "Administrar Familia";
-            this.administrarFamiliaToolStripMenuItem.Click += new System.EventHandler(this.administrarFamiliaToolStripMenuItem_Click);
-            // 
-            // administrarPatenteToolStripMenuItem
-            // 
-            this.administrarPatenteToolStripMenuItem.Name = "administrarPatenteToolStripMenuItem";
-            this.administrarPatenteToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
-            this.administrarPatenteToolStripMenuItem.Text = "Administrar Patente";
-            this.administrarPatenteToolStripMenuItem.Click += new System.EventHandler(this.administrarPatenteToolStripMenuItem_Click);
-            // 
-            // administrarPermisosToolStripMenuItem
-            // 
-            this.administrarPermisosToolStripMenuItem.Name = "administrarPermisosToolStripMenuItem";
-            this.administrarPermisosToolStripMenuItem.Size = new System.Drawing.Size(231, 26);
-            this.administrarPermisosToolStripMenuItem.Text = "Administrar Permisos";
             // 
             // administrarUsuariosToolStripMenuItem
             // 
@@ -315,13 +288,10 @@ namespace Interfaz_GUI
         private System.Windows.Forms.ToolStripMenuItem generarContraseñaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem recalcularDigitosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem administrarFamiliaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem administrarPatenteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem administrarUsuarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem administrarUsuarioFamiliaPatenteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem venderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem visualizarVentasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem administrarPermisosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem proveedorToolStripMenuItem;
     }
 }
