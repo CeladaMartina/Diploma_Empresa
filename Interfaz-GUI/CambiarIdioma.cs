@@ -51,7 +51,7 @@ namespace Interfaz_GUI
             }
             catch (Exception)
             {
-                MessageBox.Show(CambiarIdioma.TraducirGlobal("Error") ?? "Error");
+                MessageBox.Show(TraducirGlobal("Error") ?? "Error");
             }
         }
 

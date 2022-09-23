@@ -95,7 +95,7 @@ namespace Interfaz_GUI
             this.BtnCargarFP.Name = "BtnCargarFP";
             this.BtnCargarFP.Size = new System.Drawing.Size(108, 27);
             this.BtnCargarFP.TabIndex = 4;
-            this.BtnCargarFP.Tag = "Cargar";
+            this.BtnCargarFP.Tag = "Guardar";
             this.BtnCargarFP.Text = "Guardar";
             this.BtnCargarFP.UseVisualStyleBackColor = true;
             this.BtnCargarFP.Click += new System.EventHandler(this.BtnCargarFP_Click);

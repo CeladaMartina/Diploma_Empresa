@@ -341,7 +341,7 @@ namespace Interfaz_GUI
             BtnAgregarF.Text = subject.TraducirObserver(BtnAgregarF.Tag.ToString()) ?? BtnAgregarF.Tag.ToString();
             BtnAgregarP.Text = subject.TraducirObserver(BtnAgregarP.Tag.ToString()) ?? BtnAgregarP.Tag.ToString();
             BtnCargarFP.Text = subject.TraducirObserver(BtnCargarFP.Tag.ToString()) ?? BtnCargarFP.Tag.ToString();
-            //BtnSeleccionar.Text = subject.TraducirObserver(BtnSeleccionar.Tag.ToString()) ?? BtnSeleccionar.Tag.ToString();
+            BtnSeleccionar.Text = subject.TraducirObserver(BtnSeleccionar.Tag.ToString()) ?? BtnSeleccionar.Tag.ToString();
             BtnBorrarF.Text = subject.TraducirObserver(BtnBorrarF.Tag.ToString()) ?? BtnBorrarF.Tag.ToString();
             BtnBorrarP.Text = subject.TraducirObserver(BtnBorrarP.Tag.ToString()) ?? BtnBorrarP.Tag.ToString();         
         }
@@ -351,7 +351,7 @@ namespace Interfaz_GUI
             BtnAgregarF.Text = CambiarIdioma.TraducirGlobal(BtnAgregarF.Tag.ToString()) ?? BtnAgregarF.Tag.ToString();
             BtnAgregarP.Text = CambiarIdioma.TraducirGlobal(BtnAgregarP.Tag.ToString()) ?? BtnAgregarP.Tag.ToString();
             BtnCargarFP.Text = CambiarIdioma.TraducirGlobal(BtnCargarFP.Tag.ToString()) ?? BtnCargarFP.Tag.ToString();
-            //BtnSeleccionar.Text = CambiarIdioma.TraducirGlobal(BtnSeleccionar.Tag.ToString()) ?? BtnSeleccionar.Tag.ToString();
+            BtnSeleccionar.Text = CambiarIdioma.TraducirGlobal(BtnSeleccionar.Tag.ToString()) ?? BtnSeleccionar.Tag.ToString();
             BtnBorrarF.Text = CambiarIdioma.TraducirGlobal(BtnBorrarF.Tag.ToString()) ?? BtnBorrarF.Tag.ToString();
             BtnBorrarP.Text = CambiarIdioma.TraducirGlobal(BtnBorrarP.Tag.ToString()) ?? BtnBorrarP.Tag.ToString();
         }

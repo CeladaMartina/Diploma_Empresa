@@ -95,12 +95,12 @@ namespace Interfaz_GUI
             salirToolStripMenuItem.Text = Subject.TraducirObserver(salirToolStripMenuItem.Tag.ToString()) ?? salirToolStripMenuItem.Tag.ToString();
             visualizarVentasToolStripMenuItem.Text = Subject.TraducirObserver(visualizarVentasToolStripMenuItem.Tag.ToString()) ?? visualizarVentasToolStripMenuItem.Tag.ToString();
             cambiarIdiomaToolStripMenuItem.Text = Subject.TraducirObserver(cambiarIdiomaToolStripMenuItem.Tag.ToString()) ?? cambiarIdiomaToolStripMenuItem.Tag.ToString();
-            //administrarTraduccionToolStripMenuItem.Text = Subject.TraducirObserver(administrarTraduccionToolStripMenuItem.Tag.ToString()) ?? administrarTraduccionToolStripMenuItem.Tag.ToString();
-            //administrarIdiomaToolStripMenuItem.Text = Subject.TraducirObserver(administrarIdiomaToolStripMenuItem.Tag.ToString()) ?? administrarIdiomaToolStripMenuItem.Tag.ToString();
+            administrarIdiomaToolStripMenuItem.Text = Subject.TraducirObserver(administrarIdiomaToolStripMenuItem.Tag.ToString()) ?? administrarIdiomaToolStripMenuItem.Tag.ToString();
+            administrarTraduccionToolStripMenuItem.Text = Subject.TraducirObserver(administrarTraduccionToolStripMenuItem.Tag.ToString()) ?? administrarTraduccionToolStripMenuItem.Tag.ToString();
             backupToolStripMenuItem.Text = Subject.TraducirObserver(backupToolStripMenuItem.Tag.ToString()) ?? backupToolStripMenuItem.Tag.ToString();
             restoreToolStripMenuItem.Text = Subject.TraducirObserver(restoreToolStripMenuItem.Tag.ToString()) ?? restoreToolStripMenuItem.Tag.ToString();
-            //administrarPermisosToolStripMenuItem.Text = Subject.TraducirObserver(administrarPermisosToolStripMenuItem.Tag.ToString()) ?? administrarPermisosToolStripMenuItem.Tag.ToString();
-            //administrarUsuarioToolStripMenuItem.Text = Subject.TraducirObserver(administrarUsuarioToolStripMenuItem.Tag.ToString()) ?? administrarUsuarioToolStripMenuItem.Tag.ToString();
+            adminisitrarPermisosToolStripMenuItem.Text = Subject.TraducirObserver(adminisitrarPermisosToolStripMenuItem.Tag.ToString()) ?? adminisitrarPermisosToolStripMenuItem.Tag.ToString();
+            administrarUsuarioToolStripMenuItem.Text = Subject.TraducirObserver(administrarUsuarioToolStripMenuItem.Tag.ToString()) ?? administrarUsuarioToolStripMenuItem.Tag.ToString();
             bitacoraToolStripMenuItem.Text = Subject.TraducirObserver(bitacoraToolStripMenuItem.Tag.ToString()) ?? bitacoraToolStripMenuItem.Tag.ToString();
             generarContraseñaToolStripMenuItem.Text = Subject.TraducirObserver(generarContraseñaToolStripMenuItem.Tag.ToString()) ?? generarContraseñaToolStripMenuItem.Tag.ToString();
             recalcularDigitosToolStripMenuItem.Text = Subject.TraducirObserver(recalcularDigitosToolStripMenuItem.Tag.ToString()) ?? recalcularDigitosToolStripMenuItem.Tag.ToString();
@@ -122,8 +122,8 @@ namespace Interfaz_GUI
             administrarIdiomaToolStripMenuItem.Text = CambiarIdioma.TraducirGlobal(administrarIdiomaToolStripMenuItem.Tag.ToString()) ?? administrarIdiomaToolStripMenuItem.Tag.ToString();
             backupToolStripMenuItem.Text = CambiarIdioma.TraducirGlobal(backupToolStripMenuItem.Tag.ToString()) ?? backupToolStripMenuItem.Tag.ToString();
             restoreToolStripMenuItem.Text = CambiarIdioma.TraducirGlobal(restoreToolStripMenuItem.Tag.ToString()) ?? restoreToolStripMenuItem.Tag.ToString();
-            //administrarPermisosToolStripMenuItem.Text = CambiarIdioma.TraducirGlobal(administrarPermisosToolStripMenuItem.Tag.ToString()) ?? administrarPermisosToolStripMenuItem.Tag.ToString();
-            //administrarUsuarioToolStripMenuItem.Text = CambiarIdioma.TraducirGlobal(administrarUsuarioToolStripMenuItem.Tag.ToString()) ?? administrarUsuarioToolStripMenuItem.Tag.ToString();
+            adminisitrarPermisosToolStripMenuItem.Text = CambiarIdioma.TraducirGlobal(adminisitrarPermisosToolStripMenuItem.Tag.ToString()) ?? adminisitrarPermisosToolStripMenuItem.Tag.ToString();
+            administrarUsuariosToolStripMenuItem.Text = CambiarIdioma.TraducirGlobal(administrarUsuariosToolStripMenuItem.Tag.ToString()) ?? administrarUsuariosToolStripMenuItem.Tag.ToString();
             bitacoraToolStripMenuItem.Text = CambiarIdioma.TraducirGlobal(bitacoraToolStripMenuItem.Tag.ToString()) ?? bitacoraToolStripMenuItem.Tag.ToString();
             generarContraseñaToolStripMenuItem.Text = CambiarIdioma.TraducirGlobal(generarContraseñaToolStripMenuItem.Tag.ToString()) ?? generarContraseñaToolStripMenuItem.Tag.ToString();
             recalcularDigitosToolStripMenuItem.Text = CambiarIdioma.TraducirGlobal(recalcularDigitosToolStripMenuItem.Tag.ToString()) ?? recalcularDigitosToolStripMenuItem.Tag.ToString();

@@ -207,6 +207,7 @@ namespace Interfaz_GUI
             // 
             this.administrarUsuarioToolStripMenuItem.Name = "administrarUsuarioToolStripMenuItem";
             this.administrarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(327, 26);
+            this.administrarUsuarioToolStripMenuItem.Tag = "Administrar Usuario";
             this.administrarUsuarioToolStripMenuItem.Text = "Administrar Usuario";
             this.administrarUsuarioToolStripMenuItem.Click += new System.EventHandler(this.administrarUsuarioToolStripMenuItem_Click);
             // 
@@ -214,6 +215,7 @@ namespace Interfaz_GUI
             // 
             this.administrarUsuarioFamiliaPatenteToolStripMenuItem.Name = "administrarUsuarioFamiliaPatenteToolStripMenuItem";
             this.administrarUsuarioFamiliaPatenteToolStripMenuItem.Size = new System.Drawing.Size(327, 26);
+            this.administrarUsuarioFamiliaPatenteToolStripMenuItem.Tag = "Administrar Usuario Familia Patente";
             this.administrarUsuarioFamiliaPatenteToolStripMenuItem.Text = "Administrar Usuario Familia Patente";
             this.administrarUsuarioFamiliaPatenteToolStripMenuItem.Click += new System.EventHandler(this.administrarUsuarioFamiliaPatenteToolStripMenuItem_Click);
             // 
