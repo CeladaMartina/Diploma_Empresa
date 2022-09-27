@@ -14,8 +14,8 @@ namespace Interfaz_GUI
     public partial class PatenteFamilias : Form
     {
         Negocio_BLL.Permisos GestorPermisos = new Negocio_BLL.Permisos();
-        Propiedades_BE.Familia seleccion;
-        Propiedades_BE.Componente componente;
+        //Propiedades_BE.Familia seleccion;
+        //Propiedades_BE.Componente componente;
         public PatenteFamilias()
         {
             InitializeComponent();

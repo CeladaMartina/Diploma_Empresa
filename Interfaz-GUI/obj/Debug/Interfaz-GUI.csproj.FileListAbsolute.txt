@@ -8,8 +8,6 @@ C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\bin\Debug\Negoc
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\bin\Debug\Propiedades-BE.pdb
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\bin\Debug\Acceso-DAL.pdb
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\obj\Debug\Interfaz-GUI.csprojAssemblyReference.cache
-C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\obj\Debug\Interfaz_GUI.Administrar_Familia.resources
-C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\obj\Debug\Interfaz_GUI.Administrar_Patente.resources
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\obj\Debug\Interfaz_GUI.Administrar_Permisos.resources
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\obj\Debug\Interfaz_GUI.Administrar_Usuario.resources
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\obj\Debug\Interfaz_GUI.Administrar_Usu_Fam_Pat.resources

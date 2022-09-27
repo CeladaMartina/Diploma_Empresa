@@ -162,20 +162,6 @@ namespace Interfaz_GUI
             AP.Show();
         }
 
-        private void administrarFamiliaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Administrar_Familia AF = Administrar_Familia.ObtenerInstancia();
-            AF.MdiParent = this;
-            AF.Show();
-        }
-
-        private void administrarPatenteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Administrar_Patente AP = Administrar_Patente.ObtenerInstancia();
-            AP.MdiParent = this;
-            AP.Show();
-        }
-
         private void administrarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Administrar_Usuario AU = Administrar_Usuario.ObtenerInstancia();
