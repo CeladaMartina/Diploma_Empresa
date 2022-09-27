@@ -114,6 +114,12 @@
     </Compile>
     <Compile Include="IObserver.cs" />
     <Compile Include="ISubject.cs" />
+    <Compile Include="Localidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Localidad.Designer.cs">
+      <DependentUpon>Localidad.cs</DependentUpon>
+    </Compile>
     <Compile Include="LogIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +137,12 @@
     </Compile>
     <Compile Include="PatenteFamilias.Designer.cs">
       <DependentUpon>PatenteFamilias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Producto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Producto.Designer.cs">
+      <DependentUpon>Producto.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -185,6 +197,9 @@
     <EmbeddedResource Include="Generar_Contraseña.resx">
       <DependentUpon>Generar_Contraseña.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Localidad.resx">
+      <DependentUpon>Localidad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
     </EmbeddedResource>
@@ -193,6 +208,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PatenteFamilias.resx">
       <DependentUpon>PatenteFamilias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Producto.resx">
+      <DependentUpon>Producto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

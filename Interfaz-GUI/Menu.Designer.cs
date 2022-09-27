@@ -31,7 +31,6 @@ namespace Interfaz_GUI
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.proveedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.articuloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.venderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,6 +50,9 @@ namespace Interfaz_GUI
             this.generarContraseñaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.recalcularDigitosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.localidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.compraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,9 +60,11 @@ namespace Interfaz_GUI
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.productoToolStripMenuItem,
             this.proveedorToolStripMenuItem,
-            this.articuloToolStripMenuItem,
             this.clienteToolStripMenuItem,
+            this.localidadToolStripMenuItem,
+            this.compraToolStripMenuItem,
             this.ventaToolStripMenuItem,
             this.idiomaToolStripMenuItem,
             this.seguridadToolStripMenuItem,
@@ -80,13 +84,6 @@ namespace Interfaz_GUI
             this.proveedorToolStripMenuItem.Tag = "Proveedor";
             this.proveedorToolStripMenuItem.Text = "Proveedor";
             this.proveedorToolStripMenuItem.Click += new System.EventHandler(this.proveedorToolStripMenuItem_Click);
-            // 
-            // articuloToolStripMenuItem
-            // 
-            this.articuloToolStripMenuItem.Name = "articuloToolStripMenuItem";
-            this.articuloToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
-            this.articuloToolStripMenuItem.Tag = "Articulo";
-            this.articuloToolStripMenuItem.Text = "Articulo";
             // 
             // clienteToolStripMenuItem
             // 
@@ -251,6 +248,24 @@ namespace Interfaz_GUI
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
+            // productoToolStripMenuItem
+            // 
+            this.productoToolStripMenuItem.Name = "productoToolStripMenuItem";
+            this.productoToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
+            this.productoToolStripMenuItem.Text = "Producto";
+            // 
+            // localidadToolStripMenuItem
+            // 
+            this.localidadToolStripMenuItem.Name = "localidadToolStripMenuItem";
+            this.localidadToolStripMenuItem.Size = new System.Drawing.Size(88, 24);
+            this.localidadToolStripMenuItem.Text = "Localidad";
+            // 
+            // compraToolStripMenuItem
+            // 
+            this.compraToolStripMenuItem.Name = "compraToolStripMenuItem";
+            this.compraToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
+            this.compraToolStripMenuItem.Text = "Compra";
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -274,7 +289,6 @@ namespace Interfaz_GUI
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem articuloToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ventaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem idiomaToolStripMenuItem;
@@ -295,6 +309,9 @@ namespace Interfaz_GUI
         private System.Windows.Forms.ToolStripMenuItem venderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem visualizarVentasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem proveedorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem productoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem localidadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem compraToolStripMenuItem;
     }
 }
 

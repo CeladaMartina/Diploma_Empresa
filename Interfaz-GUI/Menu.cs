@@ -242,5 +242,6 @@ namespace Interfaz_GUI
             P.MdiParent = this;
             P.Show();
         }
+
     }
 }
