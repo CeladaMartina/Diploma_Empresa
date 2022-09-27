@@ -48,6 +48,7 @@ namespace Interfaz_GUI
                 this.restoreToolStripMenuItem.Visible = (Propiedades_BE.SingletonLogIn.GetInstance.IsInRole(Propiedades_BE.TipoPermiso.Realizar_Restore));
                 this.ventaToolStripMenuItem.Visible = (Propiedades_BE.SingletonLogIn.GetInstance.IsInRole(Propiedades_BE.TipoPermiso.Modificar_Venta));
                 this.proveedorToolStripMenuItem.Visible = (Propiedades_BE.SingletonLogIn.GetInstance.IsInRole(Propiedades_BE.TipoPermiso.Modificar_Proveedor));
+                this.localidadToolStripMenuItem.Visible = (Propiedades_BE.SingletonLogIn.GetInstance.IsInRole(Propiedades_BE.TipoPermiso.Modificar_Localidad));
             }
             else
             {
@@ -64,6 +65,7 @@ namespace Interfaz_GUI
                 this.restoreToolStripMenuItem.Visible = false;
                 this.ventaToolStripMenuItem.Visible = false;
                 this.proveedorToolStripMenuItem.Visible = false;
+                this.localidadToolStripMenuItem.Visible = false;
             }
         }
 
@@ -80,6 +82,7 @@ namespace Interfaz_GUI
                 this.generarContraseñaToolStripMenuItem.Visible = false;
                 this.backupToolStripMenuItem.Visible = false;
                 this.proveedorToolStripMenuItem.Visible = false;
+                this.localidadToolStripMenuItem.Visible = false;
             }
         }
         #endregion
@@ -245,9 +248,9 @@ namespace Interfaz_GUI
 
         private void productoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Producto p = Producto.ObtenerInstancia();
-            //p.MdiParent = this;
-            //p.Show();
+            Producto p = Producto.ObtenerInstancia();
+            p.MdiParent = this;
+            p.Show();
         }
 
         private void localidadToolStripMenuItem_Click(object sender, EventArgs e)

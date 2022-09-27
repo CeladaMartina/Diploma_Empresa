@@ -115,13 +115,13 @@ namespace Interfaz_GUI
             this.dataGridViewLocalidad.Name = "dataGridViewLocalidad";
             this.dataGridViewLocalidad.RowHeadersWidth = 51;
             this.dataGridViewLocalidad.RowTemplate.Height = 24;
-            this.dataGridViewLocalidad.Size = new System.Drawing.Size(574, 155);
+            this.dataGridViewLocalidad.Size = new System.Drawing.Size(817, 224);
             this.dataGridViewLocalidad.TabIndex = 8;
             this.dataGridViewLocalidad.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewLocalidad_CellClick);
             // 
             // BtnModificacion
             // 
-            this.BtnModificacion.Location = new System.Drawing.Point(584, 194);
+            this.BtnModificacion.Location = new System.Drawing.Point(115, 211);
             this.BtnModificacion.Name = "BtnModificacion";
             this.BtnModificacion.Size = new System.Drawing.Size(114, 31);
             this.BtnModificacion.TabIndex = 22;
@@ -131,7 +131,7 @@ namespace Interfaz_GUI
             // 
             // BtnBaja
             // 
-            this.BtnBaja.Location = new System.Drawing.Point(829, 194);
+            this.BtnBaja.Location = new System.Drawing.Point(235, 211);
             this.BtnBaja.Name = "BtnBaja";
             this.BtnBaja.Size = new System.Drawing.Size(98, 32);
             this.BtnBaja.TabIndex = 21;
@@ -141,7 +141,7 @@ namespace Interfaz_GUI
             // 
             // BtnAlta
             // 
-            this.BtnAlta.Location = new System.Drawing.Point(353, 196);
+            this.BtnAlta.Location = new System.Drawing.Point(11, 211);
             this.BtnAlta.Name = "BtnAlta";
             this.BtnAlta.Size = new System.Drawing.Size(98, 29);
             this.BtnAlta.TabIndex = 20;
@@ -153,7 +153,7 @@ namespace Interfaz_GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1014, 257);
+            this.ClientSize = new System.Drawing.Size(1182, 261);
             this.Controls.Add(this.BtnModificacion);
             this.Controls.Add(this.BtnBaja);
             this.Controls.Add(this.BtnAlta);

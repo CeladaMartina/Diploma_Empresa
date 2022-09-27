@@ -191,6 +191,7 @@ namespace Interfaz_GUI
             this.dataGridViewArticulo.RowTemplate.Height = 24;
             this.dataGridViewArticulo.Size = new System.Drawing.Size(745, 294);
             this.dataGridViewArticulo.TabIndex = 16;
+            this.dataGridViewArticulo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewArticulo_CellClick);
             // 
             // BtnAlta
             // 
@@ -200,6 +201,7 @@ namespace Interfaz_GUI
             this.BtnAlta.TabIndex = 17;
             this.BtnAlta.Text = "Alta";
             this.BtnAlta.UseVisualStyleBackColor = true;
+            this.BtnAlta.Click += new System.EventHandler(this.BtnAlta_Click);
             // 
             // BtnBaja
             // 
@@ -209,6 +211,7 @@ namespace Interfaz_GUI
             this.BtnBaja.TabIndex = 18;
             this.BtnBaja.Text = "Baja";
             this.BtnBaja.UseVisualStyleBackColor = true;
+            this.BtnBaja.Click += new System.EventHandler(this.BtnBaja_Click);
             // 
             // BtnModificacion
             // 
@@ -218,6 +221,7 @@ namespace Interfaz_GUI
             this.BtnModificacion.TabIndex = 19;
             this.BtnModificacion.Text = "Modificacion";
             this.BtnModificacion.UseVisualStyleBackColor = true;
+            this.BtnModificacion.Click += new System.EventHandler(this.BtnModificacion_Click);
             // 
             // Producto
             // 
