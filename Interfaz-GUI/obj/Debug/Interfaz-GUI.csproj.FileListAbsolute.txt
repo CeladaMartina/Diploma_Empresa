@@ -31,3 +31,5 @@ C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\obj\Debug\Inter
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\obj\Debug\Interfaz_GUI.Bitacora.resources
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\obj\Debug\Interfaz_GUI.Proveedor.resources
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\obj\Debug\Interfaz_GUI.ControlCambioProveedor.resources
+C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\obj\Debug\Interfaz_GUI.Localidad.resources
+C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\obj\Debug\Interfaz_GUI.Producto.resources

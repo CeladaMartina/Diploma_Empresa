@@ -40,7 +40,7 @@ namespace Interfaz_GUI
                 this.administrarTraduccionToolStripMenuItem.Visible = (Propiedades_BE.SingletonLogIn.GetInstance.IsInRole(Propiedades_BE.TipoPermiso.Modificar_Traduccion));
                 this.administrarUsuarioToolStripMenuItem.Visible = (Propiedades_BE.SingletonLogIn.GetInstance.IsInRole(Propiedades_BE.TipoPermiso.Modificar_Usuario)
                     || Propiedades_BE.SingletonLogIn.GetInstance.IsInRole(Propiedades_BE.TipoPermiso.Modificar_Permisos_Usuario));
-                this.articuloToolStripMenuItem.Visible = (Propiedades_BE.SingletonLogIn.GetInstance.IsInRole(Propiedades_BE.TipoPermiso.Modificar_Articulo));
+                this.productoToolStripMenuItem.Visible = (Propiedades_BE.SingletonLogIn.GetInstance.IsInRole(Propiedades_BE.TipoPermiso.Modificar_Articulo));
                 this.backupToolStripMenuItem.Visible = (Propiedades_BE.SingletonLogIn.GetInstance.IsInRole(Propiedades_BE.TipoPermiso.Realizar_BackUp));
                 this.bitacoraToolStripMenuItem.Visible = (Propiedades_BE.SingletonLogIn.GetInstance.IsInRole(Propiedades_BE.TipoPermiso.Ver_Bitacora));
                 this.clienteToolStripMenuItem.Visible = (Propiedades_BE.SingletonLogIn.GetInstance.IsInRole(Propiedades_BE.TipoPermiso.Modificar_Cliente));
@@ -56,7 +56,7 @@ namespace Interfaz_GUI
                 this.adminisitrarPermisosToolStripMenuItem.Visible = false;
                 this.administrarTraduccionToolStripMenuItem.Visible = false;
                 this.administrarUsuarioToolStripMenuItem.Visible = false;
-                this.articuloToolStripMenuItem.Visible = false;
+                this.productoToolStripMenuItem.Visible = false;
                 this.backupToolStripMenuItem.Visible = false;
                 this.bitacoraToolStripMenuItem.Visible = false;
                 this.clienteToolStripMenuItem.Visible = false;
@@ -71,7 +71,7 @@ namespace Interfaz_GUI
         {
             if (Propiedades_BE.SingletonLogIn.GlobalIntegridad >= 1)
             {
-                this.articuloToolStripMenuItem.Visible = false;
+                this.productoToolStripMenuItem.Visible = false;
                 this.clienteToolStripMenuItem.Visible = false;
                 this.administrarIdiomaToolStripMenuItem.Visible = false;
                 this.adminisitrarPermisosToolStripMenuItem.Visible = false;
@@ -87,7 +87,7 @@ namespace Interfaz_GUI
         #region Metodos traduccion 
         public void Update(ISubject Subject)
         {
-            articuloToolStripMenuItem.Text = Subject.TraducirObserver(articuloToolStripMenuItem.Tag.ToString()) ?? articuloToolStripMenuItem.Tag.ToString();
+            productoToolStripMenuItem.Text = Subject.TraducirObserver(productoToolStripMenuItem.Tag.ToString()) ?? productoToolStripMenuItem.Tag.ToString();
             clienteToolStripMenuItem.Text = Subject.TraducirObserver(clienteToolStripMenuItem.Tag.ToString()) ?? clienteToolStripMenuItem.Tag.ToString();
             ventaToolStripMenuItem.Text = Subject.TraducirObserver(ventaToolStripMenuItem.Tag.ToString()) ?? ventaToolStripMenuItem.Tag.ToString();
             idiomaToolStripMenuItem.Text = Subject.TraducirObserver(idiomaToolStripMenuItem.Tag.ToString()) ?? idiomaToolStripMenuItem.Tag.ToString();
@@ -109,7 +109,7 @@ namespace Interfaz_GUI
 
         public void Traducir()
         {
-            articuloToolStripMenuItem.Text = CambiarIdioma.TraducirGlobal(articuloToolStripMenuItem.Tag.ToString()) ?? articuloToolStripMenuItem.Tag.ToString();
+            productoToolStripMenuItem.Text = CambiarIdioma.TraducirGlobal(productoToolStripMenuItem.Tag.ToString()) ?? productoToolStripMenuItem.Tag.ToString();
             clienteToolStripMenuItem.Text = CambiarIdioma.TraducirGlobal(clienteToolStripMenuItem.Tag.ToString()) ?? clienteToolStripMenuItem.Tag.ToString();
             ventaToolStripMenuItem.Text = CambiarIdioma.TraducirGlobal(ventaToolStripMenuItem.Tag.ToString()) ?? ventaToolStripMenuItem.Tag.ToString();
             idiomaToolStripMenuItem.Text = CambiarIdioma.TraducirGlobal(idiomaToolStripMenuItem.Tag.ToString()) ?? idiomaToolStripMenuItem.Tag.ToString();
@@ -243,5 +243,18 @@ namespace Interfaz_GUI
             P.Show();
         }
 
+        private void productoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Producto p = Producto.ObtenerInstancia();
+            //p.MdiParent = this;
+            //p.Show();
+        }
+
+        private void localidadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Localidad l = Localidad.ObtenerInstancia();
+            l.MdiParent = this;
+            l.Show();
+        }
     }
 }

@@ -253,12 +253,14 @@ namespace Interfaz_GUI
             this.productoToolStripMenuItem.Name = "productoToolStripMenuItem";
             this.productoToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
             this.productoToolStripMenuItem.Text = "Producto";
+            this.productoToolStripMenuItem.Click += new System.EventHandler(this.productoToolStripMenuItem_Click);
             // 
             // localidadToolStripMenuItem
             // 
             this.localidadToolStripMenuItem.Name = "localidadToolStripMenuItem";
             this.localidadToolStripMenuItem.Size = new System.Drawing.Size(88, 24);
             this.localidadToolStripMenuItem.Text = "Localidad";
+            this.localidadToolStripMenuItem.Click += new System.EventHandler(this.localidadToolStripMenuItem_Click);
             // 
             // compraToolStripMenuItem
             // 
