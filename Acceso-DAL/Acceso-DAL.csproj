@@ -46,7 +46,9 @@
     <Compile Include="Acceso_BD.cs" />
     <Compile Include="Articulo.cs" />
     <Compile Include="Cliente.cs" />
+    <Compile Include="Compra.cs" />
     <Compile Include="ControlCambioProveedor.cs" />
+    <Compile Include="Detalle_Compra.cs" />
     <Compile Include="Detalle_Venta.cs" />
     <Compile Include="Idioma.cs" />
     <Compile Include="Localidad.cs" />

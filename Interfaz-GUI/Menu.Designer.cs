@@ -53,6 +53,9 @@ namespace Interfaz_GUI
             this.generarContraseñaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.recalcularDigitosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.comprarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.visualizarComprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pedidoCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -109,6 +112,10 @@ namespace Interfaz_GUI
             // 
             // compraToolStripMenuItem
             // 
+            this.compraToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.comprarToolStripMenuItem,
+            this.visualizarComprasToolStripMenuItem,
+            this.pedidoCompraToolStripMenuItem});
             this.compraToolStripMenuItem.Name = "compraToolStripMenuItem";
             this.compraToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
             this.compraToolStripMenuItem.Text = "Compra";
@@ -269,6 +276,25 @@ namespace Interfaz_GUI
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
+            // comprarToolStripMenuItem
+            // 
+            this.comprarToolStripMenuItem.Name = "comprarToolStripMenuItem";
+            this.comprarToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.comprarToolStripMenuItem.Text = "Comprar";
+            this.comprarToolStripMenuItem.Click += new System.EventHandler(this.comprarToolStripMenuItem_Click);
+            // 
+            // visualizarComprasToolStripMenuItem
+            // 
+            this.visualizarComprasToolStripMenuItem.Name = "visualizarComprasToolStripMenuItem";
+            this.visualizarComprasToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.visualizarComprasToolStripMenuItem.Text = "Visualizar compras";
+            // 
+            // pedidoCompraToolStripMenuItem
+            // 
+            this.pedidoCompraToolStripMenuItem.Name = "pedidoCompraToolStripMenuItem";
+            this.pedidoCompraToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.pedidoCompraToolStripMenuItem.Text = "Pedido Compra";
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -315,6 +341,9 @@ namespace Interfaz_GUI
         private System.Windows.Forms.ToolStripMenuItem productoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem localidadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem compraToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem comprarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem visualizarComprasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pedidoCompraToolStripMenuItem;
     }
 }
 
