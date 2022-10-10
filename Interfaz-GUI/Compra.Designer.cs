@@ -41,7 +41,7 @@ namespace Interfaz_GUI
             this.CmbNombreProveedor = new System.Windows.Forms.ComboBox();
             this.dateTimePickerFecha = new System.Windows.Forms.DateTimePicker();
             this.TxtTotal = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TxtCantidad = new System.Windows.Forms.TextBox();
             this.CmbNombreArticulo = new System.Windows.Forms.ComboBox();
             this.CmbCodProducto = new System.Windows.Forms.ComboBox();
             this.LblCantidad = new System.Windows.Forms.Label();
@@ -94,7 +94,7 @@ namespace Interfaz_GUI
             this.groupBox2.Controls.Add(this.Lblsubtotal);
             this.groupBox2.Controls.Add(this.LblSubtotalNombre);
             this.groupBox2.Controls.Add(this.TxtPrecio);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.TxtCantidad);
             this.groupBox2.Controls.Add(this.CmbCodProducto);
             this.groupBox2.Controls.Add(this.LblArticulo);
             this.groupBox2.Controls.Add(this.CmbNombreArticulo);
@@ -197,12 +197,12 @@ namespace Interfaz_GUI
             this.TxtTotal.Size = new System.Drawing.Size(121, 22);
             this.TxtTotal.TabIndex = 5;
             // 
-            // textBox1
+            // TxtCantidad
             // 
-            this.textBox1.Location = new System.Drawing.Point(107, 145);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 22);
-            this.textBox1.TabIndex = 11;
+            this.TxtCantidad.Location = new System.Drawing.Point(107, 145);
+            this.TxtCantidad.Name = "TxtCantidad";
+            this.TxtCantidad.Size = new System.Drawing.Size(121, 22);
+            this.TxtCantidad.TabIndex = 11;
             // 
             // CmbNombreArticulo
             // 
@@ -437,7 +437,7 @@ namespace Interfaz_GUI
         private System.Windows.Forms.Label Lblsubtotal;
         private System.Windows.Forms.Label LblSubtotalNombre;
         private System.Windows.Forms.TextBox TxtPrecio;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TxtCantidad;
         private System.Windows.Forms.ComboBox CmbCodProducto;
         private System.Windows.Forms.Label LblArticulo;
         private System.Windows.Forms.ComboBox CmbNombreArticulo;
