@@ -40,6 +40,8 @@ namespace Interfaz_GUI
                 this.administrarTraduccionToolStripMenuItem.Visible = (Propiedades_BE.SingletonLogIn.GetInstance.IsInRole(Propiedades_BE.TipoPermiso.Modificar_Traduccion));
                 this.administrarUsuarioToolStripMenuItem.Visible = (Propiedades_BE.SingletonLogIn.GetInstance.IsInRole(Propiedades_BE.TipoPermiso.Modificar_Usuario)
                     || Propiedades_BE.SingletonLogIn.GetInstance.IsInRole(Propiedades_BE.TipoPermiso.Modificar_Permisos_Usuario));
+                this.administrarUsuarioFamiliaPatenteToolStripMenuItem.Visible = (Propiedades_BE.SingletonLogIn.GetInstance.IsInRole(Propiedades_BE.TipoPermiso.Modificar_Usuario)
+                    || Propiedades_BE.SingletonLogIn.GetInstance.IsInRole(Propiedades_BE.TipoPermiso.Modificar_Permisos_Usuario));
                 this.productoToolStripMenuItem.Visible = (Propiedades_BE.SingletonLogIn.GetInstance.IsInRole(Propiedades_BE.TipoPermiso.Modificar_Articulo));
                 this.backupToolStripMenuItem.Visible = (Propiedades_BE.SingletonLogIn.GetInstance.IsInRole(Propiedades_BE.TipoPermiso.Realizar_BackUp));
                 this.bitacoraToolStripMenuItem.Visible = (Propiedades_BE.SingletonLogIn.GetInstance.IsInRole(Propiedades_BE.TipoPermiso.Ver_Bitacora));
@@ -49,6 +51,7 @@ namespace Interfaz_GUI
                 this.ventaToolStripMenuItem.Visible = (Propiedades_BE.SingletonLogIn.GetInstance.IsInRole(Propiedades_BE.TipoPermiso.Modificar_Venta));
                 this.proveedorToolStripMenuItem.Visible = (Propiedades_BE.SingletonLogIn.GetInstance.IsInRole(Propiedades_BE.TipoPermiso.Modificar_Proveedor));
                 this.localidadToolStripMenuItem.Visible = (Propiedades_BE.SingletonLogIn.GetInstance.IsInRole(Propiedades_BE.TipoPermiso.Modificar_Localidad));
+                this.compraToolStripMenuItem.Visible = (Propiedades_BE.SingletonLogIn.GetInstance.IsInRole(Propiedades_BE.TipoPermiso.Modificar_Compra));                
             }
             else
             {
@@ -57,6 +60,7 @@ namespace Interfaz_GUI
                 this.adminisitrarPermisosToolStripMenuItem.Visible = false;
                 this.administrarTraduccionToolStripMenuItem.Visible = false;
                 this.administrarUsuarioToolStripMenuItem.Visible = false;
+                this.administrarUsuarioFamiliaPatenteToolStripMenuItem.Visible = false;
                 this.productoToolStripMenuItem.Visible = false;
                 this.backupToolStripMenuItem.Visible = false;
                 this.bitacoraToolStripMenuItem.Visible = false;
@@ -66,6 +70,7 @@ namespace Interfaz_GUI
                 this.ventaToolStripMenuItem.Visible = false;
                 this.proveedorToolStripMenuItem.Visible = false;
                 this.localidadToolStripMenuItem.Visible = false;
+                this.compraToolStripMenuItem.Visible = false;                
             }
         }
 
@@ -83,6 +88,7 @@ namespace Interfaz_GUI
                 this.backupToolStripMenuItem.Visible = false;
                 this.proveedorToolStripMenuItem.Visible = false;
                 this.localidadToolStripMenuItem.Visible = false;
+                this.administrarUsuarioFamiliaPatenteToolStripMenuItem.Visible = false;
             }
         }
         #endregion

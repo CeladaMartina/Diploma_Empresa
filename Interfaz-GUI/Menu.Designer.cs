@@ -84,6 +84,7 @@ namespace Interfaz_GUI
             // 
             this.productoToolStripMenuItem.Name = "productoToolStripMenuItem";
             this.productoToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
+            this.productoToolStripMenuItem.Tag = "Articulo";
             this.productoToolStripMenuItem.Text = "Producto";
             this.productoToolStripMenuItem.Click += new System.EventHandler(this.productoToolStripMenuItem_Click);
             // 
