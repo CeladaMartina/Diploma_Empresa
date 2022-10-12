@@ -13,7 +13,8 @@ namespace Interfaz_GUI
 {
     public partial class Administrar_Permisos : Form, IObserver
     {
-        Propiedades_BE.Familia FamTemp = new Propiedades_BE.Familia();
+        Propiedades_BE.Familia FamTemp;
+
         Negocio_BLL.Seguridad Seguridad = new Negocio_BLL.Seguridad();
         Negocio_BLL.Permisos GestorPermisos = new Negocio_BLL.Permisos();
 
@@ -106,7 +107,11 @@ namespace Interfaz_GUI
                         Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Patente agregada a familia", "Baja",0);
                         MessageBox.Show(CambiarIdioma.TraducirGlobal("Patente agregada a familia") ?? "Patente agregada a familia");
                     }
-                }
+                }                
+            }
+            else
+            {
+                MessageBox.Show(CambiarIdioma.TraducirGlobal("Seleccione una familia") ?? "Seleccione una familia");
             }
         }
 

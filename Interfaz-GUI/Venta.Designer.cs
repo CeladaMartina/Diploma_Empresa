@@ -384,7 +384,7 @@ namespace Interfaz_GUI
             this.groupBox3.Controls.Add(this.LABELVENTA);
             this.groupBox3.Location = new System.Drawing.Point(526, 86);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(462, 635);
+            this.groupBox3.Size = new System.Drawing.Size(524, 635);
             this.groupBox3.TabIndex = 12;
             this.groupBox3.TabStop = false;
             this.groupBox3.Tag = "Factura";

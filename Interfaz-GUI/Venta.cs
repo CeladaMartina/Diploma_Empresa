@@ -41,6 +41,8 @@ namespace Interfaz_GUI
             TxtIdVenta.Text = "";
             dateTimePickerFecha.Text = DateTime.Now.ToShortDateString();
             LABELFechaValor.Text = dateTimePickerFecha.Text;
+            groupBox2.Enabled = false;
+            groupBox1.Enabled = false;
         }
 
         #region metodos 
@@ -228,9 +230,11 @@ namespace Interfaz_GUI
                 labelNumeroVenta.Text = TxtIdVenta.Text;
                 CmbDNICliente.Enabled = false;
                 CmbNombreClientes.Enabled = false;
-                BtnCargarDetalle.Visible = true;
+                BtnCargarDetalle.Visible = true;                
+                BtnEditarDetalle.Enabled = true;
                 BtnGenerarVenta.Visible = false;
-                BtnCargarDetalle.Enabled = true;
+                groupBox2.Enabled = true;
+                groupBox1.Enabled = true;
             }
             else
             {
