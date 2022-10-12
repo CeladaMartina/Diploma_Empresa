@@ -58,11 +58,17 @@ namespace Interfaz_GUI
             this.BtnVender = new System.Windows.Forms.Button();
             this.BtnCerrarDetalle = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.LABELVENTA = new System.Windows.Forms.Label();
-            this.labelNumeroVentaNombre = new System.Windows.Forms.Label();
-            this.LblClienteNombre = new System.Windows.Forms.Label();
-            this.LABELFecha = new System.Windows.Forms.Label();
             this.dataGridViewDV = new System.Windows.Forms.DataGridView();
+            this.LABELFecha = new System.Windows.Forms.Label();
+            this.LblClienteNombre = new System.Windows.Forms.Label();
+            this.labelNumeroVentaNombre = new System.Windows.Forms.Label();
+            this.LABELVENTA = new System.Windows.Forms.Label();
+            this.LABELFechaValor = new System.Windows.Forms.Label();
+            this.LABELNombreCliente = new System.Windows.Forms.Label();
+            this.LABELCliente = new System.Windows.Forms.Label();
+            this.LblStock = new System.Windows.Forms.Label();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.labelNumeroVenta = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -78,6 +84,7 @@ namespace Interfaz_GUI
             this.BtnGenerarVenta.Tag = "Generar Venta";
             this.BtnGenerarVenta.Text = "Generar Venta";
             this.BtnGenerarVenta.UseVisualStyleBackColor = true;
+            this.BtnGenerarVenta.Click += new System.EventHandler(this.BtnGenerarVenta_Click);
             // 
             // TxtIdVenta
             // 
@@ -124,6 +131,7 @@ namespace Interfaz_GUI
             this.BtnEditarDetalle.Tag = "Editar Detalle";
             this.BtnEditarDetalle.Text = "Editar Detalle";
             this.BtnEditarDetalle.UseVisualStyleBackColor = true;
+            this.BtnEditarDetalle.Click += new System.EventHandler(this.BtnEditarDetalle_Click);
             // 
             // BtnCargarDetalle
             // 
@@ -134,6 +142,7 @@ namespace Interfaz_GUI
             this.BtnCargarDetalle.Tag = "Cargar Detalle";
             this.BtnCargarDetalle.Text = "Cargar Detalle";
             this.BtnCargarDetalle.UseVisualStyleBackColor = true;
+            this.BtnCargarDetalle.Click += new System.EventHandler(this.BtnCargarDetalle_Click);
             // 
             // TxtTotal
             // 
@@ -157,6 +166,7 @@ namespace Interfaz_GUI
             this.CmbNombreClientes.Name = "CmbNombreClientes";
             this.CmbNombreClientes.Size = new System.Drawing.Size(207, 24);
             this.CmbNombreClientes.TabIndex = 6;
+            this.CmbNombreClientes.SelectedValueChanged += new System.EventHandler(this.CmbNombreClientes_SelectedValueChanged);
             // 
             // CmbDNICliente
             // 
@@ -166,6 +176,7 @@ namespace Interfaz_GUI
             this.CmbDNICliente.Name = "CmbDNICliente";
             this.CmbDNICliente.Size = new System.Drawing.Size(121, 24);
             this.CmbDNICliente.TabIndex = 5;
+            this.CmbDNICliente.SelectedValueChanged += new System.EventHandler(this.CmbDNICliente_SelectedValueChanged);
             // 
             // LblTotal
             // 
@@ -199,6 +210,7 @@ namespace Interfaz_GUI
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.LblStock);
             this.groupBox2.Controls.Add(this.BtnBajaDetalle);
             this.groupBox2.Controls.Add(this.BtnModificarDetalle);
             this.groupBox2.Controls.Add(this.BtnAltaDetalle);
@@ -213,7 +225,7 @@ namespace Interfaz_GUI
             this.groupBox2.Controls.Add(this.LblCantidad);
             this.groupBox2.Location = new System.Drawing.Point(30, 391);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(470, 284);
+            this.groupBox2.Size = new System.Drawing.Size(490, 284);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Tag = "Detalle";
@@ -228,6 +240,7 @@ namespace Interfaz_GUI
             this.BtnBajaDetalle.Tag = "Baja";
             this.BtnBajaDetalle.Text = "Baja";
             this.BtnBajaDetalle.UseVisualStyleBackColor = true;
+            this.BtnBajaDetalle.Click += new System.EventHandler(this.BtnBajaDetalle_Click);
             // 
             // BtnModificarDetalle
             // 
@@ -238,6 +251,7 @@ namespace Interfaz_GUI
             this.BtnModificarDetalle.Tag = "Modificar";
             this.BtnModificarDetalle.Text = "Modificar";
             this.BtnModificarDetalle.UseVisualStyleBackColor = true;
+            this.BtnModificarDetalle.Click += new System.EventHandler(this.BtnModificarDetalle_Click);
             // 
             // BtnAltaDetalle
             // 
@@ -248,6 +262,7 @@ namespace Interfaz_GUI
             this.BtnAltaDetalle.Tag = "Alta";
             this.BtnAltaDetalle.Text = "Alta";
             this.BtnAltaDetalle.UseVisualStyleBackColor = true;
+            this.BtnAltaDetalle.Click += new System.EventHandler(this.BtnAltaDetalle_Click);
             // 
             // Lblsubtotal
             // 
@@ -291,6 +306,7 @@ namespace Interfaz_GUI
             this.CmbCodArticulo.Name = "CmbCodArticulo";
             this.CmbCodArticulo.Size = new System.Drawing.Size(121, 24);
             this.CmbCodArticulo.TabIndex = 12;
+            this.CmbCodArticulo.SelectedValueChanged += new System.EventHandler(this.CmbCodArticulo_SelectedValueChanged);
             // 
             // LblArticulo
             // 
@@ -310,6 +326,7 @@ namespace Interfaz_GUI
             this.CmbNombreArticulo.Name = "CmbNombreArticulo";
             this.CmbNombreArticulo.Size = new System.Drawing.Size(207, 24);
             this.CmbNombreArticulo.TabIndex = 13;
+            this.CmbNombreArticulo.SelectedValueChanged += new System.EventHandler(this.CmbNombreArticulo_SelectedValueChanged);
             // 
             // LblPrecioUnitario
             // 
@@ -340,6 +357,7 @@ namespace Interfaz_GUI
             this.BtnVender.Tag = "Vender";
             this.BtnVender.Text = "Vender";
             this.BtnVender.UseVisualStyleBackColor = true;
+            this.BtnVender.Click += new System.EventHandler(this.BtnVender_Click);
             // 
             // BtnCerrarDetalle
             // 
@@ -350,10 +368,15 @@ namespace Interfaz_GUI
             this.BtnCerrarDetalle.Tag = "Cerrar Detalle";
             this.BtnCerrarDetalle.Text = "Cerrar Detalle";
             this.BtnCerrarDetalle.UseVisualStyleBackColor = true;
+            this.BtnCerrarDetalle.Click += new System.EventHandler(this.BtnCerrarDetalle_Click);
             // 
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.White;
+            this.groupBox3.Controls.Add(this.labelNumeroVenta);
+            this.groupBox3.Controls.Add(this.LABELCliente);
+            this.groupBox3.Controls.Add(this.LABELNombreCliente);
+            this.groupBox3.Controls.Add(this.LABELFechaValor);
             this.groupBox3.Controls.Add(this.dataGridViewDV);
             this.groupBox3.Controls.Add(this.LABELFecha);
             this.groupBox3.Controls.Add(this.LblClienteNombre);
@@ -367,46 +390,6 @@ namespace Interfaz_GUI
             this.groupBox3.Tag = "Factura";
             this.groupBox3.Text = "Factura";
             // 
-            // LABELVENTA
-            // 
-            this.LABELVENTA.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.LABELVENTA.Location = new System.Drawing.Point(153, 43);
-            this.LABELVENTA.Name = "LABELVENTA";
-            this.LABELVENTA.Size = new System.Drawing.Size(84, 33);
-            this.LABELVENTA.TabIndex = 0;
-            this.LABELVENTA.Tag = "Venta";
-            this.LABELVENTA.Text = "Venta";
-            // 
-            // labelNumeroVentaNombre
-            // 
-            this.labelNumeroVentaNombre.AutoSize = true;
-            this.labelNumeroVentaNombre.Location = new System.Drawing.Point(27, 125);
-            this.labelNumeroVentaNombre.Name = "labelNumeroVentaNombre";
-            this.labelNumeroVentaNombre.Size = new System.Drawing.Size(119, 17);
-            this.labelNumeroVentaNombre.TabIndex = 1;
-            this.labelNumeroVentaNombre.Tag = "Numero de Venta";
-            this.labelNumeroVentaNombre.Text = "Numero de Venta";
-            // 
-            // LblClienteNombre
-            // 
-            this.LblClienteNombre.AutoSize = true;
-            this.LblClienteNombre.Location = new System.Drawing.Point(27, 184);
-            this.LblClienteNombre.Name = "LblClienteNombre";
-            this.LblClienteNombre.Size = new System.Drawing.Size(51, 17);
-            this.LblClienteNombre.TabIndex = 2;
-            this.LblClienteNombre.Tag = "Cliente";
-            this.LblClienteNombre.Text = "Cliente";
-            // 
-            // LABELFecha
-            // 
-            this.LABELFecha.AutoSize = true;
-            this.LABELFecha.Location = new System.Drawing.Point(27, 249);
-            this.LABELFecha.Name = "LABELFecha";
-            this.LABELFecha.Size = new System.Drawing.Size(47, 17);
-            this.LABELFecha.TabIndex = 3;
-            this.LABELFecha.Tag = "Fecha";
-            this.LABELFecha.Text = "Fecha";
-            // 
             // dataGridViewDV
             // 
             this.dataGridViewDV.BackgroundColor = System.Drawing.Color.White;
@@ -418,6 +401,89 @@ namespace Interfaz_GUI
             this.dataGridViewDV.RowTemplate.Height = 24;
             this.dataGridViewDV.Size = new System.Drawing.Size(396, 250);
             this.dataGridViewDV.TabIndex = 4;
+            this.dataGridViewDV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDV_CellClick);
+            // 
+            // LABELFecha
+            // 
+            this.LABELFecha.AutoSize = true;
+            this.LABELFecha.Location = new System.Drawing.Point(27, 249);
+            this.LABELFecha.Name = "LABELFecha";
+            this.LABELFecha.Size = new System.Drawing.Size(47, 17);
+            this.LABELFecha.TabIndex = 3;
+            this.LABELFecha.Tag = "Fecha";
+            this.LABELFecha.Text = "Fecha";
+            // 
+            // LblClienteNombre
+            // 
+            this.LblClienteNombre.AutoSize = true;
+            this.LblClienteNombre.Location = new System.Drawing.Point(27, 184);
+            this.LblClienteNombre.Name = "LblClienteNombre";
+            this.LblClienteNombre.Size = new System.Drawing.Size(51, 17);
+            this.LblClienteNombre.TabIndex = 2;
+            this.LblClienteNombre.Tag = "Cliente";
+            this.LblClienteNombre.Text = "Cliente";
+            // 
+            // labelNumeroVentaNombre
+            // 
+            this.labelNumeroVentaNombre.AutoSize = true;
+            this.labelNumeroVentaNombre.Location = new System.Drawing.Point(27, 125);
+            this.labelNumeroVentaNombre.Name = "labelNumeroVentaNombre";
+            this.labelNumeroVentaNombre.Size = new System.Drawing.Size(119, 17);
+            this.labelNumeroVentaNombre.TabIndex = 1;
+            this.labelNumeroVentaNombre.Tag = "Numero de Venta";
+            this.labelNumeroVentaNombre.Text = "Numero de Venta";
+            // 
+            // LABELVENTA
+            // 
+            this.LABELVENTA.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.LABELVENTA.Location = new System.Drawing.Point(153, 43);
+            this.LABELVENTA.Name = "LABELVENTA";
+            this.LABELVENTA.Size = new System.Drawing.Size(84, 33);
+            this.LABELVENTA.TabIndex = 0;
+            this.LABELVENTA.Tag = "Venta";
+            this.LABELVENTA.Text = "Venta";
+            // 
+            // LABELFechaValor
+            // 
+            this.LABELFechaValor.AutoSize = true;
+            this.LABELFechaValor.Location = new System.Drawing.Point(120, 249);
+            this.LABELFechaValor.Name = "LABELFechaValor";
+            this.LABELFechaValor.Size = new System.Drawing.Size(0, 17);
+            this.LABELFechaValor.TabIndex = 5;
+            // 
+            // LABELNombreCliente
+            // 
+            this.LABELNombreCliente.AutoSize = true;
+            this.LABELNombreCliente.Location = new System.Drawing.Point(227, 184);
+            this.LABELNombreCliente.Name = "LABELNombreCliente";
+            this.LABELNombreCliente.Size = new System.Drawing.Size(0, 17);
+            this.LABELNombreCliente.TabIndex = 6;
+            // 
+            // LABELCliente
+            // 
+            this.LABELCliente.AutoSize = true;
+            this.LABELCliente.Location = new System.Drawing.Point(120, 184);
+            this.LABELCliente.Name = "LABELCliente";
+            this.LABELCliente.Size = new System.Drawing.Size(0, 17);
+            this.LABELCliente.TabIndex = 7;
+            // 
+            // LblStock
+            // 
+            this.LblStock.AutoSize = true;
+            this.LblStock.BackColor = System.Drawing.SystemColors.Control;
+            this.LblStock.Location = new System.Drawing.Point(447, 55);
+            this.LblStock.Name = "LblStock";
+            this.LblStock.Size = new System.Drawing.Size(0, 17);
+            this.LblStock.TabIndex = 18;
+            this.LblStock.Tag = "";
+            // 
+            // labelNumeroVenta
+            // 
+            this.labelNumeroVenta.AutoSize = true;
+            this.labelNumeroVenta.Location = new System.Drawing.Point(183, 125);
+            this.labelNumeroVenta.Name = "labelNumeroVenta";
+            this.labelNumeroVenta.Size = new System.Drawing.Size(0, 17);
+            this.labelNumeroVenta.TabIndex = 8;
             // 
             // Venta
             // 
@@ -434,6 +500,8 @@ namespace Interfaz_GUI
             this.Controls.Add(this.LblNVenta);
             this.Name = "Venta";
             this.Text = "Venta";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Venta_FormClosing);
+            this.Load += new System.EventHandler(this.Venta_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -482,5 +550,11 @@ namespace Interfaz_GUI
         private System.Windows.Forms.Label LblClienteNombre;
         private System.Windows.Forms.Label labelNumeroVentaNombre;
         private System.Windows.Forms.Label LABELVENTA;
+        private System.Windows.Forms.Label LABELFechaValor;
+        private System.Windows.Forms.Label LABELNombreCliente;
+        private System.Windows.Forms.Label LABELCliente;
+        private System.Windows.Forms.Label LblStock;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
+        private System.Windows.Forms.Label labelNumeroVenta;
     }
 }

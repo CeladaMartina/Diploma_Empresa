@@ -55,6 +55,7 @@
     <Compile Include="Seguridad.cs" />
     <Compile Include="Traduccion.cs" />
     <Compile Include="Usuario.cs" />
+    <Compile Include="Venta.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Acceso-DAL\Acceso-DAL.csproj">

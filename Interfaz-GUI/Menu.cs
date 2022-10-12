@@ -273,5 +273,12 @@ namespace Interfaz_GUI
             c.MdiParent = this;
             c.Show();
         }
+
+        private void venderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Venta v = Venta.ObtenerInstancia();
+            v.MdiParent = this;
+            v.Show();
+        }
     }
 }
