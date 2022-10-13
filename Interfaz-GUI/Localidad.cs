@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Diploma_Empresa_Final;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Interfaz_GUI
 {
-    public partial class Localidad : Form
+    public partial class Localidad : Form, IObserver
     {
         Negocio_BLL.Localidad GestorLocalidad = new Negocio_BLL.Localidad();
         Negocio_BLL.Seguridad Seguridad = new Negocio_BLL.Seguridad();
@@ -89,6 +90,31 @@ namespace Interfaz_GUI
         }
         #endregion
 
+        #region traduccion 
+        public void Update(ISubject Subject)
+        {
+            LblCodPostal.Text = Subject.TraducirObserver(LblCodPostal.Tag.ToString()) ?? LblCodPostal.Tag.ToString();
+            LblDescripcion.Text = Subject.TraducirObserver(LblDescripcion.Tag.ToString()) ?? LblDescripcion.Tag.ToString();
+            LblNombre.Text = Subject.TraducirObserver(LblNombre.Tag.ToString()) ?? LblNombre.Tag.ToString();
+            LblPartido.Text = Subject.TraducirObserver(LblPartido.Tag.ToString()) ?? LblPartido.Tag.ToString();
+            BtnAlta.Text = Subject.TraducirObserver(BtnAlta.Tag.ToString()) ?? BtnAlta.Tag.ToString();
+            BtnModificacion.Text = Subject.TraducirObserver(BtnModificacion.Tag.ToString()) ?? BtnModificacion.Tag.ToString();
+            BtnBaja.Text = Subject.TraducirObserver(BtnBaja.Tag.ToString()) ?? BtnBaja.Tag.ToString();
+            //this.Text = Subject.TraducirObserver(this.Tag.ToString()) ?? this.Tag.ToString();
+        }
+
+        public void Traducir()
+        {
+            LblCodPostal.Text = CambiarIdioma.TraducirGlobal(LblCodPostal.Tag.ToString()) ?? LblCodPostal.Tag.ToString();
+            LblDescripcion.Text = CambiarIdioma.TraducirGlobal(LblDescripcion.Tag.ToString()) ?? LblDescripcion.Tag.ToString();
+            LblNombre.Text = CambiarIdioma.TraducirGlobal(LblNombre.Tag.ToString()) ?? LblNombre.Tag.ToString();
+            LblPartido.Text = CambiarIdioma.TraducirGlobal(LblPartido.Tag.ToString()) ?? LblPartido.Tag.ToString();
+            BtnAlta.Text = CambiarIdioma.TraducirGlobal(BtnAlta.Tag.ToString()) ?? BtnAlta.Tag.ToString();
+            BtnModificacion.Text = CambiarIdioma.TraducirGlobal(BtnModificacion.Tag.ToString()) ?? BtnModificacion.Tag.ToString();
+            BtnBaja.Text = CambiarIdioma.TraducirGlobal(BtnBaja.Tag.ToString()) ?? BtnBaja.Tag.ToString();
+            this.Text = CambiarIdioma.TraducirGlobal(this.Tag.ToString()) ?? this.Tag.ToString();
+        }
+        #endregion
         private void BtnAlta_Click(object sender, EventArgs e)
         {
             if (ChequearFallaTxt() == false)

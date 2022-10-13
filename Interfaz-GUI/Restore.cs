@@ -155,5 +155,10 @@ namespace Interfaz_GUI
                 MessageBox.Show(CambiarIdioma.TraducirGlobal("Error") ?? "Error");
             }
         }
+
+        private void Restore_Load(object sender, EventArgs e)
+        {
+            Traducir();
+        }
     }
 }

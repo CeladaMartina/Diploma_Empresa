@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Diploma_Empresa_Final;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Interfaz_GUI
 {
-    public partial class Compra : Form
+    public partial class Compra : Form, IObserver
     {
         Negocio_BLL.Producto GestorArticulo = new Negocio_BLL.Producto();
         Negocio_BLL.Compra GestorCompra = new Negocio_BLL.Compra();
@@ -42,6 +43,7 @@ namespace Interfaz_GUI
             CargarCombos();
             TxtIdCompra.Text = "";
             dateTimePickerFecha.Text = DateTime.Now.ToShortDateString();
+            Traducir();
         }
 
         #region metodos 
@@ -130,6 +132,55 @@ namespace Interfaz_GUI
         }
 
         #endregion
+
+        #region traduccion 
+        void IObserver.Update(ISubject Subject)
+        {
+            groupBox1.Text = Subject.TraducirObserver(groupBox1.Tag.ToString()) ?? groupBox1.Tag.ToString();
+            LblNCompra.Text = Subject.TraducirObserver(LblNCompra.Tag.ToString()) ?? LblNCompra.Tag.ToString();
+            LblProveedor.Text = Subject.TraducirObserver(LblProveedor.Tag.ToString()) ?? LblProveedor.Tag.ToString();
+            LblFecha.Text = Subject.TraducirObserver(LblFecha.Tag.ToString()) ?? LblFecha.Tag.ToString();
+            LblTotal.Text = Subject.TraducirObserver(LblTotal.Tag.ToString()) ?? LblTotal.Tag.ToString();
+            BtnGenerarCompra.Text = Subject.TraducirObserver(BtnGenerarCompra.Tag.ToString()) ?? BtnGenerarCompra.Tag.ToString();
+            BtnComprar.Text = Subject.TraducirObserver(BtnComprar.Tag.ToString()) ?? BtnComprar.Tag.ToString();
+            BtnCargarDetalle.Text = Subject.TraducirObserver(BtnCargarDetalle.Tag.ToString()) ?? BtnCargarDetalle.Tag.ToString();
+            BtnEditarDetalle.Text = Subject.TraducirObserver(BtnEditarDetalle.Tag.ToString()) ?? BtnEditarDetalle.Tag.ToString();
+            groupBox2.Text = Subject.TraducirObserver(groupBox2.Tag.ToString()) ?? groupBox2.Tag.ToString();
+            LblArticulo.Text = Subject.TraducirObserver(LblArticulo.Tag.ToString()) ?? LblArticulo.Tag.ToString();
+            LblPrecioUnitario.Text = Subject.TraducirObserver(LblPrecioUnitario.Tag.ToString()) ?? LblPrecioUnitario.Tag.ToString();
+            LblCantidad.Text = Subject.TraducirObserver(LblCantidad.Tag.ToString()) ?? LblCantidad.Tag.ToString();
+            BtnAltaDetalle.Text = Subject.TraducirObserver(BtnAltaDetalle.Tag.ToString()) ?? BtnAltaDetalle.Tag.ToString();
+            BtnModificarDetalle.Text = Subject.TraducirObserver(BtnModificarDetalle.Tag.ToString()) ?? BtnModificarDetalle.Tag.ToString();
+            BtnBajaDetalle.Text = Subject.TraducirObserver(BtnBajaDetalle.Tag.ToString()) ?? BtnBajaDetalle.Tag.ToString();
+            BtnCargarNuevoArt.Text = Subject.TraducirObserver(BtnCargarNuevoArt.Tag.ToString()) ?? BtnCargarNuevoArt.Tag.ToString();
+            BtnCerrarDetalle.Text = Subject.TraducirObserver(BtnCerrarDetalle.Tag.ToString()) ?? BtnCerrarDetalle.Tag.ToString();
+            //this.Text = Subject.TraducirObserver(this.Tag.ToString()) ?? this.Tag.ToString();
+        }
+
+        public void Traducir()
+        {
+            groupBox1.Text = CambiarIdioma.TraducirGlobal(groupBox1.Tag.ToString()) ?? groupBox1.Tag.ToString();
+            LblNCompra.Text = CambiarIdioma.TraducirGlobal(LblNCompra.Tag.ToString()) ?? LblNCompra.Tag.ToString();
+            LblProveedor.Text = CambiarIdioma.TraducirGlobal(LblProveedor.Tag.ToString()) ?? LblProveedor.Tag.ToString();
+            LblFecha.Text = CambiarIdioma.TraducirGlobal(LblFecha.Tag.ToString()) ?? LblFecha.Tag.ToString();
+            LblTotal.Text = CambiarIdioma.TraducirGlobal(LblTotal.Tag.ToString()) ?? LblTotal.Tag.ToString();
+            BtnGenerarCompra.Text = CambiarIdioma.TraducirGlobal(BtnGenerarCompra.Tag.ToString()) ?? BtnGenerarCompra.Tag.ToString();
+            BtnComprar.Text = CambiarIdioma.TraducirGlobal(BtnComprar.Tag.ToString()) ?? BtnComprar.Tag.ToString();
+            BtnCargarDetalle.Text = CambiarIdioma.TraducirGlobal(BtnCargarDetalle.Tag.ToString()) ?? BtnCargarDetalle.Tag.ToString();
+            BtnEditarDetalle.Text = CambiarIdioma.TraducirGlobal(BtnEditarDetalle.Tag.ToString()) ?? BtnEditarDetalle.Tag.ToString();
+            groupBox2.Text = CambiarIdioma.TraducirGlobal(groupBox2.Tag.ToString()) ?? groupBox2.Tag.ToString();
+            LblArticulo.Text = CambiarIdioma.TraducirGlobal(LblArticulo.Tag.ToString()) ?? LblArticulo.Tag.ToString();
+            LblPrecioUnitario.Text = CambiarIdioma.TraducirGlobal(LblPrecioUnitario.Tag.ToString()) ?? LblPrecioUnitario.Tag.ToString();
+            LblCantidad.Text = CambiarIdioma.TraducirGlobal(LblCantidad.Tag.ToString()) ?? LblCantidad.Tag.ToString();
+            BtnAltaDetalle.Text = CambiarIdioma.TraducirGlobal(BtnAltaDetalle.Tag.ToString()) ?? BtnAltaDetalle.Tag.ToString();
+            BtnModificarDetalle.Text = CambiarIdioma.TraducirGlobal(BtnModificarDetalle.Tag.ToString()) ?? BtnModificarDetalle.Tag.ToString();
+            BtnBajaDetalle.Text = CambiarIdioma.TraducirGlobal(BtnBajaDetalle.Tag.ToString()) ?? BtnBajaDetalle.Tag.ToString();
+            BtnCargarNuevoArt.Text = CambiarIdioma.TraducirGlobal(BtnCargarNuevoArt.Tag.ToString()) ?? BtnCargarNuevoArt.Tag.ToString();
+            BtnCerrarDetalle.Text = CambiarIdioma.TraducirGlobal(BtnCerrarDetalle.Tag.ToString()) ?? BtnCerrarDetalle.Tag.ToString();
+            //this.Text = CambiarIdioma.TraducirGlobal(this.Tag.ToString()) ?? this.Tag.ToString();
+        }
+        #endregion
+
 
         #region botones
 

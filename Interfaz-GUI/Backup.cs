@@ -115,8 +115,7 @@ namespace Interfaz_GUI
         }
         #endregion
 
-        #region Botones
-        #endregion
+        #region Botones       
 
         private void Backup_Load(object sender, EventArgs e)
         {
@@ -174,5 +173,6 @@ namespace Interfaz_GUI
                 MessageBox.Show(CambiarIdioma.TraducirGlobal("Error") ?? "Error");
             }
         }
+        #endregion
     }
 }

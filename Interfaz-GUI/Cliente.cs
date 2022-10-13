@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Diploma_Empresa_Final;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Interfaz_GUI
 {
-    public partial class Cliente : Form
+    public partial class Cliente : Form , IObserver
     {
         Negocio_BLL.Cliente GestorCliente = new Negocio_BLL.Cliente();
         Negocio_BLL.Seguridad Seguridad = new Negocio_BLL.Seguridad();
@@ -88,6 +89,36 @@ namespace Interfaz_GUI
             return A;
         }
 
+        #region traduccion 
+        public void Update(ISubject Sujeto)
+        {
+            LblApellido.Text = Sujeto.TraducirObserver(LblApellido.Tag.ToString()) ?? LblApellido.Tag.ToString();
+            LblDNI.Text = Sujeto.TraducirObserver(LblDNI.Tag.ToString()) ?? LblDNI.Tag.ToString();
+            LblFechaNac.Text = Sujeto.TraducirObserver(LblFechaNac.Tag.ToString()) ?? LblFechaNac.Tag.ToString();
+            LblMail.Text = Sujeto.TraducirObserver(LblMail.Tag.ToString()) ?? LblMail.Tag.ToString();
+            LblNombre.Text = Sujeto.TraducirObserver(LblNombre.Tag.ToString()) ?? LblNombre.Tag.ToString();
+            LblTel.Text = Sujeto.TraducirObserver(LblTel.Tag.ToString()) ?? LblTel.Tag.ToString();
+            BtnAlta.Text = Sujeto.TraducirObserver(BtnAlta.Tag.ToString()) ?? BtnAlta.Tag.ToString();
+            BtnBaja.Text = Sujeto.TraducirObserver(BtnBaja.Tag.ToString()) ?? BtnBaja.Tag.ToString();
+            BtnModificar.Text = Sujeto.TraducirObserver(BtnModificar.Tag.ToString()) ?? BtnModificar.Tag.ToString();
+            //this.Text = Sujeto.TraducirObserver(this.Tag.ToString()) ?? this.Tag.ToString();
+        }
+
+        public void Traducir()
+        {
+            LblApellido.Text = CambiarIdioma.TraducirGlobal(LblApellido.Tag.ToString()) ?? LblApellido.Tag.ToString();
+            LblDNI.Text = CambiarIdioma.TraducirGlobal(LblDNI.Tag.ToString()) ?? LblDNI.Tag.ToString();
+            LblFechaNac.Text = CambiarIdioma.TraducirGlobal(LblFechaNac.Tag.ToString()) ?? LblFechaNac.Tag.ToString();
+            LblMail.Text = CambiarIdioma.TraducirGlobal(LblMail.Tag.ToString()) ?? LblMail.Tag.ToString();
+            LblNombre.Text = CambiarIdioma.TraducirGlobal(LblNombre.Tag.ToString()) ?? LblNombre.Tag.ToString();
+            LblTel.Text = CambiarIdioma.TraducirGlobal(LblTel.Tag.ToString()) ?? LblTel.Tag.ToString();
+            BtnAlta.Text = CambiarIdioma.TraducirGlobal(BtnAlta.Tag.ToString()) ?? BtnAlta.Tag.ToString();
+            BtnBaja.Text = CambiarIdioma.TraducirGlobal(BtnBaja.Tag.ToString()) ?? BtnBaja.Tag.ToString();
+            BtnModificar.Text = CambiarIdioma.TraducirGlobal(BtnModificar.Tag.ToString()) ?? BtnModificar.Tag.ToString();
+            //this.Text = CambiarIdioma.TraducirGlobal(this.Tag.ToString()) ?? this.Tag.ToString();
+        }
+        #endregion
+
         public Cliente()
         {
             InitializeComponent();
@@ -96,6 +127,7 @@ namespace Interfaz_GUI
         private void Cliente_Load(object sender, EventArgs e)
         {
             Listar();
+            Traducir();
             Fecha = DateTime.Now;
             dateTimePickerFecNac.MaxDate = Fecha;
         }

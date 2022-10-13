@@ -88,6 +88,7 @@ namespace Interfaz_GUI
             this.Controls.Add(this.listBox1);
             this.Name = "Restore";
             this.Text = "Restore";
+            this.Load += new System.EventHandler(this.Restore_Load);
             this.ResumeLayout(false);
 
         }

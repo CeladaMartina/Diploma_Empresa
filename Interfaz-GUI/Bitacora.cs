@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Interfaz_GUI
 {
-    public partial class Bitacora : Form
+    public partial class Bitacora : Form,IObserver
     {
         Propiedades_BE.Bitacora BitacoraTemp = new Propiedades_BE.Bitacora();
         Negocio_BLL.Seguridad Seguridad = new Negocio_BLL.Seguridad();
