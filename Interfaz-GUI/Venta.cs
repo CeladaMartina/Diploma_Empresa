@@ -287,7 +287,8 @@ namespace Interfaz_GUI
                 labelNumeroVenta.Text = TxtIdVenta.Text;
                 CmbDNICliente.Enabled = false;
                 CmbNombreClientes.Enabled = false;
-                BtnCargarDetalle.Visible = true;                
+                BtnCargarDetalle.Visible = true;
+                BtnCargarDetalle.Enabled = true;
                 BtnEditarDetalle.Enabled = true;
                 BtnGenerarVenta.Visible = false;
                 groupBox2.Enabled = true;
