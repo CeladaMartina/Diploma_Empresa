@@ -111,7 +111,7 @@ namespace Interfaz_GUI
             BtnAgregarPartes.Text = CambiarIdioma.TraducirGlobal(BtnAgregarPartes.Tag.ToString()) ?? BtnAgregarPartes.Tag.ToString();
             BtnLimpiarLista.Text = CambiarIdioma.TraducirGlobal(BtnLimpiarLista.Tag.ToString()) ?? BtnLimpiarLista.Tag.ToString();
             BtnRestore.Text = CambiarIdioma.TraducirGlobal(BtnRestore.Tag.ToString()) ?? BtnRestore.Tag.ToString();
-            this.Text = CambiarIdioma.TraducirGlobal(this.Tag.ToString()) ?? this.Tag.ToString();
+            //this.Text = CambiarIdioma.TraducirGlobal(this.Tag.ToString()) ?? this.Tag.ToString();
         }
 
         #endregion

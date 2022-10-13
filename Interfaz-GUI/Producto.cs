@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Diploma_Empresa_Final;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Interfaz_GUI
 {
-    public partial class Producto : Form
+    public partial class Producto : Form,IObserver
     {
         Negocio_BLL.Producto GestorArticulo = new Negocio_BLL.Producto();
         Negocio_BLL.Localidad GestorLocalidad = new Negocio_BLL.Localidad();
@@ -35,6 +36,7 @@ namespace Interfaz_GUI
 
         private void Producto_Load(object sender, EventArgs e)
         {
+            Traducir();
             TxtStock.Enabled = false;
             Listar();
             foreach (var NombreLocalidad in GestorLocalidad.TraerNomLoc())
@@ -112,6 +114,41 @@ namespace Interfaz_GUI
             TxtPrecio.Text = "";
         }
 
+        #region traduccion
+        public void Update(ISubject Subject)
+        {
+            LblCodProd.Text = Subject.TraducirObserver(LblCodProd.Tag.ToString()) ?? LblCodProd.Tag.ToString();
+            LblDescripcion.Text = Subject.TraducirObserver(LblDescripcion.Tag.ToString()) ?? LblDescripcion.Tag.ToString();
+            LblLocalidad.Text = Subject.TraducirObserver(LblLocalidad.Tag.ToString()) ?? LblLocalidad.Tag.ToString();
+            LblMaterial.Text = Subject.TraducirObserver(LblMaterial.Tag.ToString()) ?? LblMaterial.Tag.ToString();
+            LblNombre.Text = Subject.TraducirObserver(LblNombre.Tag.ToString()) ?? LblNombre.Tag.ToString();
+            LblPrecio.Text = Subject.TraducirObserver(LblPrecio.Tag.ToString()) ?? LblPrecio.Tag.ToString();
+            LblStock.Text = Subject.TraducirObserver(LblStock.Tag.ToString()) ?? LblStock.Tag.ToString();
+            LblTalle.Text = Subject.TraducirObserver(LblTalle.Tag.ToString()) ?? LblTalle.Tag.ToString();
+            BtnAlta.Text = Subject.TraducirObserver(BtnAlta.Tag.ToString()) ?? BtnAlta.Tag.ToString();
+            BtnBaja.Text = Subject.TraducirObserver(BtnBaja.Tag.ToString()) ?? BtnBaja.Tag.ToString();
+            BtnModificacion.Text = Subject.TraducirObserver(BtnModificacion.Tag.ToString()) ?? BtnModificacion.Tag.ToString();
+            //this.Text = Subject.TraducirObserver(this.Tag.ToString()) ?? this.Tag.ToString();
+        }
+
+        public void Traducir()
+        {
+            LblCodProd.Text = CambiarIdioma.TraducirGlobal(LblCodProd.Tag.ToString()) ?? LblCodProd.Tag.ToString();
+            LblDescripcion.Text = CambiarIdioma.TraducirGlobal(LblDescripcion.Tag.ToString()) ?? LblDescripcion.Tag.ToString();
+            LblLocalidad.Text = CambiarIdioma.TraducirGlobal(LblLocalidad.Tag.ToString()) ?? LblLocalidad.Tag.ToString();
+            LblMaterial.Text = CambiarIdioma.TraducirGlobal(LblMaterial.Tag.ToString()) ?? LblMaterial.Tag.ToString();
+            LblNombre.Text = CambiarIdioma.TraducirGlobal(LblNombre.Tag.ToString()) ?? LblNombre.Tag.ToString();
+            LblPrecio.Text = CambiarIdioma.TraducirGlobal(LblPrecio.Tag.ToString()) ?? LblPrecio.Tag.ToString();
+            LblStock.Text = CambiarIdioma.TraducirGlobal(LblStock.Tag.ToString()) ?? LblStock.Tag.ToString();
+            LblTalle.Text = CambiarIdioma.TraducirGlobal(LblTalle.Tag.ToString()) ?? LblTalle.Tag.ToString();
+            BtnAlta.Text = CambiarIdioma.TraducirGlobal(BtnAlta.Tag.ToString()) ?? BtnAlta.Tag.ToString();
+            BtnBaja.Text = CambiarIdioma.TraducirGlobal(BtnBaja.Tag.ToString()) ?? BtnBaja.Tag.ToString();
+            BtnModificacion.Text = CambiarIdioma.TraducirGlobal(BtnModificacion.Tag.ToString()) ?? BtnModificacion.Tag.ToString();
+           // this.Text = CambiarIdioma.TraducirGlobal(this.Tag.ToString()) ?? this.Tag.ToString();
+        }
+        #endregion
+
+        #region botones
         private void BtnAlta_Click(object sender, EventArgs e)
         {
             if (ChequearFallaTxt() == false)
@@ -188,5 +225,7 @@ namespace Interfaz_GUI
                 MessageBox.Show(CambiarIdioma.TraducirGlobal("Error") ?? "Error");
             }
         }
+
+        #endregion
     }
 }

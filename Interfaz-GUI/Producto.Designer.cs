@@ -59,6 +59,7 @@ namespace Interfaz_GUI
             this.LblCodProd.Name = "LblCodProd";
             this.LblCodProd.Size = new System.Drawing.Size(94, 17);
             this.LblCodProd.TabIndex = 0;
+            this.LblCodProd.Tag = "Codigo de Producto";
             this.LblCodProd.Text = "Cod Producto";
             // 
             // LblNombre
@@ -68,6 +69,7 @@ namespace Interfaz_GUI
             this.LblNombre.Name = "LblNombre";
             this.LblNombre.Size = new System.Drawing.Size(58, 17);
             this.LblNombre.TabIndex = 1;
+            this.LblNombre.Tag = "Nombre";
             this.LblNombre.Text = "Nombre";
             // 
             // LblDescripcion
@@ -77,6 +79,7 @@ namespace Interfaz_GUI
             this.LblDescripcion.Name = "LblDescripcion";
             this.LblDescripcion.Size = new System.Drawing.Size(82, 17);
             this.LblDescripcion.TabIndex = 2;
+            this.LblDescripcion.Tag = "Descripcion";
             this.LblDescripcion.Text = "Descripcion";
             // 
             // LblMaterial
@@ -86,6 +89,7 @@ namespace Interfaz_GUI
             this.LblMaterial.Name = "LblMaterial";
             this.LblMaterial.Size = new System.Drawing.Size(58, 17);
             this.LblMaterial.TabIndex = 3;
+            this.LblMaterial.Tag = "Material";
             this.LblMaterial.Text = "Material";
             // 
             // LblLocalidad
@@ -95,6 +99,7 @@ namespace Interfaz_GUI
             this.LblLocalidad.Name = "LblLocalidad";
             this.LblLocalidad.Size = new System.Drawing.Size(69, 17);
             this.LblLocalidad.TabIndex = 4;
+            this.LblLocalidad.Tag = "Localidad";
             this.LblLocalidad.Text = "Localidad";
             // 
             // LblTalle
@@ -104,6 +109,7 @@ namespace Interfaz_GUI
             this.LblTalle.Name = "LblTalle";
             this.LblTalle.Size = new System.Drawing.Size(39, 17);
             this.LblTalle.TabIndex = 5;
+            this.LblTalle.Tag = "Talle";
             this.LblTalle.Text = "Talle";
             // 
             // LblStock
@@ -113,6 +119,7 @@ namespace Interfaz_GUI
             this.LblStock.Name = "LblStock";
             this.LblStock.Size = new System.Drawing.Size(43, 17);
             this.LblStock.TabIndex = 6;
+            this.LblStock.Tag = "Stock";
             this.LblStock.Text = "Stock";
             // 
             // LblPrecio
@@ -122,6 +129,7 @@ namespace Interfaz_GUI
             this.LblPrecio.Name = "LblPrecio";
             this.LblPrecio.Size = new System.Drawing.Size(48, 17);
             this.LblPrecio.TabIndex = 7;
+            this.LblPrecio.Tag = "Precio";
             this.LblPrecio.Text = "Precio";
             // 
             // TxtCodProd
@@ -199,6 +207,7 @@ namespace Interfaz_GUI
             this.BtnAlta.Name = "BtnAlta";
             this.BtnAlta.Size = new System.Drawing.Size(90, 46);
             this.BtnAlta.TabIndex = 17;
+            this.BtnAlta.Tag = "Alta";
             this.BtnAlta.Text = "Alta";
             this.BtnAlta.UseVisualStyleBackColor = true;
             this.BtnAlta.Click += new System.EventHandler(this.BtnAlta_Click);
@@ -209,6 +218,7 @@ namespace Interfaz_GUI
             this.BtnBaja.Name = "BtnBaja";
             this.BtnBaja.Size = new System.Drawing.Size(90, 46);
             this.BtnBaja.TabIndex = 18;
+            this.BtnBaja.Tag = "Baja";
             this.BtnBaja.Text = "Baja";
             this.BtnBaja.UseVisualStyleBackColor = true;
             this.BtnBaja.Click += new System.EventHandler(this.BtnBaja_Click);
@@ -219,6 +229,7 @@ namespace Interfaz_GUI
             this.BtnModificacion.Name = "BtnModificacion";
             this.BtnModificacion.Size = new System.Drawing.Size(105, 46);
             this.BtnModificacion.TabIndex = 19;
+            this.BtnModificacion.Tag = "Modificar";
             this.BtnModificacion.Text = "Modificacion";
             this.BtnModificacion.UseVisualStyleBackColor = true;
             this.BtnModificacion.Click += new System.EventHandler(this.BtnModificacion_Click);
@@ -249,6 +260,7 @@ namespace Interfaz_GUI
             this.Controls.Add(this.LblNombre);
             this.Controls.Add(this.LblCodProd);
             this.Name = "Producto";
+            this.Tag = "Articulo";
             this.Text = "Producto";
             this.Load += new System.EventHandler(this.Producto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewArticulo)).EndInit();

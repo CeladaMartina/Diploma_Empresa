@@ -43,6 +43,7 @@ namespace Interfaz_GUI
             this.LblFecha = new System.Windows.Forms.Label();
             this.LblCliente = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.LblStock = new System.Windows.Forms.Label();
             this.BtnBajaDetalle = new System.Windows.Forms.Button();
             this.BtnModificarDetalle = new System.Windows.Forms.Button();
             this.BtnAltaDetalle = new System.Windows.Forms.Button();
@@ -58,17 +59,16 @@ namespace Interfaz_GUI
             this.BtnVender = new System.Windows.Forms.Button();
             this.BtnCerrarDetalle = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.labelNumeroVenta = new System.Windows.Forms.Label();
+            this.LABELCliente = new System.Windows.Forms.Label();
+            this.LABELNombreCliente = new System.Windows.Forms.Label();
+            this.LABELFechaValor = new System.Windows.Forms.Label();
             this.dataGridViewDV = new System.Windows.Forms.DataGridView();
             this.LABELFecha = new System.Windows.Forms.Label();
             this.LblClienteNombre = new System.Windows.Forms.Label();
             this.labelNumeroVentaNombre = new System.Windows.Forms.Label();
             this.LABELVENTA = new System.Windows.Forms.Label();
-            this.LABELFechaValor = new System.Windows.Forms.Label();
-            this.LABELNombreCliente = new System.Windows.Forms.Label();
-            this.LABELCliente = new System.Windows.Forms.Label();
-            this.LblStock = new System.Windows.Forms.Label();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.labelNumeroVenta = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -231,6 +231,16 @@ namespace Interfaz_GUI
             this.groupBox2.Tag = "Detalle";
             this.groupBox2.Text = "Detalle";
             // 
+            // LblStock
+            // 
+            this.LblStock.AutoSize = true;
+            this.LblStock.BackColor = System.Drawing.SystemColors.Control;
+            this.LblStock.Location = new System.Drawing.Point(447, 55);
+            this.LblStock.Name = "LblStock";
+            this.LblStock.Size = new System.Drawing.Size(0, 17);
+            this.LblStock.TabIndex = 18;
+            this.LblStock.Tag = "";
+            // 
             // BtnBajaDetalle
             // 
             this.BtnBajaDetalle.Location = new System.Drawing.Point(366, 233);
@@ -384,11 +394,43 @@ namespace Interfaz_GUI
             this.groupBox3.Controls.Add(this.LABELVENTA);
             this.groupBox3.Location = new System.Drawing.Point(526, 86);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(524, 635);
+            this.groupBox3.Size = new System.Drawing.Size(578, 635);
             this.groupBox3.TabIndex = 12;
             this.groupBox3.TabStop = false;
             this.groupBox3.Tag = "Factura";
             this.groupBox3.Text = "Factura";
+            // 
+            // labelNumeroVenta
+            // 
+            this.labelNumeroVenta.AutoSize = true;
+            this.labelNumeroVenta.Location = new System.Drawing.Point(183, 125);
+            this.labelNumeroVenta.Name = "labelNumeroVenta";
+            this.labelNumeroVenta.Size = new System.Drawing.Size(0, 17);
+            this.labelNumeroVenta.TabIndex = 8;
+            // 
+            // LABELCliente
+            // 
+            this.LABELCliente.AutoSize = true;
+            this.LABELCliente.Location = new System.Drawing.Point(120, 184);
+            this.LABELCliente.Name = "LABELCliente";
+            this.LABELCliente.Size = new System.Drawing.Size(0, 17);
+            this.LABELCliente.TabIndex = 7;
+            // 
+            // LABELNombreCliente
+            // 
+            this.LABELNombreCliente.AutoSize = true;
+            this.LABELNombreCliente.Location = new System.Drawing.Point(227, 184);
+            this.LABELNombreCliente.Name = "LABELNombreCliente";
+            this.LABELNombreCliente.Size = new System.Drawing.Size(0, 17);
+            this.LABELNombreCliente.TabIndex = 6;
+            // 
+            // LABELFechaValor
+            // 
+            this.LABELFechaValor.AutoSize = true;
+            this.LABELFechaValor.Location = new System.Drawing.Point(120, 249);
+            this.LABELFechaValor.Name = "LABELFechaValor";
+            this.LABELFechaValor.Size = new System.Drawing.Size(0, 17);
+            this.LABELFechaValor.TabIndex = 5;
             // 
             // dataGridViewDV
             // 
@@ -443,53 +485,11 @@ namespace Interfaz_GUI
             this.LABELVENTA.Tag = "Venta";
             this.LABELVENTA.Text = "Venta";
             // 
-            // LABELFechaValor
-            // 
-            this.LABELFechaValor.AutoSize = true;
-            this.LABELFechaValor.Location = new System.Drawing.Point(120, 249);
-            this.LABELFechaValor.Name = "LABELFechaValor";
-            this.LABELFechaValor.Size = new System.Drawing.Size(0, 17);
-            this.LABELFechaValor.TabIndex = 5;
-            // 
-            // LABELNombreCliente
-            // 
-            this.LABELNombreCliente.AutoSize = true;
-            this.LABELNombreCliente.Location = new System.Drawing.Point(227, 184);
-            this.LABELNombreCliente.Name = "LABELNombreCliente";
-            this.LABELNombreCliente.Size = new System.Drawing.Size(0, 17);
-            this.LABELNombreCliente.TabIndex = 6;
-            // 
-            // LABELCliente
-            // 
-            this.LABELCliente.AutoSize = true;
-            this.LABELCliente.Location = new System.Drawing.Point(120, 184);
-            this.LABELCliente.Name = "LABELCliente";
-            this.LABELCliente.Size = new System.Drawing.Size(0, 17);
-            this.LABELCliente.TabIndex = 7;
-            // 
-            // LblStock
-            // 
-            this.LblStock.AutoSize = true;
-            this.LblStock.BackColor = System.Drawing.SystemColors.Control;
-            this.LblStock.Location = new System.Drawing.Point(447, 55);
-            this.LblStock.Name = "LblStock";
-            this.LblStock.Size = new System.Drawing.Size(0, 17);
-            this.LblStock.TabIndex = 18;
-            this.LblStock.Tag = "";
-            // 
-            // labelNumeroVenta
-            // 
-            this.labelNumeroVenta.AutoSize = true;
-            this.labelNumeroVenta.Location = new System.Drawing.Point(183, 125);
-            this.labelNumeroVenta.Name = "labelNumeroVenta";
-            this.labelNumeroVenta.Size = new System.Drawing.Size(0, 17);
-            this.labelNumeroVenta.TabIndex = 8;
-            // 
             // Venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1062, 764);
+            this.ClientSize = new System.Drawing.Size(1116, 764);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.BtnVender);
             this.Controls.Add(this.BtnCerrarDetalle);

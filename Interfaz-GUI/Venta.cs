@@ -43,8 +43,9 @@ namespace Interfaz_GUI
             TxtIdVenta.Text = "";
             dateTimePickerFecha.Text = DateTime.Now.ToShortDateString();
             LABELFechaValor.Text = dateTimePickerFecha.Text;
-            groupBox2.Enabled = false;
-            groupBox1.Enabled = false;
+            BtnCargarDetalle.Enabled = false;
+            BtnEditarDetalle.Enabled = false;
+            groupBox2.Enabled = false;           
         }
 
         #region traduccion
@@ -68,7 +69,7 @@ namespace Interfaz_GUI
             BtnModificarDetalle.Text = Subject.TraducirObserver(BtnModificarDetalle.Tag.ToString()) ?? BtnModificarDetalle.Tag.ToString();
             BtnBajaDetalle.Text = Subject.TraducirObserver(BtnBajaDetalle.Tag.ToString()) ?? BtnBajaDetalle.Tag.ToString();
             BtnCerrarDetalle.Text = Subject.TraducirObserver(BtnCerrarDetalle.Tag.ToString()) ?? BtnCerrarDetalle.Tag.ToString();
-            this.Text = Subject.TraducirObserver(this.Tag.ToString()) ?? this.Tag.ToString();
+            //this.Text = Subject.TraducirObserver(this.Tag.ToString()) ?? this.Tag.ToString();
             LABELVENTA.Text = Subject.TraducirObserver(LABELVENTA.Tag.ToString()) ?? LABELVENTA.Tag.ToString();
             labelNumeroVentaNombre.Text = Subject.TraducirObserver(labelNumeroVentaNombre.Tag.ToString()) ?? labelNumeroVentaNombre.Tag.ToString();
             LblClienteNombre.Text = Subject.TraducirObserver(LblClienteNombre.Tag.ToString()) ?? LblClienteNombre.Tag.ToString();
@@ -95,7 +96,7 @@ namespace Interfaz_GUI
             BtnModificarDetalle.Text = CambiarIdioma.TraducirGlobal(BtnModificarDetalle.Tag.ToString()) ?? BtnModificarDetalle.Tag.ToString();
             BtnBajaDetalle.Text = CambiarIdioma.TraducirGlobal(BtnBajaDetalle.Tag.ToString()) ?? BtnBajaDetalle.Tag.ToString();
             BtnCerrarDetalle.Text = CambiarIdioma.TraducirGlobal(BtnCerrarDetalle.Tag.ToString()) ?? BtnCerrarDetalle.Tag.ToString();
-            this.Text = CambiarIdioma.TraducirGlobal(this.Tag.ToString()) ?? this.Tag.ToString();
+            //this.Text = CambiarIdioma.TraducirGlobal(this.Tag.ToString()) ?? this.Tag.ToString();
             LABELVENTA.Text = CambiarIdioma.TraducirGlobal(LABELVENTA.Tag.ToString()) ?? LABELVENTA.Tag.ToString();
             labelNumeroVentaNombre.Text = CambiarIdioma.TraducirGlobal(labelNumeroVentaNombre.Tag.ToString()) ?? labelNumeroVentaNombre.Tag.ToString();
             LblClienteNombre.Text = CambiarIdioma.TraducirGlobal(LblClienteNombre.Tag.ToString()) ?? LblClienteNombre.Tag.ToString();
@@ -260,9 +261,7 @@ namespace Interfaz_GUI
 
         #endregion
 
-        #region botones
-
-        #endregion
+        #region botones        
 
         private void dataGridViewDV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -510,5 +509,7 @@ namespace Interfaz_GUI
                 MessageBox.Show(CambiarIdioma.TraducirGlobal("Error") ?? "Error");
             }
         }
+
+        #endregion
     }
 }

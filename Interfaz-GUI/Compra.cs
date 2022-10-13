@@ -435,10 +435,11 @@ namespace Interfaz_GUI
                 {
                     TxtIdCompra.Text = GestorCompra.TraerIdCompra().ToString();
                     GestorCompra.Comprar(int.Parse(TxtIdCompra.Text));
-                    folderBrowserDialog1.ShowDialog();
-                    string ruta = folderBrowserDialog1.SelectedPath;
+                    //folderBrowserDialog1.ShowDialog();
+                    //string ruta = folderBrowserDialog1.SelectedPath;
                     //GestorPedido.ReduccionPedido(int.Parse(TxtIdCompra.Text));
                     //PDF(ruta, int.Parse(TxtIdCompra.Text), CmbNombreProveedor.Text, DateTime.Now.ToShortDateString(), decimal.Parse(TxtTotal.Text));
+                    MessageBox.Show(CambiarIdioma.TraducirGlobal("Compra realizada exitosamente.") ?? "Compra realizada exitosamente.");
                     Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Compra Realizada", "Baja", 0);
                     dataGridViewDC.DataSource = null;
                     dataGridViewPedido.DataSource = null;
