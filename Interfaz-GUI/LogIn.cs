@@ -55,10 +55,10 @@ namespace Interfaz_GUI
         public void VerificarIntegridadGeneral()
         {
             string ProblemaUsuario = GestorUsuario.VerificarIntegridadUsuario(Propiedades_BE.SingletonLogIn.GlobalIdUsuario);
-            //string ProblemaDetalleCompra = GestorDetalleCompra.VerificarIntegridadDC(Propiedades_BE.SingletonLogIn.GlobalIdUsuario);
+            string ProblemaBitacora = Seguridad.VerificarIntegridadBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario);
             string ProblemaDetalleVenta = GestorDetalleVenta.VerificarIntegridadDV(Propiedades_BE.SingletonLogIn.GlobalIdUsuario);
 
-            string ProblemaDefinitivo = ProblemaUsuario + ProblemaDetalleVenta;
+            string ProblemaDefinitivo = ProblemaUsuario + ProblemaBitacora + ProblemaDetalleVenta;
 
             if (ProblemaDefinitivo == "")
             {

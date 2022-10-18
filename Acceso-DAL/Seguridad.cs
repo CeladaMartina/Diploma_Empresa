@@ -190,7 +190,7 @@ namespace Acceso_DAL
             return Lista;
         }
 
-        public string VerificarIntegridadDV(int GlobalIdUsuario)
+        public string VerificarIntegridadBitacora(int GlobalIdUsuario)
         {
             long Suma = 0;
             long DVH = 0;
