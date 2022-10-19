@@ -56,9 +56,9 @@ namespace Interfaz_GUI
         {
             string ProblemaUsuario = GestorUsuario.VerificarIntegridadUsuario(Propiedades_BE.SingletonLogIn.GlobalIdUsuario);
             string ProblemaBitacora = Seguridad.VerificarIntegridadBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario);
-            string ProblemaDetalleVenta = GestorDetalleVenta.VerificarIntegridadDV(Propiedades_BE.SingletonLogIn.GlobalIdUsuario);
+            //string ProblemaDetalleVenta = GestorDetalleVenta.VerificarIntegridadDV(Propiedades_BE.SingletonLogIn.GlobalIdUsuario);
 
-            string ProblemaDefinitivo = ProblemaUsuario + ProblemaBitacora + ProblemaDetalleVenta;
+            string ProblemaDefinitivo = ProblemaUsuario + ProblemaBitacora;
 
             if (ProblemaDefinitivo == "")
             {

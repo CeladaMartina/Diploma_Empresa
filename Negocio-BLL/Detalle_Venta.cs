@@ -20,10 +20,11 @@ namespace Negocio_BLL
             return Lista;
         }
 
-        public int AltaDV(decimal PUnit, int IdArticulo, int DVH, int Cantidad, int IdVenta)
+        public int AltaDV(decimal PUnit, int IdArticulo, string descripcion ,int DVH, int Cantidad, int IdVenta)
         {
             DVTemp.PUnit = PUnit;
             DVTemp.IdArticulo = IdArticulo;
+            DVTemp.Descrip = descripcion;
             DVTemp.DVH = DVH;
             DVTemp.Cant = Cantidad;
             DVTemp.IdVenta = IdVenta;

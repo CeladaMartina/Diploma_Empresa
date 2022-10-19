@@ -441,7 +441,7 @@ namespace Interfaz_GUI
             this.dataGridViewDV.Name = "dataGridViewDV";
             this.dataGridViewDV.RowHeadersWidth = 51;
             this.dataGridViewDV.RowTemplate.Height = 24;
-            this.dataGridViewDV.Size = new System.Drawing.Size(396, 250);
+            this.dataGridViewDV.Size = new System.Drawing.Size(523, 250);
             this.dataGridViewDV.TabIndex = 4;
             this.dataGridViewDV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDV_CellClick);
             // 

@@ -154,6 +154,7 @@ namespace Interfaz_GUI
             dataGridViewDV.Columns["IdDetalle"].Visible = false;
             dataGridViewDV.Columns["IdVenta"].Visible = false;
             dataGridViewDV.Columns["IdArticulo"].Visible = false;
+            dataGridViewDV.Columns["Nombre"].Visible = false;
             dataGridViewDV.Columns["DVH"].Visible = false;
             dataGridViewDV.ReadOnly = true;
         }
@@ -163,12 +164,12 @@ namespace Interfaz_GUI
             GestorVenta.Alta(IdCliente, Fecha);
         }
 
-        public void AltaDV(int IdVenta, int IdArticulo, decimal PUnit, int Cantidad, int DVH)
+        public void AltaDV(int IdVenta, int IdArticulo, string descripcion ,decimal PUnit, int Cantidad, int DVH)
         {
             int CantidadChequeoStock = GestorArticulo.VerificarCantStock(int.Parse(CmbCodArticulo.SelectedItem.ToString()));
             if (Cantidad <= CantidadChequeoStock && GestorDV.ChequearStock(IdArticulo, int.Parse(TxtIdVenta.Text), Cantidad, 0) <= CantidadChequeoStock)
             {
-                GestorDV.AltaDV(PUnit, IdArticulo, DVH, Cantidad, IdVenta);
+                GestorDV.AltaDV(PUnit, IdArticulo, descripcion,DVH, Cantidad, IdVenta);
                 TxtIdVenta.Text = IdVenta.ToString();
                 ListarDV();
                 CmbDNICliente.Enabled = false;
@@ -271,6 +272,7 @@ namespace Interfaz_GUI
                 TxtCantidad.Text = int.Parse(Convert.ToString(dataGridViewDV.Rows[e.RowIndex].Cells["Cant"].Value.ToString())).ToString();
                 TxtPrecioUnitario.Text = decimal.Parse(Convert.ToString(dataGridViewDV.Rows[e.RowIndex].Cells["PUnit"].Value.ToString())).ToString();
                 CmbCodArticulo.Text = int.Parse(Convert.ToString(dataGridViewDV.Rows[e.RowIndex].Cells["CodProd"].Value.ToString())).ToString();
+                CmbNombreArticulo.Text = Convert.ToString(dataGridViewDV.Rows[e.RowIndex].Cells["Nombre"].Value.ToString()).ToString();
             }
             catch (Exception)
             {
@@ -352,7 +354,7 @@ namespace Interfaz_GUI
                     }
                     else
                     {
-                        AltaDV(int.Parse(TxtIdVenta.Text), GestorArticulo.SeleccionarIdArticulo(int.Parse(CmbCodArticulo.Text)), decimal.Parse(TxtPrecioUnitario.Text), int.Parse(TxtCantidad.Text), 0);
+                        AltaDV(int.Parse(TxtIdVenta.Text), GestorArticulo.SeleccionarIdArticulo(int.Parse(CmbCodArticulo.Text)), GestorArticulo.SeleccionarNombreArt(int.Parse(CmbCodArticulo.Text)), decimal.Parse(TxtPrecioUnitario.Text), int.Parse(TxtCantidad.Text), 0);
                     }
                     LimpiarTxt();
                     BtnCerrarDetalle.Enabled = true;

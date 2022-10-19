@@ -25,6 +25,7 @@ namespace Acceso_DAL
                 Propiedades_BE.Detalle_Venta DV = new Propiedades_BE.Detalle_Venta();
                 DV.IdDetalle = int.Parse(R["IdDetalle"].ToString());
                 DV.CodProd = int.Parse(R["CodProd"].ToString());
+                DV.Descrip = R["Nombre"].ToString();
                 DV.PUnit = decimal.Parse(R["PUnit"].ToString());
                 DV.Cant = int.Parse(R["Cant"].ToString());
                 ListarDetalle.Add(DV);
@@ -35,12 +36,13 @@ namespace Acceso_DAL
         public int AltaDV(Propiedades_BE.Detalle_Venta DV)
         {
             int fa = 0;
-            SqlParameter[] P = new SqlParameter[5];
+            SqlParameter[] P = new SqlParameter[6];
             P[0] = new SqlParameter("@IdVenta", DV.IdVenta);
             P[1] = new SqlParameter("@IdArticulo", DV.IdArticulo);
-            P[2] = new SqlParameter("@Cant", DV.Cant);
-            P[3] = new SqlParameter("@PUnit", DV.PUnit);
-            P[4] = new SqlParameter("@DVH", DV.DVH);
+            P[2] = new SqlParameter("@Nombre", DV.Descrip);
+            P[3] = new SqlParameter("@Cant", DV.Cant);
+            P[4] = new SqlParameter("@PUnit", DV.PUnit);
+            P[5] = new SqlParameter("@DVH", DV.DVH);
             fa = Acceso.Escribir("AltaDetalleVenta", P);
             return fa;
         }

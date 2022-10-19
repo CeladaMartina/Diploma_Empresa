@@ -46,6 +46,14 @@ namespace Propiedades_BE
             set { _cant = value; }
         }
 
+        private string _desc;
+
+        public string Descrip
+        {
+            get { return _desc; }
+            set { _desc = value; }
+        }       
+
         private decimal _punit;
 
         public decimal PUnit
