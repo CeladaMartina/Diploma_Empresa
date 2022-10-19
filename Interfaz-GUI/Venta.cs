@@ -153,8 +153,7 @@ namespace Interfaz_GUI
             dataGridViewDV.DataSource = GestorDV.ListarDV(int.Parse(TxtIdVenta.Text));
             dataGridViewDV.Columns["IdDetalle"].Visible = false;
             dataGridViewDV.Columns["IdVenta"].Visible = false;
-            dataGridViewDV.Columns["IdArticulo"].Visible = false;
-            dataGridViewDV.Columns["Nombre"].Visible = false;
+            dataGridViewDV.Columns["IdArticulo"].Visible = false;            
             dataGridViewDV.Columns["DVH"].Visible = false;
             dataGridViewDV.ReadOnly = true;
         }
@@ -272,7 +271,7 @@ namespace Interfaz_GUI
                 TxtCantidad.Text = int.Parse(Convert.ToString(dataGridViewDV.Rows[e.RowIndex].Cells["Cant"].Value.ToString())).ToString();
                 TxtPrecioUnitario.Text = decimal.Parse(Convert.ToString(dataGridViewDV.Rows[e.RowIndex].Cells["PUnit"].Value.ToString())).ToString();
                 CmbCodArticulo.Text = int.Parse(Convert.ToString(dataGridViewDV.Rows[e.RowIndex].Cells["CodProd"].Value.ToString())).ToString();
-                CmbNombreArticulo.Text = Convert.ToString(dataGridViewDV.Rows[e.RowIndex].Cells["Nombre"].Value.ToString()).ToString();
+                CmbNombreArticulo.Text = Convert.ToString(dataGridViewDV.Rows[e.RowIndex].Cells["Descrip"].Value.ToString()).ToString();
             }
             catch (Exception)
             {
@@ -364,8 +363,8 @@ namespace Interfaz_GUI
                     MessageBox.Show(CambiarIdioma.TraducirGlobal("Error") ?? "Error");
                 }
             }
-            catch (Exception)
-            {
+            catch (Exception )
+            {               
                 MessageBox.Show(CambiarIdioma.TraducirGlobal("Error") ?? "Error");
             }
         }

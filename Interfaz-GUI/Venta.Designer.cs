@@ -394,7 +394,7 @@ namespace Interfaz_GUI
             this.groupBox3.Controls.Add(this.LABELVENTA);
             this.groupBox3.Location = new System.Drawing.Point(526, 86);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(578, 635);
+            this.groupBox3.Size = new System.Drawing.Size(658, 635);
             this.groupBox3.TabIndex = 12;
             this.groupBox3.TabStop = false;
             this.groupBox3.Tag = "Factura";
@@ -441,7 +441,7 @@ namespace Interfaz_GUI
             this.dataGridViewDV.Name = "dataGridViewDV";
             this.dataGridViewDV.RowHeadersWidth = 51;
             this.dataGridViewDV.RowTemplate.Height = 24;
-            this.dataGridViewDV.Size = new System.Drawing.Size(523, 250);
+            this.dataGridViewDV.Size = new System.Drawing.Size(606, 250);
             this.dataGridViewDV.TabIndex = 4;
             this.dataGridViewDV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDV_CellClick);
             // 
@@ -489,7 +489,7 @@ namespace Interfaz_GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1116, 764);
+            this.ClientSize = new System.Drawing.Size(1196, 764);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.BtnVender);
             this.Controls.Add(this.BtnCerrarDetalle);
