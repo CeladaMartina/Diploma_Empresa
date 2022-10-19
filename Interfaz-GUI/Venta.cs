@@ -7,7 +7,15 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Documents;
 using System.Windows.Forms;
+using System.Security.AccessControl;
+using System.Security.Principal;
+using System.IO;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using Paragraph = iTextSharp.text.Paragraph;
+
 
 namespace Interfaz_GUI
 {
@@ -201,6 +209,108 @@ namespace Interfaz_GUI
                 MessageBox.Show(CambiarIdioma.TraducirGlobal("No hay Stock suficiente") ?? "No hay Stock suficiente");
             }
         }
+
+        void PDF(string ruta, int NumVenta, string Cliente, string Fecha, decimal Total)
+        {
+            Directory.CreateDirectory(ruta);
+            DirectorySecurity sec = Directory.GetAccessControl(ruta);
+
+            SecurityIdentifier everyone = new SecurityIdentifier(WellKnownSidType.WorldSid, null);
+            sec.AddAccessRule(new FileSystemAccessRule(everyone, FileSystemRights.Modify | FileSystemRights.Synchronize, InheritanceFlags.ContainerInherit | InheritanceFlags.ObjectInherit, PropagationFlags.None, AccessControlType.Allow));
+            Directory.SetAccessControl(ruta, sec);
+
+            string fecha_final = Fecha.Replace("/", "-");
+
+            string ruta_final = "" + ruta + "\\Venta" + NumVenta + "__" + fecha_final + ".pdf";
+
+            System.IO.FileStream fs = new FileStream(ruta_final, FileMode.Create);
+
+            Document doc = new Document(PageSize.A4);
+            doc.SetMargins(40f, 40f, 40f, 40f);
+            PdfWriter writer = PdfWriter.GetInstance(doc, fs);
+
+            doc.Open();
+
+            BaseFont Fuente0 = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, true);
+            iTextSharp.text.Font Titulo = new iTextSharp.text.Font(Fuente0, 26f, iTextSharp.text.Font.BOLD, new BaseColor(255, 128, 128));
+
+            BaseFont Fuente1 = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, true);
+            iTextSharp.text.Font Titulo2 = new iTextSharp.text.Font(Fuente1, 18f, iTextSharp.text.Font.BOLD, BaseColor.BLACK);
+
+            BaseFont Fuente2 = BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1252, true);
+            iTextSharp.text.Font TablasTitulo = new iTextSharp.text.Font(Fuente2, 14f, iTextSharp.text.Font.ITALIC, new BaseColor(255, 192, 192));
+
+            BaseFont Fuente3 = BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1252, true);
+            iTextSharp.text.Font TablasTexto = new iTextSharp.text.Font(Fuente3, 12f, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
+
+            //iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance("C:\\Users\\Acer\\Documents\\Facultad\\Imagenes para tp de diploma\\Imagenes\\logo.png");
+            string imagepath = Directory.GetCurrentDirectory() + "\\Imagenes\\LogoTP.png";
+            iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(imagepath);
+            logo.ScalePercent(60);
+            doc.Add(logo);
+
+            Paragraph Venta = new Paragraph("Venta", Titulo);
+            Venta.Alignment = Element.ALIGN_CENTER;
+            doc.Add(Venta);
+            doc.Add(new Chunk("\n"));
+
+            Paragraph NVenta = new Paragraph("Numero de venta: " + NumVenta + "", Titulo2);
+            NVenta.Alignment = Element.ALIGN_LEFT;
+            doc.Add(NVenta);
+            doc.Add(new Chunk("\n"));
+
+            Paragraph ClienteN = new Paragraph("Cliente: " + Cliente + "", Titulo2);
+            ClienteN.Alignment = Element.ALIGN_LEFT;
+            doc.Add(ClienteN);
+            doc.Add(new Chunk("\n"));
+
+            Paragraph FechaP = new Paragraph("Fecha: " + Fecha + "", Titulo2);
+            FechaP.Alignment = Element.ALIGN_LEFT;
+            doc.Add(FechaP);
+            doc.Add(new Chunk("\n"));
+
+            PdfPTable table = new PdfPTable(4);
+            table.AddCell(new PdfPCell(new Phrase("Codigo Producto", TablasTitulo)) { HorizontalAlignment = Element.ALIGN_CENTER });
+            table.AddCell(new PdfPCell(new Phrase("Descripcion", TablasTitulo)) { HorizontalAlignment = Element.ALIGN_CENTER });
+            table.AddCell(new PdfPCell(new Phrase("Precio", TablasTitulo)) { HorizontalAlignment = Element.ALIGN_CENTER });
+            table.AddCell(new PdfPCell(new Phrase("Cantidad", TablasTitulo)) { HorizontalAlignment = Element.ALIGN_CENTER });
+
+            table.SpacingBefore = 10;
+            foreach (DataGridViewRow row in dataGridViewDV.Rows)
+            {
+                try
+                {
+                    int CodProd = int.Parse(row.Cells["CodProd"].Value.ToString());
+                    string Descripcion = row.Cells["Descrip"].Value.ToString();
+                    decimal PrecioU = decimal.Parse(row.Cells["PUnit"].Value.ToString());
+                    int Cantidad = int.Parse(row.Cells["Cant"].Value.ToString());
+
+                    table.AddCell(new PdfPCell(new Phrase(CodProd.ToString(), TablasTexto)) { HorizontalAlignment = Element.ALIGN_CENTER, VerticalAlignment = Element.ALIGN_MIDDLE });
+                    table.AddCell(new PdfPCell(new Phrase(Descripcion.ToString(), TablasTexto)) { HorizontalAlignment = Element.ALIGN_CENTER, VerticalAlignment = Element.ALIGN_MIDDLE });
+                    table.AddCell(new PdfPCell(new Phrase(PrecioU.ToString(), TablasTexto)) { HorizontalAlignment = Element.ALIGN_CENTER, VerticalAlignment = Element.ALIGN_MIDDLE });
+                    table.AddCell(new PdfPCell(new Phrase(Cantidad.ToString(), TablasTexto)) { HorizontalAlignment = Element.ALIGN_CENTER, VerticalAlignment = Element.ALIGN_MIDDLE });
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show(CambiarIdioma.TraducirGlobal("Error") ?? "Error");
+                }
+            }
+            doc.Add(table);
+
+            Paragraph Linea = new Paragraph("----------------------------", Titulo2);
+            Linea.Alignment = Element.ALIGN_RIGHT;
+            doc.Add(Linea);
+
+            Paragraph TotalF = new Paragraph("El total es: " + Total + "", Titulo2);
+            TotalF.Alignment = Element.ALIGN_RIGHT;
+            doc.Add(TotalF);
+            doc.Add(new Chunk("\n"));
+
+            doc.Close();
+            writer.Close();
+            MessageBox.Show("PDF guardado");
+        }
+
         #endregion
 
         #region botones combo
@@ -450,10 +560,9 @@ namespace Interfaz_GUI
                 {
                     TxtIdVenta.Text = GestorVenta.TraerIdVenta().ToString();
                     GestorVenta.Vender(int.Parse(TxtIdVenta.Text));
-                    //folderBrowserDialog1.ShowDialog();
-                    //string ruta = folderBrowserDialog1.SelectedPath;
-                    //PDF(ruta, int.Parse(TxtIdVenta.Text), CmbNombreClientes.Text, DateTime.Now.ToShortDateString(), decimal.Parse(TxtTotal.Text));
-                    MessageBox.Show(CambiarIdioma.TraducirGlobal("Venta realizada exitosamente.") ?? "Venta realizada exitosamente.");
+                    folderBrowserDialog1.ShowDialog();
+                    string ruta = folderBrowserDialog1.SelectedPath;
+                    PDF(ruta, int.Parse(TxtIdVenta.Text), CmbNombreClientes.Text, DateTime.Now.ToShortDateString(), decimal.Parse(TxtTotal.Text));                    
                     Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Venta Realizada", "Baja", 0);
                     dataGridViewDV.DataSource = null;
                     BtnEditarDetalle.Enabled = false;
