@@ -1,13 +1,20 @@
 ﻿using Diploma_Empresa_Final;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Security.AccessControl;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Documents;
 using System.Windows.Forms;
+using Paragraph = iTextSharp.text.Paragraph;
 
 namespace Interfaz_GUI
 {
@@ -131,6 +138,106 @@ namespace Interfaz_GUI
             dataGridViewDC.ReadOnly = true;
         }
 
+        void PDF(string ruta, int NumCompra, string Proveedor, string Fecha, decimal Total)
+        {
+            Directory.CreateDirectory(ruta);
+            DirectorySecurity sec = Directory.GetAccessControl(ruta);
+
+            SecurityIdentifier everyone = new SecurityIdentifier(WellKnownSidType.WorldSid, null);
+            sec.AddAccessRule(new FileSystemAccessRule(everyone, FileSystemRights.Modify | FileSystemRights.Synchronize, InheritanceFlags.ContainerInherit | InheritanceFlags.ObjectInherit, PropagationFlags.None, AccessControlType.Allow));
+            Directory.SetAccessControl(ruta, sec);
+
+            string fecha_final = Fecha.Replace("/", "-");
+
+            string ruta_final = "" + ruta + "\\Compra_" + NumCompra + "__" + fecha_final + ".pdf";
+
+            System.IO.FileStream fs = new FileStream(ruta_final, FileMode.Create);
+
+            Document doc = new Document(PageSize.A4);
+            doc.SetMargins(40f, 40f, 40f, 40f);
+            PdfWriter writer = PdfWriter.GetInstance(doc, fs);
+
+            doc.Open();
+
+            BaseFont Fuente0 = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, true);
+            iTextSharp.text.Font Titulo = new iTextSharp.text.Font(Fuente0, 26f, iTextSharp.text.Font.BOLD, new BaseColor(255, 128, 128));
+
+            BaseFont Fuente1 = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, true);
+            iTextSharp.text.Font Titulo2 = new iTextSharp.text.Font(Fuente1, 18f, iTextSharp.text.Font.BOLD, BaseColor.BLACK);
+
+            BaseFont Fuente2 = BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1252, true);
+            iTextSharp.text.Font TablasTitulo = new iTextSharp.text.Font(Fuente2, 14f, iTextSharp.text.Font.ITALIC, new BaseColor(255, 192, 192));
+
+            BaseFont Fuente3 = BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1252, true);
+            iTextSharp.text.Font TablasTexto = new iTextSharp.text.Font(Fuente3, 12f, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
+
+            string imagepath = Directory.GetCurrentDirectory() + "\\Imagenes\\LogoTP.png";
+            iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(imagepath);
+            logo.ScalePercent(60);
+            doc.Add(logo);
+
+            Paragraph Compra = new Paragraph("Compra", Titulo);
+            Compra.Alignment = Element.ALIGN_CENTER;
+            doc.Add(Compra);
+            doc.Add(new Chunk("\n"));
+
+            Paragraph NCompra = new Paragraph("Numero de compra: " + NumCompra + "", Titulo2);
+            NCompra.Alignment = Element.ALIGN_LEFT;
+            doc.Add(NCompra);
+            doc.Add(new Chunk("\n"));
+
+            Paragraph ProveedorN = new Paragraph("Proveedor: " + Proveedor + "", Titulo2);
+            ProveedorN.Alignment = Element.ALIGN_LEFT;
+            doc.Add(ProveedorN);
+            doc.Add(new Chunk("\n"));
+
+            Paragraph FechaP = new Paragraph("Fecha: " + Fecha + "", Titulo2);
+            FechaP.Alignment = Element.ALIGN_LEFT;
+            doc.Add(FechaP);
+            doc.Add(new Chunk("\n"));
+
+            PdfPTable table = new PdfPTable(4);
+            table.AddCell(new PdfPCell(new Phrase("Codigo Producto", TablasTitulo)) { HorizontalAlignment = Element.ALIGN_CENTER });
+            table.AddCell(new PdfPCell(new Phrase("Descripcion", TablasTitulo)) { HorizontalAlignment = Element.ALIGN_CENTER });
+            table.AddCell(new PdfPCell(new Phrase("Precio", TablasTitulo)) { HorizontalAlignment = Element.ALIGN_CENTER });
+            table.AddCell(new PdfPCell(new Phrase("Cantidad", TablasTitulo)) { HorizontalAlignment = Element.ALIGN_CENTER });
+
+            table.SpacingBefore = 10;
+            foreach (DataGridViewRow row in dataGridViewDC.Rows)
+            {
+                try
+                {
+                    int CodProd = int.Parse(row.Cells["CodProd"].Value.ToString());
+                    string Descripcion = row.Cells["Descripcion"].Value.ToString();
+                    decimal PrecioU = decimal.Parse(row.Cells["PUnit"].Value.ToString());
+                    int Cantidad = int.Parse(row.Cells["Cant"].Value.ToString());
+
+                    table.AddCell(new PdfPCell(new Phrase(CodProd.ToString(), TablasTexto)) { HorizontalAlignment = Element.ALIGN_CENTER, VerticalAlignment = Element.ALIGN_MIDDLE });
+                    table.AddCell(new PdfPCell(new Phrase(Descripcion.ToString(), TablasTexto)) { HorizontalAlignment = Element.ALIGN_CENTER, VerticalAlignment = Element.ALIGN_MIDDLE });
+                    table.AddCell(new PdfPCell(new Phrase(PrecioU.ToString(), TablasTexto)) { HorizontalAlignment = Element.ALIGN_CENTER, VerticalAlignment = Element.ALIGN_MIDDLE });
+                    table.AddCell(new PdfPCell(new Phrase(Cantidad.ToString(), TablasTexto)) { HorizontalAlignment = Element.ALIGN_CENTER, VerticalAlignment = Element.ALIGN_MIDDLE });
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show(CambiarIdioma.TraducirGlobal("Error") ?? "Error");
+                }
+            }
+            doc.Add(table);
+
+            Paragraph Linea = new Paragraph("----------------------------", Titulo2);
+            Linea.Alignment = Element.ALIGN_RIGHT;
+            doc.Add(Linea);
+
+            Paragraph TotalF = new Paragraph("El total es: " + Total + "", Titulo2);
+            TotalF.Alignment = Element.ALIGN_RIGHT;
+            doc.Add(TotalF);
+            doc.Add(new Chunk("\n"));
+
+            doc.Close();
+            writer.Close();
+            MessageBox.Show("PDF guardado");
+        }
+
         #endregion
 
         #region traduccion 
@@ -192,6 +299,7 @@ namespace Interfaz_GUI
                 TxtCantidad.Text = int.Parse(Convert.ToString(dataGridViewDC.Rows[e.RowIndex].Cells["Cant"].Value.ToString())).ToString();
                 TxtPrecio.Text = Convert.ToString(dataGridViewDC.Rows[e.RowIndex].Cells["PUnit"].Value.ToString());
                 CmbCodProducto.Text = Convert.ToString(dataGridViewDC.Rows[e.RowIndex].Cells["CodProd"].Value.ToString());
+                CmbNombreArticulo.Text = Convert.ToString(dataGridViewDC.Rows[e.RowIndex].Cells["Descripcion"].Value.ToString());
             }
             catch (Exception)
             {
@@ -435,10 +543,10 @@ namespace Interfaz_GUI
                 {
                     TxtIdCompra.Text = GestorCompra.TraerIdCompra().ToString();
                     GestorCompra.Comprar(int.Parse(TxtIdCompra.Text));
-                    //folderBrowserDialog1.ShowDialog();
-                    //string ruta = folderBrowserDialog1.SelectedPath;
+                    folderBrowserDialog1.ShowDialog();
+                    string ruta = folderBrowserDialog1.SelectedPath;
                     //GestorPedido.ReduccionPedido(int.Parse(TxtIdCompra.Text));
-                    //PDF(ruta, int.Parse(TxtIdCompra.Text), CmbNombreProveedor.Text, DateTime.Now.ToShortDateString(), decimal.Parse(TxtTotal.Text));
+                    PDF(ruta, int.Parse(TxtIdCompra.Text), CmbNombreProveedor.Text, DateTime.Now.ToShortDateString(), decimal.Parse(TxtTotal.Text));
                     MessageBox.Show(CambiarIdioma.TraducirGlobal("Compra realizada exitosamente.") ?? "Compra realizada exitosamente.");
                     Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Compra Realizada", "Baja", 0);
                     dataGridViewDC.DataSource = null;

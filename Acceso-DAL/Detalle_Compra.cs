@@ -26,6 +26,7 @@ namespace Acceso_DAL
                 Propiedades_BE.Detalle_Compra DC = new Propiedades_BE.Detalle_Compra();
                 DC.IdDetalle = int.Parse(R["IdDetalle"].ToString());
                 DC.CodProd = int.Parse(R["CodProd"].ToString());
+                DC.Descripcion = R["Descripcion"].ToString();
                 DC.PUnit = decimal.Parse(R["PUnit"].ToString());
                 DC.Cant = int.Parse(R["Cant"].ToString());
                 ListarDetalle.Add(DC);

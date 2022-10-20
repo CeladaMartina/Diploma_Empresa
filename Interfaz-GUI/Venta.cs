@@ -153,7 +153,7 @@ namespace Interfaz_GUI
             TxtPrecioUnitario.Text = "";
             CmbCodArticulo.SelectedIndex = -1;
             CmbNombreArticulo.SelectedIndex = -1;
-            LblStock.Text = "";
+            //LblStock.Text = "";
         }
         public void ListarDV()
         {
@@ -347,7 +347,7 @@ namespace Interfaz_GUI
             {
                 CmbNombreArticulo.Text = GestorArticulo.SeleccionarNombreArt(int.Parse(CmbCodArticulo.SelectedItem.ToString()));
                 TxtPrecioUnitario.Text = GestorArticulo.SeleccionPUnit(int.Parse(CmbCodArticulo.SelectedItem.ToString())).ToString();
-                LblStock.Text = GestorArticulo.SeleccionarStock(int.Parse(CmbCodArticulo.SelectedItem.ToString())).ToString();
+                //LblStock.Text = GestorArticulo.SeleccionarStock(int.Parse(CmbCodArticulo.SelectedItem.ToString())).ToString();
             }
             catch (Exception)
             {
@@ -360,7 +360,7 @@ namespace Interfaz_GUI
             try
             {
                 CmbCodArticulo.Text = GestorArticulo.SeleccionarCodArticulo(CmbNombreArticulo.SelectedItem.ToString()).ToString();
-                LblStock.Text = GestorArticulo.SeleccionarStock(int.Parse(CmbCodArticulo.SelectedItem.ToString())).ToString();
+                //LblStock.Text = GestorArticulo.SeleccionarStock(int.Parse(CmbCodArticulo.SelectedItem.ToString())).ToString();
             }
             catch (Exception)
             {

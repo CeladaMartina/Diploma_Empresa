@@ -40,6 +40,14 @@ namespace Propiedades_BE
             set { _codprod = value; }
         }
 
+        private string _descripcion;
+
+        public string Descripcion
+        {
+            get { return _descripcion; }
+            set { _descripcion = value; }
+        }
+
         private int _cant;
 
         public int Cant
