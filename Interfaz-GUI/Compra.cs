@@ -25,7 +25,7 @@ namespace Interfaz_GUI
         Negocio_BLL.Detalle_Compra GestorDC = new Negocio_BLL.Detalle_Compra();
         Negocio_BLL.Proveedor GestorProveedor = new Negocio_BLL.Proveedor();
         Negocio_BLL.Seguridad Seguridad = new Negocio_BLL.Seguridad();
-        //Negocio_BLL.Pedido GestorPedido = new Negocio_BLL.Pedido();
+        Negocio_BLL.Pedido GestorPedido = new Negocio_BLL.Pedido();
 
         private static Compra _instancia;
         public static Compra ObtenerInstancia()
@@ -60,7 +60,7 @@ namespace Interfaz_GUI
             CmbNombreArticulo.SelectedIndex = -1;
             TxtPrecio.Text = "";
             TxtCantidad.Text = "";
-            //TxtCantSugerida.Text = "";
+            TxtCantSugerida.Text = "";
         }
 
         bool ChequearFallaTxt()
@@ -545,7 +545,7 @@ namespace Interfaz_GUI
                     GestorCompra.Comprar(int.Parse(TxtIdCompra.Text));
                     folderBrowserDialog1.ShowDialog();
                     string ruta = folderBrowserDialog1.SelectedPath;
-                    //GestorPedido.ReduccionPedido(int.Parse(TxtIdCompra.Text));
+                    GestorPedido.ReduccionPedido(int.Parse(TxtIdCompra.Text));
                     PDF(ruta, int.Parse(TxtIdCompra.Text), CmbNombreProveedor.Text, DateTime.Now.ToShortDateString(), decimal.Parse(TxtTotal.Text));
                     MessageBox.Show(CambiarIdioma.TraducirGlobal("Compra realizada exitosamente.") ?? "Compra realizada exitosamente.");
                     Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Compra Realizada", "Baja", 0);
@@ -605,5 +605,45 @@ namespace Interfaz_GUI
         }
 
         #endregion
+
+        private void BtnDeserializar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                dataGridViewPedido.DataSource = null;
+                OpenFileDialog thisDialog = new OpenFileDialog();
+                string Ruta = "";
+                thisDialog.Filter = "All Files |*.xml";
+                thisDialog.FilterIndex = 1;
+
+                if (thisDialog.ShowDialog() == DialogResult.OK)
+                {
+                    Ruta = thisDialog.FileName;
+                }
+                dataGridViewPedido.DataSource = GestorPedido.DeserializarPedido(Ruta);
+                dataGridViewPedido.Columns["IdPedido"].Visible = false;
+                dataGridViewPedido.Columns["IdArticulo"].Visible = false;
+                dataGridViewPedido.ReadOnly = true;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(CambiarIdioma.TraducirGlobal("Error") ?? "Error");
+            }
+        }
+
+        private void dataGridViewPedido_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                TxtCantSugerida.Text = int.Parse(Convert.ToString(dataGridViewPedido.Rows[e.RowIndex].Cells["Cantidad"].Value.ToString())).ToString();
+                CmbCodProducto.Text = Convert.ToString(dataGridViewPedido.Rows[e.RowIndex].Cells["CodProd"].Value.ToString());
+                groupBox2.Enabled = true;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(CambiarIdioma.TraducirGlobal("Error") ?? "Error");
+                TxtPrecio.Text = "";
+            }
+        }
     }
 }

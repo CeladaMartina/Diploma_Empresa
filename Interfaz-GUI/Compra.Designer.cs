@@ -62,6 +62,7 @@ namespace Interfaz_GUI
             this.BtnCerrarDetalle = new System.Windows.Forms.Button();
             this.BtnComprar = new System.Windows.Forms.Button();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.TxtCantSugerida = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDC)).BeginInit();
@@ -175,6 +176,7 @@ namespace Interfaz_GUI
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.TxtCantSugerida);
             this.groupBox2.Controls.Add(this.BtnBajaDetalle);
             this.groupBox2.Controls.Add(this.BtnModificarDetalle);
             this.groupBox2.Controls.Add(this.BtnAltaDetalle);
@@ -360,6 +362,7 @@ namespace Interfaz_GUI
             this.dataGridViewPedido.RowTemplate.Height = 24;
             this.dataGridViewPedido.Size = new System.Drawing.Size(470, 424);
             this.dataGridViewPedido.TabIndex = 6;
+            this.dataGridViewPedido.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPedido_CellClick);
             // 
             // BtnDeserializar
             // 
@@ -370,6 +373,7 @@ namespace Interfaz_GUI
             this.BtnDeserializar.Tag = "Traer Pedido";
             this.BtnDeserializar.Text = "Traer Pedido";
             this.BtnDeserializar.UseVisualStyleBackColor = true;
+            this.BtnDeserializar.Click += new System.EventHandler(this.BtnDeserializar_Click);
             // 
             // BtnCargarNuevoArt
             // 
@@ -403,6 +407,15 @@ namespace Interfaz_GUI
             this.BtnComprar.Text = "Comprar";
             this.BtnComprar.UseVisualStyleBackColor = true;
             this.BtnComprar.Click += new System.EventHandler(this.BtnComprar_Click);
+            // 
+            // TxtCantSugerida
+            // 
+            this.TxtCantSugerida.BackColor = System.Drawing.Color.White;
+            this.TxtCantSugerida.Enabled = false;
+            this.TxtCantSugerida.Location = new System.Drawing.Point(234, 145);
+            this.TxtCantSugerida.Name = "TxtCantSugerida";
+            this.TxtCantSugerida.Size = new System.Drawing.Size(100, 22);
+            this.TxtCantSugerida.TabIndex = 18;
             // 
             // Compra
             // 
@@ -470,5 +483,6 @@ namespace Interfaz_GUI
         private System.Windows.Forms.Button BtnCerrarDetalle;
         private System.Windows.Forms.Button BtnComprar;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
+        private System.Windows.Forms.TextBox TxtCantSugerida;
     }
 }
