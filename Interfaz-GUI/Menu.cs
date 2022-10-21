@@ -293,5 +293,12 @@ namespace Interfaz_GUI
             pc.MdiParent = this;
             pc.Show();
         }
+
+        private void visualizarComprasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VisualizarCompra vc = VisualizarCompra.ObtenerInstancia();
+            vc.MdiParent = this;
+            vc.Show();
+        }
     }
 }

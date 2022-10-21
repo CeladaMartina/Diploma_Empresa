@@ -133,6 +133,7 @@ namespace Interfaz_GUI
             this.visualizarComprasToolStripMenuItem.Name = "visualizarComprasToolStripMenuItem";
             this.visualizarComprasToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.visualizarComprasToolStripMenuItem.Text = "Visualizar compras";
+            this.visualizarComprasToolStripMenuItem.Click += new System.EventHandler(this.visualizarComprasToolStripMenuItem_Click);
             // 
             // pedidoCompraToolStripMenuItem
             // 
