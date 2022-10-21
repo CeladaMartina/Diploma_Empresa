@@ -162,7 +162,8 @@ namespace Interfaz_GUI
             BaseFont Fuente3 = BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1252, true);
             iTextSharp.text.Font TablasTexto = new iTextSharp.text.Font(Fuente3, 12f, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
 
-            iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance("C: \\Users\\mcelada\\source\\repos\\Diploma_Empresa_Final\\Imagenes\\logo.jpg");
+            string imagepath = Directory.GetCurrentDirectory() + "\\Imagenes\\LogoTP.png";
+            iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(imagepath);
             logo.ScalePercent(50);
             doc.Add(logo);
 
