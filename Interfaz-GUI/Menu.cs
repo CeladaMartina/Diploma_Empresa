@@ -286,5 +286,12 @@ namespace Interfaz_GUI
             v.MdiParent = this;
             v.Show();
         }
+
+        private void pedidoCompraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PedidosCompras pc = PedidosCompras.ObtenerInstancia();
+            pc.MdiParent = this;
+            pc.Show();
+        }
     }
 }

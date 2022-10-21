@@ -39,3 +39,4 @@ C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\bin\Debug\Bounc
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\bin\Debug\itextsharp.dll
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\bin\Debug\itextsharp.xml
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\bin\Debug\Imagenes\LogoTP.png
+C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\obj\Debug\Interfaz_GUI.PedidosCompras.resources
