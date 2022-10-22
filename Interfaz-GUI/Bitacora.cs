@@ -43,66 +43,29 @@ namespace Interfaz_GUI
             dataGridViewBitacora.ReadOnly = true;
         }
 
-        void Elegirfiltro()
+        void Filtrar()
         {
-            if (comboBoxElegir.SelectedIndex == 0)
-            {
-                groupBoxCriticidad.Enabled = true;
-                groupBoxUsuario.Enabled = false;
-                groupBoxRangodefecha.Enabled = false;
-            }
-
-            else if (comboBoxElegir.SelectedIndex == 1)
-            {
-                groupBoxUsuario.Enabled = true;
-                groupBoxCriticidad.Enabled = false;
-                groupBoxRangodefecha.Enabled = false;
-            }
-
-            else if (comboBoxElegir.SelectedIndex == 2)
-            {
-                groupBoxRangodefecha.Enabled = true;
-                groupBoxCriticidad.Enabled = false;
-                groupBoxUsuario.Enabled = false;
-            }
-        }
-
-        void filtrar()
-        {
+            string criticidad = "";
             dataGridViewBitacora.DataSource = null;
 
-            if (comboBoxElegir.SelectedIndex == 0)
+            if (radioButtonAlta.Checked == true)
             {
-                string criticidad = "";
-
-                if (radioButtonAlta.Checked == true)
-                {
-                    criticidad = "Alta";
-                }
-
-                if (radioButtonBaja.Checked == true)
-                {
-                    criticidad = "Baja";
-                }
-
-                if (radioButtonMedia.Checked == true)
-                {
-                    criticidad = "Media";
-                }
-
-                dataGridViewBitacora.DataSource = Seguridad.FiltrarCriticidadBitacora(criticidad);
+                 criticidad = "Alta";
             }
 
-            else if (comboBoxElegir.SelectedIndex == 1)
+            if (radioButtonBaja.Checked == true)
             {
-                dataGridViewBitacora.DataSource = Seguridad.FiltrarUsuarioBitacora(comboBoxUsuario.SelectedItem.ToString());
+                criticidad = "Baja";
             }
 
-            else if (comboBoxElegir.SelectedIndex == 2)
+            if (radioButtonMedia.Checked == true)
             {
-                dataGridViewBitacora.DataSource = Seguridad.FiltrarFechaRangoBitacora(dateTimePickerDesde.Value, dateTimePickerHasta.Value);
-            }
+                criticidad = "Media";
+            }                
+            
 
+            dataGridViewBitacora.DataSource = Seguridad.FiltradoCompleto(comboBoxUsuario.SelectedItem.ToString(), dateTimePickerDesde.Value.Date, dateTimePickerHasta.Value.Date, criticidad);
+            
             dataGridViewBitacora.Columns["IdUsuario"].Visible = false;
             dataGridViewBitacora.Columns["IdBitacora"].Visible = false;
             dataGridViewBitacora.Columns["DVH"].Visible = false;
@@ -117,13 +80,14 @@ namespace Interfaz_GUI
                 comboBoxUsuario.Items.Add(NickUs.ToString());
             }
         }
-
-        void CargarComboFiltro()
+        bool ChequearFallaTxt()
         {
-            comboBoxElegir.DataSource = null;
-            comboBoxElegir.Items.Add(CambiarIdioma.TraducirGlobal("Criticidad") ?? "Criticidad");
-            comboBoxElegir.Items.Add(CambiarIdioma.TraducirGlobal("Usuario") ?? "Usuario");
-            comboBoxElegir.Items.Add(CambiarIdioma.TraducirGlobal("Rango de Fecha") ?? "Rango de Fecha");
+            bool A = false;
+            if (string.IsNullOrEmpty(comboBoxUsuario.Text))
+            {
+                A = true;
+            }
+            return A;
         }
         #endregion
 
@@ -165,31 +129,32 @@ namespace Interfaz_GUI
         #region Botones
         private void Bitacora_Load(object sender, EventArgs e)
         {
-            CargarComboUsuario();
-            CargarComboFiltro();
+            CargarComboUsuario();           
             Listar();
             Traducir();
             dateTimePickerDesde.MaxDate = DateTime.Now;
-            dateTimePickerHasta.MaxDate = DateTime.Now;
-            groupBoxCriticidad.Enabled = false;
-            groupBoxUsuario.Enabled = false;
-            groupBoxRangodefecha.Enabled = false;
-        }
-
-        private void comboBoxElegir_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Elegirfiltro();
+            dateTimePickerHasta.MaxDate = DateTime.Now;           
+            
         }
 
         private void BtnFiltrar_Click(object sender, EventArgs e)
         {
             try
             {
-                filtrar();
+                if (ChequearFallaTxt() == false)
+                {
+                    Filtrar();
+                }
+                else
+                {
+                    MessageBox.Show(CambiarIdioma.TraducirGlobal("Error") ?? "Error");
+                }
+
             }
             catch (Exception)
             {
                 MessageBox.Show(CambiarIdioma.TraducirGlobal("Error filtrando") ?? "Error filtrando");
+                Listar();
             }
         }
 
@@ -197,10 +162,7 @@ namespace Interfaz_GUI
         {
             try
             {
-                Listar();
-                groupBoxCriticidad.Enabled = false;
-                groupBoxRangodefecha.Enabled = false;
-                groupBoxUsuario.Enabled = false;
+                Listar();                
                 radioButtonAlta.Checked = false;
                 radioButtonBaja.Checked = false;
                 radioButtonMedia.Checked = false;

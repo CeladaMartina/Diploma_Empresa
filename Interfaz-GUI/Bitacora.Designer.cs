@@ -30,18 +30,17 @@ namespace Interfaz_GUI
         private void InitializeComponent()
         {
             this.LblElegirFiltro = new System.Windows.Forms.Label();
-            this.comboBoxElegir = new System.Windows.Forms.ComboBox();
             this.groupBoxUsuario = new System.Windows.Forms.GroupBox();
-            this.groupBoxRangodefecha = new System.Windows.Forms.GroupBox();
-            this.groupBoxCriticidad = new System.Windows.Forms.GroupBox();
             this.comboBoxUsuario = new System.Windows.Forms.ComboBox();
-            this.LblDesde = new System.Windows.Forms.Label();
-            this.LblHasta = new System.Windows.Forms.Label();
-            this.dateTimePickerDesde = new System.Windows.Forms.DateTimePicker();
+            this.groupBoxRangodefecha = new System.Windows.Forms.GroupBox();
             this.dateTimePickerHasta = new System.Windows.Forms.DateTimePicker();
-            this.radioButtonAlta = new System.Windows.Forms.RadioButton();
-            this.radioButtonMedia = new System.Windows.Forms.RadioButton();
+            this.dateTimePickerDesde = new System.Windows.Forms.DateTimePicker();
+            this.LblHasta = new System.Windows.Forms.Label();
+            this.LblDesde = new System.Windows.Forms.Label();
+            this.groupBoxCriticidad = new System.Windows.Forms.GroupBox();
             this.radioButtonBaja = new System.Windows.Forms.RadioButton();
+            this.radioButtonMedia = new System.Windows.Forms.RadioButton();
+            this.radioButtonAlta = new System.Windows.Forms.RadioButton();
             this.BtnFiltrar = new System.Windows.Forms.Button();
             this.BtnCancelarfiltro = new System.Windows.Forms.Button();
             this.dataGridViewBitacora = new System.Windows.Forms.DataGridView();
@@ -61,15 +60,6 @@ namespace Interfaz_GUI
             this.LblElegirFiltro.Tag = "Elegir filtro";
             this.LblElegirFiltro.Text = "Elegir filtro";
             // 
-            // comboBoxElegir
-            // 
-            this.comboBoxElegir.FormattingEnabled = true;
-            this.comboBoxElegir.Location = new System.Drawing.Point(124, 31);
-            this.comboBoxElegir.Name = "comboBoxElegir";
-            this.comboBoxElegir.Size = new System.Drawing.Size(210, 24);
-            this.comboBoxElegir.TabIndex = 1;
-            this.comboBoxElegir.SelectedIndexChanged += new System.EventHandler(this.comboBoxElegir_SelectedIndexChanged);
-            // 
             // groupBoxUsuario
             // 
             this.groupBoxUsuario.Controls.Add(this.comboBoxUsuario);
@@ -80,6 +70,14 @@ namespace Interfaz_GUI
             this.groupBoxUsuario.TabStop = false;
             this.groupBoxUsuario.Tag = "Usuario";
             this.groupBoxUsuario.Text = "Usuario";
+            // 
+            // comboBoxUsuario
+            // 
+            this.comboBoxUsuario.FormattingEnabled = true;
+            this.comboBoxUsuario.Location = new System.Drawing.Point(20, 53);
+            this.comboBoxUsuario.Name = "comboBoxUsuario";
+            this.comboBoxUsuario.Size = new System.Drawing.Size(230, 24);
+            this.comboBoxUsuario.TabIndex = 4;
             // 
             // groupBoxRangodefecha
             // 
@@ -95,6 +93,40 @@ namespace Interfaz_GUI
             this.groupBoxRangodefecha.Tag = "Rango de Fecha";
             this.groupBoxRangodefecha.Text = "Rango de Fecha";
             // 
+            // dateTimePickerHasta
+            // 
+            this.dateTimePickerHasta.Location = new System.Drawing.Point(79, 119);
+            this.dateTimePickerHasta.Name = "dateTimePickerHasta";
+            this.dateTimePickerHasta.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePickerHasta.TabIndex = 3;
+            // 
+            // dateTimePickerDesde
+            // 
+            this.dateTimePickerDesde.Location = new System.Drawing.Point(79, 55);
+            this.dateTimePickerDesde.Name = "dateTimePickerDesde";
+            this.dateTimePickerDesde.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePickerDesde.TabIndex = 2;
+            // 
+            // LblHasta
+            // 
+            this.LblHasta.AutoSize = true;
+            this.LblHasta.Location = new System.Drawing.Point(6, 124);
+            this.LblHasta.Name = "LblHasta";
+            this.LblHasta.Size = new System.Drawing.Size(45, 17);
+            this.LblHasta.TabIndex = 1;
+            this.LblHasta.Tag = "Hasta";
+            this.LblHasta.Text = "Hasta";
+            // 
+            // LblDesde
+            // 
+            this.LblDesde.AutoSize = true;
+            this.LblDesde.Location = new System.Drawing.Point(6, 60);
+            this.LblDesde.Name = "LblDesde";
+            this.LblDesde.Size = new System.Drawing.Size(49, 17);
+            this.LblDesde.TabIndex = 0;
+            this.LblDesde.Tag = "Desde";
+            this.LblDesde.Text = "Desde";
+            // 
             // groupBoxCriticidad
             // 
             this.groupBoxCriticidad.Controls.Add(this.radioButtonBaja);
@@ -108,59 +140,17 @@ namespace Interfaz_GUI
             this.groupBoxCriticidad.Tag = "Criticidad";
             this.groupBoxCriticidad.Text = "Criticidad";
             // 
-            // comboBoxUsuario
+            // radioButtonBaja
             // 
-            this.comboBoxUsuario.FormattingEnabled = true;
-            this.comboBoxUsuario.Location = new System.Drawing.Point(20, 53);
-            this.comboBoxUsuario.Name = "comboBoxUsuario";
-            this.comboBoxUsuario.Size = new System.Drawing.Size(230, 24);
-            this.comboBoxUsuario.TabIndex = 4;
-            // 
-            // LblDesde
-            // 
-            this.LblDesde.AutoSize = true;
-            this.LblDesde.Location = new System.Drawing.Point(6, 60);
-            this.LblDesde.Name = "LblDesde";
-            this.LblDesde.Size = new System.Drawing.Size(49, 17);
-            this.LblDesde.TabIndex = 0;
-            this.LblDesde.Tag = "Desde";
-            this.LblDesde.Text = "Desde";
-            // 
-            // LblHasta
-            // 
-            this.LblHasta.AutoSize = true;
-            this.LblHasta.Location = new System.Drawing.Point(6, 124);
-            this.LblHasta.Name = "LblHasta";
-            this.LblHasta.Size = new System.Drawing.Size(45, 17);
-            this.LblHasta.TabIndex = 1;
-            this.LblHasta.Tag = "Hasta";
-            this.LblHasta.Text = "Hasta";
-            // 
-            // dateTimePickerDesde
-            // 
-            this.dateTimePickerDesde.Location = new System.Drawing.Point(79, 55);
-            this.dateTimePickerDesde.Name = "dateTimePickerDesde";
-            this.dateTimePickerDesde.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePickerDesde.TabIndex = 2;
-            // 
-            // dateTimePickerHasta
-            // 
-            this.dateTimePickerHasta.Location = new System.Drawing.Point(79, 119);
-            this.dateTimePickerHasta.Name = "dateTimePickerHasta";
-            this.dateTimePickerHasta.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePickerHasta.TabIndex = 3;
-            // 
-            // radioButtonAlta
-            // 
-            this.radioButtonAlta.AutoSize = true;
-            this.radioButtonAlta.Location = new System.Drawing.Point(79, 49);
-            this.radioButtonAlta.Name = "radioButtonAlta";
-            this.radioButtonAlta.Size = new System.Drawing.Size(115, 21);
-            this.radioButtonAlta.TabIndex = 0;
-            this.radioButtonAlta.TabStop = true;
-            this.radioButtonAlta.Tag = "Criticidad Alta";
-            this.radioButtonAlta.Text = "Criticidad Alta";
-            this.radioButtonAlta.UseVisualStyleBackColor = true;
+            this.radioButtonBaja.AutoSize = true;
+            this.radioButtonBaja.Location = new System.Drawing.Point(79, 128);
+            this.radioButtonBaja.Name = "radioButtonBaja";
+            this.radioButtonBaja.Size = new System.Drawing.Size(119, 21);
+            this.radioButtonBaja.TabIndex = 2;
+            this.radioButtonBaja.TabStop = true;
+            this.radioButtonBaja.Tag = "Criticidad Baja";
+            this.radioButtonBaja.Text = "Criticidad Baja";
+            this.radioButtonBaja.UseVisualStyleBackColor = true;
             // 
             // radioButtonMedia
             // 
@@ -174,17 +164,17 @@ namespace Interfaz_GUI
             this.radioButtonMedia.Text = "Criticidad Media";
             this.radioButtonMedia.UseVisualStyleBackColor = true;
             // 
-            // radioButtonBaja
+            // radioButtonAlta
             // 
-            this.radioButtonBaja.AutoSize = true;
-            this.radioButtonBaja.Location = new System.Drawing.Point(79, 128);
-            this.radioButtonBaja.Name = "radioButtonBaja";
-            this.radioButtonBaja.Size = new System.Drawing.Size(119, 21);
-            this.radioButtonBaja.TabIndex = 2;
-            this.radioButtonBaja.TabStop = true;
-            this.radioButtonBaja.Tag = "Criticidad Baja";
-            this.radioButtonBaja.Text = "Criticidad Baja";
-            this.radioButtonBaja.UseVisualStyleBackColor = true;
+            this.radioButtonAlta.AutoSize = true;
+            this.radioButtonAlta.Location = new System.Drawing.Point(79, 49);
+            this.radioButtonAlta.Name = "radioButtonAlta";
+            this.radioButtonAlta.Size = new System.Drawing.Size(115, 21);
+            this.radioButtonAlta.TabIndex = 0;
+            this.radioButtonAlta.TabStop = true;
+            this.radioButtonAlta.Tag = "Criticidad Alta";
+            this.radioButtonAlta.Text = "Criticidad Alta";
+            this.radioButtonAlta.UseVisualStyleBackColor = true;
             // 
             // BtnFiltrar
             // 
@@ -229,7 +219,6 @@ namespace Interfaz_GUI
             this.Controls.Add(this.groupBoxCriticidad);
             this.Controls.Add(this.groupBoxRangodefecha);
             this.Controls.Add(this.groupBoxUsuario);
-            this.Controls.Add(this.comboBoxElegir);
             this.Controls.Add(this.LblElegirFiltro);
             this.Name = "Bitacora";
             this.Text = "Bitacora";
@@ -248,7 +237,6 @@ namespace Interfaz_GUI
         #endregion
 
         private System.Windows.Forms.Label LblElegirFiltro;
-        private System.Windows.Forms.ComboBox comboBoxElegir;
         private System.Windows.Forms.GroupBox groupBoxUsuario;
         private System.Windows.Forms.ComboBox comboBoxUsuario;
         private System.Windows.Forms.GroupBox groupBoxRangodefecha;

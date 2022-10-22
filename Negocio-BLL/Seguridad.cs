@@ -21,19 +21,24 @@ namespace Negocio_BLL
             Mapper.CargarBitacora(IdUsuario, Fecha, Descripcion, Criticidad, DVH);
         }
 
-        public List<Propiedades_BE.Bitacora> FiltrarCriticidadBitacora(string _Criticidad)
-        {
-            return Mapper.FiltrarCriticidadBitacora(_Criticidad);
-        }
+        //public List<Propiedades_BE.Bitacora> FiltrarCriticidadBitacora(string _Criticidad)
+        //{
+        //    return Mapper.FiltrarCriticidadBitacora(_Criticidad);
+        //}
 
-        public List<Propiedades_BE.Bitacora> FiltrarUsuarioBitacora(string _Nick)
-        {
-            return Mapper.FiltrarUsuarioBitacora(_Nick);
-        }
+        //public List<Propiedades_BE.Bitacora> FiltrarUsuarioBitacora(string _Nick)
+        //{
+        //    return Mapper.FiltrarUsuarioBitacora(_Nick);
+        //}
 
-        public List<Propiedades_BE.Bitacora> FiltrarFechaRangoBitacora(DateTime _FechaDesde, DateTime _FechaHasta)
+        //public List<Propiedades_BE.Bitacora> FiltrarFechaRangoBitacora(DateTime _FechaDesde, DateTime _FechaHasta)
+        //{
+        //    return Mapper.FiltrarFechaRangoBitacora(_FechaDesde, _FechaHasta);
+        //}
+
+        public List<Propiedades_BE.Bitacora> FiltradoCompleto(string _Nick, DateTime _FechaDesde, DateTime _FechaHasta, string _Criticidad)
         {
-            return Mapper.FiltrarFechaRangoBitacora(_FechaDesde, _FechaHasta);
+            return Mapper.FiltradoCompleto(_Nick, _FechaDesde, _FechaHasta, _Criticidad);
         }
 
         #endregion
