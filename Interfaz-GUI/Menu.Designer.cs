@@ -124,21 +124,21 @@ namespace Interfaz_GUI
             // comprarToolStripMenuItem
             // 
             this.comprarToolStripMenuItem.Name = "comprarToolStripMenuItem";
-            this.comprarToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.comprarToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.comprarToolStripMenuItem.Text = "Comprar";
             this.comprarToolStripMenuItem.Click += new System.EventHandler(this.comprarToolStripMenuItem_Click);
             // 
             // visualizarComprasToolStripMenuItem
             // 
             this.visualizarComprasToolStripMenuItem.Name = "visualizarComprasToolStripMenuItem";
-            this.visualizarComprasToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.visualizarComprasToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.visualizarComprasToolStripMenuItem.Text = "Visualizar compras";
             this.visualizarComprasToolStripMenuItem.Click += new System.EventHandler(this.visualizarComprasToolStripMenuItem_Click);
             // 
             // pedidoCompraToolStripMenuItem
             // 
             this.pedidoCompraToolStripMenuItem.Name = "pedidoCompraToolStripMenuItem";
-            this.pedidoCompraToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.pedidoCompraToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.pedidoCompraToolStripMenuItem.Text = "Pedido Compra";
             this.pedidoCompraToolStripMenuItem.Click += new System.EventHandler(this.pedidoCompraToolStripMenuItem_Click);
             // 
@@ -155,7 +155,7 @@ namespace Interfaz_GUI
             // venderToolStripMenuItem
             // 
             this.venderToolStripMenuItem.Name = "venderToolStripMenuItem";
-            this.venderToolStripMenuItem.Size = new System.Drawing.Size(201, 26);
+            this.venderToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.venderToolStripMenuItem.Tag = "Vender";
             this.venderToolStripMenuItem.Text = "Vender";
             this.venderToolStripMenuItem.Click += new System.EventHandler(this.venderToolStripMenuItem_Click);
@@ -163,9 +163,10 @@ namespace Interfaz_GUI
             // visualizarVentasToolStripMenuItem
             // 
             this.visualizarVentasToolStripMenuItem.Name = "visualizarVentasToolStripMenuItem";
-            this.visualizarVentasToolStripMenuItem.Size = new System.Drawing.Size(201, 26);
+            this.visualizarVentasToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.visualizarVentasToolStripMenuItem.Tag = "Visualizar Ventas";
             this.visualizarVentasToolStripMenuItem.Text = "Visualizar ventas";
+            this.visualizarVentasToolStripMenuItem.Click += new System.EventHandler(this.visualizarVentasToolStripMenuItem_Click);
             // 
             // idiomaToolStripMenuItem
             // 

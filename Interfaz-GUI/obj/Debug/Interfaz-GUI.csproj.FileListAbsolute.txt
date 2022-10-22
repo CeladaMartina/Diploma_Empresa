@@ -41,3 +41,4 @@ C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\bin\Debug\itext
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\bin\Debug\Imagenes\LogoTP.png
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\obj\Debug\Interfaz_GUI.PedidosCompras.resources
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\obj\Debug\Interfaz_GUI.VisualizarCompra.resources
+C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\obj\Debug\Interfaz_GUI.VisualizarVenta.resources

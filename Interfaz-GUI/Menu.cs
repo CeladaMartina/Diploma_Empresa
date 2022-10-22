@@ -300,5 +300,12 @@ namespace Interfaz_GUI
             vc.MdiParent = this;
             vc.Show();
         }
+
+        private void visualizarVentasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VisualizarVenta vv = VisualizarVenta.ObtenerInstancia();
+            vv.MdiParent = this;
+            vv.Show();
+        }
     }
 }

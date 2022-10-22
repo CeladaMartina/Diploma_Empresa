@@ -31,18 +31,18 @@ namespace Interfaz_GUI
         {
             this.LblFiltrar = new System.Windows.Forms.Label();
             this.groupBoxMonto = new System.Windows.Forms.GroupBox();
-            this.LblDesdeM = new System.Windows.Forms.Label();
-            this.LblHastaM = new System.Windows.Forms.Label();
-            this.TxtDesde = new System.Windows.Forms.TextBox();
             this.TxtHasta = new System.Windows.Forms.TextBox();
+            this.TxtDesde = new System.Windows.Forms.TextBox();
+            this.LblHastaM = new System.Windows.Forms.Label();
+            this.LblDesdeM = new System.Windows.Forms.Label();
             this.groupBoxRangoFecha = new System.Windows.Forms.GroupBox();
+            this.dateTimePickerHasta = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerDesde = new System.Windows.Forms.DateTimePicker();
             this.LblHasta = new System.Windows.Forms.Label();
             this.LblDesde = new System.Windows.Forms.Label();
-            this.dateTimePickerDesde = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerHasta = new System.Windows.Forms.DateTimePicker();
             this.groupBoxProveedor = new System.Windows.Forms.GroupBox();
-            this.LblCUIT = new System.Windows.Forms.Label();
             this.comboBoxProveedorCUIT = new System.Windows.Forms.ComboBox();
+            this.LblCUIT = new System.Windows.Forms.Label();
             this.BtnFiltrar = new System.Windows.Forms.Button();
             this.BtnCancelarFiltro = new System.Windows.Forms.Button();
             this.dataGridViewCompras = new System.Windows.Forms.DataGridView();
@@ -76,15 +76,19 @@ namespace Interfaz_GUI
             this.groupBoxMonto.Tag = "Monto";
             this.groupBoxMonto.Text = "Monto";
             // 
-            // LblDesdeM
+            // TxtHasta
             // 
-            this.LblDesdeM.AutoSize = true;
-            this.LblDesdeM.Location = new System.Drawing.Point(6, 56);
-            this.LblDesdeM.Name = "LblDesdeM";
-            this.LblDesdeM.Size = new System.Drawing.Size(49, 17);
-            this.LblDesdeM.TabIndex = 0;
-            this.LblDesdeM.Tag = "Desde";
-            this.LblDesdeM.Text = "Desde";
+            this.TxtHasta.Location = new System.Drawing.Point(95, 99);
+            this.TxtHasta.Name = "TxtHasta";
+            this.TxtHasta.Size = new System.Drawing.Size(143, 22);
+            this.TxtHasta.TabIndex = 3;
+            // 
+            // TxtDesde
+            // 
+            this.TxtDesde.Location = new System.Drawing.Point(95, 53);
+            this.TxtDesde.Name = "TxtDesde";
+            this.TxtDesde.Size = new System.Drawing.Size(143, 22);
+            this.TxtDesde.TabIndex = 2;
             // 
             // LblHastaM
             // 
@@ -96,19 +100,15 @@ namespace Interfaz_GUI
             this.LblHastaM.Tag = "Hasta";
             this.LblHastaM.Text = "Hasta";
             // 
-            // TxtDesde
+            // LblDesdeM
             // 
-            this.TxtDesde.Location = new System.Drawing.Point(95, 53);
-            this.TxtDesde.Name = "TxtDesde";
-            this.TxtDesde.Size = new System.Drawing.Size(143, 22);
-            this.TxtDesde.TabIndex = 2;
-            // 
-            // TxtHasta
-            // 
-            this.TxtHasta.Location = new System.Drawing.Point(95, 99);
-            this.TxtHasta.Name = "TxtHasta";
-            this.TxtHasta.Size = new System.Drawing.Size(143, 22);
-            this.TxtHasta.TabIndex = 3;
+            this.LblDesdeM.AutoSize = true;
+            this.LblDesdeM.Location = new System.Drawing.Point(6, 56);
+            this.LblDesdeM.Name = "LblDesdeM";
+            this.LblDesdeM.Size = new System.Drawing.Size(49, 17);
+            this.LblDesdeM.TabIndex = 0;
+            this.LblDesdeM.Tag = "Desde";
+            this.LblDesdeM.Text = "Desde";
             // 
             // groupBoxRangoFecha
             // 
@@ -123,6 +123,20 @@ namespace Interfaz_GUI
             this.groupBoxRangoFecha.TabStop = false;
             this.groupBoxRangoFecha.Tag = "Rango de Fecha";
             this.groupBoxRangoFecha.Text = "Rango de Fecha";
+            // 
+            // dateTimePickerHasta
+            // 
+            this.dateTimePickerHasta.Location = new System.Drawing.Point(71, 99);
+            this.dateTimePickerHasta.Name = "dateTimePickerHasta";
+            this.dateTimePickerHasta.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePickerHasta.TabIndex = 3;
+            // 
+            // dateTimePickerDesde
+            // 
+            this.dateTimePickerDesde.Location = new System.Drawing.Point(71, 56);
+            this.dateTimePickerDesde.Name = "dateTimePickerDesde";
+            this.dateTimePickerDesde.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePickerDesde.TabIndex = 2;
             // 
             // LblHasta
             // 
@@ -144,20 +158,6 @@ namespace Interfaz_GUI
             this.LblDesde.Tag = "Desde";
             this.LblDesde.Text = "Desde";
             // 
-            // dateTimePickerDesde
-            // 
-            this.dateTimePickerDesde.Location = new System.Drawing.Point(71, 56);
-            this.dateTimePickerDesde.Name = "dateTimePickerDesde";
-            this.dateTimePickerDesde.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePickerDesde.TabIndex = 2;
-            // 
-            // dateTimePickerHasta
-            // 
-            this.dateTimePickerHasta.Location = new System.Drawing.Point(71, 99);
-            this.dateTimePickerHasta.Name = "dateTimePickerHasta";
-            this.dateTimePickerHasta.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePickerHasta.TabIndex = 3;
-            // 
             // groupBoxProveedor
             // 
             this.groupBoxProveedor.Controls.Add(this.comboBoxProveedorCUIT);
@@ -170,6 +170,14 @@ namespace Interfaz_GUI
             this.groupBoxProveedor.Tag = "Proveedor";
             this.groupBoxProveedor.Text = "Proveedor";
             // 
+            // comboBoxProveedorCUIT
+            // 
+            this.comboBoxProveedorCUIT.FormattingEnabled = true;
+            this.comboBoxProveedorCUIT.Location = new System.Drawing.Point(66, 74);
+            this.comboBoxProveedorCUIT.Name = "comboBoxProveedorCUIT";
+            this.comboBoxProveedorCUIT.Size = new System.Drawing.Size(174, 24);
+            this.comboBoxProveedorCUIT.TabIndex = 1;
+            // 
             // LblCUIT
             // 
             this.LblCUIT.AutoSize = true;
@@ -179,14 +187,6 @@ namespace Interfaz_GUI
             this.LblCUIT.TabIndex = 0;
             this.LblCUIT.Tag = "CUIT";
             this.LblCUIT.Text = "CUIT";
-            // 
-            // comboBoxProveedorCUIT
-            // 
-            this.comboBoxProveedorCUIT.FormattingEnabled = true;
-            this.comboBoxProveedorCUIT.Location = new System.Drawing.Point(66, 74);
-            this.comboBoxProveedorCUIT.Name = "comboBoxProveedorCUIT";
-            this.comboBoxProveedorCUIT.Size = new System.Drawing.Size(174, 24);
-            this.comboBoxProveedorCUIT.TabIndex = 1;
             // 
             // BtnFiltrar
             // 
@@ -219,6 +219,7 @@ namespace Interfaz_GUI
             this.dataGridViewCompras.RowTemplate.Height = 24;
             this.dataGridViewCompras.Size = new System.Drawing.Size(867, 198);
             this.dataGridViewCompras.TabIndex = 8;
+            this.dataGridViewCompras.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCompras_CellClick);
             // 
             // VisualizarCompra
             // 

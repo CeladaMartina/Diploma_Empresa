@@ -31,65 +31,13 @@ namespace Acceso_DAL
             return ListaVenta;
         }
 
-        public List<Propiedades_BE.Venta> FiltrarMontoVenta(decimal _MontoDesde, decimal _MontoHasta)
-        {
-            List<Propiedades_BE.Venta> ListaVenta = new List<Propiedades_BE.Venta>();
-
-            Acceso.AbrirConexion();
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select V.IdVenta as 'NumVenta', C.DNI as 'DNICliente', V.Fecha, (select ISNULL(SUM(Cant * PUnit),0) from Detalle_Venta where IdVenta = V.IdVenta) as 'Monto' from Venta V inner join Cliente C on V.IdCliente = C.IdCliente where (select ISNULL(SUM(Cant * PUnit),0) from Detalle_Venta where IdVenta = V.IdVenta) >= " + _MontoDesde + " and (select ISNULL(SUM(Cant * PUnit),0) from Detalle_Venta where IdVenta = V.IdVenta) <= " + _MontoHasta + "";
-            cmd.Connection = Acceso.Conexion;
-
-            SqlDataReader lector = cmd.ExecuteReader();
-
-            while (lector.Read())
-            {
-                Propiedades_BE.Venta V = new Propiedades_BE.Venta();
-                V.NumVenta = int.Parse(lector["NumVenta"].ToString());
-                V.DNICliente = Seguridad.Desencriptar(lector["DNICliente"].ToString());
-                V.Fecha = DateTime.Parse(lector["Fecha"].ToString());
-                V.Monto = decimal.Parse(lector["Monto"].ToString());
-                ListaVenta.Add(V);
-            }
-            lector.Close();
-            Acceso.CerrarConexion();
-            return ListaVenta;
-        }
-
-        public List<Propiedades_BE.Venta> FiltrarRangoFechaVenta(DateTime _FechaDesde, DateTime _FechaHasta)
-        {
-            List<Propiedades_BE.Venta> ListaVenta = new List<Propiedades_BE.Venta>();
-
-            Acceso.AbrirConexion();
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select V.IdVenta as 'NumVenta', C.DNI as 'DNICliente', V.Fecha, (select ISNULL(SUM(Cant * PUnit),0) from Detalle_Venta where IdVenta = V.IdVenta) as 'Monto' from Venta V inner join Cliente C on V.IdCliente = C.IdCliente where convert(date,Fecha) >= '" + _FechaDesde + "' and convert(date,Fecha) <= '" + _FechaHasta + "'";
-            cmd.Connection = Acceso.Conexion;
-
-            SqlDataReader lector = cmd.ExecuteReader();
-
-            while (lector.Read())
-            {
-                Propiedades_BE.Venta V = new Propiedades_BE.Venta();
-                V.NumVenta = int.Parse(lector["NumVenta"].ToString());
-                V.DNICliente = Seguridad.Desencriptar(lector["DNICliente"].ToString());
-                V.Fecha = DateTime.Parse(lector["Fecha"].ToString());
-                V.Monto = decimal.Parse(lector["Monto"].ToString());
-                ListaVenta.Add(V);
-            }
-            lector.Close();
-            Acceso.CerrarConexion();
-            return ListaVenta;
-        }
-
-        public List<Propiedades_BE.Venta> FiltrarDNIVenta(string _DNI)
+        public List<Propiedades_BE.Venta> FiltradoCompleto(string _DNI, decimal _MontoDesde, decimal _MontoHasta, DateTime _FechaDesde, DateTime _FechaHasta)
         {
             List<Propiedades_BE.Venta> ListaVenta = new List<Propiedades_BE.Venta>();
             Acceso.AbrirConexion();
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select V.IdVenta as 'NumVenta', C.DNI as 'DNICliente', V.Fecha, (select ISNULL(SUM(Cant * PUnit),0) from Detalle_Venta where IdVenta = V.IdVenta) as 'Monto' from Venta V inner join Cliente C on V.IdCliente = C.IdCliente where DNI = '" + Seguridad.EncriptarAES(_DNI) + "'";
+            cmd.CommandText = "select V.IdVenta as 'NumVenta', C.DNI as 'DNICliente', V.Fecha, (select ISNULL(SUM(Cant * PUnit),0) from Detalle_Venta where IdVenta = V.IdVenta) as 'Monto' from Venta V inner join Cliente C on V.IdCliente = C.IdCliente where (select ISNULL(SUM(Cant * PUnit),0) from Detalle_Venta where IdVenta = V.IdVenta) >= " + _MontoDesde + " and (select ISNULL(SUM(Cant * PUnit),0) from Detalle_Venta where IdVenta = V.IdVenta) <= " + _MontoHasta + " and convert(date,Fecha) >= '" + _FechaDesde + "' and convert(date,Fecha) <= '" + _FechaHasta + "' and DNI = '" + Seguridad.EncriptarAES(_DNI) + "'";
             cmd.Connection = Acceso.Conexion;
 
             SqlDataReader lector = cmd.ExecuteReader();

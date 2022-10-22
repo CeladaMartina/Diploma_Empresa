@@ -68,7 +68,6 @@ namespace Interfaz_GUI
         void Filtrar()
         {
             dataGridViewCompras.DataSource = null;
-
             dataGridViewCompras.DataSource = GestorCompra.FiltradoCompleto(decimal.Parse(TxtDesde.Text), decimal.Parse(TxtHasta.Text), dateTimePickerDesde.Value.Date, dateTimePickerHasta.Value.Date, comboBoxProveedorCUIT.SelectedItem.ToString());           
             dataGridViewCompras.Columns["IdCompra"].Visible = false;
             dataGridViewCompras.Columns["IdProveedor"].Visible = false;
@@ -151,6 +150,11 @@ namespace Interfaz_GUI
             {
                 MessageBox.Show(CambiarIdioma.TraducirGlobal("Error") ?? "Error");
             }
+        }
+
+        private void dataGridViewCompras_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

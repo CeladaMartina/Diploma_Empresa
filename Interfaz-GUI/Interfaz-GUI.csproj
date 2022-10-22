@@ -196,6 +196,12 @@
     <Compile Include="VisualizarCompra.Designer.cs">
       <DependentUpon>VisualizarCompra.cs</DependentUpon>
     </Compile>
+    <Compile Include="VisualizarVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisualizarVenta.Designer.cs">
+      <DependentUpon>VisualizarVenta.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Administrar_Idioma.resx">
       <DependentUpon>Administrar_Idioma.cs</DependentUpon>
     </EmbeddedResource>
@@ -273,6 +279,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VisualizarCompra.resx">
       <DependentUpon>VisualizarCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisualizarVenta.resx">
+      <DependentUpon>VisualizarVenta.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

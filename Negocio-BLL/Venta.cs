@@ -16,20 +16,12 @@ namespace Negocio_BLL
         {
             return Mapper.Listar();
         }
-        public List<Propiedades_BE.Venta> FiltrarDNIVenta(string _DNI)
+        
+        public List<Propiedades_BE.Venta> FiltradoCompleto(string _DNI, DateTime _FechaDesde, DateTime _FechaHasta, decimal _MontoDesde, decimal _MontoHasta)
         {
-            return Mapper.FiltrarDNIVenta(_DNI);
+            return Mapper.FiltradoCompleto(_DNI, _MontoDesde, _MontoHasta, _FechaDesde, _FechaHasta);
         }
 
-        public List<Propiedades_BE.Venta> FiltrarRangoFechaVenta(DateTime _FechaDesde, DateTime _FechaHasta)
-        {
-            return Mapper.FiltrarRangoFechaVenta(_FechaDesde, _FechaHasta);
-        }
-
-        public List<Propiedades_BE.Venta> FiltrarMontoVenta(decimal _MontoDesde, decimal _MontoHasta)
-        {
-            return Mapper.FiltrarMontoVenta(_MontoDesde, _MontoHasta);
-        }
 
         #endregion
         public string CancelarVenta(int IdVenta)
