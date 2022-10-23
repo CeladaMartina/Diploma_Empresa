@@ -51,6 +51,7 @@ namespace Interfaz_GUI
             this.LblNombre.Name = "LblNombre";
             this.LblNombre.Size = new System.Drawing.Size(58, 17);
             this.LblNombre.TabIndex = 0;
+            this.LblNombre.Tag = "Nombre";
             this.LblNombre.Text = "Nombre";
             // 
             // LblDescripcion
@@ -60,6 +61,7 @@ namespace Interfaz_GUI
             this.LblDescripcion.Name = "LblDescripcion";
             this.LblDescripcion.Size = new System.Drawing.Size(82, 17);
             this.LblDescripcion.TabIndex = 1;
+            this.LblDescripcion.Tag = "Descripcion";
             this.LblDescripcion.Text = "Descripcion";
             // 
             // LblCodPostal
@@ -69,6 +71,7 @@ namespace Interfaz_GUI
             this.LblCodPostal.Name = "LblCodPostal";
             this.LblCodPostal.Size = new System.Drawing.Size(80, 17);
             this.LblCodPostal.TabIndex = 2;
+            this.LblCodPostal.Tag = "Cod Postal";
             this.LblCodPostal.Text = "Cod Postal ";
             // 
             // LblPartido
@@ -78,6 +81,7 @@ namespace Interfaz_GUI
             this.LblPartido.Name = "LblPartido";
             this.LblPartido.Size = new System.Drawing.Size(53, 17);
             this.LblPartido.TabIndex = 3;
+            this.LblPartido.Tag = "Partido";
             this.LblPartido.Text = "Partido";
             // 
             // TxtNombre
@@ -125,6 +129,7 @@ namespace Interfaz_GUI
             this.BtnModificacion.Name = "BtnModificacion";
             this.BtnModificacion.Size = new System.Drawing.Size(114, 31);
             this.BtnModificacion.TabIndex = 22;
+            this.BtnModificacion.Tag = "Modificacion";
             this.BtnModificacion.Text = "Modificacion";
             this.BtnModificacion.UseVisualStyleBackColor = true;
             this.BtnModificacion.Click += new System.EventHandler(this.BtnModificacion_Click);
@@ -135,6 +140,7 @@ namespace Interfaz_GUI
             this.BtnBaja.Name = "BtnBaja";
             this.BtnBaja.Size = new System.Drawing.Size(98, 32);
             this.BtnBaja.TabIndex = 21;
+            this.BtnBaja.Tag = "Baja";
             this.BtnBaja.Text = "Baja";
             this.BtnBaja.UseVisualStyleBackColor = true;
             this.BtnBaja.Click += new System.EventHandler(this.BtnBaja_Click);
@@ -145,6 +151,7 @@ namespace Interfaz_GUI
             this.BtnAlta.Name = "BtnAlta";
             this.BtnAlta.Size = new System.Drawing.Size(98, 29);
             this.BtnAlta.TabIndex = 20;
+            this.BtnAlta.Tag = "Alta";
             this.BtnAlta.Text = "Alta";
             this.BtnAlta.UseVisualStyleBackColor = true;
             this.BtnAlta.Click += new System.EventHandler(this.BtnAlta_Click);

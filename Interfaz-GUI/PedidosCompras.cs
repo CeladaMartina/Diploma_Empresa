@@ -1,4 +1,5 @@
-﻿using iTextSharp.text;
+﻿using Diploma_Empresa_Final;
+using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,8 @@ using System.Windows.Forms;
 
 namespace Interfaz_GUI
 {
-    public partial class PedidosCompras : Form
+    public partial class PedidosCompras : Form, IObserver
+
     {
         Negocio_BLL.Pedido GestorPedido = new Negocio_BLL.Pedido();
         Negocio_BLL.Seguridad Seguridad = new Negocio_BLL.Seguridad();
@@ -38,6 +40,7 @@ namespace Interfaz_GUI
 
         private void PedidosCompras_Load(object sender, EventArgs e)
         {
+            Traducir();
             CargarCombos();
             Listar();
         }
@@ -331,7 +334,30 @@ namespace Interfaz_GUI
         #endregion
 
         #region traduccion
+        void IObserver.Update(ISubject Subject)
+        {
+            
+            LblArticulo.Text = Subject.TraducirObserver(LblArticulo.Tag.ToString()) ?? LblArticulo.Tag.ToString();            
+            LblCantidad.Text = Subject.TraducirObserver(LblCantidad.Tag.ToString()) ?? LblCantidad.Tag.ToString();
+            BtnAlta.Text = Subject.TraducirObserver(BtnAlta.Tag.ToString()) ?? BtnAlta.Tag.ToString();
+            BtnModificar.Text = Subject.TraducirObserver(BtnModificar.Tag.ToString()) ?? BtnModificar.Tag.ToString();
+            BtnBaja.Text = Subject.TraducirObserver(BtnBaja.Tag.ToString()) ?? BtnBaja.Tag.ToString();
+            BtnCerrarPedido.Text = Subject.TraducirObserver(BtnCerrarPedido.Tag.ToString()) ?? BtnCerrarPedido.Tag.ToString();
+            btnPedidosViejos.Text = Subject.TraducirObserver(btnPedidosViejos.Tag.ToString()) ?? btnPedidosViejos.Tag.ToString();
+            BtnImprimir.Text = Subject.TraducirObserver(BtnImprimir.Tag.ToString()) ?? BtnImprimir.Tag.ToString();
+        }
 
+        public void Traducir()
+        {
+            LblArticulo.Text = CambiarIdioma.TraducirGlobal(LblArticulo.Tag.ToString()) ?? LblArticulo.Tag.ToString();
+            LblCantidad.Text = CambiarIdioma.TraducirGlobal(LblCantidad.Tag.ToString()) ?? LblCantidad.Tag.ToString();
+            BtnAlta.Text = CambiarIdioma.TraducirGlobal(BtnAlta.Tag.ToString()) ?? BtnAlta.Tag.ToString();
+            BtnModificar.Text = CambiarIdioma.TraducirGlobal(BtnModificar.Tag.ToString()) ?? BtnModificar.Tag.ToString();
+            BtnBaja.Text = CambiarIdioma.TraducirGlobal(BtnBaja.Tag.ToString()) ?? BtnBaja.Tag.ToString();
+            BtnCerrarPedido.Text = CambiarIdioma.TraducirGlobal(BtnCerrarPedido.Tag.ToString()) ?? BtnCerrarPedido.Tag.ToString();
+            btnPedidosViejos.Text = CambiarIdioma.TraducirGlobal(btnPedidosViejos.Tag.ToString()) ?? btnPedidosViejos.Tag.ToString();
+            BtnImprimir.Text = CambiarIdioma.TraducirGlobal(BtnImprimir.Tag.ToString()) ?? BtnImprimir.Tag.ToString();
+        }
         #endregion
     }
 }

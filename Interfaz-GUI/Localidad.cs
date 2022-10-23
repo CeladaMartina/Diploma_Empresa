@@ -99,8 +99,7 @@ namespace Interfaz_GUI
             LblPartido.Text = Subject.TraducirObserver(LblPartido.Tag.ToString()) ?? LblPartido.Tag.ToString();
             BtnAlta.Text = Subject.TraducirObserver(BtnAlta.Tag.ToString()) ?? BtnAlta.Tag.ToString();
             BtnModificacion.Text = Subject.TraducirObserver(BtnModificacion.Tag.ToString()) ?? BtnModificacion.Tag.ToString();
-            BtnBaja.Text = Subject.TraducirObserver(BtnBaja.Tag.ToString()) ?? BtnBaja.Tag.ToString();
-            //this.Text = Subject.TraducirObserver(this.Tag.ToString()) ?? this.Tag.ToString();
+            BtnBaja.Text = Subject.TraducirObserver(BtnBaja.Tag.ToString()) ?? BtnBaja.Tag.ToString();            
         }
 
         public void Traducir()
@@ -112,7 +111,6 @@ namespace Interfaz_GUI
             BtnAlta.Text = CambiarIdioma.TraducirGlobal(BtnAlta.Tag.ToString()) ?? BtnAlta.Tag.ToString();
             BtnModificacion.Text = CambiarIdioma.TraducirGlobal(BtnModificacion.Tag.ToString()) ?? BtnModificacion.Tag.ToString();
             BtnBaja.Text = CambiarIdioma.TraducirGlobal(BtnBaja.Tag.ToString()) ?? BtnBaja.Tag.ToString();
-            this.Text = CambiarIdioma.TraducirGlobal(this.Tag.ToString()) ?? this.Tag.ToString();
         }
         #endregion
         private void BtnAlta_Click(object sender, EventArgs e)
@@ -174,6 +172,7 @@ namespace Interfaz_GUI
 
         private void Localidad_Load(object sender, EventArgs e)
         {
+            Traducir();
             Listar();
         }
 

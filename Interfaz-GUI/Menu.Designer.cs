@@ -108,6 +108,7 @@ namespace Interfaz_GUI
             // 
             this.localidadToolStripMenuItem.Name = "localidadToolStripMenuItem";
             this.localidadToolStripMenuItem.Size = new System.Drawing.Size(88, 24);
+            this.localidadToolStripMenuItem.Tag = "Localidad";
             this.localidadToolStripMenuItem.Text = "Localidad";
             this.localidadToolStripMenuItem.Click += new System.EventHandler(this.localidadToolStripMenuItem_Click);
             // 
@@ -119,26 +120,30 @@ namespace Interfaz_GUI
             this.pedidoCompraToolStripMenuItem});
             this.compraToolStripMenuItem.Name = "compraToolStripMenuItem";
             this.compraToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
+            this.compraToolStripMenuItem.Tag = "Compra";
             this.compraToolStripMenuItem.Text = "Compra";
             // 
             // comprarToolStripMenuItem
             // 
             this.comprarToolStripMenuItem.Name = "comprarToolStripMenuItem";
-            this.comprarToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.comprarToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.comprarToolStripMenuItem.Tag = "Comprar";
             this.comprarToolStripMenuItem.Text = "Comprar";
             this.comprarToolStripMenuItem.Click += new System.EventHandler(this.comprarToolStripMenuItem_Click);
             // 
             // visualizarComprasToolStripMenuItem
             // 
             this.visualizarComprasToolStripMenuItem.Name = "visualizarComprasToolStripMenuItem";
-            this.visualizarComprasToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.visualizarComprasToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.visualizarComprasToolStripMenuItem.Tag = "Visualizar Compras";
             this.visualizarComprasToolStripMenuItem.Text = "Visualizar compras";
             this.visualizarComprasToolStripMenuItem.Click += new System.EventHandler(this.visualizarComprasToolStripMenuItem_Click);
             // 
             // pedidoCompraToolStripMenuItem
             // 
             this.pedidoCompraToolStripMenuItem.Name = "pedidoCompraToolStripMenuItem";
-            this.pedidoCompraToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.pedidoCompraToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.pedidoCompraToolStripMenuItem.Tag = "Pedido Compra";
             this.pedidoCompraToolStripMenuItem.Text = "Pedido Compra";
             this.pedidoCompraToolStripMenuItem.Click += new System.EventHandler(this.pedidoCompraToolStripMenuItem_Click);
             // 

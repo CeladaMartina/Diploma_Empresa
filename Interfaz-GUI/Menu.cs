@@ -114,6 +114,13 @@ namespace Interfaz_GUI
             generarContraseñaToolStripMenuItem.Text = Subject.TraducirObserver(generarContraseñaToolStripMenuItem.Tag.ToString()) ?? generarContraseñaToolStripMenuItem.Tag.ToString();
             recalcularDigitosToolStripMenuItem.Text = Subject.TraducirObserver(recalcularDigitosToolStripMenuItem.Tag.ToString()) ?? recalcularDigitosToolStripMenuItem.Tag.ToString();
             proveedorToolStripMenuItem.Text = Subject.TraducirObserver(proveedorToolStripMenuItem.Tag.ToString()) ?? proveedorToolStripMenuItem.Tag.ToString();
+            visualizarComprasToolStripMenuItem.Text = Subject.TraducirObserver(visualizarComprasToolStripMenuItem.Tag.ToString()) ?? visualizarComprasToolStripMenuItem.Tag.ToString();
+            venderToolStripMenuItem.Text = Subject.TraducirObserver(venderToolStripMenuItem.Tag.ToString()) ?? venderToolStripMenuItem.Tag.ToString();
+            comprarToolStripMenuItem.Text = Subject.TraducirObserver(comprarToolStripMenuItem.Tag.ToString()) ?? comprarToolStripMenuItem.Tag.ToString();
+            pedidoCompraToolStripMenuItem.Text = Subject.TraducirObserver(pedidoCompraToolStripMenuItem.Tag.ToString()) ?? pedidoCompraToolStripMenuItem.Tag.ToString();
+            compraToolStripMenuItem.Text = Subject.TraducirObserver(compraToolStripMenuItem.Tag.ToString()) ?? compraToolStripMenuItem.Tag.ToString();
+            localidadToolStripMenuItem.Text = Subject.TraducirObserver(localidadToolStripMenuItem.Tag.ToString()) ?? localidadToolStripMenuItem.Tag.ToString();
+
         }
 
         public void Traducir()
@@ -137,6 +144,12 @@ namespace Interfaz_GUI
             generarContraseñaToolStripMenuItem.Text = CambiarIdioma.TraducirGlobal(generarContraseñaToolStripMenuItem.Tag.ToString()) ?? generarContraseñaToolStripMenuItem.Tag.ToString();
             recalcularDigitosToolStripMenuItem.Text = CambiarIdioma.TraducirGlobal(recalcularDigitosToolStripMenuItem.Tag.ToString()) ?? recalcularDigitosToolStripMenuItem.Tag.ToString();
             proveedorToolStripMenuItem.Text = CambiarIdioma.TraducirGlobal(proveedorToolStripMenuItem.Tag.ToString()) ?? proveedorToolStripMenuItem.Tag.ToString();
+            pedidoCompraToolStripMenuItem.Text = CambiarIdioma.TraducirGlobal(pedidoCompraToolStripMenuItem.Tag.ToString()) ?? pedidoCompraToolStripMenuItem.Tag.ToString();
+            comprarToolStripMenuItem.Text = CambiarIdioma.TraducirGlobal(comprarToolStripMenuItem.Tag.ToString()) ?? comprarToolStripMenuItem.Tag.ToString();
+            visualizarComprasToolStripMenuItem.Text = CambiarIdioma.TraducirGlobal(visualizarComprasToolStripMenuItem.Tag.ToString()) ?? visualizarComprasToolStripMenuItem.Tag.ToString();
+            compraToolStripMenuItem.Text = CambiarIdioma.TraducirGlobal(compraToolStripMenuItem.Tag.ToString()) ?? compraToolStripMenuItem.Tag.ToString();
+            localidadToolStripMenuItem.Text = CambiarIdioma.TraducirGlobal(localidadToolStripMenuItem.Tag.ToString()) ?? localidadToolStripMenuItem.Tag.ToString();
+
         }
 
         #endregion
