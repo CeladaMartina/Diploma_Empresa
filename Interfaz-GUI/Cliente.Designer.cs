@@ -216,6 +216,7 @@ namespace Interfaz_GUI
             this.Controls.Add(this.LblNombre);
             this.Controls.Add(this.LblDNI);
             this.Name = "Cliente";
+            this.Tag = "Cliente";
             this.Text = "Cliente";
             this.Load += new System.EventHandler(this.Cliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCliente)).EndInit();

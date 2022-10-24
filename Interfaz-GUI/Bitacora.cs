@@ -105,7 +105,7 @@ namespace Interfaz_GUI
             radioButtonAlta.Text = Sujeto.TraducirObserver(radioButtonAlta.Tag.ToString()) ?? radioButtonAlta.Tag.ToString();
             radioButtonBaja.Text = Sujeto.TraducirObserver(radioButtonBaja.Tag.ToString()) ?? radioButtonBaja.Tag.ToString();
             radioButtonMedia.Text = Sujeto.TraducirObserver(radioButtonMedia.Tag.ToString()) ?? radioButtonMedia.Tag.ToString();
-            //this.Text = Sujeto.TraducirObserver(this.Tag.ToString()) ?? this.Tag.ToString();
+            this.Text = Sujeto.TraducirObserver(this.Tag.ToString()) ?? this.Tag.ToString();
         }
 
         public void Traducir()
@@ -121,7 +121,7 @@ namespace Interfaz_GUI
             radioButtonAlta.Text = CambiarIdioma.TraducirGlobal(radioButtonAlta.Tag.ToString()) ?? radioButtonAlta.Tag.ToString();
             radioButtonBaja.Text = CambiarIdioma.TraducirGlobal(radioButtonBaja.Tag.ToString()) ?? radioButtonBaja.Tag.ToString();
             radioButtonMedia.Text = CambiarIdioma.TraducirGlobal(radioButtonMedia.Tag.ToString()) ?? radioButtonMedia.Tag.ToString();
-            //this.Text = CambiarIdioma.TraducirGlobal(this.Tag.ToString()) ?? this.Tag.ToString();
+            this.Text = CambiarIdioma.TraducirGlobal(this.Tag.ToString()) ?? this.Tag.ToString();
         }
 
         #endregion

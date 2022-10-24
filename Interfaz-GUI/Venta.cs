@@ -69,6 +69,7 @@ namespace Interfaz_GUI
             BtnCargarDetalle.Text = Subject.TraducirObserver(BtnCargarDetalle.Tag.ToString()) ?? BtnCargarDetalle.Tag.ToString();
             BtnEditarDetalle.Text = Subject.TraducirObserver(BtnEditarDetalle.Tag.ToString()) ?? BtnEditarDetalle.Tag.ToString();
             groupBox2.Text = Subject.TraducirObserver(groupBox2.Tag.ToString()) ?? groupBox2.Tag.ToString();
+            groupBox3.Text = Subject.TraducirObserver(groupBox3.Tag.ToString()) ?? groupBox3.Tag.ToString();
             LblArticulo.Text = Subject.TraducirObserver(LblArticulo.Tag.ToString()) ?? LblArticulo.Tag.ToString();
             LblPrecioUnitario.Text = Subject.TraducirObserver(LblPrecioUnitario.Tag.ToString()) ?? LblPrecioUnitario.Tag.ToString();
             LblCantidad.Text = Subject.TraducirObserver(LblCantidad.Tag.ToString()) ?? LblCantidad.Tag.ToString();
@@ -77,7 +78,7 @@ namespace Interfaz_GUI
             BtnModificarDetalle.Text = Subject.TraducirObserver(BtnModificarDetalle.Tag.ToString()) ?? BtnModificarDetalle.Tag.ToString();
             BtnBajaDetalle.Text = Subject.TraducirObserver(BtnBajaDetalle.Tag.ToString()) ?? BtnBajaDetalle.Tag.ToString();
             BtnCerrarDetalle.Text = Subject.TraducirObserver(BtnCerrarDetalle.Tag.ToString()) ?? BtnCerrarDetalle.Tag.ToString();
-            //this.Text = Subject.TraducirObserver(this.Tag.ToString()) ?? this.Tag.ToString();
+            this.Text = Subject.TraducirObserver(this.Tag.ToString()) ?? this.Tag.ToString();
             LABELVENTA.Text = Subject.TraducirObserver(LABELVENTA.Tag.ToString()) ?? LABELVENTA.Tag.ToString();
             labelNumeroVentaNombre.Text = Subject.TraducirObserver(labelNumeroVentaNombre.Tag.ToString()) ?? labelNumeroVentaNombre.Tag.ToString();
             LblClienteNombre.Text = Subject.TraducirObserver(LblClienteNombre.Tag.ToString()) ?? LblClienteNombre.Tag.ToString();
@@ -96,6 +97,7 @@ namespace Interfaz_GUI
             BtnCargarDetalle.Text = CambiarIdioma.TraducirGlobal(BtnCargarDetalle.Tag.ToString()) ?? BtnCargarDetalle.Tag.ToString();
             BtnEditarDetalle.Text = CambiarIdioma.TraducirGlobal(BtnEditarDetalle.Tag.ToString()) ?? BtnEditarDetalle.Tag.ToString();
             groupBox2.Text = CambiarIdioma.TraducirGlobal(groupBox2.Tag.ToString()) ?? groupBox2.Tag.ToString();
+            groupBox3.Text = CambiarIdioma.TraducirGlobal(groupBox3.Tag.ToString()) ?? groupBox3.Tag.ToString();
             LblArticulo.Text = CambiarIdioma.TraducirGlobal(LblArticulo.Tag.ToString()) ?? LblArticulo.Tag.ToString();
             LblPrecioUnitario.Text = CambiarIdioma.TraducirGlobal(LblPrecioUnitario.Tag.ToString()) ?? LblPrecioUnitario.Tag.ToString();
             LblCantidad.Text = CambiarIdioma.TraducirGlobal(LblCantidad.Tag.ToString()) ?? LblCantidad.Tag.ToString();
@@ -104,7 +106,7 @@ namespace Interfaz_GUI
             BtnModificarDetalle.Text = CambiarIdioma.TraducirGlobal(BtnModificarDetalle.Tag.ToString()) ?? BtnModificarDetalle.Tag.ToString();
             BtnBajaDetalle.Text = CambiarIdioma.TraducirGlobal(BtnBajaDetalle.Tag.ToString()) ?? BtnBajaDetalle.Tag.ToString();
             BtnCerrarDetalle.Text = CambiarIdioma.TraducirGlobal(BtnCerrarDetalle.Tag.ToString()) ?? BtnCerrarDetalle.Tag.ToString();
-            //this.Text = CambiarIdioma.TraducirGlobal(this.Tag.ToString()) ?? this.Tag.ToString();
+            this.Text = CambiarIdioma.TraducirGlobal(this.Tag.ToString()) ?? this.Tag.ToString();
             LABELVENTA.Text = CambiarIdioma.TraducirGlobal(LABELVENTA.Tag.ToString()) ?? LABELVENTA.Tag.ToString();
             labelNumeroVentaNombre.Text = CambiarIdioma.TraducirGlobal(labelNumeroVentaNombre.Tag.ToString()) ?? labelNumeroVentaNombre.Tag.ToString();
             LblClienteNombre.Text = CambiarIdioma.TraducirGlobal(LblClienteNombre.Tag.ToString()) ?? LblClienteNombre.Tag.ToString();

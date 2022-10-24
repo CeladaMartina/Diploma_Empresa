@@ -30,12 +30,12 @@ namespace Interfaz_GUI
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridViewIdioma = new System.Windows.Forms.DataGridView();
             this.BtnBaja = new System.Windows.Forms.Button();
             this.BtnModificar = new System.Windows.Forms.Button();
             this.BtnAlta = new System.Windows.Forms.Button();
             this.TxtNombreIdioma = new System.Windows.Forms.TextBox();
             this.LblNombre = new System.Windows.Forms.Label();
+            this.dataGridViewIdioma = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIdioma)).BeginInit();
             this.SuspendLayout();
@@ -52,18 +52,8 @@ namespace Interfaz_GUI
             this.groupBox1.Size = new System.Drawing.Size(460, 151);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Tag = "Administrar";
             this.groupBox1.Text = "Administrar";
-            // 
-            // dataGridViewIdioma
-            // 
-            this.dataGridViewIdioma.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewIdioma.Location = new System.Drawing.Point(12, 219);
-            this.dataGridViewIdioma.Name = "dataGridViewIdioma";
-            this.dataGridViewIdioma.RowHeadersWidth = 51;
-            this.dataGridViewIdioma.RowTemplate.Height = 24;
-            this.dataGridViewIdioma.Size = new System.Drawing.Size(460, 159);
-            this.dataGridViewIdioma.TabIndex = 1;
-            this.dataGridViewIdioma.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewIdioma_CellClick);
             // 
             // BtnBaja
             // 
@@ -115,6 +105,17 @@ namespace Interfaz_GUI
             this.LblNombre.Tag = "Nombre";
             this.LblNombre.Text = "Nombre";
             // 
+            // dataGridViewIdioma
+            // 
+            this.dataGridViewIdioma.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewIdioma.Location = new System.Drawing.Point(12, 219);
+            this.dataGridViewIdioma.Name = "dataGridViewIdioma";
+            this.dataGridViewIdioma.RowHeadersWidth = 51;
+            this.dataGridViewIdioma.RowTemplate.Height = 24;
+            this.dataGridViewIdioma.Size = new System.Drawing.Size(460, 159);
+            this.dataGridViewIdioma.TabIndex = 1;
+            this.dataGridViewIdioma.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewIdioma_CellClick);
+            // 
             // Administrar_Idioma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -123,6 +124,7 @@ namespace Interfaz_GUI
             this.Controls.Add(this.dataGridViewIdioma);
             this.Controls.Add(this.groupBox1);
             this.Name = "Administrar_Idioma";
+            this.Tag = "Administrar Idioma";
             this.Text = "Administrar Idioma";
             this.Load += new System.EventHandler(this.Administrar_Idioma_Load);
             this.groupBox1.ResumeLayout(false);

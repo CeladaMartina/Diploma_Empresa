@@ -92,7 +92,7 @@ namespace Interfaz_GUI
             LblHasta.Text = Subject.TraducirObserver(LblHasta.Tag.ToString()) ?? LblHasta.Tag.ToString();
             BtnCancelarFiltro.Text = Subject.TraducirObserver(BtnCancelarFiltro.Tag.ToString()) ?? BtnCancelarFiltro.Tag.ToString();
             BtnFiltrar.Text = Subject.TraducirObserver(BtnFiltrar.Tag.ToString()) ?? BtnFiltrar.Tag.ToString();
-            //this.Text = Subject.TraducirObserver(this.Tag.ToString()) ?? this.Tag.ToString();
+            this.Text = Subject.TraducirObserver(this.Tag.ToString()) ?? this.Tag.ToString();
         }
 
         void Traducir()
@@ -108,7 +108,7 @@ namespace Interfaz_GUI
             LblHasta.Text = CambiarIdioma.TraducirGlobal(LblHasta.Tag.ToString()) ?? LblHasta.Tag.ToString();
             BtnCancelarFiltro.Text = CambiarIdioma.TraducirGlobal(BtnCancelarFiltro.Tag.ToString()) ?? BtnCancelarFiltro.Tag.ToString();
             BtnFiltrar.Text = CambiarIdioma.TraducirGlobal(BtnFiltrar.Tag.ToString()) ?? BtnFiltrar.Tag.ToString();
-            //this.Text = CambiarIdioma.TraducirGlobal(this.Tag.ToString()) ?? this.Tag.ToString();
+            this.Text = CambiarIdioma.TraducirGlobal(this.Tag.ToString()) ?? this.Tag.ToString();
         }
         #endregion
         private void VisualizarVenta_Load(object sender, EventArgs e)

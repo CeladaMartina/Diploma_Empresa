@@ -221,6 +221,7 @@ namespace Interfaz_GUI
             this.Controls.Add(this.groupBoxUsuario);
             this.Controls.Add(this.LblElegirFiltro);
             this.Name = "Bitacora";
+            this.Tag = "Bitacora";
             this.Text = "Bitacora";
             this.Load += new System.EventHandler(this.Bitacora_Load);
             this.groupBoxUsuario.ResumeLayout(false);

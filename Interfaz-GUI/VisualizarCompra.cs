@@ -33,6 +33,7 @@ namespace Interfaz_GUI
 
         private void VisualizarCompra_Load(object sender, EventArgs e)
         {
+            Traducir();
             Listar();
             CargarComboCUIT();
             dateTimePickerDesde.MaxDate = DateTime.Now;
@@ -89,6 +90,7 @@ namespace Interfaz_GUI
         #region traduccion
         void IObserver.Update(ISubject subject)
         {
+            LblFiltrar.Text = subject.TraducirObserver(LblFiltrar.Tag.ToString()) ?? LblFiltrar.Tag.ToString();
             groupBoxMonto.Text = subject.TraducirObserver(groupBoxMonto.Tag.ToString()) ?? groupBoxMonto.Tag.ToString();
             groupBoxProveedor.Text = subject.TraducirObserver(groupBoxProveedor.Tag.ToString()) ?? groupBoxProveedor.Tag.ToString();
             groupBoxRangoFecha.Text = subject.TraducirObserver(groupBoxRangoFecha.Tag.ToString()) ?? groupBoxRangoFecha.Tag.ToString();
@@ -99,11 +101,12 @@ namespace Interfaz_GUI
             LblHastaM.Text = subject.TraducirObserver(LblHastaM.Tag.ToString()) ?? LblHastaM.Tag.ToString();
             BtnFiltrar.Text = subject.TraducirObserver(BtnFiltrar.Tag.ToString()) ?? BtnFiltrar.Tag.ToString();
             BtnCancelarFiltro.Text = subject.TraducirObserver(BtnCancelarFiltro.Tag.ToString()) ?? BtnCancelarFiltro.Tag.ToString();
-            //this.Text = subject.TraducirObserver(this.Tag.ToString()) ?? this.Tag.ToString();
+            this.Text = subject.TraducirObserver(this.Tag.ToString()) ?? this.Tag.ToString();
         }
 
         public void Traducir()
         {
+            LblFiltrar.Text = CambiarIdioma.TraducirGlobal(LblFiltrar.Tag.ToString()) ?? LblFiltrar.Tag.ToString();
             groupBoxMonto.Text = CambiarIdioma.TraducirGlobal(groupBoxMonto.Tag.ToString()) ?? groupBoxMonto.Tag.ToString();
             groupBoxProveedor.Text = CambiarIdioma.TraducirGlobal(groupBoxProveedor.Tag.ToString()) ?? groupBoxProveedor.Tag.ToString();
             groupBoxRangoFecha.Text = CambiarIdioma.TraducirGlobal(groupBoxRangoFecha.Tag.ToString()) ?? groupBoxRangoFecha.Tag.ToString();
@@ -114,7 +117,7 @@ namespace Interfaz_GUI
             LblHastaM.Text = CambiarIdioma.TraducirGlobal(LblHastaM.Tag.ToString()) ?? LblHastaM.Tag.ToString();
             BtnFiltrar.Text = CambiarIdioma.TraducirGlobal(BtnFiltrar.Tag.ToString()) ?? BtnFiltrar.Tag.ToString();
             BtnCancelarFiltro.Text = CambiarIdioma.TraducirGlobal(BtnCancelarFiltro.Tag.ToString()) ?? BtnCancelarFiltro.Tag.ToString();
-            //this.Text = CambiarIdioma.TraducirGlobal(this.Tag.ToString()) ?? this.Tag.ToString();
+            this.Text = CambiarIdioma.TraducirGlobal(this.Tag.ToString()) ?? this.Tag.ToString();
         }
         #endregion
 

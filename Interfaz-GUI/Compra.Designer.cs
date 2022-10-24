@@ -40,6 +40,7 @@ namespace Interfaz_GUI
             this.LblFecha = new System.Windows.Forms.Label();
             this.LblProveedor = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.TxtCantSugerida = new System.Windows.Forms.TextBox();
             this.BtnBajaDetalle = new System.Windows.Forms.Button();
             this.BtnModificarDetalle = new System.Windows.Forms.Button();
             this.BtnAltaDetalle = new System.Windows.Forms.Button();
@@ -62,7 +63,6 @@ namespace Interfaz_GUI
             this.BtnCerrarDetalle = new System.Windows.Forms.Button();
             this.BtnComprar = new System.Windows.Forms.Button();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.TxtCantSugerida = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDC)).BeginInit();
@@ -196,6 +196,15 @@ namespace Interfaz_GUI
             this.groupBox2.TabStop = false;
             this.groupBox2.Tag = "Detalle";
             this.groupBox2.Text = "Detalle";
+            // 
+            // TxtCantSugerida
+            // 
+            this.TxtCantSugerida.BackColor = System.Drawing.Color.White;
+            this.TxtCantSugerida.Enabled = false;
+            this.TxtCantSugerida.Location = new System.Drawing.Point(234, 145);
+            this.TxtCantSugerida.Name = "TxtCantSugerida";
+            this.TxtCantSugerida.Size = new System.Drawing.Size(100, 22);
+            this.TxtCantSugerida.TabIndex = 18;
             // 
             // BtnBajaDetalle
             // 
@@ -408,15 +417,6 @@ namespace Interfaz_GUI
             this.BtnComprar.UseVisualStyleBackColor = true;
             this.BtnComprar.Click += new System.EventHandler(this.BtnComprar_Click);
             // 
-            // TxtCantSugerida
-            // 
-            this.TxtCantSugerida.BackColor = System.Drawing.Color.White;
-            this.TxtCantSugerida.Enabled = false;
-            this.TxtCantSugerida.Location = new System.Drawing.Point(234, 145);
-            this.TxtCantSugerida.Name = "TxtCantSugerida";
-            this.TxtCantSugerida.Size = new System.Drawing.Size(100, 22);
-            this.TxtCantSugerida.TabIndex = 18;
-            // 
             // Compra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -434,6 +434,7 @@ namespace Interfaz_GUI
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Compra";
+            this.Tag = "Compra";
             this.Text = "Compra";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Compra_FormClosing);
             this.Load += new System.EventHandler(this.Compra_Load);

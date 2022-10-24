@@ -108,6 +108,7 @@ namespace Interfaz_GUI
         #region Traduccion
         public void Update(ISubject Sujeto)
         {
+            groupBox1.Text = Sujeto.TraducirObserver(groupBox1.Tag.ToString()) ?? groupBox1.Tag.ToString();
             LblApellido.Text = Sujeto.TraducirObserver(LblApellido.Tag.ToString()) ?? LblApellido.Tag.ToString();
             LblCUIT.Text = Sujeto.TraducirObserver(LblCUIT.Tag.ToString()) ?? LblCUIT.Tag.ToString();
             LblFechaNac.Text = Sujeto.TraducirObserver(LblFechaNac.Tag.ToString()) ?? LblFechaNac.Tag.ToString();
@@ -118,11 +119,12 @@ namespace Interfaz_GUI
             BtnBaja.Text = Sujeto.TraducirObserver(BtnBaja.Tag.ToString()) ?? BtnBaja.Tag.ToString();
             BtnControlCambio.Text = Sujeto.TraducirObserver(BtnControlCambio.Tag.ToString()) ?? BtnControlCambio.Tag.ToString();
             BtnModificar.Text = Sujeto.TraducirObserver(BtnModificar.Tag.ToString()) ?? BtnModificar.Tag.ToString();
-            //this.Text = Sujeto.TraducirObserver(this.Tag.ToString()) ?? this.Tag.ToString();
+            this.Text = Sujeto.TraducirObserver(this.Tag.ToString()) ?? this.Tag.ToString();
         }
 
         public void Traducir()
         {
+            groupBox1.Text = CambiarIdioma.TraducirGlobal(groupBox1.Tag.ToString()) ?? groupBox1.Tag.ToString();
             LblApellido.Text = CambiarIdioma.TraducirGlobal(LblApellido.Tag.ToString()) ?? LblApellido.Tag.ToString();
             LblCUIT.Text = CambiarIdioma.TraducirGlobal(LblCUIT.Tag.ToString()) ?? LblCUIT.Tag.ToString();
             LblFechaNac.Text = CambiarIdioma.TraducirGlobal(LblFechaNac.Tag.ToString()) ?? LblFechaNac.Tag.ToString();
@@ -133,7 +135,7 @@ namespace Interfaz_GUI
             BtnBaja.Text = CambiarIdioma.TraducirGlobal(BtnBaja.Tag.ToString()) ?? BtnBaja.Tag.ToString();
             BtnControlCambio.Text = CambiarIdioma.TraducirGlobal(BtnControlCambio.Tag.ToString()) ?? BtnControlCambio.Tag.ToString();
             BtnModificar.Text = CambiarIdioma.TraducirGlobal(BtnModificar.Tag.ToString()) ?? BtnModificar.Tag.ToString();
-            //this.Text = CambiarIdioma.TraducirGlobal(this.Tag.ToString()) ?? this.Tag.ToString();
+            this.Text = CambiarIdioma.TraducirGlobal(this.Tag.ToString()) ?? this.Tag.ToString();
         }
 
         #endregion

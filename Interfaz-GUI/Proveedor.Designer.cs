@@ -70,6 +70,7 @@ namespace Interfaz_GUI
             this.groupBox1.Size = new System.Drawing.Size(449, 361);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Tag = "Datos";
             this.groupBox1.Text = "Datos";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
@@ -203,7 +204,7 @@ namespace Interfaz_GUI
             this.BtnModificar.Name = "BtnModificar";
             this.BtnModificar.Size = new System.Drawing.Size(110, 32);
             this.BtnModificar.TabIndex = 3;
-            this.BtnModificar.Tag = "Modificacion";
+            this.BtnModificar.Tag = "Modificar";
             this.BtnModificar.Text = "Modificacion";
             this.BtnModificar.UseVisualStyleBackColor = true;
             this.BtnModificar.Click += new System.EventHandler(this.BtnModificar_Click);

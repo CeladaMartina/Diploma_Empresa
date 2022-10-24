@@ -71,7 +71,7 @@ namespace Interfaz_GUI
             this.LblCodPostal.Name = "LblCodPostal";
             this.LblCodPostal.Size = new System.Drawing.Size(80, 17);
             this.LblCodPostal.TabIndex = 2;
-            this.LblCodPostal.Tag = "Cod Postal";
+            this.LblCodPostal.Tag = "Codigo Postal";
             this.LblCodPostal.Text = "Cod Postal ";
             // 
             // LblPartido
@@ -129,7 +129,7 @@ namespace Interfaz_GUI
             this.BtnModificacion.Name = "BtnModificacion";
             this.BtnModificacion.Size = new System.Drawing.Size(114, 31);
             this.BtnModificacion.TabIndex = 22;
-            this.BtnModificacion.Tag = "Modificacion";
+            this.BtnModificacion.Tag = "Modificar";
             this.BtnModificacion.Text = "Modificacion";
             this.BtnModificacion.UseVisualStyleBackColor = true;
             this.BtnModificacion.Click += new System.EventHandler(this.BtnModificacion_Click);
@@ -174,6 +174,7 @@ namespace Interfaz_GUI
             this.Controls.Add(this.LblDescripcion);
             this.Controls.Add(this.LblNombre);
             this.Name = "Localidad";
+            this.Tag = "Localidad";
             this.Text = "Localidad";
             this.Load += new System.EventHandler(this.Localidad_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLocalidad)).EndInit();

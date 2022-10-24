@@ -185,6 +185,7 @@ namespace Interfaz_GUI
             this.Controls.Add(this.LblCantidad);
             this.Controls.Add(this.LblArticulo);
             this.Name = "PedidosCompras";
+            this.Tag = "Pedido Compra";
             this.Text = "PedidosCompras";
             this.Load += new System.EventHandler(this.PedidosCompras_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPedido)).EndInit();

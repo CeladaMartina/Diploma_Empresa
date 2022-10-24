@@ -234,6 +234,7 @@ namespace Interfaz_GUI
             this.Controls.Add(this.groupBoxMonto);
             this.Controls.Add(this.LblFiltrar);
             this.Name = "VisualizarCompra";
+            this.Tag = "Visualizar Compra";
             this.Text = "VisualizarCompra";
             this.Load += new System.EventHandler(this.VisualizarCompra_Load);
             this.groupBoxMonto.ResumeLayout(false);

@@ -345,6 +345,7 @@ namespace Interfaz_GUI
             BtnCerrarPedido.Text = Subject.TraducirObserver(BtnCerrarPedido.Tag.ToString()) ?? BtnCerrarPedido.Tag.ToString();
             btnPedidosViejos.Text = Subject.TraducirObserver(btnPedidosViejos.Tag.ToString()) ?? btnPedidosViejos.Tag.ToString();
             BtnImprimir.Text = Subject.TraducirObserver(BtnImprimir.Tag.ToString()) ?? BtnImprimir.Tag.ToString();
+            this.Text = Subject.TraducirObserver(this.Tag.ToString()) ?? this.Tag.ToString();
         }
 
         public void Traducir()
@@ -357,6 +358,7 @@ namespace Interfaz_GUI
             BtnCerrarPedido.Text = CambiarIdioma.TraducirGlobal(BtnCerrarPedido.Tag.ToString()) ?? BtnCerrarPedido.Tag.ToString();
             btnPedidosViejos.Text = CambiarIdioma.TraducirGlobal(btnPedidosViejos.Tag.ToString()) ?? btnPedidosViejos.Tag.ToString();
             BtnImprimir.Text = CambiarIdioma.TraducirGlobal(BtnImprimir.Tag.ToString()) ?? BtnImprimir.Tag.ToString();
+            this.Text = CambiarIdioma.TraducirGlobal(this.Tag.ToString()) ?? this.Tag.ToString();
         }
         #endregion
     }

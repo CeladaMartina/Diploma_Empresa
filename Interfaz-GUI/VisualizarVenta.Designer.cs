@@ -233,6 +233,7 @@ namespace Interfaz_GUI
             this.Controls.Add(this.groupBoxMonto);
             this.Controls.Add(this.LblFiltrar);
             this.Name = "VisualizarVenta";
+            this.Tag = "Visualizar Venta";
             this.Text = "VisualizarVenta";
             this.Load += new System.EventHandler(this.VisualizarVenta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDV)).EndInit();

@@ -197,6 +197,7 @@ namespace Interfaz_GUI
             this.groupBox1.Size = new System.Drawing.Size(610, 247);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Tag = "Administrar";
             this.groupBox1.Text = "Administrar";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
@@ -220,6 +221,7 @@ namespace Interfaz_GUI
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridViewTraducciones);
             this.Name = "Administrar_Traduccion";
+            this.Tag = "Administrar Traduccion";
             this.Text = "Administrar_Traduccion";
             this.Load += new System.EventHandler(this.Administrar_Traduccion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTraducciones)).EndInit();

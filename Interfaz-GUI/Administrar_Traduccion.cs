@@ -37,6 +37,7 @@ namespace Interfaz_GUI
         #region Metodos traduccion 
         public void Update(ISubject subject)
         {
+            groupBox1.Text = subject.TraducirObserver(groupBox1.Tag.ToString()) ?? groupBox1.Tag.ToString();
             LblIdioma.Text = subject.TraducirObserver(LblIdioma.Tag.ToString()) ?? LblIdioma.Tag.ToString();
             LblOriginal.Text = subject.TraducirObserver(LblOriginal.Tag.ToString()) ?? LblOriginal.Tag.ToString();
             LblTraducido.Text = subject.TraducirObserver(LblTraducido.Tag.ToString()) ?? LblTraducido.Tag.ToString();
@@ -46,11 +47,12 @@ namespace Interfaz_GUI
             BtnFiltrar.Text = subject.TraducirObserver(BtnFiltrar.Tag.ToString()) ?? BtnFiltrar.Tag.ToString();
             BtnFiltrarIdioma.Text = subject.TraducirObserver(BtnFiltrarIdioma.Tag.ToString()) ?? BtnFiltrarIdioma.Tag.ToString();
             BtnCancelarFiltro.Text = subject.TraducirObserver(BtnCancelarFiltro.Tag.ToString()) ?? BtnCancelarFiltro.Tag.ToString();
-           
+            this.Text = subject.TraducirObserver(this.Tag.ToString()) ?? this.Tag.ToString();
         }
 
         public void Traducir()
         {
+            groupBox1.Text = CambiarIdioma.TraducirGlobal(groupBox1.Tag.ToString()) ?? groupBox1.Tag.ToString();
             LblIdioma.Text = CambiarIdioma.TraducirGlobal(LblIdioma.Tag.ToString()) ?? LblIdioma.Tag.ToString();
             LblOriginal.Text = CambiarIdioma.TraducirGlobal(LblOriginal.Tag.ToString()) ?? LblOriginal.Tag.ToString();
             LblTraducido.Text = CambiarIdioma.TraducirGlobal(LblTraducido.Tag.ToString()) ?? LblTraducido.Tag.ToString();
@@ -60,7 +62,7 @@ namespace Interfaz_GUI
             BtnFiltrar.Text = CambiarIdioma.TraducirGlobal(BtnFiltrar.Tag.ToString()) ?? BtnFiltrar.Tag.ToString();
             BtnFiltrarIdioma.Text = CambiarIdioma.TraducirGlobal(BtnFiltrarIdioma.Tag.ToString()) ?? BtnFiltrarIdioma.Tag.ToString();
             BtnCancelarFiltro.Text = CambiarIdioma.TraducirGlobal(BtnCancelarFiltro.Tag.ToString()) ?? BtnCancelarFiltro.Tag.ToString();
-            
+            this.Text = CambiarIdioma.TraducirGlobal(this.Tag.ToString()) ?? this.Tag.ToString();
         }
         #endregion
 

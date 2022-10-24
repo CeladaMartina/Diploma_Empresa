@@ -499,6 +499,7 @@ namespace Interfaz_GUI
             this.Controls.Add(this.TxtIdVenta);
             this.Controls.Add(this.LblNVenta);
             this.Name = "Venta";
+            this.Tag = "Venta";
             this.Text = "Venta";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Venta_FormClosing);
             this.Load += new System.EventHandler(this.Venta_Load);

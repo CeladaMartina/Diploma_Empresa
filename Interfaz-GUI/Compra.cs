@@ -261,7 +261,8 @@ namespace Interfaz_GUI
             BtnBajaDetalle.Text = Subject.TraducirObserver(BtnBajaDetalle.Tag.ToString()) ?? BtnBajaDetalle.Tag.ToString();
             BtnCargarNuevoArt.Text = Subject.TraducirObserver(BtnCargarNuevoArt.Tag.ToString()) ?? BtnCargarNuevoArt.Tag.ToString();
             BtnCerrarDetalle.Text = Subject.TraducirObserver(BtnCerrarDetalle.Tag.ToString()) ?? BtnCerrarDetalle.Tag.ToString();
-            //this.Text = Subject.TraducirObserver(this.Tag.ToString()) ?? this.Tag.ToString();
+            BtnDeserializar.Text = Subject.TraducirObserver(BtnDeserializar.Tag.ToString()) ?? BtnDeserializar.Tag.ToString();
+            this.Text = Subject.TraducirObserver(this.Tag.ToString()) ?? this.Tag.ToString();
         }
 
         public void Traducir()
@@ -284,7 +285,8 @@ namespace Interfaz_GUI
             BtnBajaDetalle.Text = CambiarIdioma.TraducirGlobal(BtnBajaDetalle.Tag.ToString()) ?? BtnBajaDetalle.Tag.ToString();
             BtnCargarNuevoArt.Text = CambiarIdioma.TraducirGlobal(BtnCargarNuevoArt.Tag.ToString()) ?? BtnCargarNuevoArt.Tag.ToString();
             BtnCerrarDetalle.Text = CambiarIdioma.TraducirGlobal(BtnCerrarDetalle.Tag.ToString()) ?? BtnCerrarDetalle.Tag.ToString();
-            //this.Text = CambiarIdioma.TraducirGlobal(this.Tag.ToString()) ?? this.Tag.ToString();
+            BtnDeserializar.Text = CambiarIdioma.TraducirGlobal(BtnDeserializar.Tag.ToString()) ?? BtnDeserializar.Tag.ToString();
+            this.Text = CambiarIdioma.TraducirGlobal(this.Tag.ToString()) ?? this.Tag.ToString();
         }
         #endregion
 
