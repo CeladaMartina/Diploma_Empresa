@@ -126,7 +126,18 @@ namespace Interfaz_GUI
             {
                 if (ChequearFallaTxt() == false)
                 {
-                    Filtrar();
+                    if (dateTimePickerDesde.Value >= dateTimePickerHasta.Value)
+                    {
+                        MessageBox.Show(CambiarIdioma.TraducirGlobal("La fecha Hasta no puede ser menor que Desde.") ?? "La fecha Hasta no puede ser menor que Desde.");
+                    }
+                    else if (Convert.ToInt32(TxtDesde.Text) >= Convert.ToInt32(TxtHasta.Text))
+                    {
+                        MessageBox.Show(CambiarIdioma.TraducirGlobal("El Monto Hasta no puede ser menor que el Monto Desde.") ?? "El Monto Hasta no puede ser menor que el Monto Desde.");
+                    }
+                    else
+                    {
+                        Filtrar();
+                    }
                 }
                 else
                 {
