@@ -151,6 +151,28 @@ namespace Acceso_DAL
             }
         }
 
+        public int ObtenerCantidad(int IdVenta, int IdArticulo)
+        {
+            int CantTotal = 0;           
+            using (Acceso.Conexion)
+            {
+                Acceso.AbrirConexion();
+                string Query = "select Cant from Detalle_Venta where IdVenta = " + IdVenta + " and IdArticulo = " + IdArticulo + "";
+                using (SqlCommand Cmd = new SqlCommand(Query, Acceso.Conexion))
+                {
+                    using (SqlDataReader Lector = Cmd.ExecuteReader())
+                    {
+                        while (Lector.Read())
+                        {
+                            CantTotal = Lector.GetInt32(0);
+                        }
+                    }
+                }
+                Acceso.CerrarConexion();
+            }
+            return CantTotal;
+        }
+
         #region VerificarIntegridad
 
         public List<Propiedades_BE.Detalle_Venta> ListaVerificacion()

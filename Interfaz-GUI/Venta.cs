@@ -39,6 +39,7 @@ namespace Interfaz_GUI
         }
 
         int IdDetalle = -1;
+        int cantidadTotalStock = 0;
         public Venta()
         {
             InitializeComponent();
@@ -155,7 +156,7 @@ namespace Interfaz_GUI
             TxtPrecioUnitario.Text = "";
             CmbCodArticulo.SelectedIndex = -1;
             CmbNombreArticulo.SelectedIndex = -1;
-            //LblStock.Text = "";
+            LblStock.Text = "";
         }
         public void ListarDV()
         {
@@ -164,7 +165,7 @@ namespace Interfaz_GUI
             dataGridViewDV.Columns["IdDetalle"].Visible = false;
             dataGridViewDV.Columns["IdVenta"].Visible = false;
             dataGridViewDV.Columns["IdArticulo"].Visible = false;            
-            dataGridViewDV.Columns["DVH"].Visible = false;
+            dataGridViewDV.Columns["DVH"].Visible = false;            
             dataGridViewDV.ReadOnly = true;
         }
 
@@ -174,15 +175,18 @@ namespace Interfaz_GUI
         }
 
         public void AltaDV(int IdVenta, int IdArticulo, string descripcion ,decimal PUnit, int Cantidad, int DVH)
-        {
+        {            
             int CantidadChequeoStock = GestorArticulo.VerificarCantStock(int.Parse(CmbCodArticulo.SelectedItem.ToString()));
-            if (Cantidad <= CantidadChequeoStock && GestorDV.ChequearStock(IdArticulo, int.Parse(TxtIdVenta.Text), Cantidad, 0) <= CantidadChequeoStock)
+
+            //if (Cantidad <= CantidadChequeoStock && GestorDV.ChequearStock(IdArticulo, int.Parse(TxtIdVenta.Text), Cantidad, 0) <= CantidadChequeoStock)
+            if (Cantidad <= Convert.ToInt32(LblStock.Text) && GestorDV.ChequearStock(IdArticulo, int.Parse(TxtIdVenta.Text), Cantidad, 0) <= Convert.ToInt32(LblStock.Text))
             {
                 GestorDV.AltaDV(PUnit, IdArticulo, descripcion,DVH, Cantidad, IdVenta);
                 TxtIdVenta.Text = IdVenta.ToString();
                 ListarDV();
                 CmbDNICliente.Enabled = false;
                 Lblsubtotal.Text = GestorDV.SubTotal(int.Parse(TxtIdVenta.Text)).ToString();
+                checkCantStock("Alta");
             }
             else
             {
@@ -313,6 +317,30 @@ namespace Interfaz_GUI
             MessageBox.Show("PDF guardado");
         }
 
+
+        void checkCantStock(string btn)
+        {
+            int Cantidad = Convert.ToInt32(TxtCantidad.Text);
+            int CantidadChequeoStock = GestorArticulo.VerificarCantStock(int.Parse(CmbCodArticulo.SelectedItem.ToString()));
+
+            switch (btn)
+            {
+                case "Alta":
+                    LblStock.Text = Convert.ToString(CantidadChequeoStock - Cantidad);
+                    break;
+                case "AltaUnificar":
+                    LblStock.Text = Convert.ToString(CantidadChequeoStock - cantidadTotalStock);
+                    break;
+                case "Baja":
+                    LblStock.Text = Convert.ToString(CantidadChequeoStock + Cantidad);
+                    break;
+                case "Modificar":
+                    LblStock.Text = Convert.ToString(CantidadChequeoStock - Cantidad);
+                    break;                
+            }
+            LblStock.Visible = true;
+
+        }
         #endregion
 
         #region botones combo
@@ -349,7 +377,8 @@ namespace Interfaz_GUI
             {
                 CmbNombreArticulo.Text = GestorArticulo.SeleccionarNombreArt(int.Parse(CmbCodArticulo.SelectedItem.ToString()));
                 TxtPrecioUnitario.Text = GestorArticulo.SeleccionPUnit(int.Parse(CmbCodArticulo.SelectedItem.ToString())).ToString();
-                //LblStock.Text = GestorArticulo.SeleccionarStock(int.Parse(CmbCodArticulo.SelectedItem.ToString())).ToString();
+                LblStock.Text = GestorArticulo.SeleccionarStock(int.Parse(CmbCodArticulo.SelectedItem.ToString())).ToString();
+                LblStock.Visible = false;
             }
             catch (Exception)
             {
@@ -362,7 +391,8 @@ namespace Interfaz_GUI
             try
             {
                 CmbCodArticulo.Text = GestorArticulo.SeleccionarCodArticulo(CmbNombreArticulo.SelectedItem.ToString()).ToString();
-                //LblStock.Text = GestorArticulo.SeleccionarStock(int.Parse(CmbCodArticulo.SelectedItem.ToString())).ToString();
+                LblStock.Text = GestorArticulo.SeleccionarStock(int.Parse(CmbCodArticulo.SelectedItem.ToString())).ToString();
+                LblStock.Visible = false;
             }
             catch (Exception)
             {
@@ -383,7 +413,7 @@ namespace Interfaz_GUI
                 TxtCantidad.Text = int.Parse(Convert.ToString(dataGridViewDV.Rows[e.RowIndex].Cells["Cant"].Value.ToString())).ToString();
                 TxtPrecioUnitario.Text = decimal.Parse(Convert.ToString(dataGridViewDV.Rows[e.RowIndex].Cells["PUnit"].Value.ToString())).ToString();
                 CmbCodArticulo.Text = int.Parse(Convert.ToString(dataGridViewDV.Rows[e.RowIndex].Cells["CodProd"].Value.ToString())).ToString();
-                CmbNombreArticulo.Text = Convert.ToString(dataGridViewDV.Rows[e.RowIndex].Cells["Descrip"].Value.ToString()).ToString();
+                CmbNombreArticulo.Text = Convert.ToString(dataGridViewDV.Rows[e.RowIndex].Cells["Descrip"].Value.ToString()).ToString();                
             }
             catch (Exception)
             {
@@ -461,13 +491,15 @@ namespace Interfaz_GUI
                     if (GestorDV.ExisteProducto(int.Parse(TxtIdVenta.Text), GestorArticulo.SeleccionarIdArticulo(int.Parse(CmbCodArticulo.Text))) == true)
                     {
                         GestorDV.UnificarArticulos(int.Parse(TxtIdVenta.Text), GestorArticulo.SeleccionarIdArticulo(int.Parse(CmbCodArticulo.Text)), int.Parse(TxtCantidad.Text));
+                        cantidadTotalStock = GestorDV.ObtenerCantidad(int.Parse(TxtIdVenta.Text), GestorArticulo.SeleccionarIdArticulo(int.Parse(CmbCodArticulo.Text)));
                         ListarDV();
+                        checkCantStock("AltaUnificar");
                     }
                     else
                     {
                         AltaDV(int.Parse(TxtIdVenta.Text), GestorArticulo.SeleccionarIdArticulo(int.Parse(CmbCodArticulo.Text)), GestorArticulo.SeleccionarNombreArt(int.Parse(CmbCodArticulo.Text)), decimal.Parse(TxtPrecioUnitario.Text), int.Parse(TxtCantidad.Text), 0);
                     }
-                    LimpiarTxt();
+                    //LimpiarTxt();
                     BtnCerrarDetalle.Enabled = true;
                 }
                 else
@@ -488,7 +520,8 @@ namespace Interfaz_GUI
                 if (ChequearFallaTxt() == false)
                 {
                     ModificarDV(IdDetalle, GestorArticulo.SeleccionarIdArticulo(int.Parse(CmbCodArticulo.Text)), decimal.Parse(TxtPrecioUnitario.Text), int.Parse(TxtCantidad.Text), 0);
-                    LimpiarTxt();
+                    checkCantStock("Modificar");
+                    //LimpiarTxt();
                 }
 
                 else

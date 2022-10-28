@@ -78,10 +78,15 @@ namespace Negocio_BLL
 
         public void UnificarArticulos(int IdVenta, int IdArticulo, int Cantidad)
         {
-            Mapper.UnificarArticulos(IdVenta, IdArticulo, Cantidad);
+            Mapper.UnificarArticulos(IdVenta, IdArticulo, Cantidad);            
             DV = Seguridad.CalcularDVH("Select * from Detalle_Venta where IdArticulo = " + IdArticulo + " and IdVenta = " + IdVenta + "", "Detalle_Venta");
             Articulo.EjecutarConsulta("Update Detalle_Venta set DVH = " + DV + " where IdArticulo = " + IdArticulo + " and IdVenta = " + IdVenta + "");
             Seguridad.ActualizarDVV("Detalle_Venta", Seguridad.SumaDVV("Detalle_Venta"));
+        }
+
+        public int ObtenerCantidad(int IdVenta, int IdArticulo)
+        {
+            return Mapper.ObtenerCantidad(IdVenta, IdArticulo);
         }
 
         #region VerificarIntegridad
