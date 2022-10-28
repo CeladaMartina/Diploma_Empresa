@@ -176,9 +176,6 @@ namespace Interfaz_GUI
 
         public void AltaDV(int IdVenta, int IdArticulo, string descripcion ,decimal PUnit, int Cantidad, int DVH)
         {            
-            int CantidadChequeoStock = GestorArticulo.VerificarCantStock(int.Parse(CmbCodArticulo.SelectedItem.ToString()));
-
-            //if (Cantidad <= CantidadChequeoStock && GestorDV.ChequearStock(IdArticulo, int.Parse(TxtIdVenta.Text), Cantidad, 0) <= CantidadChequeoStock)
             if (Cantidad <= Convert.ToInt32(LblStock.Text) && GestorDV.ChequearStock(IdArticulo, int.Parse(TxtIdVenta.Text), Cantidad, 0) <= Convert.ToInt32(LblStock.Text))
             {
                 GestorDV.AltaDV(PUnit, IdArticulo, descripcion,DVH, Cantidad, IdVenta);
@@ -187,6 +184,21 @@ namespace Interfaz_GUI
                 CmbDNICliente.Enabled = false;
                 Lblsubtotal.Text = GestorDV.SubTotal(int.Parse(TxtIdVenta.Text)).ToString();
                 checkCantStock("Alta");
+            }
+            else
+            {
+                MessageBox.Show(CambiarIdioma.TraducirGlobal("No hay Stock suficiente") ?? "No hay Stock suficiente");
+            }
+        }
+
+        public void UnificarDV(int IdArticulo, int Cantidad)
+        {
+           if (Cantidad <= Convert.ToInt32(LblStock.Text) && Convert.ToInt32(LblStock.Text) <= GestorDV.ChequearStock(IdArticulo, int.Parse(TxtIdVenta.Text), Cantidad, 0) )
+            {
+                GestorDV.UnificarArticulos(int.Parse(TxtIdVenta.Text), GestorArticulo.SeleccionarIdArticulo(int.Parse(CmbCodArticulo.Text)), int.Parse(TxtCantidad.Text));
+                cantidadTotalStock = GestorDV.ObtenerCantidad(int.Parse(TxtIdVenta.Text), GestorArticulo.SeleccionarIdArticulo(int.Parse(CmbCodArticulo.Text)));
+                ListarDV();
+                checkCantStock("AltaUnificar");
             }
             else
             {
@@ -203,12 +215,13 @@ namespace Interfaz_GUI
 
         public void ModificarDV(int IdDetalle, int IdArticulo, decimal PUnit, int Cantidad, int DVH)
         {
-            int CantidadChequeoStock = GestorArticulo.VerificarCantStock(int.Parse(CmbCodArticulo.SelectedItem.ToString()));
-            if (Cantidad <= CantidadChequeoStock && GestorDV.ChequearStock(IdArticulo, int.Parse(TxtIdVenta.Text), Cantidad, IdDetalle) <= CantidadChequeoStock)
+            LblStock.Text = Convert.ToString(GestorArticulo.VerificarCantStock(int.Parse(CmbCodArticulo.SelectedItem.ToString())));
+            if (Cantidad <= Convert.ToInt32(LblStock.Text) && GestorDV.ChequearStock(IdArticulo, int.Parse(TxtIdVenta.Text), Cantidad, IdDetalle) <= Convert.ToInt32(LblStock.Text))
             {
                 GestorDV.ModificarDV(IdDetalle, IdArticulo, PUnit, Cantidad, DVH);
                 ListarDV();
                 Lblsubtotal.Text = GestorDV.SubTotal(int.Parse(TxtIdVenta.Text)).ToString();
+                checkCantStock("Modificar");
             }
             else
             {
@@ -490,10 +503,8 @@ namespace Interfaz_GUI
                 {
                     if (GestorDV.ExisteProducto(int.Parse(TxtIdVenta.Text), GestorArticulo.SeleccionarIdArticulo(int.Parse(CmbCodArticulo.Text))) == true)
                     {
-                        GestorDV.UnificarArticulos(int.Parse(TxtIdVenta.Text), GestorArticulo.SeleccionarIdArticulo(int.Parse(CmbCodArticulo.Text)), int.Parse(TxtCantidad.Text));
-                        cantidadTotalStock = GestorDV.ObtenerCantidad(int.Parse(TxtIdVenta.Text), GestorArticulo.SeleccionarIdArticulo(int.Parse(CmbCodArticulo.Text)));
-                        ListarDV();
-                        checkCantStock("AltaUnificar");
+                        UnificarDV(GestorArticulo.SeleccionarIdArticulo(int.Parse(CmbCodArticulo.Text)), int.Parse(TxtCantidad.Text));
+                        
                     }
                     else
                     {
@@ -520,7 +531,6 @@ namespace Interfaz_GUI
                 if (ChequearFallaTxt() == false)
                 {
                     ModificarDV(IdDetalle, GestorArticulo.SeleccionarIdArticulo(int.Parse(CmbCodArticulo.Text)), decimal.Parse(TxtPrecioUnitario.Text), int.Parse(TxtCantidad.Text), 0);
-                    checkCantStock("Modificar");
                     //LimpiarTxt();
                 }
 
