@@ -138,7 +138,7 @@ namespace Acceso_DAL
             using (Acceso.Conexion)
             {
                 Acceso.AbrirConexion();
-                string Query = "select CodProd from Articulo";
+                string Query = "select CodProd from Articulo where BajaLogica != 1";
                 using (SqlCommand Cmd = new SqlCommand(Query, Acceso.Conexion))
                 {
                     using (SqlDataReader Lector = Cmd.ExecuteReader())
@@ -160,7 +160,7 @@ namespace Acceso_DAL
             using (Acceso.Conexion)
             {
                 Acceso.AbrirConexion();
-                string query = "Select Descripcion From Articulo";
+                string query = "Select Descripcion From Articulo where BajaLogica != 1";
                 using (SqlCommand cmd = new SqlCommand(query, Acceso.Conexion))
                 {
                     using (SqlDataReader lector = cmd.ExecuteReader())
