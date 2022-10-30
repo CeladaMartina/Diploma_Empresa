@@ -193,7 +193,7 @@ namespace Interfaz_GUI
 
         public void UnificarDV(int IdArticulo, int Cantidad)
         {
-           if (Cantidad <= Convert.ToInt32(LblStock.Text))
+            if (Cantidad <= Convert.ToInt32(LblStock.Text))
             {
                 GestorDV.UnificarArticulos(int.Parse(TxtIdVenta.Text), GestorArticulo.SeleccionarIdArticulo(int.Parse(CmbCodArticulo.Text)), int.Parse(TxtCantidad.Text));
                 cantidadTotalStock = GestorDV.ObtenerCantidad(int.Parse(TxtIdVenta.Text), GestorArticulo.SeleccionarIdArticulo(int.Parse(CmbCodArticulo.Text)));

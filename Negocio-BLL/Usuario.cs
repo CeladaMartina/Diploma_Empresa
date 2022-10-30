@@ -106,10 +106,10 @@ namespace Negocio_BLL
 
         public void RestaurarClave(string Contraseña, string Nick, string Mail) { }
 
-        public List<string> NombreUsuariosSistema()
-        {
-            return Mapper.NombreUsuariosSistema();
-        }
+        //public List<string> NombreUsuariosSistema()
+        //{
+        //    return Mapper.NombreUsuariosSistema();
+        //}
 
         #endregion
 

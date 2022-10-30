@@ -237,6 +237,7 @@ namespace Interfaz_GUI
             this.Controls.Add(this.groupBox1);
             this.Name = "Administrar_Usuario";
             this.Text = "Administrar_Usuario";
+            this.Load += new System.EventHandler(this.Administrar_Usuario_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsuario)).EndInit();

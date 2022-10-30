@@ -112,6 +112,7 @@ namespace Interfaz_GUI
             // 
             // TxtTotal
             // 
+            this.TxtTotal.Enabled = false;
             this.TxtTotal.Location = new System.Drawing.Point(95, 145);
             this.TxtTotal.Name = "TxtTotal";
             this.TxtTotal.Size = new System.Drawing.Size(121, 22);
@@ -335,6 +336,7 @@ namespace Interfaz_GUI
             // 
             // TxtIdCompra
             // 
+            this.TxtIdCompra.Enabled = false;
             this.TxtIdCompra.Location = new System.Drawing.Point(166, 20);
             this.TxtIdCompra.Name = "TxtIdCompra";
             this.TxtIdCompra.Size = new System.Drawing.Size(71, 22);
@@ -358,7 +360,7 @@ namespace Interfaz_GUI
             this.dataGridViewDC.Name = "dataGridViewDC";
             this.dataGridViewDC.RowHeadersWidth = 51;
             this.dataGridViewDC.RowTemplate.Height = 24;
-            this.dataGridViewDC.Size = new System.Drawing.Size(482, 348);
+            this.dataGridViewDC.Size = new System.Drawing.Size(528, 348);
             this.dataGridViewDC.TabIndex = 5;
             this.dataGridViewDC.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDC_CellClick);
             // 

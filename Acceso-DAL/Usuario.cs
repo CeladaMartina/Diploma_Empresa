@@ -28,31 +28,31 @@ namespace Acceso_DAL
 
 
         //NO USO
-        public List<string> NombreUsuariosSistema()
-        {
-            List<string> NomUs = new List<string>();
-            SqlConnection Conexion = new SqlConnection();
-            using (Conexion)
-            {
-                Conexion.ConnectionString = @"Data Source=.;Integrated Security=True";
-                Conexion.Open();
+        //public List<string> NombreUsuariosSistema()
+        //{
+        //    List<string> NomUs = new List<string>();
+        //    SqlConnection Conexion = new SqlConnection();
+        //    using (Conexion)
+        //    {
+        //        Conexion.ConnectionString = @"Data Source=.;Integrated Security=True";
+        //        Conexion.Open();
 
-                string query = "select suser_sname(owner_sid) as 'Owner' from sys.databases";
-                using (SqlCommand cmd = new SqlCommand(query, Conexion))
-                {
-                    using (SqlDataReader lector = cmd.ExecuteReader())
-                    {
-                        while (lector.Read())
-                        {
-                            NomUs.Add(lector.GetString(0).ToString());
-                        }
-                    }
-                }
-                Conexion.Close();
-            }
-            NomUs = NomUs.Distinct().ToList();
-            return NomUs;
-        }
+        //        string query = "select suser_sname(owner_sid) as 'Owner' from sys.databases";
+        //        using (SqlCommand cmd = new SqlCommand(query, Conexion))
+        //        {
+        //            using (SqlDataReader lector = cmd.ExecuteReader())
+        //            {
+        //                while (lector.Read())
+        //                {
+        //                    NomUs.Add(lector.GetString(0).ToString());
+        //                }
+        //            }
+        //        }
+        //        Conexion.Close();
+        //    }
+        //    NomUs = NomUs.Distinct().ToList();
+        //    return NomUs;
+        //}
 
         public string GetConexion()
         {

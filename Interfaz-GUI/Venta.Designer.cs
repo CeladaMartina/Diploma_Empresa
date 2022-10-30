@@ -88,6 +88,7 @@ namespace Interfaz_GUI
             // 
             // TxtIdVenta
             // 
+            this.TxtIdVenta.Enabled = false;
             this.TxtIdVenta.Location = new System.Drawing.Point(148, 24);
             this.TxtIdVenta.Name = "TxtIdVenta";
             this.TxtIdVenta.Size = new System.Drawing.Size(71, 22);
@@ -146,6 +147,7 @@ namespace Interfaz_GUI
             // 
             // TxtTotal
             // 
+            this.TxtTotal.Enabled = false;
             this.TxtTotal.Location = new System.Drawing.Point(95, 145);
             this.TxtTotal.Name = "TxtTotal";
             this.TxtTotal.Size = new System.Drawing.Size(121, 22);

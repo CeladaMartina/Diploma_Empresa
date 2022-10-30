@@ -290,5 +290,10 @@ namespace Interfaz_GUI
                 MessageBox.Show(CambiarIdioma.TraducirGlobal("Error") ?? "Error");
             }
         }
+
+        private void Administrar_Usuario_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

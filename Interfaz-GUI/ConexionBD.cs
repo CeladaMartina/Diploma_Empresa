@@ -14,6 +14,16 @@ namespace Interfaz_GUI
     public partial class ConexionBD : Form
     {
         Negocio_BLL.Usuario GestorUsuario = new Negocio_BLL.Usuario();
+
+        bool ChequearFallaTxt()
+        {
+            bool A = false;
+            if (string.IsNullOrEmpty(UsuarioServidor.Text) || string.IsNullOrEmpty(UsuarioBase.Text))
+            {
+                A = true;
+            }            
+            return A;
+        }
         public ConexionBD()
         {
             InitializeComponent();
@@ -27,15 +37,23 @@ namespace Interfaz_GUI
         {
             try
             {
-                SqlConnection Conexion = new SqlConnection();
-                GestorUsuario.GenerarConexion(UsuarioServidor.Text, UsuarioBase.Text);                
-                Conexion.ConnectionString = GestorUsuario.GetConexion();
-                Conexion.Open();
-                MessageBox.Show(CambiarIdioma.TraducirGlobal("La conexion funciona correctamente") ?? "La conexion funciona correctamente");
-                
-                LogIn formLogIn = new LogIn();
-                this.Hide();
-                formLogIn.Show();
+                if(ChequearFallaTxt() == false)
+                {
+                    SqlConnection Conexion = new SqlConnection();
+                    GestorUsuario.GenerarConexion(UsuarioServidor.Text, UsuarioBase.Text);
+                    Conexion.ConnectionString = GestorUsuario.GetConexion();
+                    Conexion.Open();
+                    MessageBox.Show(CambiarIdioma.TraducirGlobal("La conexion funciona correctamente") ?? "La conexion funciona correctamente");
+
+                    LogIn formLogIn = new LogIn();
+                    this.Hide();
+                    formLogIn.Show();
+                }
+                else
+                {
+                    MessageBox.Show(CambiarIdioma.TraducirGlobal("Error") ?? "Error");
+                }
+
             }
             catch (Exception)
             {

@@ -536,8 +536,8 @@ namespace Acceso_DAL
 
         public string GenerarClave()
         {
-            const string Chars = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ123456789";
-            return new string(Enumerable.Repeat(Chars, 8).Select(s => s[Random.Next(s.Length)]).ToArray());
+            const string Chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+            return new string(Enumerable.Repeat(Chars, 7).Select(s => s[Random.Next(s.Length)]).ToArray());
         }
 
         public bool ValidarClave(string clave)
