@@ -61,15 +61,28 @@ namespace Interfaz_GUI
             if (radioButtonMedia.Checked == true)
             {
                 criticidad = "Media";
-            }                
-            
+            }
 
             dataGridViewBitacora.DataSource = Seguridad.FiltradoCompleto(comboBoxUsuario.SelectedItem.ToString(), dateTimePickerDesde.Value.Date, dateTimePickerHasta.Value.Date, criticidad);
+            if (dataGridViewBitacora.Rows.Count == 0)
+            {
+                dataGridViewBitacora.DataSource = null;
+                MessageBox.Show(CambiarIdioma.TraducirGlobal("No hay valores para mostrar en la grilla.") ?? "No hay valores para mostrar en la grilla.");
+                Listar();
+                radioButtonAlta.Checked = false;
+                radioButtonBaja.Checked = false;
+                radioButtonMedia.Checked = false;
+
+            }
+            else
+            {
+                dataGridViewBitacora.Columns["IdUsuario"].Visible = false;
+                dataGridViewBitacora.Columns["IdBitacora"].Visible = false;
+                dataGridViewBitacora.Columns["DVH"].Visible = false;
+                dataGridViewBitacora.ReadOnly = true;
+            }
             
-            dataGridViewBitacora.Columns["IdUsuario"].Visible = false;
-            dataGridViewBitacora.Columns["IdBitacora"].Visible = false;
-            dataGridViewBitacora.Columns["DVH"].Visible = false;
-            dataGridViewBitacora.ReadOnly = true;
+            
         }
 
         void CargarComboUsuario()

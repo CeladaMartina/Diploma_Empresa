@@ -69,10 +69,22 @@ namespace Interfaz_GUI
         void Filtrar()
         {
             dataGridViewCompras.DataSource = null;
-            dataGridViewCompras.DataSource = GestorCompra.FiltradoCompleto(decimal.Parse(TxtDesde.Text), decimal.Parse(TxtHasta.Text), dateTimePickerDesde.Value.Date, dateTimePickerHasta.Value.Date, comboBoxProveedorCUIT.SelectedItem.ToString());           
-            dataGridViewCompras.Columns["IdCompra"].Visible = false;
-            dataGridViewCompras.Columns["IdProveedor"].Visible = false;
-            dataGridViewCompras.ReadOnly = true;
+            dataGridViewCompras.DataSource = GestorCompra.FiltradoCompleto(decimal.Parse(TxtDesde.Text), decimal.Parse(TxtHasta.Text), dateTimePickerDesde.Value.Date, dateTimePickerHasta.Value.Date, comboBoxProveedorCUIT.SelectedItem.ToString());
+
+            if(dataGridViewCompras.Rows.Count == 0)
+            {
+                dataGridViewCompras.DataSource = null;
+                MessageBox.Show(CambiarIdioma.TraducirGlobal("No hay valores para mostrar en la grilla.") ?? "No hay valores para mostrar en la grilla.");
+                Listar();
+                LimpiarTxt();
+            }
+            else
+            {
+                dataGridViewCompras.Columns["IdCompra"].Visible = false;
+                dataGridViewCompras.Columns["IdProveedor"].Visible = false;
+                dataGridViewCompras.ReadOnly = true;
+            }
+            
         }
 
         bool ChequearFallaTxt()

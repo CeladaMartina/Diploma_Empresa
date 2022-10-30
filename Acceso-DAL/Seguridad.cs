@@ -169,8 +169,6 @@ namespace Acceso_DAL
             return ListaBitacora;
         }
 
-
-
         public void RecalcularDVH()
         {
             long suma = 0;

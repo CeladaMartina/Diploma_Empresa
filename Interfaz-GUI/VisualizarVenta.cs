@@ -54,9 +54,21 @@ namespace Interfaz_GUI
         {
             dataGridViewDV.DataSource = null;
             dataGridViewDV.DataSource =  GestorVenta.FiltradoCompleto(CmbDNIClientes.SelectedItem.ToString(), dateTimePickerDesde.Value.Date, dateTimePickerHasta.Value.Date, decimal.Parse(TxtDesde.Text), decimal.Parse(TxtHasta.Text));
-            dataGridViewDV.Columns["IdVenta"].Visible = false;
-            dataGridViewDV.Columns["IdCliente"].Visible = false;
-            dataGridViewDV.ReadOnly = true;
+            
+            if(dataGridViewDV.Rows.Count == 0)
+            {
+                dataGridViewDV.DataSource = null;
+                MessageBox.Show(CambiarIdioma.TraducirGlobal("No hay valores para mostrar en la grilla.") ?? "No hay valores para mostrar en la grilla.");
+                Listar();
+                LimpiarTxt();
+            }
+            else
+            {
+                dataGridViewDV.Columns["IdVenta"].Visible = false;
+                dataGridViewDV.Columns["IdCliente"].Visible = false;
+                dataGridViewDV.ReadOnly = true;
+            }
+            
         }
 
         bool ChequearFallaTxt()

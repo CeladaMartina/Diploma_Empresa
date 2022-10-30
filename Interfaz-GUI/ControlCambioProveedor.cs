@@ -50,8 +50,20 @@ namespace Interfaz_GUI
         {
             dataGridViewControlCambio.DataSource = null;
             dataGridViewControlCambio.DataSource = GestorControlCambio.FiltrarCambio(txtCUIT.Text);
-            dataGridViewControlCambio.Columns["IdProveedor"].Visible = false;
-            dataGridViewControlCambio.ReadOnly = true;
+
+            if(dataGridViewControlCambio.Rows.Count == 0)
+            {
+                dataGridViewControlCambio.DataSource = null;
+                MessageBox.Show(CambiarIdioma.TraducirGlobal("No hay valores para mostrar en la grilla.") ?? "No hay valores para mostrar en la grilla.");
+                ListarCambios();
+                LimpiarTxt();
+            }
+            else
+            {
+                dataGridViewControlCambio.Columns["IdProveedor"].Visible = false;
+                dataGridViewControlCambio.ReadOnly = true;
+            }
+            
         }
 
         void LimpiarTxt()
