@@ -494,20 +494,9 @@ namespace Acceso_DAL
 
         }
 
-        public string GenerarBackup(string Nombre, string ruta, int CantVol)
-        {
-            //string query = "USE MASTER; BACKUP DATABASE [Diploma_Empresa_de_Ropa] TO ";
-            string query = "USE MASTER; BACKUP DATABASE [Diploma_Empresa] TO "; 
-            for (int i = 1; i < CantVol + 1; i++)
-            {
-                if (i > 1)
-                {
-                    query += ",";
-                }
-                query += " DISK = N'" + ruta + "\\" + Nombre + i.ToString() + ".bak'";
-            }
-            query += " WITH NOFORMAT,NOINIT,NAME = N'" + Nombre + "', SKIP,NOREWIND,NOUNLOAD,STATS = 10";
-
+        public string GenerarBackup(string Nombre, string ruta)
+        {            
+            string query = "USE MASTER; BACKUP DATABASE [Diploma_Empresa] TO DISK = N'" + ruta + "\\" + Nombre  + ".bak' WITH NOFORMAT,NOINIT,NAME = N'" + Nombre + "', SKIP,NOREWIND,NOUNLOAD,STATS = 10 "; 
             return Ejecutar(query, null);
         }
 

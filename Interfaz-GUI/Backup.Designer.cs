@@ -31,10 +31,8 @@ namespace Interfaz_GUI
         {
             this.LblRuta = new System.Windows.Forms.Label();
             this.LblNombre = new System.Windows.Forms.Label();
-            this.LblCantCopias = new System.Windows.Forms.Label();
             this.TxtRuta = new System.Windows.Forms.TextBox();
             this.TxtNombre = new System.Windows.Forms.TextBox();
-            this.TxtCantCopias = new System.Windows.Forms.TextBox();
             this.BtnModificar = new System.Windows.Forms.Button();
             this.BtnExaminar = new System.Windows.Forms.Button();
             this.BtnBackup = new System.Windows.Forms.Button();
@@ -61,16 +59,6 @@ namespace Interfaz_GUI
             this.LblNombre.Tag = "Nombre";
             this.LblNombre.Text = "Nombre";
             // 
-            // LblCantCopias
-            // 
-            this.LblCantCopias.AutoSize = true;
-            this.LblCantCopias.Location = new System.Drawing.Point(32, 115);
-            this.LblCantCopias.Name = "LblCantCopias";
-            this.LblCantCopias.Size = new System.Drawing.Size(129, 17);
-            this.LblCantCopias.TabIndex = 2;
-            this.LblCantCopias.Tag = "Cantidad de Copias";
-            this.LblCantCopias.Text = "Cantidad de copias";
-            // 
             // TxtRuta
             // 
             this.TxtRuta.Location = new System.Drawing.Point(167, 33);
@@ -85,18 +73,11 @@ namespace Interfaz_GUI
             this.TxtNombre.Size = new System.Drawing.Size(192, 22);
             this.TxtNombre.TabIndex = 4;
             // 
-            // TxtCantCopias
-            // 
-            this.TxtCantCopias.Location = new System.Drawing.Point(167, 110);
-            this.TxtCantCopias.Name = "TxtCantCopias";
-            this.TxtCantCopias.Size = new System.Drawing.Size(192, 22);
-            this.TxtCantCopias.TabIndex = 5;
-            // 
             // BtnModificar
             // 
-            this.BtnModificar.Location = new System.Drawing.Point(384, 32);
+            this.BtnModificar.Location = new System.Drawing.Point(272, 134);
             this.BtnModificar.Name = "BtnModificar";
-            this.BtnModificar.Size = new System.Drawing.Size(99, 25);
+            this.BtnModificar.Size = new System.Drawing.Size(87, 34);
             this.BtnModificar.TabIndex = 6;
             this.BtnModificar.Tag = " Modificar";
             this.BtnModificar.Text = "Modificar";
@@ -105,7 +86,7 @@ namespace Interfaz_GUI
             // 
             // BtnExaminar
             // 
-            this.BtnExaminar.Location = new System.Drawing.Point(35, 174);
+            this.BtnExaminar.Location = new System.Drawing.Point(383, 27);
             this.BtnExaminar.Name = "BtnExaminar";
             this.BtnExaminar.Size = new System.Drawing.Size(87, 34);
             this.BtnExaminar.TabIndex = 7;
@@ -116,7 +97,7 @@ namespace Interfaz_GUI
             // 
             // BtnBackup
             // 
-            this.BtnBackup.Location = new System.Drawing.Point(272, 174);
+            this.BtnBackup.Location = new System.Drawing.Point(35, 134);
             this.BtnBackup.Name = "BtnBackup";
             this.BtnBackup.Size = new System.Drawing.Size(87, 34);
             this.BtnBackup.TabIndex = 8;
@@ -129,14 +110,12 @@ namespace Interfaz_GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(509, 266);
+            this.ClientSize = new System.Drawing.Size(498, 205);
             this.Controls.Add(this.BtnBackup);
             this.Controls.Add(this.BtnExaminar);
             this.Controls.Add(this.BtnModificar);
-            this.Controls.Add(this.TxtCantCopias);
             this.Controls.Add(this.TxtNombre);
             this.Controls.Add(this.TxtRuta);
-            this.Controls.Add(this.LblCantCopias);
             this.Controls.Add(this.LblNombre);
             this.Controls.Add(this.LblRuta);
             this.Name = "Backup";
@@ -151,10 +130,8 @@ namespace Interfaz_GUI
 
         private System.Windows.Forms.Label LblRuta;
         private System.Windows.Forms.Label LblNombre;
-        private System.Windows.Forms.Label LblCantCopias;
         private System.Windows.Forms.TextBox TxtRuta;
         private System.Windows.Forms.TextBox TxtNombre;
-        private System.Windows.Forms.TextBox TxtCantCopias;
         private System.Windows.Forms.Button BtnModificar;
         private System.Windows.Forms.Button BtnExaminar;
         private System.Windows.Forms.Button BtnBackup;

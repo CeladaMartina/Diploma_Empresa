@@ -13,12 +13,10 @@
     <AssemblyName>SistemasVentasDemo</AssemblyName>
     <Name>SistemasVentasDemo</Name>
     <RootNamespace>SistemasVentasDemo</RootNamespace>
-    <LoadFromTemplate>True</LoadFromTemplate>
+    <LoadFromTemplate>
+    </LoadFromTemplate>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)' == 'All' ">
-    <DebugSymbols>false</DebugSymbols>
-    <EnableUnmanagedDebugging>true</EnableUnmanagedDebugging>
-  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'DefaultBuild' " />
   <ItemGroup>
     <Compile Include="SistemasVentasDemo.aip">
       <SubType>Code</SubType>

@@ -36,21 +36,16 @@ namespace Interfaz_GUI
             BtnBackup.Enabled = false;
             TxtRuta.Text = "";
             TxtNombre.Text = "";
-            TxtCantCopias.Text = "";
+           
         }
 
         bool ChequearFallaTxt()
         {
             bool A = false;
-            if (string.IsNullOrEmpty(TxtNombre.Text) || string.IsNullOrEmpty(TxtCantCopias.Text)
-                || string.IsNullOrEmpty(TxtRuta.Text))
+            if (string.IsNullOrEmpty(TxtNombre.Text) || string.IsNullOrEmpty(TxtRuta.Text))
             {
                 A = true;
-            }
-            else if (int.Parse(TxtCantCopias.Text) < 1)
-            {
-                A = true;
-            }
+            }            
             return A;
         }
 
@@ -63,7 +58,7 @@ namespace Interfaz_GUI
             sec.AddAccessRule(new FileSystemAccessRule(everyone, FileSystemRights.Modify | FileSystemRights.Synchronize, InheritanceFlags.ContainerInherit | InheritanceFlags.ObjectInherit, PropagationFlags.None, AccessControlType.Allow));
             Directory.SetAccessControl(TxtRuta.Text, sec);
 
-            string Backup = Seguridad.GenerarBackUp(TxtNombre.Text, TxtRuta.Text, int.Parse(TxtCantCopias.Text));
+            string Backup = Seguridad.GenerarBackUp(TxtNombre.Text, TxtRuta.Text);
             if (Backup == "ok")
             {
                 MessageBox.Show(CambiarIdioma.TraducirGlobal("Backup realizado correctamente") ?? "Backup realizado correctamente");
@@ -96,7 +91,6 @@ namespace Interfaz_GUI
         {
             LblRuta.Text = Subject.TraducirObserver(LblRuta.Tag.ToString()) ?? LblRuta.Tag.ToString();
             LblNombre.Text = Subject.TraducirObserver(LblNombre.Tag.ToString()) ?? LblNombre.Tag.ToString();
-            LblCantCopias.Text = Subject.TraducirObserver(LblCantCopias.Tag.ToString()) ?? LblCantCopias.Tag.ToString();
             BtnBackup.Text = Subject.TraducirObserver(BtnBackup.Tag.ToString()) ?? BtnBackup.Tag.ToString();
             BtnExaminar.Text = Subject.TraducirObserver(BtnExaminar.Tag.ToString()) ?? BtnExaminar.Tag.ToString();
             //this.Text = Subject.TraducirObserver(this.Tag.ToString()) ?? this.Tag.ToString();
@@ -107,7 +101,6 @@ namespace Interfaz_GUI
         {
             LblRuta.Text = CambiarIdioma.TraducirGlobal(LblRuta.Tag.ToString()) ?? LblRuta.Tag.ToString();
             LblNombre.Text = CambiarIdioma.TraducirGlobal(LblNombre.Tag.ToString()) ?? LblNombre.Tag.ToString();
-            LblCantCopias.Text = CambiarIdioma.TraducirGlobal(LblCantCopias.Tag.ToString()) ?? LblCantCopias.Tag.ToString();
             BtnBackup.Text = CambiarIdioma.TraducirGlobal(BtnBackup.Tag.ToString()) ?? BtnBackup.Tag.ToString();
             BtnExaminar.Text = CambiarIdioma.TraducirGlobal(BtnExaminar.Tag.ToString()) ?? BtnExaminar.Tag.ToString();
             //this.Text = CambiarIdioma.TraducirGlobal(this.Tag.ToString()) ?? this.Tag.ToString();

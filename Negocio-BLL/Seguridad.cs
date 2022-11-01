@@ -110,9 +110,9 @@ namespace Negocio_BLL
 
         #region BackUpRestore
 
-        public string GenerarBackUp(string Nombre, string Ruta, int CantVol)
+        public string GenerarBackUp(string Nombre, string Ruta)
         {
-            return Mapper.GenerarBackup(Nombre, Ruta, CantVol);
+            return Mapper.GenerarBackup(Nombre, Ruta);
         }
 
         public string Restaurar(List<string> archivos)
