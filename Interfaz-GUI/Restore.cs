@@ -44,7 +44,7 @@ namespace Interfaz_GUI
             thisDialog.FilterIndex = 2;
             thisDialog.RestoreDirectory = true;
             thisDialog.Multiselect = true;
-            thisDialog.Title = "Seleccione el/los archivos para restaurar la base de datos.";
+            thisDialog.Title = "Seleccione el archivo para restaurar la base de datos.";
 
             if (thisDialog.ShowDialog() == DialogResult.OK)
             {
@@ -56,7 +56,7 @@ namespace Interfaz_GUI
                         {
                             using (myStream)
                             {
-                                listBox1.Items.Add(file);
+                                txtRestore.Text = file;
                             }
                         }
                     }
@@ -65,18 +65,12 @@ namespace Interfaz_GUI
                         MessageBox.Show(CambiarIdioma.TraducirGlobal("Error -> No se puede leer el archivo: ") ?? "Error -> No se puede leer el archivo: " + ex.Message);
                     }
                 }
-            }
-            listBox1.Sorted = true;
+            }            
         }
 
         void RealizarRestore()
-        {
-            List<string> lista = new List<string>();
-            for (int i = listBox1.Items.Count - 1; i >= 0; i--)
-            {
-                lista.Add(listBox1.Items[i].ToString());
-            }
-            string restore = Seguridad.Restaurar(lista);
+        {  
+            string restore = Seguridad.Restaurar(txtRestore.Text);
             if (restore == "ok")
             {
                 MessageBox.Show(CambiarIdioma.TraducirGlobal("Restore realizado correctamente") ?? "Restore realizado correctamente");
@@ -124,6 +118,7 @@ namespace Interfaz_GUI
             try
             {
                 AgregarPartes();
+                BtnAgregarPartes.Enabled = false;
             }
             catch (Exception)
             {
@@ -134,8 +129,8 @@ namespace Interfaz_GUI
         private void BtnLimpiarLista_Click(object sender, EventArgs e)
         {
             try
-            {
-                listBox1.Items.Clear();
+            {                
+                txtRestore.Clear();
             }
             catch (Exception)
             {

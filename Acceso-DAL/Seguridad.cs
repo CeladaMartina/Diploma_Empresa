@@ -500,19 +500,9 @@ namespace Acceso_DAL
             return Ejecutar(query, null);
         }
 
-        public string Restaurar(List<string> archivos)
-        {
-            archivos.Sort();            
-            string query = "USE MASTER; ALTER DATABASE [Diploma_Empresa] SET Single_User WITH Rollback Immediate; RESTORE DATABASE [Diploma_Empresa] FROM ";
-            for (int i = 0; i <= archivos.Count - 1; i++)
-            {
-                if (i >= 1)
-                {
-                    query += ",";
-                }
-                query += " DISK = '" + archivos[i] + "'";
-            }
-            query += " WITH REPLACE; ALTER DATABASE [Diploma_Empresa] SET Multi_User";           
+        public string Restaurar(string ruta)
+        {      
+            string query = "USE MASTER; ALTER DATABASE [Diploma_Empresa] SET Single_User WITH Rollback Immediate; RESTORE DATABASE [Diploma_Empresa] FROM  DISK = '" + ruta + "' WITH REPLACE; ALTER DATABASE [Diploma_Empresa] SET Multi_User";          
             return Ejecutar(query, null);
         }
 

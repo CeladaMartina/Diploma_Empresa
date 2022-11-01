@@ -115,9 +115,9 @@ namespace Negocio_BLL
             return Mapper.GenerarBackup(Nombre, Ruta);
         }
 
-        public string Restaurar(List<string> archivos)
+        public string Restaurar(string ruta)
         {
-            return Mapper.Restaurar(archivos);
+            return Mapper.Restaurar(ruta);
         }
 
         #endregion
