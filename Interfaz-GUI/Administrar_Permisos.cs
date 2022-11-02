@@ -343,6 +343,12 @@ namespace Interfaz_GUI
         #region Traduccion 
         public void Update(ISubject subject)
         {
+            groupBox1.Text = subject.TraducirObserver(groupBox1.Tag.ToString()) ?? groupBox1.Tag.ToString();
+            groupBox2.Text = subject.TraducirObserver(groupBox2.Tag.ToString()) ?? groupBox2.Tag.ToString();
+            groupBox3.Text = subject.TraducirObserver(groupBox3.Tag.ToString()) ?? groupBox3.Tag.ToString();
+            groupBox4.Text = subject.TraducirObserver(groupBox4.Tag.ToString()) ?? groupBox4.Tag.ToString();
+            LblPatente.Text = subject.TraducirObserver(LblPatente.Tag.ToString()) ?? LblPatente.Tag.ToString();
+            LblFamilia.Text = subject.TraducirObserver(LblFamilia.Tag.ToString()) ?? LblFamilia.Tag.ToString();
             BtnAgregarF.Text = subject.TraducirObserver(BtnAgregarF.Tag.ToString()) ?? BtnAgregarF.Tag.ToString();
             BtnAgregarP.Text = subject.TraducirObserver(BtnAgregarP.Tag.ToString()) ?? BtnAgregarP.Tag.ToString();
             BtnCargarFP.Text = subject.TraducirObserver(BtnCargarFP.Tag.ToString()) ?? BtnCargarFP.Tag.ToString();
@@ -353,6 +359,12 @@ namespace Interfaz_GUI
 
         public void Traducir()
         {
+            groupBox1.Text = CambiarIdioma.TraducirGlobal(groupBox1.Tag.ToString()) ?? groupBox1.Tag.ToString();
+            groupBox2.Text = CambiarIdioma.TraducirGlobal(groupBox2.Tag.ToString()) ?? groupBox2.Tag.ToString();
+            groupBox3.Text = CambiarIdioma.TraducirGlobal(groupBox3.Tag.ToString()) ?? groupBox3.Tag.ToString();
+            groupBox4.Text = CambiarIdioma.TraducirGlobal(groupBox4.Tag.ToString()) ?? groupBox4.Tag.ToString();
+            LblPatente.Text = CambiarIdioma.TraducirGlobal(LblPatente.Tag.ToString()) ?? LblPatente.Tag.ToString();
+            LblFamilia.Text = CambiarIdioma.TraducirGlobal(LblFamilia.Tag.ToString()) ?? LblFamilia.Tag.ToString();
             BtnAgregarF.Text = CambiarIdioma.TraducirGlobal(BtnAgregarF.Tag.ToString()) ?? BtnAgregarF.Tag.ToString();
             BtnAgregarP.Text = CambiarIdioma.TraducirGlobal(BtnAgregarP.Tag.ToString()) ?? BtnAgregarP.Tag.ToString();
             BtnCargarFP.Text = CambiarIdioma.TraducirGlobal(BtnCargarFP.Tag.ToString()) ?? BtnCargarFP.Tag.ToString();

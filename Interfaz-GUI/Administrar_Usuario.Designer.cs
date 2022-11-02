@@ -72,6 +72,7 @@ namespace Interfaz_GUI
             this.groupBox1.Size = new System.Drawing.Size(1069, 284);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Tag = "Usuario";
             this.groupBox1.Text = "Usuario";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
@@ -106,9 +107,9 @@ namespace Interfaz_GUI
             // 
             this.BtnDesbloquear.Location = new System.Drawing.Point(945, 30);
             this.BtnDesbloquear.Name = "BtnDesbloquear";
-            this.BtnDesbloquear.Size = new System.Drawing.Size(105, 35);
+            this.BtnDesbloquear.Size = new System.Drawing.Size(105, 63);
             this.BtnDesbloquear.TabIndex = 14;
-            this.BtnDesbloquear.Tag = "Desbloquear";
+            this.BtnDesbloquear.Tag = "Desbloquear Usuario";
             this.BtnDesbloquear.Text = "Desbloquear";
             this.BtnDesbloquear.UseVisualStyleBackColor = true;
             this.BtnDesbloquear.Click += new System.EventHandler(this.BtnDesbloquear_Click);

@@ -1,4 +1,5 @@
-﻿using Microsoft.Reporting.WinForms;
+﻿using Diploma_Empresa_Final;
+using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +13,7 @@ using System.Windows.Forms;
 
 namespace Interfaz_GUI
 {
-    public partial class ReporteForm : Form
+    public partial class ReporteForm : Form, IObserver
     {
         Negocio_BLL.Producto GestorArticulo = new Negocio_BLL.Producto();
         public ReporteForm()
@@ -22,7 +23,7 @@ namespace Interfaz_GUI
 
         private void ReporteForm_Load(object sender, EventArgs e)
         {
-
+            Traducir();
             this.reportViewerProduct.RefreshReport();
         }
 
@@ -48,5 +49,19 @@ namespace Interfaz_GUI
                 MessageBox.Show(CambiarIdioma.TraducirGlobal("Error") ?? "Error");
             }
         }
+        #region traduccion
+        public void Update(ISubject Subject)
+        {
+            label1.Text = Subject.TraducirObserver(label1.Tag.ToString()) ?? label1.Tag.ToString();
+            BtnGenerarReporte.Text = Subject.TraducirObserver(BtnGenerarReporte.Tag.ToString()) ?? BtnGenerarReporte.Tag.ToString();            
+        }
+
+        public void Traducir()
+        {
+            label1.Text = CambiarIdioma.TraducirGlobal(label1.Tag.ToString()) ?? label1.Tag.ToString();
+            BtnGenerarReporte.Text = CambiarIdioma.TraducirGlobal(BtnGenerarReporte.Tag.ToString()) ?? BtnGenerarReporte.Tag.ToString();  
+        }
+        #endregion
+
     }
 }

@@ -66,6 +66,7 @@ namespace Interfaz_GUI
             this.groupBox1.Size = new System.Drawing.Size(802, 502);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Tag = "Permisos";
             this.groupBox1.Text = "Permisos";
             // 
             // treeViewPermisos
@@ -86,6 +87,7 @@ namespace Interfaz_GUI
             this.groupBox4.Size = new System.Drawing.Size(342, 153);
             this.groupBox4.TabIndex = 15;
             this.groupBox4.TabStop = false;
+            this.groupBox4.Tag = "Patente";
             this.groupBox4.Text = "Patente:";
             // 
             // CmbPatente
@@ -123,7 +125,7 @@ namespace Interfaz_GUI
             this.BtnQuitarPatente.Name = "BtnQuitarPatente";
             this.BtnQuitarPatente.Size = new System.Drawing.Size(75, 32);
             this.BtnQuitarPatente.TabIndex = 10;
-            this.BtnQuitarPatente.Tag = "Quitar";
+            this.BtnQuitarPatente.Tag = "Borrar";
             this.BtnQuitarPatente.Text = "Quitar";
             this.BtnQuitarPatente.UseVisualStyleBackColor = true;
             this.BtnQuitarPatente.Click += new System.EventHandler(this.BtnQuitarPatente_Click);
@@ -150,6 +152,7 @@ namespace Interfaz_GUI
             this.groupBox3.Size = new System.Drawing.Size(342, 151);
             this.groupBox3.TabIndex = 14;
             this.groupBox3.TabStop = false;
+            this.groupBox3.Tag = "Familia";
             this.groupBox3.Text = "Familia:";
             // 
             // CmbFamilia
@@ -187,7 +190,7 @@ namespace Interfaz_GUI
             this.BtnQuitarFamilia.Name = "BtnQuitarFamilia";
             this.BtnQuitarFamilia.Size = new System.Drawing.Size(86, 32);
             this.BtnQuitarFamilia.TabIndex = 6;
-            this.BtnQuitarFamilia.Tag = "Quitar";
+            this.BtnQuitarFamilia.Tag = "Borrar";
             this.BtnQuitarFamilia.Text = "Quitar";
             this.BtnQuitarFamilia.UseVisualStyleBackColor = true;
             this.BtnQuitarFamilia.Click += new System.EventHandler(this.BtnQuitarFamilia_Click);
@@ -202,7 +205,8 @@ namespace Interfaz_GUI
             this.groupBox2.Size = new System.Drawing.Size(342, 122);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Usuarios:";
+            this.groupBox2.Tag = "Usuario";
+            this.groupBox2.Text = "Usuarios";
             // 
             // LblUsuario
             // 

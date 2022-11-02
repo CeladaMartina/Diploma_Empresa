@@ -32,6 +32,7 @@ namespace Interfaz_GUI
             this.reportViewerProduct = new Microsoft.Reporting.WinForms.ReportViewer();
             this.BtnGenerarReporte = new System.Windows.Forms.Button();
             this.BtnVolver = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // reportViewerProduct
@@ -48,6 +49,7 @@ namespace Interfaz_GUI
             this.BtnGenerarReporte.Name = "BtnGenerarReporte";
             this.BtnGenerarReporte.Size = new System.Drawing.Size(161, 27);
             this.BtnGenerarReporte.TabIndex = 1;
+            this.BtnGenerarReporte.Tag = "Generar Reporte";
             this.BtnGenerarReporte.Text = "Generar Reporte";
             this.BtnGenerarReporte.UseVisualStyleBackColor = true;
             this.BtnGenerarReporte.Click += new System.EventHandler(this.BtnGenerarReporte_Click);
@@ -63,11 +65,22 @@ namespace Interfaz_GUI
             this.BtnVolver.UseVisualStyleBackColor = true;
             this.BtnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(197, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(182, 17);
+            this.label1.TabIndex = 3;
+            this.label1.Tag = "Top 5 Productos mas caros";
+            this.label1.Text = "Top 5 Productos mas caros";
+            // 
             // ReporteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(899, 557);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.BtnVolver);
             this.Controls.Add(this.BtnGenerarReporte);
             this.Controls.Add(this.reportViewerProduct);
@@ -75,6 +88,7 @@ namespace Interfaz_GUI
             this.Text = "ReporteForm";
             this.Load += new System.EventHandler(this.ReporteForm_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -83,5 +97,6 @@ namespace Interfaz_GUI
         private Microsoft.Reporting.WinForms.ReportViewer reportViewerProduct;
         private System.Windows.Forms.Button BtnGenerarReporte;
         private System.Windows.Forms.Button BtnVolver;
+        private System.Windows.Forms.Label label1;
     }
 }

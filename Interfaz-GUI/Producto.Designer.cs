@@ -241,7 +241,7 @@ namespace Interfaz_GUI
             this.BtnReporte.Name = "BtnReporte";
             this.BtnReporte.Size = new System.Drawing.Size(177, 46);
             this.BtnReporte.TabIndex = 20;
-            this.BtnReporte.Tag = "Baja";
+            this.BtnReporte.Tag = "Generar Reporte";
             this.BtnReporte.Text = "Generar Reporte";
             this.BtnReporte.UseVisualStyleBackColor = true;
             this.BtnReporte.Click += new System.EventHandler(this.BtnReporte_Click);

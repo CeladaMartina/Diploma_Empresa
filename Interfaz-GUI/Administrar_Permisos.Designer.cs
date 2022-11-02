@@ -60,7 +60,7 @@ namespace Interfaz_GUI
             this.LblFamilia.Name = "LblFamilia";
             this.LblFamilia.Size = new System.Drawing.Size(121, 17);
             this.LblFamilia.TabIndex = 0;
-            this.LblFamilia.Tag = "Familia";
+            this.LblFamilia.Tag = "Todas las Familias";
             this.LblFamilia.Text = "Todas las familias";
             // 
             // LblPatente
@@ -111,7 +111,7 @@ namespace Interfaz_GUI
             this.groupBox1.Size = new System.Drawing.Size(826, 477);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Tag = "Administrar Permisos";
+            this.groupBox1.Tag = "Administrar Patentes";
             this.groupBox1.Text = "Administrar Patentes";
             // 
             // treeViewFamilia
@@ -134,6 +134,7 @@ namespace Interfaz_GUI
             this.groupBox3.Size = new System.Drawing.Size(350, 307);
             this.groupBox3.TabIndex = 11;
             this.groupBox3.TabStop = false;
+            this.groupBox3.Tag = "Familia";
             this.groupBox3.Text = "Familias";
             // 
             // BtnSeleccionar
@@ -157,6 +158,7 @@ namespace Interfaz_GUI
             this.groupBox4.Size = new System.Drawing.Size(290, 124);
             this.groupBox4.TabIndex = 10;
             this.groupBox4.TabStop = false;
+            this.groupBox4.Tag = "Nueva Familia";
             this.groupBox4.Text = "Nueva Familia";
             // 
             // BtnAgregarFamilia
@@ -165,7 +167,7 @@ namespace Interfaz_GUI
             this.BtnAgregarFamilia.Name = "BtnAgregarFamilia";
             this.BtnAgregarFamilia.Size = new System.Drawing.Size(76, 33);
             this.BtnAgregarFamilia.TabIndex = 11;
-            this.BtnAgregarFamilia.Tag = "Agregar";
+            this.BtnAgregarFamilia.Tag = "Crear";
             this.BtnAgregarFamilia.Text = "Crear";
             this.BtnAgregarFamilia.UseVisualStyleBackColor = true;
             this.BtnAgregarFamilia.Click += new System.EventHandler(this.BtnAgregarFamilia_Click);
@@ -184,7 +186,7 @@ namespace Interfaz_GUI
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 17);
             this.label2.TabIndex = 11;
-            this.label2.Tag = "Familia";
+            this.label2.Tag = "Nombre";
             this.label2.Text = "Nombre";
             // 
             // BtnBorrarF
@@ -220,6 +222,7 @@ namespace Interfaz_GUI
             this.groupBox2.Size = new System.Drawing.Size(350, 122);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
+            this.groupBox2.Tag = "Patentes";
             this.groupBox2.Text = "Patentes";
             // 
             // BtnBorrarP

@@ -346,6 +346,10 @@ namespace Interfaz_GUI
         #region Traduccion
         public void Update(ISubject subject)
         {
+            groupBox1.Text = subject.TraducirObserver(groupBox1.Tag.ToString()) ?? groupBox1.Tag.ToString();
+            groupBox2.Text = subject.TraducirObserver(groupBox2.Tag.ToString()) ?? groupBox2.Tag.ToString();
+            groupBox3.Text = subject.TraducirObserver(groupBox3.Tag.ToString()) ?? groupBox3.Tag.ToString();
+            groupBox4.Text = subject.TraducirObserver(groupBox4.Tag.ToString()) ?? groupBox4.Tag.ToString();
             LblFamilia.Text = subject.TraducirObserver(LblFamilia.Tag.ToString()) ?? LblFamilia.Tag.ToString();
             LblPatente.Text = subject.TraducirObserver(LblPatente.Tag.ToString()) ?? LblPatente.Tag.ToString();
             LblUsuario.Text = subject.TraducirObserver(LblUsuario.Tag.ToString()) ?? LblUsuario.Tag.ToString();
@@ -358,6 +362,10 @@ namespace Interfaz_GUI
 
         void Traducir()
         {
+            groupBox1.Text = CambiarIdioma.TraducirGlobal(groupBox1.Tag.ToString()) ?? groupBox1.Tag.ToString();
+            groupBox2.Text = CambiarIdioma.TraducirGlobal(groupBox2.Tag.ToString()) ?? groupBox2.Tag.ToString();
+            groupBox3.Text = CambiarIdioma.TraducirGlobal(groupBox3.Tag.ToString()) ?? groupBox3.Tag.ToString();
+            groupBox4.Text = CambiarIdioma.TraducirGlobal(groupBox4.Tag.ToString()) ?? groupBox4.Tag.ToString();
             LblFamilia.Text = CambiarIdioma.TraducirGlobal(LblFamilia.Tag.ToString()) ?? LblFamilia.Tag.ToString();
             LblPatente.Text = CambiarIdioma.TraducirGlobal(LblPatente.Tag.ToString()) ?? LblPatente.Tag.ToString();
             LblUsuario.Text = CambiarIdioma.TraducirGlobal(LblUsuario.Tag.ToString()) ?? LblUsuario.Tag.ToString();

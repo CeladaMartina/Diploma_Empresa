@@ -147,6 +147,8 @@ namespace Interfaz_GUI
         #region Traduccion 
         public void Update(ISubject subject)
         {
+            groupBox1.Text = subject.TraducirObserver(groupBox1.Tag.ToString()) ?? groupBox1.Tag.ToString();
+            BtnGenerarClave.Text = subject.TraducirObserver(BtnGenerarClave.Tag.ToString()) ?? BtnGenerarClave.Tag.ToString();
             LblContraseñaLabel.Text = subject.TraducirObserver(LblContraseñaLabel.Tag.ToString()) ?? LblContraseñaLabel.Tag.ToString();
             LblIdioma.Text = subject.TraducirObserver(LblIdioma.Tag.ToString()) ?? LblIdioma.Tag.ToString();
             LblMail.Text = subject.TraducirObserver(LblMail.Tag.ToString()) ?? LblMail.Tag.ToString();
@@ -160,6 +162,8 @@ namespace Interfaz_GUI
 
         void Traducir()
         {
+            groupBox1.Text = CambiarIdioma.TraducirGlobal(groupBox1.Tag.ToString()) ?? groupBox1.Tag.ToString();
+            BtnGenerarClave.Text = CambiarIdioma.TraducirGlobal(BtnGenerarClave.Tag.ToString()) ?? BtnGenerarClave.Tag.ToString();
             LblContraseñaLabel.Text = CambiarIdioma.TraducirGlobal(LblContraseñaLabel.Tag.ToString()) ?? LblContraseñaLabel.Tag.ToString();
             LblIdioma.Text = CambiarIdioma.TraducirGlobal(LblIdioma.Tag.ToString()) ?? LblIdioma.Tag.ToString();
             LblMail.Text = CambiarIdioma.TraducirGlobal(LblMail.Tag.ToString()) ?? LblMail.Tag.ToString();
@@ -293,7 +297,7 @@ namespace Interfaz_GUI
 
         private void Administrar_Usuario_Load(object sender, EventArgs e)
         {
-
+            Traducir();
         }
     }
 }

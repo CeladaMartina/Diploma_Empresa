@@ -127,7 +127,8 @@ namespace Interfaz_GUI
             LblTalle.Text = Subject.TraducirObserver(LblTalle.Tag.ToString()) ?? LblTalle.Tag.ToString();
             BtnAlta.Text = Subject.TraducirObserver(BtnAlta.Tag.ToString()) ?? BtnAlta.Tag.ToString();
             BtnBaja.Text = Subject.TraducirObserver(BtnBaja.Tag.ToString()) ?? BtnBaja.Tag.ToString();
-            BtnModificacion.Text = Subject.TraducirObserver(BtnModificacion.Tag.ToString()) ?? BtnModificacion.Tag.ToString();            
+            BtnModificacion.Text = Subject.TraducirObserver(BtnModificacion.Tag.ToString()) ?? BtnModificacion.Tag.ToString();
+            BtnReporte.Text = Subject.TraducirObserver(BtnReporte.Tag.ToString()) ?? BtnReporte.Tag.ToString();
             this.Text = Subject.TraducirObserver(this.Tag.ToString()) ?? this.Tag.ToString();
         }
 
@@ -144,6 +145,7 @@ namespace Interfaz_GUI
             BtnAlta.Text = CambiarIdioma.TraducirGlobal(BtnAlta.Tag.ToString()) ?? BtnAlta.Tag.ToString();
             BtnBaja.Text = CambiarIdioma.TraducirGlobal(BtnBaja.Tag.ToString()) ?? BtnBaja.Tag.ToString();
             BtnModificacion.Text = CambiarIdioma.TraducirGlobal(BtnModificacion.Tag.ToString()) ?? BtnModificacion.Tag.ToString();
+            BtnReporte.Text = CambiarIdioma.TraducirGlobal(BtnReporte.Tag.ToString()) ?? BtnReporte.Tag.ToString();
             this.Text = CambiarIdioma.TraducirGlobal(this.Tag.ToString()) ?? this.Tag.ToString();
         }
         #endregion
