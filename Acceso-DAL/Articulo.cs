@@ -267,6 +267,21 @@ namespace Acceso_DAL
             return fa;
         }
 
+        public List<Propiedades_BE.Articulo> ListarTopProductos()
+        {
+            List<Propiedades_BE.Articulo> ListarTopProductos = new List<Propiedades_BE.Articulo>();
+            DataTable Tabla = Acceso.Leer("ListarTopProductos", null);
+
+            foreach (DataRow R in Tabla.Rows)
+            {
+                Propiedades_BE.Articulo A = new Propiedades_BE.Articulo();
+                A.IdArticulo = int.Parse(R["IdArticulo"].ToString());               
+                A.Nombre = R["Nombre"].ToString();                
+                A.PUnit = decimal.Parse(R["Precio"].ToString());                
+                ListarTopProductos.Add(A);
+            }
+            return ListarTopProductos;
+        }
         #endregion
     }
 }

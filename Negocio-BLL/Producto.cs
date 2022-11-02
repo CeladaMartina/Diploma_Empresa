@@ -63,6 +63,12 @@ namespace Negocio_BLL
             return Lista;
         }
 
+        public List<Propiedades_BE.Articulo> ListarTopProductos()
+        {
+            List<Propiedades_BE.Articulo> Lista = Mapper.ListarTopProductos();
+            return Lista;
+        }
+
         public int Alta(int IdArticulo, int CodProd, string Nombre, string Descripcion, string Material, int IdLocalidad, int Talle, int Stock, decimal PUnit)
         {
             ArticuloTemp.IdArticulo = IdArticulo;

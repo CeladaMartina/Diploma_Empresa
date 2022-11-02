@@ -227,5 +227,19 @@ namespace Interfaz_GUI
         }
 
         #endregion
+
+        private void BtnReporte_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ReporteForm RF = new ReporteForm();
+                RF.Show();
+                this.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(CambiarIdioma.TraducirGlobal("Error") ?? "Error");
+            }
+        }
     }
 }

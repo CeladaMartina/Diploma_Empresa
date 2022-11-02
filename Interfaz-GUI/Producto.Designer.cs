@@ -49,6 +49,7 @@ namespace Interfaz_GUI
             this.BtnAlta = new System.Windows.Forms.Button();
             this.BtnBaja = new System.Windows.Forms.Button();
             this.BtnModificacion = new System.Windows.Forms.Button();
+            this.BtnReporte = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewArticulo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -214,7 +215,7 @@ namespace Interfaz_GUI
             // 
             // BtnBaja
             // 
-            this.BtnBaja.Location = new System.Drawing.Point(998, 344);
+            this.BtnBaja.Location = new System.Drawing.Point(550, 344);
             this.BtnBaja.Name = "BtnBaja";
             this.BtnBaja.Size = new System.Drawing.Size(90, 46);
             this.BtnBaja.TabIndex = 18;
@@ -225,7 +226,7 @@ namespace Interfaz_GUI
             // 
             // BtnModificacion
             // 
-            this.BtnModificacion.Location = new System.Drawing.Point(669, 344);
+            this.BtnModificacion.Location = new System.Drawing.Point(439, 344);
             this.BtnModificacion.Name = "BtnModificacion";
             this.BtnModificacion.Size = new System.Drawing.Size(105, 46);
             this.BtnModificacion.TabIndex = 19;
@@ -234,11 +235,23 @@ namespace Interfaz_GUI
             this.BtnModificacion.UseVisualStyleBackColor = true;
             this.BtnModificacion.Click += new System.EventHandler(this.BtnModificacion_Click);
             // 
+            // BtnReporte
+            // 
+            this.BtnReporte.Location = new System.Drawing.Point(911, 344);
+            this.BtnReporte.Name = "BtnReporte";
+            this.BtnReporte.Size = new System.Drawing.Size(177, 46);
+            this.BtnReporte.TabIndex = 20;
+            this.BtnReporte.Tag = "Baja";
+            this.BtnReporte.Text = "Generar Reporte";
+            this.BtnReporte.UseVisualStyleBackColor = true;
+            this.BtnReporte.Click += new System.EventHandler(this.BtnReporte_Click);
+            // 
             // Producto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1100, 410);
+            this.Controls.Add(this.BtnReporte);
             this.Controls.Add(this.BtnModificacion);
             this.Controls.Add(this.BtnBaja);
             this.Controls.Add(this.BtnAlta);
@@ -291,5 +304,6 @@ namespace Interfaz_GUI
         private System.Windows.Forms.Button BtnAlta;
         private System.Windows.Forms.Button BtnBaja;
         private System.Windows.Forms.Button BtnModificacion;
+        private System.Windows.Forms.Button BtnReporte;
     }
 }
