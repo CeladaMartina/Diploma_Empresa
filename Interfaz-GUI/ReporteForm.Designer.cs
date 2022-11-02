@@ -29,14 +29,22 @@ namespace Interfaz_GUI
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewerProduct = new Microsoft.Reporting.WinForms.ReportViewer();
             this.BtnGenerarReporte = new System.Windows.Forms.Button();
             this.BtnVolver = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.ProductoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.ProductoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // reportViewerProduct
             // 
+            reportDataSource1.Name = "ProductDataSet";
+            reportDataSource1.Value = this.ProductoBindingSource;
+            this.reportViewerProduct.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewerProduct.LocalReport.ReportEmbeddedResource = "Interfaz_GUI.Reportes.ReportProduct.rdlc";
             this.reportViewerProduct.Location = new System.Drawing.Point(12, 69);
             this.reportViewerProduct.Name = "reportViewerProduct";
             this.reportViewerProduct.ServerReport.BearerToken = null;
@@ -75,6 +83,10 @@ namespace Interfaz_GUI
             this.label1.Tag = "Top 5 Productos mas caros";
             this.label1.Text = "Top 5 Productos mas caros";
             // 
+            // ProductoBindingSource
+            // 
+            this.ProductoBindingSource.DataSource = typeof(Propiedades_BE.Producto);
+            // 
             // ReporteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -87,6 +99,7 @@ namespace Interfaz_GUI
             this.Name = "ReporteForm";
             this.Text = "ReporteForm";
             this.Load += new System.EventHandler(this.ReporteForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ProductoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -98,5 +111,6 @@ namespace Interfaz_GUI
         private System.Windows.Forms.Button BtnGenerarReporte;
         private System.Windows.Forms.Button BtnVolver;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.BindingSource ProductoBindingSource;
     }
 }

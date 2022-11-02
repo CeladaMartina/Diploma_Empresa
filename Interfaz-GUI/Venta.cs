@@ -262,12 +262,12 @@ namespace Interfaz_GUI
             BaseFont Fuente3 = BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1252, true);
             iTextSharp.text.Font TablasTexto = new iTextSharp.text.Font(Fuente3, 12f, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
 
-            //iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance("C:\\Users\\Acer\\Documents\\Facultad\\Imagenes para tp de diploma\\Imagenes\\logo.png");
-            string imagepath = Directory.GetCurrentDirectory() + "\\Imagenes\\LogoTP.png";
-            iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(imagepath);
-            logo.Alignment = Element.ALIGN_CENTER;
-            logo.ScalePercent(60);
-            doc.Add(logo);
+            ////iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance("C:\\Users\\Acer\\Documents\\Facultad\\Imagenes para tp de diploma\\Imagenes\\logo.png");
+            //string imagepath = Directory.GetCurrentDirectory() + "\\Imagenes\\LogoTP.png";
+            //iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(imagepath);
+            //logo.Alignment = Element.ALIGN_CENTER;
+            //logo.ScalePercent(60);
+            //doc.Add(logo);
 
             Paragraph Venta = new Paragraph("Venta", Titulo);
             Venta.Alignment = Element.ALIGN_CENTER;

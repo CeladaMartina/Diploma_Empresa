@@ -10,12 +10,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Resources;
 
 namespace Interfaz_GUI
 {
     public partial class ReporteForm : Form, IObserver
     {
         Negocio_BLL.Producto GestorArticulo = new Negocio_BLL.Producto();
+        
         public ReporteForm()
         {
             InitializeComponent();
@@ -29,8 +31,8 @@ namespace Interfaz_GUI
 
         private void BtnGenerarReporte_Click(object sender, EventArgs e)
         {
-            string reportpath = Directory.GetCurrentDirectory() + "\\Reportes\\ReportProduct.rdlc";
-            this.reportViewerProduct.LocalReport.ReportPath = reportpath;
+            //string reportpath = @".\\Reportes\\ReportProduct.rdlc";
+            //this.reportViewerProduct.LocalReport.ReportPath = reportpath;
             ReportDataSource rds = new ReportDataSource("ProductDataSet", GestorArticulo.ListarTopProductos());
             this.reportViewerProduct.LocalReport.DataSources.Add(rds);
             this.reportViewerProduct.RefreshReport();

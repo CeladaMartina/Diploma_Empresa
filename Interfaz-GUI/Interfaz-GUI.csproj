@@ -292,6 +292,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Proveedor.resx">
       <DependentUpon>Proveedor.cs</DependentUpon>
@@ -302,6 +303,8 @@
     <EmbeddedResource Include="ReporteForm.resx">
       <DependentUpon>ReporteForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportProduct.rdlc" />
+    <EmbeddedResource Include="ReportProduct.rdlc" />
     <EmbeddedResource Include="Restore.resx">
       <DependentUpon>Restore.cs</DependentUpon>
     </EmbeddedResource>

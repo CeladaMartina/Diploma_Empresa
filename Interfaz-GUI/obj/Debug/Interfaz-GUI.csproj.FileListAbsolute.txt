@@ -101,3 +101,5 @@ C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\bin\Debug\ru\Mi
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\obj\Debug\Interfaz_GUI.ReporteForm.resources
+C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\obj\Debug\RdlCompile.cache
+C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\obj\Debug\RdlCompile.compiled
