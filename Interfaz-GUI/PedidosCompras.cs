@@ -157,16 +157,17 @@ namespace Interfaz_GUI
             doc.Open();
 
             BaseFont Fuente1 = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, true);
-            iTextSharp.text.Font Titulo = new iTextSharp.text.Font(Fuente1, 20f, iTextSharp.text.Font.BOLD, new BaseColor(255, 128, 128));
+            iTextSharp.text.Font Titulo = new iTextSharp.text.Font(Fuente1, 20f, iTextSharp.text.Font.BOLD, BaseColor.BLACK);
 
             BaseFont Fuente2 = BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1252, true);
-            iTextSharp.text.Font TablasTitulo = new iTextSharp.text.Font(Fuente2, 14f, iTextSharp.text.Font.ITALIC, new BaseColor(255, 192, 192));
+            iTextSharp.text.Font TablasTitulo = new iTextSharp.text.Font(Fuente2, 14f, iTextSharp.text.Font.ITALIC, BaseColor.BLACK);
 
             BaseFont Fuente3 = BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1252, true);
             iTextSharp.text.Font TablasTexto = new iTextSharp.text.Font(Fuente3, 12f, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
 
             string imagepath = Directory.GetCurrentDirectory() + "\\Imagenes\\LogoTP.png";
             iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(imagepath);
+            logo.Alignment = Element.ALIGN_CENTER;
             logo.ScalePercent(50);
             doc.Add(logo);
 
