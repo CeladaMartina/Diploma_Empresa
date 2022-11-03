@@ -26,16 +26,7 @@ namespace Interfaz_GUI
         private void ReporteForm_Load(object sender, EventArgs e)
         {
             Traducir();
-            this.reportViewerProduct.RefreshReport();
-        }
-
-        private void BtnGenerarReporte_Click(object sender, EventArgs e)
-        {
-            //string reportpath = @".\\Reportes\\ReportProduct.rdlc";
-            //this.reportViewerProduct.LocalReport.ReportPath = reportpath;
-            ReportDataSource rds = new ReportDataSource("ProductDataSet", GestorArticulo.ListarTopProductos());
-            this.reportViewerProduct.LocalReport.DataSources.Add(rds);
-            this.reportViewerProduct.RefreshReport();
+            Listar();
         }
 
         private void BtnVolver_Click(object sender, EventArgs e)
@@ -55,15 +46,26 @@ namespace Interfaz_GUI
         public void Update(ISubject Subject)
         {
             label1.Text = Subject.TraducirObserver(label1.Tag.ToString()) ?? label1.Tag.ToString();
-            BtnGenerarReporte.Text = Subject.TraducirObserver(BtnGenerarReporte.Tag.ToString()) ?? BtnGenerarReporte.Tag.ToString();            
         }
 
         public void Traducir()
         {
             label1.Text = CambiarIdioma.TraducirGlobal(label1.Tag.ToString()) ?? label1.Tag.ToString();
-            BtnGenerarReporte.Text = CambiarIdioma.TraducirGlobal(BtnGenerarReporte.Tag.ToString()) ?? BtnGenerarReporte.Tag.ToString();  
         }
         #endregion
 
+        public void Listar()
+        {
+            dataGridViewProd.DataSource = null;
+            dataGridViewProd.DataSource = GestorArticulo.ListarTopProductos();
+            dataGridViewProd.Columns["IdArticulo"].Visible = false;
+            dataGridViewProd.Columns["IdLocalidad"].Visible = false;
+            dataGridViewProd.Columns["NombreLocalidad"].Visible = false;
+            dataGridViewProd.Columns["Material"].Visible = false;
+            dataGridViewProd.Columns["Talle"].Visible = false;
+            dataGridViewProd.Columns["Stock"].Visible = false;
+            dataGridViewProd.Columns["BajaLogica"].Visible = false;
+            dataGridViewProd.ReadOnly = true;
+        }
     }
 }

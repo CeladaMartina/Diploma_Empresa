@@ -275,8 +275,9 @@ namespace Acceso_DAL
             foreach (DataRow R in Tabla.Rows)
             {
                 Propiedades_BE.Articulo A = new Propiedades_BE.Articulo();
-                A.IdArticulo = int.Parse(R["IdArticulo"].ToString());               
-                A.Nombre = R["Nombre"].ToString();                
+                A.CodProd = int.Parse(R["CodProd"].ToString());               
+                A.Nombre = R["Nombre"].ToString();
+                A.Descripcion = R["Descripcion"].ToString();
                 A.PUnit = decimal.Parse(R["Precio"].ToString());                
                 ListarTopProductos.Add(A);
             }
