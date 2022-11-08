@@ -26,10 +26,10 @@ namespace Negocio_BLL
         //    return Mapper.FiltrarCriticidadBitacora(_Criticidad);
         //}
 
-        //public List<Propiedades_BE.Bitacora> FiltrarUsuarioBitacora(string _Nick)
-        //{
-        //    return Mapper.FiltrarUsuarioBitacora(_Nick);
-        //}
+        public List<Propiedades_BE.Bitacora> FiltrarUsuarioBitacora(string _Nick)
+        {
+            return Mapper.FiltrarUsuarioBitacora(_Nick);
+        }
 
         //public List<Propiedades_BE.Bitacora> FiltrarFechaRangoBitacora(DateTime _FechaDesde, DateTime _FechaHasta)
         //{

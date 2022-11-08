@@ -78,6 +78,7 @@ namespace Interfaz_GUI
             this.comboBoxUsuario.Name = "comboBoxUsuario";
             this.comboBoxUsuario.Size = new System.Drawing.Size(230, 24);
             this.comboBoxUsuario.TabIndex = 4;
+            this.comboBoxUsuario.SelectedIndexChanged += new System.EventHandler(this.comboBoxUsuario_SelectedIndexChanged);
             // 
             // groupBoxRangodefecha
             // 
@@ -99,6 +100,7 @@ namespace Interfaz_GUI
             this.dateTimePickerHasta.Name = "dateTimePickerHasta";
             this.dateTimePickerHasta.Size = new System.Drawing.Size(200, 22);
             this.dateTimePickerHasta.TabIndex = 3;
+            this.dateTimePickerHasta.ValueChanged += new System.EventHandler(this.dateTimePickerHasta_ValueChanged);
             // 
             // dateTimePickerDesde
             // 
@@ -151,6 +153,7 @@ namespace Interfaz_GUI
             this.radioButtonBaja.Tag = "Criticidad Baja";
             this.radioButtonBaja.Text = "Criticidad Baja";
             this.radioButtonBaja.UseVisualStyleBackColor = true;
+            this.radioButtonBaja.Click += new System.EventHandler(this.radioButtonBaja_Click);
             // 
             // radioButtonMedia
             // 
@@ -163,6 +166,7 @@ namespace Interfaz_GUI
             this.radioButtonMedia.Tag = "Criticidad Media";
             this.radioButtonMedia.Text = "Criticidad Media";
             this.radioButtonMedia.UseVisualStyleBackColor = true;
+            this.radioButtonMedia.Click += new System.EventHandler(this.radioButtonMedia_Click);
             // 
             // radioButtonAlta
             // 
@@ -175,6 +179,7 @@ namespace Interfaz_GUI
             this.radioButtonAlta.Tag = "Criticidad Alta";
             this.radioButtonAlta.Text = "Criticidad Alta";
             this.radioButtonAlta.UseVisualStyleBackColor = true;
+            this.radioButtonAlta.Click += new System.EventHandler(this.radioButtonAlta_Click);
             // 
             // BtnFiltrar
             // 

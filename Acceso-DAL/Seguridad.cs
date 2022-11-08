@@ -119,30 +119,30 @@ namespace Acceso_DAL
         //    return ListaBitacora;
         //}
 
-        //public List<Propiedades_BE.Bitacora> FiltrarUsuarioBitacora(string _NickUs)
-        //{
-        //    List<Propiedades_BE.Bitacora> ListaBitacora = new List<Propiedades_BE.Bitacora>();
-        //    Acceso.AbrirConexion();
-        //    SqlCommand cmd = new SqlCommand();
-        //    cmd.CommandType = CommandType.Text;
-        //    cmd.CommandText = "select Us.Nick,B.Fecha,B.Descripcion,B.Criticidad from Usuario Us inner join Bitacora B on Us.IdUsuario = B.IdUsuario where Us.Nick = '" + EncriptarAES(_NickUs) + "'";
-        //    cmd.Connection = Acceso.Conexion;
+        public List<Propiedades_BE.Bitacora> FiltrarUsuarioBitacora(string _NickUs)
+        {
+            List<Propiedades_BE.Bitacora> ListaBitacora = new List<Propiedades_BE.Bitacora>();
+            Acceso.AbrirConexion();
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select Us.Nick,B.Fecha,B.Descripcion,B.Criticidad from Usuario Us inner join Bitacora B on Us.IdUsuario = B.IdUsuario where Us.Nick = '" + EncriptarAES(_NickUs) + "'";
+            cmd.Connection = Acceso.Conexion;
 
-        //    SqlDataReader lector = cmd.ExecuteReader();
+            SqlDataReader lector = cmd.ExecuteReader();
 
-        //    while (lector.Read())
-        //    {
-        //        Propiedades_BE.Bitacora B = new Propiedades_BE.Bitacora();
-        //        B.NickUs = Desencriptar(lector["Nick"].ToString());
-        //        B.Fecha = DateTime.Parse(lector["Fecha"].ToString());
-        //        B.Criticidad = lector["Criticidad"].ToString();
-        //        B.Descripcion = Desencriptar(lector["Descripcion"].ToString());
-        //        ListaBitacora.Add(B);
-        //    }
-        //    lector.Close();
-        //    Acceso.CerrarConexion();
-        //    return ListaBitacora;
-        //}
+            while (lector.Read())
+            {
+                Propiedades_BE.Bitacora B = new Propiedades_BE.Bitacora();
+                B.NickUs = Desencriptar(lector["Nick"].ToString());
+                B.Fecha = DateTime.Parse(lector["Fecha"].ToString());
+                B.Criticidad = lector["Criticidad"].ToString();
+                B.Descripcion = Desencriptar(lector["Descripcion"].ToString());
+                ListaBitacora.Add(B);
+            }
+            lector.Close();
+            Acceso.CerrarConexion();
+            return ListaBitacora;
+        }
 
         public List<Propiedades_BE.Bitacora> FiltradoCompleto(string _NickUs, DateTime _FechaDesde, DateTime _FechaHasta, string _Criticidad)
         {
