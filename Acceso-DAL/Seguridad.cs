@@ -92,6 +92,30 @@ namespace Acceso_DAL
         //    Acceso.CerrarConexion();
         //    return ListaBitacora;
         //}
+        //public List<Propiedades_BE.Bitacora> FiltrarUsuarioBitacora(string _NickUs)
+        //{
+        //    List<Propiedades_BE.Bitacora> ListaBitacora = new List<Propiedades_BE.Bitacora>();
+        //    Acceso.AbrirConexion();
+        //    SqlCommand cmd = new SqlCommand();
+        //    cmd.CommandType = CommandType.Text;
+        //    cmd.CommandText = "select Us.Nick,B.Fecha,B.Descripcion,B.Criticidad from Usuario Us inner join Bitacora B on Us.IdUsuario = B.IdUsuario where Us.Nick = '" + EncriptarAES(_NickUs) + "'";
+        //    cmd.Connection = Acceso.Conexion;
+
+        //    SqlDataReader lector = cmd.ExecuteReader();
+
+        //    while (lector.Read())
+        //    {
+        //        Propiedades_BE.Bitacora B = new Propiedades_BE.Bitacora();
+        //        B.NickUs = Desencriptar(lector["Nick"].ToString());
+        //        B.Fecha = DateTime.Parse(lector["Fecha"].ToString());
+        //        B.Criticidad = lector["Criticidad"].ToString();
+        //        B.Descripcion = Desencriptar(lector["Descripcion"].ToString());
+        //        ListaBitacora.Add(B);
+        //    }
+        //    lector.Close();
+        //    Acceso.CerrarConexion();
+        //    return ListaBitacora;
+        //}
 
         public List<Propiedades_BE.Bitacora> FiltrarFechaRangoBitacora(DateTime _FechaDesde, DateTime _FechaHasta)
         {
@@ -119,13 +143,15 @@ namespace Acceso_DAL
             return ListaBitacora;
         }
 
-        public List<Propiedades_BE.Bitacora> FiltrarUsuarioBitacora(string _NickUs)
+        //filtrado fecha - usuario
+        public List<Propiedades_BE.Bitacora> FiltrarFechaRangoUsuario(DateTime _FechaDesde, DateTime _FechaHasta, string _NickUs)
         {
             List<Propiedades_BE.Bitacora> ListaBitacora = new List<Propiedades_BE.Bitacora>();
+
             Acceso.AbrirConexion();
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select Us.Nick,B.Fecha,B.Descripcion,B.Criticidad from Usuario Us inner join Bitacora B on Us.IdUsuario = B.IdUsuario where Us.Nick = '" + EncriptarAES(_NickUs) + "'";
+            cmd.CommandText = "select Us.Nick,B.Fecha,B.Descripcion,B.Criticidad from Usuario Us inner join Bitacora B on Us.IdUsuario = B.IdUsuario where convert(date,Fecha) >= '" + _FechaDesde + "' and convert(date,Fecha) <= '" + _FechaHasta + "' and Us.Nick = '" + EncriptarAES(_NickUs) + "' ";
             cmd.Connection = Acceso.Conexion;
 
             SqlDataReader lector = cmd.ExecuteReader();
@@ -135,8 +161,35 @@ namespace Acceso_DAL
                 Propiedades_BE.Bitacora B = new Propiedades_BE.Bitacora();
                 B.NickUs = Desencriptar(lector["Nick"].ToString());
                 B.Fecha = DateTime.Parse(lector["Fecha"].ToString());
-                B.Criticidad = lector["Criticidad"].ToString();
                 B.Descripcion = Desencriptar(lector["Descripcion"].ToString());
+                B.Criticidad = lector["Criticidad"].ToString();
+                ListaBitacora.Add(B);
+            }
+            lector.Close();
+            Acceso.CerrarConexion();
+            return ListaBitacora;
+        }
+
+        //filtrado fecha - criticidad
+        public List<Propiedades_BE.Bitacora> FiltrarFechaRangoCriticidad(DateTime _FechaDesde, DateTime _FechaHasta, string _Criticidad)
+        {
+            List<Propiedades_BE.Bitacora> ListaBitacora = new List<Propiedades_BE.Bitacora>();
+
+            Acceso.AbrirConexion();
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select Us.Nick,B.Fecha,B.Descripcion,B.Criticidad from Usuario Us inner join Bitacora B on Us.IdUsuario = B.IdUsuario where convert(date,Fecha) >= '" + _FechaDesde + "' and convert(date,Fecha) <= '" + _FechaHasta + "' and Criticidad = '" + _Criticidad + "' ";
+            cmd.Connection = Acceso.Conexion;
+
+            SqlDataReader lector = cmd.ExecuteReader();
+
+            while (lector.Read())
+            {
+                Propiedades_BE.Bitacora B = new Propiedades_BE.Bitacora();
+                B.NickUs = Desencriptar(lector["Nick"].ToString());
+                B.Fecha = DateTime.Parse(lector["Fecha"].ToString());
+                B.Descripcion = Desencriptar(lector["Descripcion"].ToString());
+                B.Criticidad = lector["Criticidad"].ToString();
                 ListaBitacora.Add(B);
             }
             lector.Close();

@@ -16,7 +16,7 @@ namespace Interfaz_GUI
         Propiedades_BE.Bitacora BitacoraTemp = new Propiedades_BE.Bitacora();
         Negocio_BLL.Seguridad Seguridad = new Negocio_BLL.Seguridad();
         Negocio_BLL.Usuario GestorUsuario = new Negocio_BLL.Usuario();
-        public string valueC = "";
+        string criticidad = "";
 
         private static Bitacora _instancia;
         public static Bitacora ObtenerInstancia()
@@ -45,8 +45,7 @@ namespace Interfaz_GUI
         }
 
         void Filtrar()
-        {
-            string criticidad = "";
+        {            
             dataGridViewBitacora.DataSource = null;
 
             if (radioButtonAlta.Checked == true)
@@ -83,8 +82,7 @@ namespace Interfaz_GUI
                 dataGridViewBitacora.Columns["IdBitacora"].Visible = false;
                 dataGridViewBitacora.Columns["DVH"].Visible = false;
                 dataGridViewBitacora.ReadOnly = true;
-            }
-            
+            }           
             
         }
 
@@ -127,16 +125,8 @@ namespace Interfaz_GUI
 
                 }
             }
-
-            if(comboBoxUsuario.SelectedIndex == -1)
-            {
-                groupBoxRangodefecha.Enabled = false;
-            }
-            else
-            {
-                groupBoxRangodefecha.Enabled = true;
-            }
-
+            criticidad = valueC;
+            
         }
         #endregion
 
@@ -221,7 +211,7 @@ namespace Interfaz_GUI
             radioButtonAlta.Checked = false;
             radioButtonBaja.Checked = false;
             radioButtonMedia.Checked = false;
-            comboBoxUsuario.SelectedIndex = -1;            
+            comboBoxUsuario.ResetText();
         }
 
         #endregion
@@ -247,15 +237,6 @@ namespace Interfaz_GUI
                         
                 }
             }
-
-            if(radioButtonAlta.Checked == false && radioButtonBaja.Checked == false && radioButtonMedia.Checked == false)
-            {
-                groupBoxRangodefecha.Enabled = false;
-            }
-            else
-            {
-                groupBoxRangodefecha.Enabled = true;
-            }
         }
 
         #region radio buttons
@@ -277,15 +258,34 @@ namespace Interfaz_GUI
         #endregion
 
         private void dateTimePickerHasta_ValueChanged(object sender, EventArgs e)
-        {
-            if (dateTimePickerDesde.Value >= dateTimePickerHasta.Value)
+        {   
+            if(comboBoxUsuario.SelectedIndex == -1 && radioButtonAlta.Checked == false && radioButtonBaja.Checked == false && radioButtonMedia.Checked == false)
             {
-                MessageBox.Show(CambiarIdioma.TraducirGlobal("La fecha Hasta no puede ser menor que Desde.") ?? "La fecha Hasta no puede ser menor que Desde.");
+                if (dateTimePickerDesde.Value >= dateTimePickerHasta.Value)
+                {
+                    MessageBox.Show(CambiarIdioma.TraducirGlobal("La fecha Hasta no puede ser menor que Desde.") ?? "La fecha Hasta no puede ser menor que Desde.");
+                }
+                else
+                {
+                    //filtrado fecha
+                    dataGridViewBitacora.DataSource = Seguridad.FiltrarFechaRangoBitacora(dateTimePickerDesde.Value, dateTimePickerHasta.Value);
+                }
+            }
+            else if(comboBoxUsuario.SelectedIndex != -1 && radioButtonAlta.Checked == false && radioButtonBaja.Checked == false && radioButtonMedia.Checked == false)
+            {
+                //filtrado usuario - fecha
+                dataGridViewBitacora.DataSource = Seguridad.FiltrarFechaRangoUsuario(dateTimePickerDesde.Value, dateTimePickerHasta.Value, comboBoxUsuario.SelectedItem.ToString());
+
+            }else if (comboBoxUsuario.SelectedIndex == -1 && (radioButtonAlta.Checked == false || radioButtonBaja.Checked == false || radioButtonMedia.Checked == false))
+            {
+                //filtrado fecha - criticidad
+                dataGridViewBitacora.DataSource = Seguridad.FiltrarFechaRangoCriticidad(dateTimePickerDesde.Value, dateTimePickerHasta.Value, criticidad);
             }
             else
             {
+                //filtrado completo
                 Filtrar();
-            }
+            }            
         }
     }
 }

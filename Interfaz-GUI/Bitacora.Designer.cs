@@ -86,7 +86,6 @@ namespace Interfaz_GUI
             this.groupBoxRangodefecha.Controls.Add(this.dateTimePickerDesde);
             this.groupBoxRangodefecha.Controls.Add(this.LblHasta);
             this.groupBoxRangodefecha.Controls.Add(this.LblDesde);
-            this.groupBoxRangodefecha.Enabled = false;
             this.groupBoxRangodefecha.Location = new System.Drawing.Point(12, 422);
             this.groupBoxRangodefecha.Name = "groupBoxRangodefecha";
             this.groupBoxRangodefecha.Size = new System.Drawing.Size(322, 178);

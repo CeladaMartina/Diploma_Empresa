@@ -26,16 +26,30 @@ namespace Negocio_BLL
         //    return Mapper.FiltrarCriticidadBitacora(_Criticidad);
         //}
 
-        public List<Propiedades_BE.Bitacora> FiltrarUsuarioBitacora(string _Nick)
+        //public List<Propiedades_BE.Bitacora> FiltrarUsuarioBitacora(string _Nick)
+        //{
+        //    return Mapper.FiltrarUsuarioBitacora(_Nick);
+        //}
+
+        // Filtro usuario y fecha
+        public List<Propiedades_BE.Bitacora> FiltrarFechaRangoUsuario(DateTime _FechaDesde, DateTime _FechaHasta, string _Nick)
         {
-            return Mapper.FiltrarUsuarioBitacora(_Nick);
+            return Mapper.FiltrarFechaRangoUsuario(_FechaDesde, _FechaHasta,_Nick);
         }
 
+        //Filtro criticidad y fecha
+        public List<Propiedades_BE.Bitacora> FiltrarFechaRangoCriticidad(DateTime _FechaDesde, DateTime _FechaHasta, string _Criticidad)
+        {
+            return Mapper.FiltrarFechaRangoCriticidad(_FechaDesde, _FechaHasta, _Criticidad);
+        }
+
+        //filtrado fecha
         public List<Propiedades_BE.Bitacora> FiltrarFechaRangoBitacora(DateTime _FechaDesde, DateTime _FechaHasta)
         {
             return Mapper.FiltrarFechaRangoBitacora(_FechaDesde, _FechaHasta);
         }
 
+        //filtrado criticidad - fecha - usuario
         public List<Propiedades_BE.Bitacora> FiltradoCompleto(string _Nick, DateTime _FechaDesde, DateTime _FechaHasta, string _Criticidad)
         {
             return Mapper.FiltradoCompleto(_Nick, _FechaDesde, _FechaHasta, _Criticidad);
