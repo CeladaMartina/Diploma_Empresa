@@ -86,7 +86,8 @@ namespace Interfaz_GUI
             this.groupBoxRangodefecha.Controls.Add(this.dateTimePickerDesde);
             this.groupBoxRangodefecha.Controls.Add(this.LblHasta);
             this.groupBoxRangodefecha.Controls.Add(this.LblDesde);
-            this.groupBoxRangodefecha.Location = new System.Drawing.Point(12, 230);
+            this.groupBoxRangodefecha.Enabled = false;
+            this.groupBoxRangodefecha.Location = new System.Drawing.Point(12, 422);
             this.groupBoxRangodefecha.Name = "groupBoxRangodefecha";
             this.groupBoxRangodefecha.Size = new System.Drawing.Size(322, 178);
             this.groupBoxRangodefecha.TabIndex = 3;
@@ -134,7 +135,7 @@ namespace Interfaz_GUI
             this.groupBoxCriticidad.Controls.Add(this.radioButtonBaja);
             this.groupBoxCriticidad.Controls.Add(this.radioButtonMedia);
             this.groupBoxCriticidad.Controls.Add(this.radioButtonAlta);
-            this.groupBoxCriticidad.Location = new System.Drawing.Point(12, 424);
+            this.groupBoxCriticidad.Location = new System.Drawing.Point(12, 221);
             this.groupBoxCriticidad.Name = "groupBoxCriticidad";
             this.groupBoxCriticidad.Size = new System.Drawing.Size(322, 177);
             this.groupBoxCriticidad.TabIndex = 3;
@@ -190,6 +191,7 @@ namespace Interfaz_GUI
             this.BtnFiltrar.Tag = "Filtrar";
             this.BtnFiltrar.Text = "Filtrar";
             this.BtnFiltrar.UseVisualStyleBackColor = true;
+            this.BtnFiltrar.Visible = false;
             this.BtnFiltrar.Click += new System.EventHandler(this.BtnFiltrar_Click);
             // 
             // BtnCancelarfiltro

@@ -16,7 +16,7 @@ namespace Interfaz_GUI
         Propiedades_BE.Bitacora BitacoraTemp = new Propiedades_BE.Bitacora();
         Negocio_BLL.Seguridad Seguridad = new Negocio_BLL.Seguridad();
         Negocio_BLL.Usuario GestorUsuario = new Negocio_BLL.Usuario();
-        BindingSource bs = new BindingSource();
+        public string valueC = "";
 
         private static Bitacora _instancia;
         public static Bitacora ObtenerInstancia()
@@ -65,6 +65,7 @@ namespace Interfaz_GUI
             }
 
             dataGridViewBitacora.DataSource = Seguridad.FiltradoCompleto(comboBoxUsuario.SelectedItem.ToString(), dateTimePickerDesde.Value.Date, dateTimePickerHasta.Value.Date, criticidad);
+            
             if (dataGridViewBitacora.Rows.Count == 0)
             {
                 dataGridViewBitacora.DataSource = null;
@@ -73,6 +74,7 @@ namespace Interfaz_GUI
                 radioButtonAlta.Checked = false;
                 radioButtonBaja.Checked = false;
                 radioButtonMedia.Checked = false;
+                groupBoxRangodefecha.Enabled = false;
 
             }
             else
@@ -102,6 +104,39 @@ namespace Interfaz_GUI
                 A = true;
             }
             return A;
+        }
+
+        void CriticidadRadio(string valueC)
+        {
+            for (int i = 0; i <= dataGridViewBitacora.Rows.Count - 1; i++)
+            {
+                foreach (DataGridViewRow dr in dataGridViewBitacora.Rows)
+                {
+                    if (dr.Visible)
+                    {
+                        if (dr.Cells[5].Value.ToString().Contains(valueC))
+                        {
+                            dr.Visible = true;                            
+                        }
+                        else
+                        {
+                            this.dataGridViewBitacora.CurrentCell = null;
+                            dr.Visible = false;
+                        }
+                    }
+
+                }
+            }
+
+            if(comboBoxUsuario.SelectedIndex == -1)
+            {
+                groupBoxRangodefecha.Enabled = false;
+            }
+            else
+            {
+                groupBoxRangodefecha.Enabled = true;
+            }
+
         }
         #endregion
 
@@ -182,143 +217,74 @@ namespace Interfaz_GUI
 
         private void BtnCancelarfiltro_Click(object sender, EventArgs e)
         {
-            try
-            {
-                Listar();                
-                radioButtonAlta.Checked = false;
-                radioButtonBaja.Checked = false;
-                radioButtonMedia.Checked = false;
-            }
-            catch (Exception)
-            {
-                MessageBox.Show(CambiarIdioma.TraducirGlobal("Error") ?? "Error");
-            }
+            Listar();
+            radioButtonAlta.Checked = false;
+            radioButtonBaja.Checked = false;
+            radioButtonMedia.Checked = false;
+            comboBoxUsuario.SelectedIndex = -1;            
         }
 
         #endregion
 
         private void comboBoxUsuario_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //bs.DataSource = dataGridViewBitacora.DataSource;
-
-
             for (int i=0; i <= dataGridViewBitacora.Rows.Count-1; i++)
             {
                 foreach(DataGridViewRow dr in dataGridViewBitacora.Rows)
                 {
-                    if (dr.Cells[2].Value.ToString().Contains(comboBoxUsuario.SelectedItem.ToString()))
+                    if (dr.Visible)
                     {
-                        dr.Visible = true;
-                        //dataGridViewBitacora.DataSource = bs;
+                        if (dr.Cells[2].Value.ToString().Contains(comboBoxUsuario.SelectedItem.ToString()))
+                        {
+                            dr.Visible = true;
+                        }
+                        else
+                        {
+                            this.dataGridViewBitacora.CurrentCell = null;
+                            dr.Visible = false;
+                        }
                     }
-                    else
-                    {
-                        this.dataGridViewBitacora.CurrentCell = null;
-                        dr.Visible = false;
-                    }
+                        
                 }
+            }
+
+            if(radioButtonAlta.Checked == false && radioButtonBaja.Checked == false && radioButtonMedia.Checked == false)
+            {
+                groupBoxRangodefecha.Enabled = false;
+            }
+            else
+            {
+                groupBoxRangodefecha.Enabled = true;
             }
         }
 
         #region radio buttons
         private void radioButtonAlta_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i <= dataGridViewBitacora.Rows.Count - 1; i++)
-            {
-                foreach (DataGridViewRow dr in dataGridViewBitacora.Rows)
-                {
-                    if (dr.Visible)
-                    {
-                        if (dr.Cells[5].Value.ToString().Contains("Alta"))
-                        {
-                            dr.Visible = true;
-                        }
-                        else
-                        {
-                            this.dataGridViewBitacora.CurrentCell = null;
-                            dr.Visible = false;
-                        }
-                    }
-                    
-                }
-            }
-            
+            CriticidadRadio("Alta");
         }
 
         private void radioButtonMedia_Click(object sender, EventArgs e)
         {
-            //bs.DataSource = dataGridViewBitacora.DataSource;
-
-            for (int i = 0; i <= dataGridViewBitacora.Rows.Count - 1; i++)
-            {
-                foreach (DataGridViewRow dr in dataGridViewBitacora.Rows)
-                {
-                    if (dr.Visible)
-                    {
-                        if (dr.Cells[5].Value.ToString().Contains("Media"))
-                        {
-                            dr.Visible = true;
-                           // dataGridViewBitacora.DataSource = bs;
-                        }
-                        else
-                        {
-                            this.dataGridViewBitacora.CurrentCell = null;
-                            dr.Visible = false;
-                        }
-                    }
-
-                }
-            }
-
+            CriticidadRadio("Media");
         }
 
         private void radioButtonBaja_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i <= dataGridViewBitacora.Rows.Count - 1; i++)
-            {
-                foreach (DataGridViewRow dr in dataGridViewBitacora.Rows)
-                {
-                    if (dr.Visible)
-                    {
-                        if (dr.Cells[5].Value.ToString().Contains("Baja"))
-                        {
-                            dr.Visible = true;
-                        }
-                        else
-                        {
-                            this.dataGridViewBitacora.CurrentCell = null;
-                            dr.Visible = false;
-                        }
-                    }
-
-                }
-            }
-
+            CriticidadRadio("Baja");
         }
 
         #endregion
 
         private void dateTimePickerHasta_ValueChanged(object sender, EventArgs e)
         {
-            DateTime Desde = dateTimePickerDesde.Value.Date;
-            DateTime Hasta = dateTimePickerHasta.Value.Date;
-
             if (dateTimePickerDesde.Value >= dateTimePickerHasta.Value)
             {
                 MessageBox.Show(CambiarIdioma.TraducirGlobal("La fecha Hasta no puede ser menor que Desde.") ?? "La fecha Hasta no puede ser menor que Desde.");
             }
             else
             {
-                foreach (DataGridViewRow dr in dataGridViewBitacora.Rows)
-                {
-                    if (dr.Visible)
-                    {
-                        bs.DataSource = dataGridViewBitacora.Rows;
-                        //bs.Filter = string.Format("Date Between #{0:yyyy/MM/dd}# And #{1:yyyy/MM/dd}#", Desde, Hasta);
-                        bs.Filter = $"Fecha >= '{Desde}' AND Fecha <= '{Hasta}'";
-                        dataGridViewBitacora.DataSource = bs;
-                    }
-                }
+                Filtrar();
             }
         }
     }
