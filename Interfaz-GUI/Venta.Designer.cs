@@ -69,6 +69,7 @@ namespace Interfaz_GUI
             this.labelNumeroVentaNombre = new System.Windows.Forms.Label();
             this.LABELVENTA = new System.Windows.Forms.Label();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.labelStock = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -212,6 +213,7 @@ namespace Interfaz_GUI
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.labelStock);
             this.groupBox2.Controls.Add(this.LblStock);
             this.groupBox2.Controls.Add(this.BtnBajaDetalle);
             this.groupBox2.Controls.Add(this.BtnModificarDetalle);
@@ -487,11 +489,20 @@ namespace Interfaz_GUI
             this.LABELVENTA.Tag = "Venta";
             this.LABELVENTA.Text = "Venta";
             // 
+            // labelStock
+            // 
+            this.labelStock.AutoSize = true;
+            this.labelStock.Location = new System.Drawing.Point(430, 28);
+            this.labelStock.Name = "labelStock";
+            this.labelStock.Size = new System.Drawing.Size(43, 17);
+            this.labelStock.TabIndex = 19;
+            this.labelStock.Text = "Stock";
+            // 
             // Venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1196, 764);
+            this.ClientSize = new System.Drawing.Size(956, 611);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.BtnVender);
             this.Controls.Add(this.BtnCerrarDetalle);
@@ -559,5 +570,6 @@ namespace Interfaz_GUI
         private System.Windows.Forms.Label LblStock;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.Label labelNumeroVenta;
+        private System.Windows.Forms.Label labelStock;
     }
 }

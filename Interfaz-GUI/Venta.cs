@@ -27,6 +27,8 @@ namespace Interfaz_GUI
         Negocio_BLL.Producto GestorArticulo = new Negocio_BLL.Producto();
         Negocio_BLL.Seguridad Seguridad = new Negocio_BLL.Seguridad();
 
+        int cantActual = 0; 
+
         private static Venta _instancia;
         public static Venta ObtenerInstancia()
         {
@@ -193,6 +195,8 @@ namespace Interfaz_GUI
 
         public void UnificarDV(int IdArticulo, int Cantidad)
         {
+            Cantidad = verificarArticulosEnTabla(GestorArticulo.SeleccionarCodArticulo(CmbNombreArticulo.SelectedItem.ToString()), Cantidad);
+
             if (Cantidad <= Convert.ToInt32(LblStock.Text))
             {
                 GestorDV.UnificarArticulos(int.Parse(TxtIdVenta.Text), GestorArticulo.SeleccionarIdArticulo(int.Parse(CmbCodArticulo.Text)), int.Parse(TxtCantidad.Text));
@@ -342,7 +346,7 @@ namespace Interfaz_GUI
                 case "Alta":
                     LblStock.Text = Convert.ToString(CantidadChequeoStock - Cantidad);
                     break;
-                case "AltaUnificar":
+                case "AltaUnificar":                    
                     LblStock.Text = Convert.ToString(CantidadChequeoStock - cantidadTotalStock);
                     break;
                 case "Baja":
@@ -352,8 +356,26 @@ namespace Interfaz_GUI
                     LblStock.Text = Convert.ToString(CantidadChequeoStock - Cantidad);
                     break;                
             }
-            LblStock.Visible = true;
 
+            LblStock.Visible = true;
+            labelStock.Visible = true;
+
+        }
+
+        int verificarArticulosEnTabla(int cod, int cantDeseada)
+        {
+            foreach (DataGridViewRow dr in dataGridViewDV.Rows)
+            {
+                if (dr.Visible)
+                {
+                    if (Convert.ToInt32(dr.Cells[3].Value) == cod)
+                    {
+                        cantActual = Convert.ToInt32(dr.Cells[4].Value);
+                        cantActual += cantDeseada;
+                    }
+                }
+            }
+            return cantActual;
         }
         #endregion
 
@@ -391,8 +413,9 @@ namespace Interfaz_GUI
             {
                 CmbNombreArticulo.Text = GestorArticulo.SeleccionarNombreArt(int.Parse(CmbCodArticulo.SelectedItem.ToString()));
                 TxtPrecioUnitario.Text = GestorArticulo.SeleccionPUnit(int.Parse(CmbCodArticulo.SelectedItem.ToString())).ToString();
-                LblStock.Text = GestorArticulo.SeleccionarStock(int.Parse(CmbCodArticulo.SelectedItem.ToString())).ToString();
+                LblStock.Text = GestorArticulo.SeleccionarStock(int.Parse(CmbCodArticulo.SelectedItem.ToString())).ToString();                
                 LblStock.Visible = false;
+                labelStock.Visible = false;
             }
             catch (Exception)
             {
@@ -407,6 +430,7 @@ namespace Interfaz_GUI
                 CmbCodArticulo.Text = GestorArticulo.SeleccionarCodArticulo(CmbNombreArticulo.SelectedItem.ToString()).ToString();
                 LblStock.Text = GestorArticulo.SeleccionarStock(int.Parse(CmbCodArticulo.SelectedItem.ToString())).ToString();
                 LblStock.Visible = false;
+                labelStock.Visible = false;
             }
             catch (Exception)
             {
@@ -504,8 +528,8 @@ namespace Interfaz_GUI
                 {
                     if (GestorDV.ExisteProducto(int.Parse(TxtIdVenta.Text), GestorArticulo.SeleccionarIdArticulo(int.Parse(CmbCodArticulo.Text))) == true)
                     {
-                        UnificarDV(GestorArticulo.SeleccionarIdArticulo(int.Parse(CmbCodArticulo.Text)), int.Parse(TxtCantidad.Text));
-                        
+
+                        UnificarDV(GestorArticulo.SeleccionarIdArticulo(int.Parse(CmbCodArticulo.Text)), int.Parse(TxtCantidad.Text));                    
                     }
                     else
                     {
