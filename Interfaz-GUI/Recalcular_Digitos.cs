@@ -44,21 +44,25 @@ namespace Interfaz_GUI
         void Recalcular_digitos()
         {
             BtnRecalcularDVV.Enabled = false;
+
             if (GestorUsuario.VerificarIntegridadUsuario(Propiedades_BE.SingletonLogIn.GlobalIdUsuario) != "")
             {
                 TxtTablas.Text = "ERROR.";
                 BtnUsuario.Enabled = true;
 
-            }else if(GestorDetalleVenta.VerificarIntegridadDV(Propiedades_BE.SingletonLogIn.GlobalIdUsuario) != "")
+            }
+            
+            if(GestorDetalleVenta.VerificarIntegridadDV(Propiedades_BE.SingletonLogIn.GlobalIdUsuario) != "")
             {
                 TxtTablas.Text = "ERROR.";
                 BtnUsuario.Enabled = true;
             }
-            else if (Seguridad.VerificarIntegridadBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario) != "")
-            {
-                TxtTablas.Text = "ERROR.";
-                BtnUsuario.Enabled = true;
-            }
+
+            //else if (Seguridad.VerificarIntegridadBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario) != "")
+            //{
+            //    TxtTablas.Text = "ERROR.";
+            //    BtnUsuario.Enabled = true;
+            //}
         }
 
         void RDVV()
@@ -118,6 +122,7 @@ namespace Interfaz_GUI
                 TxtTablas.Text = "OK";
                 BtnUsuario.Enabled = false;
                 BtnRecalcularDVV.Enabled = true;
+                Propiedades_BE.SingletonLogIn.GlobalIntegridad = 0;
             }
             catch (Exception)
             {
@@ -131,6 +136,9 @@ namespace Interfaz_GUI
             try
             {
                 RDVV();
+                Menu menu = new Menu();
+                this.Hide();
+                menu.Show();
             }
             catch (Exception)
             {

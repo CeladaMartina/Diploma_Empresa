@@ -222,6 +222,7 @@ namespace Acceso_DAL
             return ListaBitacora;
         }
 
+        //borrar-
         public void RecalcularDVH()
         {
             long suma = 0;
@@ -232,19 +233,19 @@ namespace Acceso_DAL
                 suma = 0;
                 string IdBitacora = bitacora.IdBitacora.ToString();
                 string IdUsuario = bitacora.IdUsuario.ToString();
-                string Fecha = bitacora.Fecha.ToString();
+                //string Fecha = bitacora.Fecha.ToString();
                 string Descripcion = bitacora.Descripcion.ToString();
                 string Criticidad = bitacora.Criticidad.ToString();
                 string dvh = bitacora.DVH.ToString();
 
                 long IdBitacoraB = ObtenerAscii(IdBitacora);
                 long IdUsuarioB = ObtenerAscii(IdUsuario);
-                long FechaB = ObtenerAscii(Fecha);
+                //long FechaB = ObtenerAscii(Fecha);
                 long DescripcionB = ObtenerAscii(Descripcion);
                 long CriticidadB = ObtenerAscii(Criticidad);
                 long dvhDv = long.Parse(dvh);
 
-                suma = IdBitacoraB + IdUsuarioB + FechaB + DescripcionB + CriticidadB;
+                suma = IdBitacoraB + IdUsuarioB  + DescripcionB + CriticidadB;
                 Acceso.EjecutarConsulta("Update Bitacora set DVH = " + suma + " where IdBitacora = " + IdBitacora + "");
             }
         }
@@ -259,7 +260,7 @@ namespace Acceso_DAL
                 Propiedades_BE.Bitacora DV = new Propiedades_BE.Bitacora();
                 DV.IdBitacora = int.Parse(R["IdBitacora"].ToString());
                 DV.IdUsuario = int.Parse(R["IdUsuario"].ToString());
-                DV.Fecha = DateTime.Parse(R["Fecha"].ToString()); 
+                //DV.Fecha = DateTime.Parse(R["Fecha"].ToString()); 
                 DV.Descripcion = R["Descripcion"].ToString();
                 DV.Criticidad = R["Criticidad"].ToString();
                 DV.DVH = int.Parse(R["DVH"].ToString());
@@ -282,19 +283,20 @@ namespace Acceso_DAL
             {
                 string IdBitacora = Dv.IdBitacora.ToString();
                 string IdUsuario = Dv.IdUsuario.ToString();
-                string Fecha = Dv.Fecha.ToString();
+                //string Fecha = Dv.Fecha.ToString();
                 string Descripcion = Dv.Descripcion.ToString();
                 string Criticidad = Dv.Criticidad.ToString();
                 string dvh = Dv.DVH.ToString();
 
                 long IdBitacoraB = ObtenerAscii(IdBitacora);
                 long IdUsuarioB = ObtenerAscii(IdUsuario);
-                long FechaB = ObtenerAscii(Fecha);
+                //long FechaB = ObtenerAscii(Fecha);
                 long DescripcionB = ObtenerAscii(Descripcion);
                 long CriticidadB = ObtenerAscii(Criticidad);
                 long dvhDv = long.Parse(dvh);
 
-                Suma = IdBitacoraB + IdUsuarioB + FechaB + DescripcionB + CriticidadB;
+                //Suma = IdBitacoraB + IdUsuarioB + FechaB + DescripcionB + CriticidadB;
+                Suma = IdBitacoraB + IdUsuarioB + DescripcionB + CriticidadB;
                 DVH += Suma;
 
                 if (dvhDv == Suma)
@@ -328,6 +330,7 @@ namespace Acceso_DAL
             return msj;
         }
 
+        //borrar-
         #endregion
 
         #region DigitoVerificador

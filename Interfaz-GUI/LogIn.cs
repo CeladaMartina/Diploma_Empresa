@@ -55,10 +55,10 @@ namespace Interfaz_GUI
         public void VerificarIntegridadGeneral()
         {
             string ProblemaUsuario = GestorUsuario.VerificarIntegridadUsuario(Propiedades_BE.SingletonLogIn.GlobalIdUsuario);
-            string ProblemaBitacora = Seguridad.VerificarIntegridadBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario);
-            //string ProblemaDetalleVenta = GestorDetalleVenta.VerificarIntegridadDV(Propiedades_BE.SingletonLogIn.GlobalIdUsuario);
+            //string ProblemaBitacora = Seguridad.VerificarIntegridadBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario);
+            string ProblemaDetalleVenta = GestorDetalleVenta.VerificarIntegridadDV(Propiedades_BE.SingletonLogIn.GlobalIdUsuario);
 
-            string ProblemaDefinitivo = ProblemaUsuario + ProblemaBitacora;
+            string ProblemaDefinitivo = ProblemaUsuario + ProblemaDetalleVenta;
 
             if (ProblemaDefinitivo == "")
             {
@@ -79,8 +79,12 @@ namespace Interfaz_GUI
             {
                 if (Propiedades_BE.SingletonLogIn.GetInstance.IsInRole(Propiedades_BE.TipoPermiso.Recalcular_Digitos))
                 {
-                    MessageBox.Show(ProblemaDefinitivo);
-                    Login();
+                    groupBox1.Visible = false;
+                    groupBox2.Visible = true;
+                    txtErrorDV.Text = ProblemaDefinitivo;
+
+                    //MessageBox.Show(ProblemaDefinitivo);
+                    //Login();
                 }
                 else
                 {
@@ -171,6 +175,27 @@ namespace Interfaz_GUI
             catch (Exception EX)
             {
                 MessageBox.Show(EX.Message);
+            }
+        }
+
+        private void btnRestore_Click(object sender, EventArgs e)
+        {
+            Restore r = Restore.ObtenerInstancia();
+            this.Hide();
+            r.Show();
+        }
+
+        private void BtnRecalcular_Click(object sender, EventArgs e)
+        {
+            if (Propiedades_BE.SingletonLogIn.GlobalIntegridad >= 1)
+            {
+                Recalcular_Digitos RD = Recalcular_Digitos.ObtenerInstancia();
+                this.Hide();
+                RD.Show();
+            }
+            else
+            {
+                BtnRecalcular.Enabled = false;
             }
         }
     }

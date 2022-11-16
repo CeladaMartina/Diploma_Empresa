@@ -36,7 +36,12 @@ namespace Interfaz_GUI
             this.label1 = new System.Windows.Forms.Label();
             this.txtcontraseña = new System.Windows.Forms.TextBox();
             this.txtnick = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.BtnRecalcular = new System.Windows.Forms.Button();
+            this.btnRestore = new System.Windows.Forms.Button();
+            this.txtErrorDV = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -47,9 +52,9 @@ namespace Interfaz_GUI
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtcontraseña);
             this.groupBox1.Controls.Add(this.txtnick);
-            this.groupBox1.Location = new System.Drawing.Point(38, 39);
+            this.groupBox1.Location = new System.Drawing.Point(81, 51);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(514, 311);
+            this.groupBox1.Size = new System.Drawing.Size(466, 311);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Log In";
@@ -111,17 +116,64 @@ namespace Interfaz_GUI
             this.txtnick.Size = new System.Drawing.Size(173, 22);
             this.txtnick.TabIndex = 0;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txtErrorDV);
+            this.groupBox2.Controls.Add(this.BtnRecalcular);
+            this.groupBox2.Controls.Add(this.btnRestore);
+            this.groupBox2.Location = new System.Drawing.Point(103, 51);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(460, 319);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Error DV";
+            this.groupBox2.Visible = false;
+            // 
+            // BtnRecalcular
+            // 
+            this.BtnRecalcular.Location = new System.Drawing.Point(345, 266);
+            this.BtnRecalcular.Name = "BtnRecalcular";
+            this.BtnRecalcular.Size = new System.Drawing.Size(91, 33);
+            this.BtnRecalcular.TabIndex = 7;
+            this.BtnRecalcular.Tag = "Recalcular";
+            this.BtnRecalcular.Text = "Recalcular";
+            this.BtnRecalcular.UseVisualStyleBackColor = true;
+            this.BtnRecalcular.Click += new System.EventHandler(this.BtnRecalcular_Click);
+            // 
+            // btnRestore
+            // 
+            this.btnRestore.Location = new System.Drawing.Point(7, 266);
+            this.btnRestore.Name = "btnRestore";
+            this.btnRestore.Size = new System.Drawing.Size(75, 33);
+            this.btnRestore.TabIndex = 6;
+            this.btnRestore.Tag = "Restore";
+            this.btnRestore.Text = "Restore";
+            this.btnRestore.UseVisualStyleBackColor = true;
+            this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click);
+            // 
+            // txtErrorDV
+            // 
+            this.txtErrorDV.Enabled = false;
+            this.txtErrorDV.Location = new System.Drawing.Point(7, 40);
+            this.txtErrorDV.Multiline = true;
+            this.txtErrorDV.Name = "txtErrorDV";
+            this.txtErrorDV.Size = new System.Drawing.Size(429, 207);
+            this.txtErrorDV.TabIndex = 8;
+            // 
             // LogIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(604, 387);
+            this.ClientSize = new System.Drawing.Size(659, 407);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "LogIn";
             this.Text = "LogIn";
             this.Load += new System.EventHandler(this.LogIn_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -135,5 +187,9 @@ namespace Interfaz_GUI
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtcontraseña;
         private System.Windows.Forms.TextBox txtnick;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button BtnRecalcular;
+        private System.Windows.Forms.Button btnRestore;
+        private System.Windows.Forms.TextBox txtErrorDV;
     }
 }

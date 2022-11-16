@@ -74,12 +74,18 @@ namespace Interfaz_GUI
             if (restore == "ok")
             {
                 MessageBox.Show(CambiarIdioma.TraducirGlobal("Restore realizado correctamente") ?? "Restore realizado correctamente");
-                Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Restore exitoso", "Alta",0);
+                Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Restore exitoso", "Alta", 0);
                 Negocio_BLL.Usuario GestorUsuario = new Negocio_BLL.Usuario();
                 GestorUsuario.LogOut();
 
-                Menu Menu = (Menu)Application.OpenForms["Menu"];
-                Menu.Close();
+                for(int i = Application.OpenForms.Count -1; i >= 0; i--)
+                {
+                    if(Application.OpenForms[i].Name == "Menu" || Application.OpenForms[i].Name == "Restore")
+                    {
+                        Application.OpenForms[i].Close();                       
+                    }
+                }
+
                 LogIn L = new LogIn();
                 L.Show();
             }
@@ -140,15 +146,23 @@ namespace Interfaz_GUI
 
         private void BtnRestore_Click(object sender, EventArgs e)
         {
-            try
+            if(txtRestore.Text == "")
             {
-                RealizarRestore();
+                MessageBox.Show(CambiarIdioma.TraducirGlobal("Seleccione un .bak para poder continuar.") ?? "Seleccione un .bak para poder continuar.");
+            }
+            else
+            {
+                try
+                {
+                    RealizarRestore();
 
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show(CambiarIdioma.TraducirGlobal("Error") ?? "Error");
+                }
             }
-            catch (Exception)
-            {
-                MessageBox.Show(CambiarIdioma.TraducirGlobal("Error") ?? "Error");
-            }
+            
         }
 
         private void Restore_Load(object sender, EventArgs e)
