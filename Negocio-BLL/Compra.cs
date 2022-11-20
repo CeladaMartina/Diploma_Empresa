@@ -17,9 +17,14 @@ namespace Negocio_BLL
             return Mapper.Listar();
         }
 
-        public List<Propiedades_BE.Compra> FiltradoCompleto(decimal _MontoDesde, decimal _MontoHasta, DateTime _FechaDesde, DateTime _FechaHasta, string _CUIT)
+        //public List<Propiedades_BE.Compra> FiltradoCompleto(decimal _MontoDesde, decimal _MontoHasta, DateTime _FechaDesde, DateTime _FechaHasta, string _CUIT)
+        //{
+        //    return Mapper.FiltradoCompleto(_MontoDesde, _MontoHasta, _FechaDesde, _FechaHasta, _CUIT);
+        //}
+
+        public List<Propiedades_BE.Compra> ConsultaCompra(DateTime _FechaDesde, DateTime _FechaHasta, string consultaProveedor, string consultaMonto)
         {
-            return Mapper.FiltradoCompleto(_MontoDesde, _MontoHasta, _FechaDesde, _FechaHasta, _CUIT);
+            return Mapper.ConsultaCompra(_FechaDesde, _FechaHasta, consultaProveedor, consultaMonto);
         }
         #endregion
 

@@ -15,6 +15,7 @@ namespace Interfaz_GUI
     {
         Negocio_BLL.Proveedor GestorProveedor = new Negocio_BLL.Proveedor();
         Negocio_BLL.Compra GestorCompra = new Negocio_BLL.Compra();
+        Negocio_BLL.Seguridad Seguridad = new Negocio_BLL.Seguridad();
 
         private static VisualizarCompra _instancia;
         public static VisualizarCompra ObtenerInstancia()
@@ -52,6 +53,7 @@ namespace Interfaz_GUI
 
         void CargarComboCUIT()
         {
+            comboBoxProveedorCUIT.Items.Add("Todos");
             List<string> CUITs = GestorProveedor.CUITProveedor();
             foreach (var CUITp in CUITs)
             {
@@ -68,30 +70,65 @@ namespace Interfaz_GUI
 
         void Filtrar()
         {
-            dataGridViewCompras.DataSource = null;
-            dataGridViewCompras.DataSource = GestorCompra.FiltradoCompleto(decimal.Parse(TxtDesde.Text), decimal.Parse(TxtHasta.Text), dateTimePickerDesde.Value.Date, dateTimePickerHasta.Value.Date, comboBoxProveedorCUIT.SelectedItem.ToString());
+            try
+            {
+                DateTime fechaDesde = Convert.ToDateTime(dateTimePickerDesde.Text);
+                DateTime fechaHasta = Convert.ToDateTime(dateTimePickerHasta.Text);
+                string proveedor = comboBoxProveedorCUIT.Text;
+                string montoDesde = TxtDesde.Text;
+                string montoHasta = TxtHasta.Text;
+                string consultarProveedor = "";
+                string consultaMonto = "";
 
-            if(dataGridViewCompras.Rows.Count == 0)
-            {
-                dataGridViewCompras.DataSource = null;
-                MessageBox.Show(CambiarIdioma.TraducirGlobal("No hay valores para mostrar en la grilla.") ?? "No hay valores para mostrar en la grilla.");
-                Listar();
-                LimpiarTxt();
+                switch (proveedor)
+                {
+                    case "":
+                        MessageBox.Show("seccione un proveedor", "Proveedor Vacio", MessageBoxButtons.OK,
+                     MessageBoxIcon.Hand);
+                        break;
+                    case "Todos":
+                        consultarProveedor = "select CUIT from Proveedor";
+                        break;
+                    default:
+                        consultarProveedor = "select CUIT from Proveedor where CUIT = '" + Seguridad.EncriptarAES(proveedor) + "'";
+                        break;
+                }
+
+                if (montoDesde != "" && montoHasta != "")
+                {
+                    consultaMonto = "(select ISNULL(SUM(Cant * PUnit),0) from Detalle_Compra where IdCompra = C.IdCompra) >= '" + montoDesde + "' and (select ISNULL(SUM(Cant * PUnit),0) from Detalle_Compra where IdCompra = C.IdCompra) <= '" + montoHasta + "'";
+                }
+                else
+                {
+                    consultaMonto = "";
+                }
+
+                dataGridViewCompras.DataSource = GestorCompra.ConsultaCompra(fechaDesde, fechaHasta, consultarProveedor, consultaMonto);
+
+                if (dataGridViewCompras.Rows.Count == 0)
+                {
+                    dataGridViewCompras.DataSource = null;
+                    MessageBox.Show(CambiarIdioma.TraducirGlobal("No hay valores para mostrar en la grilla.") ?? "No hay valores para mostrar en la grilla.");
+                    Listar();
+                    LimpiarTxt();
+                }
+                else
+                {
+                    dataGridViewCompras.Columns["IdCompra"].Visible = false;
+                    dataGridViewCompras.Columns["IdProveedor"].Visible = false;
+                    dataGridViewCompras.ReadOnly = true;
+                }
             }
-            else
+            catch(Exception ex)
             {
-                dataGridViewCompras.Columns["IdCompra"].Visible = false;
-                dataGridViewCompras.Columns["IdProveedor"].Visible = false;
-                dataGridViewCompras.ReadOnly = true;
-            }
-            
+                MessageBox.Show(ex.Message);
+            }  
         }
 
         bool ChequearFallaTxt()
         {
             bool A = false;
-            if (string.IsNullOrEmpty(TxtDesde.Text) || string.IsNullOrEmpty(TxtHasta.Text)
-                || string.IsNullOrEmpty(comboBoxProveedorCUIT.Text))
+            if (string.IsNullOrEmpty(comboBoxProveedorCUIT.Text))
             {
                 A = true;
             }
@@ -143,9 +180,16 @@ namespace Interfaz_GUI
                     {
                         MessageBox.Show(CambiarIdioma.TraducirGlobal("La fecha Hasta no puede ser menor que Desde.") ?? "La fecha Hasta no puede ser menor que Desde.");
                     }
-                    else if (Convert.ToInt32(TxtDesde.Text) >= Convert.ToInt32(TxtHasta.Text))
+                    else if (TxtDesde.Text != "" && TxtHasta.Text != "")
                     {
-                        MessageBox.Show(CambiarIdioma.TraducirGlobal("El Monto Hasta no puede ser menor que el Monto Desde.") ?? "El Monto Hasta no puede ser menor que el Monto Desde.");
+                        if (Convert.ToInt32(TxtDesde.Text) >= Convert.ToInt32(TxtHasta.Text))
+                        {
+                            MessageBox.Show(CambiarIdioma.TraducirGlobal("El Monto Hasta no puede ser menor que el Monto Desde.") ?? "El Monto Hasta no puede ser menor que el Monto Desde.");
+                        }
+                        else
+                        {
+                            Filtrar();
+                        }                            
                     }
                     else
                     {

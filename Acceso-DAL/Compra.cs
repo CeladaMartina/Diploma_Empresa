@@ -54,6 +54,41 @@ namespace Acceso_DAL
             Acceso.CerrarConexion();
             return ListaCompra;
         }
+
+        public List<Propiedades_BE.Compra> ConsultaCompra(DateTime _FechaDesde, DateTime _FechaHasta, string consultaProveedor, string consultaMonto)
+        {
+            List<Propiedades_BE.Compra> ListaCompra = new List<Propiedades_BE.Compra>();
+            Acceso.AbrirConexion();
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+
+            if (consultaMonto == "")
+            {
+                cmd.CommandText = "select C.IdCompra as 'NumCompra', P.CUIT, C.Fecha, (select ISNULL(SUM(Cant * PUnit),0) from Detalle_Compra where IdCompra = C.IdCompra) as 'Monto' from Compra C inner join Proveedor P on C.IdProveedor = P.IdProveedor where Fecha BETWEEN '" + _FechaDesde + "' and '" + _FechaHasta + "' and P.CUIT IN(" + consultaProveedor + ")";
+            }
+            else
+            {
+                cmd.CommandText = "select C.IdCompra as 'NumCompra', P.CUIT, C.Fecha, (select ISNULL(SUM(Cant * PUnit),0) from Detalle_Compra where IdCompra = C.IdCompra) as 'Monto' from Compra C inner join Proveedor P on C.IdProveedor = P.IdProveedor where Fecha BETWEEN '" + _FechaDesde + "' and '"+ _FechaHasta +"' and P.CUIT IN(" + consultaProveedor + ") and " + consultaMonto +"";
+            }
+
+               
+            cmd.Connection = Acceso.Conexion;
+
+            SqlDataReader lector = cmd.ExecuteReader();
+
+            while (lector.Read())
+            {
+                Propiedades_BE.Compra C = new Propiedades_BE.Compra();
+                C.NumCompra = int.Parse(lector["NumCompra"].ToString());
+                C.CUIT = Seguridad.Desencriptar(lector["CUIT"].ToString());
+                C.Fecha = DateTime.Parse(lector["Fecha"].ToString());
+                C.Monto = decimal.Parse(lector["Monto"].ToString());
+                ListaCompra.Add(C);
+            }
+            lector.Close();
+            Acceso.CerrarConexion();
+            return ListaCompra;
+        }
         #endregion
 
 
