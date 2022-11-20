@@ -55,6 +55,40 @@ namespace Acceso_DAL
             Acceso.CerrarConexion();
             return ListaVenta;
         }
+
+        public List<Propiedades_BE.Venta> ConsultaVenta(DateTime _FechaDesde, DateTime _FechaHasta, string consultaCliente, string consultaMonto)
+        {
+            List<Propiedades_BE.Venta> ListaVenta = new List<Propiedades_BE.Venta>();
+            Acceso.AbrirConexion();
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+
+            if(consultaMonto == "")
+            {
+                cmd.CommandText = "select V.IdVenta as 'NumVenta', C.DNI as 'DNICliente', V.Fecha, (select ISNULL(SUM(Cant * PUnit),0) from Detalle_Venta where IdVenta = V.IdVenta) as 'Monto' from Venta V inner join Cliente C on V.IdCliente = C.IdCliente where Fecha BETWEEN  '" + _FechaDesde + "' and '" + _FechaHasta + "' and c.DNI IN (" + consultaCliente + ")";
+            }
+            else
+            {
+                cmd.CommandText = "select V.IdVenta as 'NumVenta', C.DNI as 'DNICliente', V.Fecha, (select ISNULL(SUM(Cant * PUnit),0) from Detalle_Venta where IdVenta = V.IdVenta) as 'Monto' from Venta V inner join Cliente C on V.IdCliente = C.IdCliente where Fecha BETWEEN  '" + _FechaDesde + "' and '" + _FechaHasta + "' and c.DNI IN (" + consultaCliente + ") and " + consultaMonto + "";
+            }
+
+            cmd.Connection = Acceso.Conexion;
+
+            SqlDataReader lector = cmd.ExecuteReader();
+
+            while (lector.Read())
+            {
+                Propiedades_BE.Venta V = new Propiedades_BE.Venta();
+                V.NumVenta = int.Parse(lector["NumVenta"].ToString());
+                V.DNICliente = Seguridad.Desencriptar(lector["DNICliente"].ToString());
+                V.Fecha = DateTime.Parse(lector["Fecha"].ToString());
+                V.Monto = decimal.Parse(lector["Monto"].ToString());
+                ListaVenta.Add(V);
+            }
+            lector.Close();
+            Acceso.CerrarConexion();
+            return ListaVenta;
+        }
         #endregion
 
         public bool VerificarExistenciaMonto(int IdVenta)

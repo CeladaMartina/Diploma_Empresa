@@ -15,6 +15,7 @@ namespace Interfaz_GUI
     {
         Negocio_BLL.Venta GestorVenta = new Negocio_BLL.Venta();
         Negocio_BLL.Cliente GestorCliente = new Negocio_BLL.Cliente();
+        Negocio_BLL.Seguridad Seguridad = new Negocio_BLL.Seguridad();
 
         private static VisualizarVenta _instancia;
         public static VisualizarVenta ObtenerInstancia()
@@ -43,6 +44,7 @@ namespace Interfaz_GUI
 
         void CargarComboDNI()
         {
+            CmbDNIClientes.Items.Add("Todos");
             List<string> DNIs = GestorCliente.DNIsClientes();
             foreach (var DNIc in DNIs)
             {
@@ -52,30 +54,67 @@ namespace Interfaz_GUI
 
         void Filtrar()
         {
-            dataGridViewDV.DataSource = null;
-            dataGridViewDV.DataSource =  GestorVenta.FiltradoCompleto(CmbDNIClientes.SelectedItem.ToString(), dateTimePickerDesde.Value.Date, dateTimePickerHasta.Value.Date, decimal.Parse(TxtDesde.Text), decimal.Parse(TxtHasta.Text));
-            
-            if(dataGridViewDV.Rows.Count == 0)
+            try
             {
-                dataGridViewDV.DataSource = null;
-                MessageBox.Show(CambiarIdioma.TraducirGlobal("No hay valores para mostrar en la grilla.") ?? "No hay valores para mostrar en la grilla.");
-                Listar();
-                LimpiarTxt();
+                DateTime fechaDesde = Convert.ToDateTime(dateTimePickerDesde.Text);
+                DateTime fechaHasta = Convert.ToDateTime(dateTimePickerHasta.Text);
+                string cliente = CmbDNIClientes.Text;
+                string montoDesde = TxtDesde.Text;
+                string montoHasta = TxtHasta.Text;
+                string consultarCliente = "";
+                string consultaMonto = "";
+
+
+                switch (cliente)
+                {
+                    case "":
+                        MessageBox.Show("seccione un cliente", "Cliente Vacio", MessageBoxButtons.OK,
+                     MessageBoxIcon.Hand);
+                        break;
+                    case "Todos":
+                        consultarCliente = "select DNI from Cliente";
+                        break;
+                    default:
+                        consultarCliente = "select DNI from Cliente where DNI = '" + Seguridad.EncriptarAES(cliente)+ "'";
+                        break;
+                }
+
+                if(montoDesde != "" && montoHasta != "")
+                {
+                    consultaMonto = "(select ISNULL(SUM(Cant * PUnit),0) from Detalle_Venta where IdVenta = V.IdVenta) >= '"+ montoDesde +"' and (select ISNULL(SUM(Cant * PUnit),0) from Detalle_Venta where IdVenta = V.IdVenta) <= '"+ montoHasta +"'";
+                }
+                else
+                {
+                    consultaMonto = "";
+                }
+
+                dataGridViewDV.DataSource = GestorVenta.ConsultaVenta(fechaDesde, fechaHasta, consultarCliente, consultaMonto);
+
+                if (dataGridViewDV.Rows.Count == 0)
+                {
+                    dataGridViewDV.DataSource = null;
+                    MessageBox.Show(CambiarIdioma.TraducirGlobal("No hay valores para mostrar en la grilla.") ?? "No hay valores para mostrar en la grilla.");
+                    Listar();
+                    LimpiarTxt();
+                }
+                else
+                {
+                    dataGridViewDV.Columns["IdVenta"].Visible = false;
+                    dataGridViewDV.Columns["IdCliente"].Visible = false;
+                    dataGridViewDV.ReadOnly = true;
+                }
             }
-            else
+            catch(Exception ex)
             {
-                dataGridViewDV.Columns["IdVenta"].Visible = false;
-                dataGridViewDV.Columns["IdCliente"].Visible = false;
-                dataGridViewDV.ReadOnly = true;
-            }
+                MessageBox.Show(ex.Message);
+            }          
             
         }
 
         bool ChequearFallaTxt()
         {
             bool A = false;
-            if (string.IsNullOrEmpty(TxtDesde.Text) || string.IsNullOrEmpty(TxtHasta.Text)
-                || string.IsNullOrEmpty(CmbDNIClientes.Text))
+            if (string.IsNullOrEmpty(CmbDNIClientes.Text))
             {
                 A = true;
             }
@@ -142,14 +181,22 @@ namespace Interfaz_GUI
                     {
                         MessageBox.Show(CambiarIdioma.TraducirGlobal("La fecha Hasta no puede ser menor que Desde.") ?? "La fecha Hasta no puede ser menor que Desde.");
                     }
-                    else if (Convert.ToInt32(TxtDesde.Text) >= Convert.ToInt32(TxtHasta.Text))
+                    else if (TxtDesde.Text != "" && TxtHasta.Text != "")
                     {
-                        MessageBox.Show(CambiarIdioma.TraducirGlobal("El Monto Hasta no puede ser menor que el Monto Desde.") ?? "El Monto Hasta no puede ser menor que el Monto Desde.");
+                        if(Convert.ToInt32(TxtDesde.Text) > Convert.ToInt32(TxtHasta.Text))
+                        {
+                            MessageBox.Show(CambiarIdioma.TraducirGlobal("El Monto Hasta no puede ser menor que el Monto Desde.") ?? "El Monto Hasta no puede ser menor que el Monto Desde.");
+                        }
+                        else
+                        {
+                            Filtrar();
+                        }
                     }
                     else
                     {
                         Filtrar();
                     }
+
                 }
                 else
                 {

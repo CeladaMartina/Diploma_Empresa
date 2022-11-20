@@ -16,8 +16,7 @@ namespace Interfaz_GUI
         Propiedades_BE.Bitacora BitacoraTemp = new Propiedades_BE.Bitacora();
         Negocio_BLL.Seguridad Seguridad = new Negocio_BLL.Seguridad();
         Negocio_BLL.Usuario GestorUsuario = new Negocio_BLL.Usuario();
-        string criticidad = "";
-
+        
         private static Bitacora _instancia;
         public static Bitacora ObtenerInstancia()
         {
@@ -109,9 +108,7 @@ namespace Interfaz_GUI
                 {
                     dataGridViewBitacora.DataSource = null;
                     MessageBox.Show(CambiarIdioma.TraducirGlobal("No hay valores para mostrar en la grilla.") ?? "No hay valores para mostrar en la grilla.");
-                    Listar();                    
-                    //groupBoxRangodefecha.Enabled = false;
-
+                    Listar();                   
                 }
                 else
                 {

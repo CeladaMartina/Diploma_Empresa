@@ -68,7 +68,7 @@ namespace Interfaz_GUI
             this.groupBoxMonto.Controls.Add(this.TxtDesde);
             this.groupBoxMonto.Controls.Add(this.LblHastaM);
             this.groupBoxMonto.Controls.Add(this.LblDesdeM);
-            this.groupBoxMonto.Location = new System.Drawing.Point(30, 67);
+            this.groupBoxMonto.Location = new System.Drawing.Point(618, 67);
             this.groupBoxMonto.Name = "groupBoxMonto";
             this.groupBoxMonto.Size = new System.Drawing.Size(288, 152);
             this.groupBoxMonto.TabIndex = 1;
@@ -162,7 +162,7 @@ namespace Interfaz_GUI
             // 
             this.groupBoxProveedor.Controls.Add(this.comboBoxProveedorCUIT);
             this.groupBoxProveedor.Controls.Add(this.LblCUIT);
-            this.groupBoxProveedor.Location = new System.Drawing.Point(618, 67);
+            this.groupBoxProveedor.Location = new System.Drawing.Point(30, 67);
             this.groupBoxProveedor.Name = "groupBoxProveedor";
             this.groupBoxProveedor.Size = new System.Drawing.Size(288, 152);
             this.groupBoxProveedor.TabIndex = 5;

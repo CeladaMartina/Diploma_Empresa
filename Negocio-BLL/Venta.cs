@@ -17,9 +17,9 @@ namespace Negocio_BLL
             return Mapper.Listar();
         }
         
-        public List<Propiedades_BE.Venta> FiltradoCompleto(string _DNI, DateTime _FechaDesde, DateTime _FechaHasta, decimal _MontoDesde, decimal _MontoHasta)
+        public List<Propiedades_BE.Venta> ConsultaVenta(DateTime _FechaDesde, DateTime _FechaHasta, string consultaCliente, string consultaMonto)
         {
-            return Mapper.FiltradoCompleto(_DNI, _MontoDesde, _MontoHasta, _FechaDesde, _FechaHasta);
+            return Mapper.ConsultaVenta(_FechaDesde, _FechaHasta, consultaCliente, consultaMonto);
         }
 
 

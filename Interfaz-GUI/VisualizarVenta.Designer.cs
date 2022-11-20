@@ -75,7 +75,7 @@ namespace Interfaz_GUI
             // 
             // BtnFiltrar
             // 
-            this.BtnFiltrar.Location = new System.Drawing.Point(905, 53);
+            this.BtnFiltrar.Location = new System.Drawing.Point(905, 62);
             this.BtnFiltrar.Name = "BtnFiltrar";
             this.BtnFiltrar.Size = new System.Drawing.Size(90, 48);
             this.BtnFiltrar.TabIndex = 13;
@@ -88,7 +88,7 @@ namespace Interfaz_GUI
             // 
             this.groupBoxCliente.Controls.Add(this.CmbDNIClientes);
             this.groupBoxCliente.Controls.Add(this.LblDNI);
-            this.groupBoxCliente.Location = new System.Drawing.Point(600, 53);
+            this.groupBoxCliente.Location = new System.Drawing.Point(12, 53);
             this.groupBoxCliente.Name = "groupBoxCliente";
             this.groupBoxCliente.Size = new System.Drawing.Size(288, 152);
             this.groupBoxCliente.TabIndex = 12;
@@ -168,7 +168,7 @@ namespace Interfaz_GUI
             this.groupBoxMonto.Controls.Add(this.TxtDesde);
             this.groupBoxMonto.Controls.Add(this.LblHastaM);
             this.groupBoxMonto.Controls.Add(this.LblDesdeM);
-            this.groupBoxMonto.Location = new System.Drawing.Point(12, 53);
+            this.groupBoxMonto.Location = new System.Drawing.Point(600, 53);
             this.groupBoxMonto.Name = "groupBoxMonto";
             this.groupBoxMonto.Size = new System.Drawing.Size(288, 152);
             this.groupBoxMonto.TabIndex = 10;
