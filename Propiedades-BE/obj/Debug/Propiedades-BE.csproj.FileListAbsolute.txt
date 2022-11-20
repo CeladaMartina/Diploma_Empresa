@@ -1,13 +1,9 @@
-C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Propiedades-BE\bin\Debug\Propiedades-BE.dll
-C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Propiedades-BE\bin\Debug\Propiedades-BE.pdb
-C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Propiedades-BE\obj\Debug\Propiedades-BE.csproj.CoreCompileInputs.cache
-C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Propiedades-BE\obj\Debug\Propiedades-BE.dll
-C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Propiedades-BE\obj\Debug\Propiedades-BE.pdb
-C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Propiedades-BE\obj\Debug\Propiedades-BE.csprojAssemblyReference.cache
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Propiedades-BE\bin\Debug\SqlServerTypes\x64\msvcr120.dll
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Propiedades-BE\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Propiedades-BE\bin\Debug\SqlServerTypes\x86\msvcr120.dll
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Propiedades-BE\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Propiedades-BE\bin\Debug\Propiedades-BE.dll
+C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Propiedades-BE\bin\Debug\Propiedades-BE.pdb
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Propiedades-BE\bin\Debug\Microsoft.ReportViewer.Common.dll
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Propiedades-BE\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Propiedades-BE\bin\Debug\Microsoft.ReportViewer.Design.dll
@@ -62,4 +58,7 @@ C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Propiedades-BE\bin\Debug\pt\
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Propiedades-BE\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Propiedades-BE\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Propiedades-BE\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Propiedades-BE\obj\Debug\Propiedades-BE.csproj.CoreCompileInputs.cache
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Propiedades-BE\obj\Debug\Propiedades-BE.csproj.CopyComplete
+C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Propiedades-BE\obj\Debug\Propiedades-BE.dll
+C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Propiedades-BE\obj\Debug\Propiedades-BE.pdb

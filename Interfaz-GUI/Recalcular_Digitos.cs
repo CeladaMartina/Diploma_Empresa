@@ -89,7 +89,7 @@ namespace Interfaz_GUI
 
         void RBitacora()
         {
-            Seguridad.RecalcularDVH();
+            //Seguridad.RecalcularDVH();
             Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Digitos DVV recalculados", "Alta",0);
             
         }
