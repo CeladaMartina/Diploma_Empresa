@@ -43,6 +43,7 @@ namespace Interfaz_GUI
             this.LblFecha = new System.Windows.Forms.Label();
             this.LblCliente = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.labelStock = new System.Windows.Forms.Label();
             this.LblStock = new System.Windows.Forms.Label();
             this.BtnBajaDetalle = new System.Windows.Forms.Button();
             this.BtnModificarDetalle = new System.Windows.Forms.Button();
@@ -69,7 +70,6 @@ namespace Interfaz_GUI
             this.labelNumeroVentaNombre = new System.Windows.Forms.Label();
             this.LABELVENTA = new System.Windows.Forms.Label();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.labelStock = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -234,6 +234,15 @@ namespace Interfaz_GUI
             this.groupBox2.TabStop = false;
             this.groupBox2.Tag = "Detalle";
             this.groupBox2.Text = "Detalle";
+            // 
+            // labelStock
+            // 
+            this.labelStock.AutoSize = true;
+            this.labelStock.Location = new System.Drawing.Point(430, 28);
+            this.labelStock.Name = "labelStock";
+            this.labelStock.Size = new System.Drawing.Size(43, 17);
+            this.labelStock.TabIndex = 19;
+            this.labelStock.Text = "Stock";
             // 
             // LblStock
             // 
@@ -489,15 +498,6 @@ namespace Interfaz_GUI
             this.LABELVENTA.Tag = "Venta";
             this.LABELVENTA.Text = "Venta";
             // 
-            // labelStock
-            // 
-            this.labelStock.AutoSize = true;
-            this.labelStock.Location = new System.Drawing.Point(430, 28);
-            this.labelStock.Name = "labelStock";
-            this.labelStock.Size = new System.Drawing.Size(43, 17);
-            this.labelStock.TabIndex = 19;
-            this.labelStock.Text = "Stock";
-            // 
             // Venta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -516,6 +516,7 @@ namespace Interfaz_GUI
             this.Text = "Venta";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Venta_FormClosing);
             this.Load += new System.EventHandler(this.Venta_Load);
+            this.HelpRequested += new System.Windows.Forms.HelpEventHandler(this.Venta_HelpRequested);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

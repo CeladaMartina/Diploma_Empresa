@@ -54,8 +54,7 @@ namespace Interfaz_GUI
         #region Metodos
         public void VerificarIntegridadGeneral()
         {
-            string ProblemaUsuario = GestorUsuario.VerificarIntegridadUsuario(Propiedades_BE.SingletonLogIn.GlobalIdUsuario);
-            //string ProblemaBitacora = Seguridad.VerificarIntegridadBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario);
+            string ProblemaUsuario = GestorUsuario.VerificarIntegridadUsuario(Propiedades_BE.SingletonLogIn.GlobalIdUsuario);            
             string ProblemaDetalleVenta = GestorDetalleVenta.VerificarIntegridadDV(Propiedades_BE.SingletonLogIn.GlobalIdUsuario);
 
             string ProblemaDefinitivo = ProblemaUsuario + ProblemaDetalleVenta;

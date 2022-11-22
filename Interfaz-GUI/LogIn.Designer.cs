@@ -37,9 +37,9 @@ namespace Interfaz_GUI
             this.txtcontraseña = new System.Windows.Forms.TextBox();
             this.txtnick = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtErrorDV = new System.Windows.Forms.TextBox();
             this.BtnRecalcular = new System.Windows.Forms.Button();
             this.btnRestore = new System.Windows.Forms.Button();
-            this.txtErrorDV = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -52,7 +52,7 @@ namespace Interfaz_GUI
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtcontraseña);
             this.groupBox1.Controls.Add(this.txtnick);
-            this.groupBox1.Location = new System.Drawing.Point(81, 51);
+            this.groupBox1.Location = new System.Drawing.Point(73, 39);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(466, 311);
             this.groupBox1.TabIndex = 0;
@@ -129,6 +129,15 @@ namespace Interfaz_GUI
             this.groupBox2.Text = "Error DV";
             this.groupBox2.Visible = false;
             // 
+            // txtErrorDV
+            // 
+            this.txtErrorDV.Enabled = false;
+            this.txtErrorDV.Location = new System.Drawing.Point(7, 40);
+            this.txtErrorDV.Multiline = true;
+            this.txtErrorDV.Name = "txtErrorDV";
+            this.txtErrorDV.Size = new System.Drawing.Size(429, 207);
+            this.txtErrorDV.TabIndex = 8;
+            // 
             // BtnRecalcular
             // 
             this.BtnRecalcular.Location = new System.Drawing.Point(345, 266);
@@ -150,15 +159,6 @@ namespace Interfaz_GUI
             this.btnRestore.Text = "Restore";
             this.btnRestore.UseVisualStyleBackColor = true;
             this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click);
-            // 
-            // txtErrorDV
-            // 
-            this.txtErrorDV.Enabled = false;
-            this.txtErrorDV.Location = new System.Drawing.Point(7, 40);
-            this.txtErrorDV.Multiline = true;
-            this.txtErrorDV.Name = "txtErrorDV";
-            this.txtErrorDV.Size = new System.Drawing.Size(429, 207);
-            this.txtErrorDV.TabIndex = 8;
             // 
             // LogIn
             // 
