@@ -171,11 +171,11 @@ namespace Interfaz_GUI
             BaseFont Fuente3 = BaseFont.CreateFont(BaseFont.HELVETICA, BaseFont.CP1252, true);
             iTextSharp.text.Font TablasTexto = new iTextSharp.text.Font(Fuente3, 12f, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
 
-            string imagepath = Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.FullName + "\\Imagenes\\LogoTP.png";
-            iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(imagepath);
-            logo.Alignment = Element.ALIGN_CENTER;
-            logo.ScalePercent(60);
-            doc.Add(logo);
+            //string imagepath = Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.FullName + "\\Imagenes\\LogoTP.png";
+            //iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance(imagepath);
+            //logo.Alignment = Element.ALIGN_CENTER;
+            //logo.ScalePercent(60);
+            //doc.Add(logo);
 
             Paragraph Compra = new Paragraph("Compra", Titulo);
             Compra.Alignment = Element.ALIGN_CENTER;

@@ -311,7 +311,7 @@ namespace Acceso_DAL
             }
             var cs = new SqlConnectionStringBuilder();
             cs.IntegratedSecurity = true;
-            cs.DataSource = "GASGANO";
+            cs.DataSource = ".";
             cs.InitialCatalog = "Diploma_Empresa";
             //cs.InitialCatalog = "Diploma_Trabajo_Final";
             var cnn = new SqlConnection(cs.ConnectionString);
