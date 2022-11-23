@@ -89,6 +89,8 @@ namespace Interfaz_GUI
                 this.proveedorToolStripMenuItem.Visible = false;
                 this.localidadToolStripMenuItem.Visible = false;
                 this.administrarUsuarioFamiliaPatenteToolStripMenuItem.Visible = false;
+                this.compraToolStripMenuItem.Visible = false;
+                this.ventaToolStripMenuItem.Visible = false;
             }
         }
         #endregion

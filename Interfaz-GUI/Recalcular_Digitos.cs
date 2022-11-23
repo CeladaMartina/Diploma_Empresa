@@ -118,7 +118,7 @@ namespace Interfaz_GUI
             {
                 RUsuario();
                 RDV();
-                RBitacora();
+                //RBitacora();
                 TxtTablas.Text = "OK";
                 BtnUsuario.Enabled = false;
                 BtnRecalcularDVV.Enabled = true;
