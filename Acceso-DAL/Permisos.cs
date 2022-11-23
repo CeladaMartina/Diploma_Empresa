@@ -309,12 +309,8 @@ namespace Acceso_DAL
             {
                 where = familia;
             }
-            var cs = new SqlConnectionStringBuilder();
-            cs.IntegratedSecurity = true;
-            cs.DataSource = ".";
-            cs.InitialCatalog = "Diploma_Empresa";
-            //cs.InitialCatalog = "Diploma_Trabajo_Final";
-            var cnn = new SqlConnection(cs.ConnectionString);
+
+            var cnn = new SqlConnection(Acceso.GlobalConexion);            
             cnn.Open();
             var cmd = new SqlCommand();
             cmd.Connection = cnn;
