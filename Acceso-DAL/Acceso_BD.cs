@@ -81,7 +81,7 @@ namespace Acceso_DAL
             {
                 FA = Cmd.ExecuteNonQuery();
             }
-            catch
+            catch(Exception ex)
             {
                 FA = -1;
             }

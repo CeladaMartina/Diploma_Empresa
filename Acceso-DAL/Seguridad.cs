@@ -33,7 +33,7 @@ namespace Acceso_DAL
             {
                 Propiedades_BE.Bitacora B = new Propiedades_BE.Bitacora();
                 B.NickUs = Desencriptar(R["Nick"].ToString());
-                B.Fecha = DateTime.Parse(R["Fecha"].ToString());
+                B.Fecha = new DateTime(long.Parse(R["Fecha"].ToString()));
                 B.Descripcion = Desencriptar(R["Descripcion"].ToString());
                 B.Criticidad = R["Criticidad"].ToString();
                 ListarBitacora.Add(B);
@@ -49,14 +49,14 @@ namespace Acceso_DAL
             {
                 SqlParameter[] P = new SqlParameter[5];
                 P[0] = new SqlParameter("@IdUsuario", IdUsuario);
-                P[1] = new SqlParameter("@Fecha", Fecha);
+                P[1] = new SqlParameter("@Fecha", Fecha.Ticks);
                 P[2] = new SqlParameter("@Descripcion", EncriptarAES(Descripcion));
                 P[3] = new SqlParameter("@Criticidad", Criticidad);
                 P[4] = new SqlParameter("@DVH", DVH);
                 Acceso.Escribir("CargarBitacora", P);
-                long DV = CalcularDVH("select * from Bitacora where Fecha = '" + Fecha + "'", "Bitacora");
-                EjecutarConsulta("Update Bitacora set DVH = " + DV + "where Fecha = '" + Fecha + "'");
-                ActualizarDVV("Bitacora", SumaDVV("Bitacora"));
+                //long DV = CalcularDVH("select * from Bitacora where Fecha = '" + Fecha + "'", "Bitacora");
+                //EjecutarConsulta("Update Bitacora set DVH = " + DV + "where Fecha = '" + Fecha + "'");
+                //ActualizarDVV("Bitacora", SumaDVV("Bitacora"));
 
                 o = 1;
             }
@@ -75,7 +75,7 @@ namespace Acceso_DAL
             Acceso.AbrirConexion();
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select Us.Nick,B.Fecha,B.Descripcion,B.Criticidad  from Usuario Us inner join Bitacora B  on Us.IdUsuario = B.IdUsuario where Fecha BETWEEN '" + _FechaDesde + "' and '" + _FechaHasta + "' and Criticidad IN(" + consultaCriticidad + ") and B.IdUsuario IN (" + consultaUsuario + ")";
+            cmd.CommandText = "select Us.Nick,B.Fecha,B.Descripcion,B.Criticidad  from Usuario Us inner join Bitacora B  on Us.IdUsuario = B.IdUsuario where Fecha BETWEEN '" + _FechaDesde.Ticks + "' and '" + _FechaHasta.Ticks + "' and Criticidad IN(" + consultaCriticidad + ") and B.IdUsuario IN (" + consultaUsuario + ")";
             cmd.Connection = Acceso.Conexion;
 
             SqlDataReader lector = cmd.ExecuteReader();
@@ -84,7 +84,7 @@ namespace Acceso_DAL
             {
                 Propiedades_BE.Bitacora B = new Propiedades_BE.Bitacora();
                 B.NickUs = Desencriptar(lector["Nick"].ToString());
-                B.Fecha = DateTime.Parse(lector["Fecha"].ToString());
+                B.Fecha = new DateTime(long.Parse(lector["Fecha"].ToString()));
                 B.Descripcion = Desencriptar(lector["Descripcion"].ToString());
                 B.Criticidad = lector["Criticidad"].ToString();
                 ListaBitacora.Add(B);

@@ -23,37 +23,38 @@ namespace Acceso_DAL
                 Propiedades_BE.Compra C = new Propiedades_BE.Compra();
                 C.NumCompra = int.Parse(R["NumCompra"].ToString());
                 C.CUIT = Seguridad.Desencriptar(R["CUIT"].ToString());
-                C.Fecha = DateTime.Parse(R["Fecha"].ToString());
+                //C.Fecha = DateTime.Parse(R["Fecha"].ToString());
+                C.Fecha = new DateTime(long.Parse(R["Fecha"].ToString()));
                 C.Monto = decimal.Parse(R["Monto"].ToString());
                 ListaCompra.Add(C);
             }
             return ListaCompra;
         }
 
-        public List<Propiedades_BE.Compra> FiltradoCompleto(decimal _MontoDesde, decimal _MontoHasta, DateTime _FechaDesde, DateTime _FechaHasta, string _CUIT)
-        {
-            List<Propiedades_BE.Compra> ListaCompra = new List<Propiedades_BE.Compra>();
-            Acceso.AbrirConexion();
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select C.IdCompra as 'NumCompra', P.CUIT, C.Fecha, (select ISNULL(SUM(Cant * PUnit),0) from Detalle_Compra where IdCompra = C.IdCompra) as 'Monto' from Compra C inner join Proveedor P on C.IdProveedor = P.IdProveedor where (select ISNULL(SUM(Cant * PUnit),0) from Detalle_Compra where IdCompra = C.IdCompra) >= " + _MontoDesde + " and (select ISNULL(SUM(Cant * PUnit),0) from Detalle_Compra where IdCompra = C.IdCompra) <= " + _MontoHasta + " and convert(date,Fecha) >= '" + _FechaDesde + "' and convert(date,Fecha) <= '" + _FechaHasta + "' and CUIT = '" + Seguridad.EncriptarAES(_CUIT) + "'";
-            cmd.Connection = Acceso.Conexion;
+        //public List<Propiedades_BE.Compra> FiltradoCompleto(decimal _MontoDesde, decimal _MontoHasta, DateTime _FechaDesde, DateTime _FechaHasta, string _CUIT)
+        //{
+        //    List<Propiedades_BE.Compra> ListaCompra = new List<Propiedades_BE.Compra>();
+        //    Acceso.AbrirConexion();
+        //    SqlCommand cmd = new SqlCommand();
+        //    cmd.CommandType = CommandType.Text;
+        //    cmd.CommandText = "select C.IdCompra as 'NumCompra', P.CUIT, C.Fecha, (select ISNULL(SUM(Cant * PUnit),0) from Detalle_Compra where IdCompra = C.IdCompra) as 'Monto' from Compra C inner join Proveedor P on C.IdProveedor = P.IdProveedor where (select ISNULL(SUM(Cant * PUnit),0) from Detalle_Compra where IdCompra = C.IdCompra) >= " + _MontoDesde + " and (select ISNULL(SUM(Cant * PUnit),0) from Detalle_Compra where IdCompra = C.IdCompra) <= " + _MontoHasta + " and convert(date,Fecha) >= '" + _FechaDesde + "' and convert(date,Fecha) <= '" + _FechaHasta + "' and CUIT = '" + Seguridad.EncriptarAES(_CUIT) + "'";
+        //    cmd.Connection = Acceso.Conexion;
 
-            SqlDataReader lector = cmd.ExecuteReader();
+        //    SqlDataReader lector = cmd.ExecuteReader();
 
-            while (lector.Read())
-            {
-                Propiedades_BE.Compra C = new Propiedades_BE.Compra();
-                C.NumCompra = int.Parse(lector["NumCompra"].ToString());
-                C.CUIT = Seguridad.Desencriptar(lector["CUIT"].ToString());
-                C.Fecha = DateTime.Parse(lector["Fecha"].ToString());
-                C.Monto = decimal.Parse(lector["Monto"].ToString());
-                ListaCompra.Add(C);
-            }
-            lector.Close();
-            Acceso.CerrarConexion();
-            return ListaCompra;
-        }
+        //    while (lector.Read())
+        //    {
+        //        Propiedades_BE.Compra C = new Propiedades_BE.Compra();
+        //        C.NumCompra = int.Parse(lector["NumCompra"].ToString());
+        //        C.CUIT = Seguridad.Desencriptar(lector["CUIT"].ToString());
+        //        C.Fecha = DateTime.Parse(lector["Fecha"].ToString());
+        //        C.Monto = decimal.Parse(lector["Monto"].ToString());
+        //        ListaCompra.Add(C);
+        //    }
+        //    lector.Close();
+        //    Acceso.CerrarConexion();
+        //    return ListaCompra;
+        //}
 
         public List<Propiedades_BE.Compra> ConsultaCompra(DateTime _FechaDesde, DateTime _FechaHasta, string consultaProveedor, string consultaMonto)
         {
@@ -64,11 +65,11 @@ namespace Acceso_DAL
 
             if (consultaMonto == "")
             {
-                cmd.CommandText = "select C.IdCompra as 'NumCompra', P.CUIT, C.Fecha, (select ISNULL(SUM(Cant * PUnit),0) from Detalle_Compra where IdCompra = C.IdCompra) as 'Monto' from Compra C inner join Proveedor P on C.IdProveedor = P.IdProveedor where Fecha BETWEEN '" + _FechaDesde + "' and '" + _FechaHasta + "' and P.CUIT IN(" + consultaProveedor + ")";
+                cmd.CommandText = "select C.IdCompra as 'NumCompra', P.CUIT, C.Fecha, (select ISNULL(SUM(Cant * PUnit),0) from Detalle_Compra where IdCompra = C.IdCompra) as 'Monto' from Compra C inner join Proveedor P on C.IdProveedor = P.IdProveedor where Fecha BETWEEN '" + _FechaDesde.Ticks + "' and '" + _FechaHasta.Ticks + "' and P.CUIT IN(" + consultaProveedor + ")";
             }
             else
             {
-                cmd.CommandText = "select C.IdCompra as 'NumCompra', P.CUIT, C.Fecha, (select ISNULL(SUM(Cant * PUnit),0) from Detalle_Compra where IdCompra = C.IdCompra) as 'Monto' from Compra C inner join Proveedor P on C.IdProveedor = P.IdProveedor where Fecha BETWEEN '" + _FechaDesde + "' and '"+ _FechaHasta +"' and P.CUIT IN(" + consultaProveedor + ") and " + consultaMonto +"";
+                cmd.CommandText = "select C.IdCompra as 'NumCompra', P.CUIT, C.Fecha, (select ISNULL(SUM(Cant * PUnit),0) from Detalle_Compra where IdCompra = C.IdCompra) as 'Monto' from Compra C inner join Proveedor P on C.IdProveedor = P.IdProveedor where Fecha BETWEEN '" + _FechaDesde.Ticks + "' and '"+ _FechaHasta.Ticks +"' and P.CUIT IN(" + consultaProveedor + ") and " + consultaMonto +"";
             }
 
                
@@ -81,7 +82,8 @@ namespace Acceso_DAL
                 Propiedades_BE.Compra C = new Propiedades_BE.Compra();
                 C.NumCompra = int.Parse(lector["NumCompra"].ToString());
                 C.CUIT = Seguridad.Desencriptar(lector["CUIT"].ToString());
-                C.Fecha = DateTime.Parse(lector["Fecha"].ToString());
+                //C.Fecha = DateTime.Parse(lector["Fecha"].ToString());
+                C.Fecha = new DateTime(long.Parse(lector["Fecha"].ToString()));
                 C.Monto = decimal.Parse(lector["Monto"].ToString());
                 ListaCompra.Add(C);
             }
@@ -97,7 +99,7 @@ namespace Acceso_DAL
             int fa = 0;
             SqlParameter[] P = new SqlParameter[2];
             P[0] = new SqlParameter("@IdProveedor", Compra.IdProveedor);
-            P[1] = new SqlParameter("@Fecha", Compra.Fecha);
+            P[1] = new SqlParameter("@Fecha", Compra.Fecha.Ticks);
             fa = Acceso.Escribir("AltaCompra", P);
             return fa;
         }

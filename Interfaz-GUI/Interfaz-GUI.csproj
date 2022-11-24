@@ -315,6 +315,7 @@
     <EmbeddedResource Include="VisualizarVenta.resx">
       <DependentUpon>VisualizarVenta.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ayuda\Manual Ventas.chm" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Propiedades_BE.Producto.datasource" />
     <None Include="Properties\Settings.settings">
@@ -345,6 +346,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="LogoTP.ico" />
+    <None Include="Resources\Manual Ventas.chm" />
+    <None Include="Resources\ManualAyuda.bmp" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

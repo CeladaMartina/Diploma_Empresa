@@ -72,8 +72,8 @@ namespace Interfaz_GUI
         {
             try
             {
-                DateTime fechaDesde = Convert.ToDateTime(dateTimePickerDesde.Text);
-                DateTime fechaHasta = Convert.ToDateTime(dateTimePickerHasta.Text);
+                DateTime fechaDesde = dateTimePickerDesde.Value.Date;
+                DateTime fechaHasta = dateTimePickerHasta.Value.Date.AddHours(23).AddMinutes(59).AddSeconds(59);
                 string proveedor = comboBoxProveedorCUIT.Text;
                 string montoDesde = TxtDesde.Text;
                 string montoHasta = TxtHasta.Text;
@@ -172,11 +172,13 @@ namespace Interfaz_GUI
 
         private void BtnFiltrar_Click(object sender, EventArgs e)
         {
+            DateTime fechaDesde = dateTimePickerDesde.Value.Date;
+            DateTime fechaHasta = dateTimePickerHasta.Value.Date.AddHours(23).AddMinutes(59).AddSeconds(59);
             try
             {
                 if (ChequearFallaTxt() == false)
                 {
-                    if (dateTimePickerDesde.Value >= dateTimePickerHasta.Value)
+                    if (fechaDesde >= fechaHasta)
                     {
                         MessageBox.Show(CambiarIdioma.TraducirGlobal("La fecha Hasta no puede ser menor que Desde.") ?? "La fecha Hasta no puede ser menor que Desde.");
                     }

@@ -69,5 +69,15 @@ namespace Interfaz_GUI.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Byte[].
+        /// </summary>
+        internal static byte[] Manual_Ventas {
+            get {
+                object obj = ResourceManager.GetObject("Manual_Ventas", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }
