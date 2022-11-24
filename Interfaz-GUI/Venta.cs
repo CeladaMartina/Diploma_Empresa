@@ -694,9 +694,11 @@ namespace Interfaz_GUI
         #endregion
 
         private void Venta_HelpRequested(object sender, HelpEventArgs hlpevent)
-        {            
-            string pathAyuda = Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).FullName + "\\ManualDiploma\\Manual Ventas.chm";
-            Help.ShowHelp(this, pathAyuda, "About.htm");
+        {
+            string strAppPath = Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName;
+            string strFilePath = Path.Combine(strAppPath, "Resources");
+            string strFullFilename = Path.Combine(strFilePath, "Manual Ventas.chm");            
+            Help.ShowHelp(this, strFullFilename, "About.htm");
         }
     }
 }
