@@ -697,10 +697,12 @@ namespace Interfaz_GUI
 
         private void Venta_HelpRequested(object sender, HelpEventArgs hlpevent)
         {
-            string strAppPath = Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName;
-            string strFilePath = Path.Combine(strAppPath, "Resources");
-            string strFullFilename = Path.Combine(strFilePath, "ManualVentas.chm");            
-            Help.ShowHelp(this, strFullFilename, "About.htm");
+
+            string path = AppDomain.CurrentDomain.BaseDirectory + @"help\Help.chm.chm";
+            #if DEBUG
+            path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + @"\help\Help.chm";
+            #endif
+            Help.ShowHelp(this, path);
         }
     }
 }

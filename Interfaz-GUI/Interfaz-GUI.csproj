@@ -317,6 +317,11 @@
     </EmbeddedResource>
     <None Include="ayuda\Manual Ventas.chm" />
     <None Include="ClassDiagram1.cd" />
+    <None Include="help\Help.chm" />
+    <None Include="help\Help.chw" />
+    <None Include="help\Help.hhp" />
+    <None Include="help\Index.hhk" />
+    <None Include="help\Table of Contents.hhc" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Propiedades_BE.Producto.datasource" />
     <None Include="Properties\Settings.settings">
@@ -328,7 +333,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Resources\ManualVentas.chm" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -344,6 +348,34 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="help\Administrar Idioma.htm" />
+    <Content Include="help\Administrar Permisos.htm" />
+    <Content Include="help\Administrar Traduccion.htm" />
+    <Content Include="help\Administrar Usuario.htm" />
+    <Content Include="help\Articulo.htm" />
+    <Content Include="help\BackUp.htm" />
+    <Content Include="help\Bienvenido.htm" />
+    <Content Include="help\Bitacora.htm" />
+    <Content Include="help\Cambiar Idioma.htm" />
+    <Content Include="help\Cliente.htm" />
+    <Content Include="help\Compra.htm" />
+    <Content Include="help\Comprar.htm" />
+    <Content Include="help\Control Cambio Proveedor.htm" />
+    <Content Include="help\Generar Contraseña.htm" />
+    <Content Include="help\Idioma.htm" />
+    <Content Include="help\Localidad.htm" />
+    <Content Include="help\LogIn.htm" />
+    <Content Include="help\Menu.htm" />
+    <Content Include="help\Pedido Compra.htm" />
+    <Content Include="help\Proveedor.htm" />
+    <Content Include="help\Recalcular Digitos.htm" />
+    <Content Include="help\Restore.htm" />
+    <Content Include="help\Salir.htm" />
+    <Content Include="help\Seguridad.htm" />
+    <Content Include="help\Vender.htm" />
+    <Content Include="help\Venta.htm" />
+    <Content Include="help\Visualizar Compras.htm" />
+    <Content Include="help\Visualizar Ventas.htm" />
     <Content Include="LogoTP.ico" />
     <None Include="Resources\LogoTP.png" />
     <Content Include="SqlServerTypes\readme.htm" />
