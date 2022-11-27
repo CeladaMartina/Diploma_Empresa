@@ -316,6 +316,7 @@
       <DependentUpon>VisualizarVenta.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ayuda\Manual Ventas.chm" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Propiedades_BE.Producto.datasource" />
     <None Include="Properties\Settings.settings">
@@ -327,6 +328,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\ManualVentas.chm" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -342,12 +344,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Imagenes\LogoTP.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="LogoTP.ico" />
-    <None Include="Resources\Manual Ventas.chm" />
-    <None Include="Resources\ManualAyuda.bmp" />
+    <None Include="Resources\LogoTP.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -361,6 +359,9 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Imagenes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

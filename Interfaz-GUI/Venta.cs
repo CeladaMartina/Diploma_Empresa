@@ -55,7 +55,9 @@ namespace Interfaz_GUI
             dateTimePickerFecha.Text = DateTime.Now.ToShortDateString();
             LABELFechaValor.Text = dateTimePickerFecha.Text;
             BtnCargarDetalle.Enabled = false;
+            BtnCerrarDetalle.Enabled = false;
             BtnEditarDetalle.Enabled = false;
+            BtnVender.Enabled = false;
             groupBox2.Enabled = false;           
         }
 
@@ -467,12 +469,10 @@ namespace Interfaz_GUI
                 TxtIdVenta.Text = GestorVenta.TraerIdVenta().ToString();
                 labelNumeroVenta.Text = TxtIdVenta.Text;
                 CmbDNICliente.Enabled = false;
-                CmbNombreClientes.Enabled = false;
-                BtnCargarDetalle.Visible = true;
+                CmbNombreClientes.Enabled = false;               
                 BtnCargarDetalle.Enabled = true;
                 BtnEditarDetalle.Enabled = true;
-                BtnGenerarVenta.Visible = false;
-                groupBox2.Enabled = true;
+                BtnGenerarVenta.Visible = false;               
                 groupBox1.Enabled = true;
             }
             else
@@ -491,6 +491,7 @@ namespace Interfaz_GUI
                 BtnModificarDetalle.Enabled = true;
                 BtnBajaDetalle.Enabled = true;
                 BtnCargarDetalle.Enabled = false;
+                BtnVender.Enabled = false;
             }
             catch (Exception)
             {
@@ -513,6 +514,7 @@ namespace Interfaz_GUI
                 BtnBajaDetalle.Enabled = true;
                 CmbCodArticulo.Enabled = true;
                 BtnCerrarDetalle.Enabled = true;
+                BtnVender.Enabled = false;
             }
             catch (Exception)
             {
@@ -697,7 +699,7 @@ namespace Interfaz_GUI
         {
             string strAppPath = Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName;
             string strFilePath = Path.Combine(strAppPath, "Resources");
-            string strFullFilename = Path.Combine(strFilePath, "Manual Ventas.chm");            
+            string strFullFilename = Path.Combine(strFilePath, "ManualVentas.chm");            
             Help.ShowHelp(this, strFullFilename, "About.htm");
         }
     }

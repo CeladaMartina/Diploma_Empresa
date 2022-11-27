@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SqlServerTypes.Utilities">
+    <Position X="19" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAAAAAAAAQAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>SqlServerTypes\Loader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Interfaz_GUI.Administrar_Idioma" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUQARAAAGAAQAQACKCAIAAyAACAcIAEACAAAAIAEAQ=</HashCode>
+      <FileName>Administrar_Idioma.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Interfaz_GUI.Administrar_Permisos" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gCQKARgEICwAAFBgACCQABIGASAAEBBGAqiERAAQEBA=</HashCode>
+      <FileName>Administrar_Permisos.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Interfaz_GUI.Administrar_Traduccion" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAwQBRCAACAUQAQAKLSAIAAWEQCAcIAEECAAAAIYcAQ=</HashCode>
+      <FileName>Administrar_Traduccion.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Interfaz_GUI.Administrar_Usu_Fam_Pat" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>UiQIkAYEKSZEEAAAACDAABICA4AAGBAGACIEpAEAEAA=</HashCode>
+      <FileName>Administrar_Usu_Fam_Pat.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Interfaz_GUI.Administrar_Usuario" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AiwQQTQBCCQgABQgCGCAJAASgCKQdNAEgCACAAIIEBw=</HashCode>
+      <FileName>Administrar_Usuario.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Interfaz_GUI.Backup" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AARAABADACAAgAACACSCIAASAACAMBAEAAAAAIAAUCA=</HashCode>
+      <FileName>Backup.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Interfaz_GUI.Bitacora" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACRAADARAGAAAAAABLCEAAACMMDBEQAEAIEIAAQBEAA=</HashCode>
+      <FileName>Bitacora.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Interfaz_GUI.CambiarIdioma" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>FAAAAIAAACAgQAgAACCAAAACAIAAECAEAAABFgABEQA=</HashCode>
+      <FileName>CambiarIdioma.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Interfaz_GUI.Cliente" BaseTypeListCollapsed="true">
+    <Position X="15" Y="2.5" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAQQIRAEAGQQBAEASCCQIEASAACAcIAEAAAARJIIECQ=</HashCode>
+      <FileName>Cliente.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Interfaz_GUI.Compra" BaseTypeListCollapsed="true">
+    <Position X="6" Y="4.75" Width="2" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ikKEQ5QAEmBwgDFEJCSAEFKXIFGCFBEEEGhAEYsBEBQ=</HashCode>
+      <FileName>Compra.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="GestorArticulo" />
+      <Field Name="GestorDC" />
+      <Field Name="GestorProveedor" />
+      <Field Name="GestorCompra" />
+      <Field Name="GestorPedido" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Interfaz_GUI.ConexionBD" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ICAAABAAACAAgIgABACAAAACABBgAIAAAAAAAABAAAA=</HashCode>
+      <FileName>ConexionBD.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Interfaz_GUI.ControlCambioProveedor" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQEADACACEAgAABEPCAAAASEACAUQAEAQAAACAAlAA=</HashCode>
+      <FileName>ControlCambioProveedor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Interfaz_GUI.Generar_Contraseña" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QCQAQBARICQAAAAEAGCABAASAAAYEAAEoAAAEgEhEAA=</HashCode>
+      <FileName>Generar_Contraseña.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Interfaz_GUI.Localidad" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BCQQARAQAGAAAAAgCCCAIAASAAiEUogEARAAAAIAECQ=</HashCode>
+      <FileName>Localidad.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Interfaz_GUI.LogIn" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ICkAAAAAACAAAZAAACCAAAACgABAAACEBDAUQBAIEAA=</HashCode>
+      <FileName>LogIn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Interfaz_GUI.Menu" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AcQAKABxBCkAQEKKCAGcKIgHBAGBMIKuwAAAJgAIBII=</HashCode>
+      <FileName>Menu.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Interfaz_GUI.PedidosCompras" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAgQA5AACGB4AAAACCCAIUASABAAdIEEBAhAUIIAkAQ=</HashCode>
+      <FileName>PedidosCompras.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Interfaz_GUI.Producto" BaseTypeListCollapsed="true">
+    <Position X="12.25" Y="2.5" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>BAQQA1EAAGQAAAAACCCAAABSQYKAUIpEARAAAQMIEKQ=</HashCode>
+      <FileName>Producto.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="GestorLocalidad" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Interfaz_GUI.Program" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Interfaz_GUI.Proveedor" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQQARAACGQCgAUASGCAYAASACCQcYAkASBAABIIEEQ=</HashCode>
+      <FileName>Proveedor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Interfaz_GUI.Recalcular_Digitos" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACQIAAIAACAQACEEACCAAIACAIAAEAAEADAAAAEQEAA=</HashCode>
+      <FileName>Recalcular_Digitos.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Interfaz_GUI.ReporteForm" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQgAgAAAHAAABABAACQAAACAAAAEAAAAAAAAAAABAA=</HashCode>
+      <FileName>ReporteForm.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Interfaz_GUI.Restore" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAgAAACAAAAAAACCAABAKAACAEAAEgEAACARAEAA=</HashCode>
+      <FileName>Restore.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Interfaz_GUI.Venta" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>iIYAApQAKGB4lAFEJCSgZBOTYlGJFhsFAiBCFoqHEBQ=</HashCode>
+      <FileName>Venta.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Interfaz_GUI.VisualizarCompra" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAQDARKGAAAABAAbCCABASEBCAEQEEAAEAQAIAECA=</HashCode>
+      <FileName>VisualizarCompra.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Interfaz_GUI.VisualizarVenta" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQDARKGQABABAALSAAAATEBCAEQEEAAEAQBAAEAA=</HashCode>
+      <FileName>VisualizarVenta.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Negocio_BLL.Localidad" Collapsed="true">
+    <Position X="12.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Negocio_BLL.Producto" Collapsed="true">
+    <Position X="8.75" Y="5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Negocio_BLL.Detalle_Compra" Collapsed="true">
+    <Position X="8.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Negocio_BLL.Proveedor" Collapsed="true">
+    <Position X="8.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Negocio_BLL.Compra" Collapsed="true">
+    <Position X="8.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Negocio_BLL.Pedido">
+    <Position X="8.75" Y="8" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Interface Name="Diploma_Empresa_Final.IObserver" Collapsed="true">
+    <Position X="18.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IObserver.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Diploma_Empresa_Final.ISubject" Collapsed="true">
+    <Position X="18.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>ISubject.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -2,10 +2,6 @@ C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\bin\Debug\SqlSe
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\bin\Debug\SqlServerTypes\x86\msvcr120.dll
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
-C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\bin\Debug\Imagenes\LogoTP.png
-C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\bin\Debug\SistemasVentasDemo.exe.config
-C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\bin\Debug\SistemasVentasDemo.exe
-C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\bin\Debug\SistemasVentasDemo.pdb
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\bin\Debug\itextsharp.dll
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\bin\Debug\Microsoft.ReportViewer.Common.dll
@@ -69,7 +65,7 @@ C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\bin\Debug\pt\Mi
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
-C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\obj\Debug\Interfaz-GUI.csprojAssemblyReference.cache
+C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\obj\Debug\Interfaz-GUI.csproj.AssemblyReference.cache
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\obj\Debug\Interfaz_GUI.Administrar_Idioma.resources
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\obj\Debug\Interfaz_GUI.Administrar_Permisos.resources
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\obj\Debug\Interfaz_GUI.Administrar_Traduccion.resources
@@ -101,3 +97,6 @@ C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\obj\Debug\Inter
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\obj\Debug\Interfaz-GUI.csproj.CopyComplete
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\obj\Debug\SistemasVentasDemo.exe
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\obj\Debug\SistemasVentasDemo.pdb
+C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\bin\Debug\SistemasVentasDemo.exe.config
+C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\bin\Debug\SistemasVentasDemo.exe
+C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Interfaz-GUI\bin\Debug\SistemasVentasDemo.pdb

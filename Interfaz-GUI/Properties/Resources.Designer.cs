@@ -73,9 +73,9 @@ namespace Interfaz_GUI.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Byte[].
         /// </summary>
-        internal static byte[] Manual_Ventas {
+        internal static byte[] ManualVentas {
             get {
-                object obj = ResourceManager.GetObject("Manual_Ventas", resourceCulture);
+                object obj = ResourceManager.GetObject("ManualVentas", resourceCulture);
                 return ((byte[])(obj));
             }
         }

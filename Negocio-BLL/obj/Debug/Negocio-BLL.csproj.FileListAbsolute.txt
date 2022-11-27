@@ -62,7 +62,7 @@ C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Negocio-BLL\bin\Debug\pt\Mic
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Negocio-BLL\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Negocio-BLL\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Negocio-BLL\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
-C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Negocio-BLL\obj\Debug\Negocio-BLL.csprojAssemblyReference.cache
+C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Negocio-BLL\obj\Debug\Negocio-BLL.csproj.AssemblyReference.cache
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Negocio-BLL\obj\Debug\Negocio-BLL.csproj.CoreCompileInputs.cache
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Negocio-BLL\obj\Debug\Negocio-BLL.csproj.CopyComplete
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Negocio-BLL\obj\Debug\Negocio-BLL.dll

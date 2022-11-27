@@ -60,7 +60,7 @@ C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Acceso-DAL\bin\Debug\pt\Micr
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Acceso-DAL\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Acceso-DAL\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Acceso-DAL\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
-C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Acceso-DAL\obj\Debug\Acceso-DAL.csprojAssemblyReference.cache
+C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Acceso-DAL\obj\Debug\Acceso-DAL.csproj.AssemblyReference.cache
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Acceso-DAL\obj\Debug\Acceso-DAL.csproj.CoreCompileInputs.cache
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Acceso-DAL\obj\Debug\Acceso-DAL.csproj.CopyComplete
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Acceso-DAL\obj\Debug\Acceso-DAL.dll

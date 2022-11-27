@@ -78,19 +78,19 @@ namespace Interfaz_GUI
             // 
             // BtnGenerarVenta
             // 
-            this.BtnGenerarVenta.Location = new System.Drawing.Point(357, 20);
+            this.BtnGenerarVenta.Location = new System.Drawing.Point(18, 217);
             this.BtnGenerarVenta.Name = "BtnGenerarVenta";
-            this.BtnGenerarVenta.Size = new System.Drawing.Size(143, 30);
+            this.BtnGenerarVenta.Size = new System.Drawing.Size(91, 32);
             this.BtnGenerarVenta.TabIndex = 7;
-            this.BtnGenerarVenta.Tag = "Generar Venta";
-            this.BtnGenerarVenta.Text = "Generar Venta";
+            this.BtnGenerarVenta.Tag = "Seleccionar";
+            this.BtnGenerarVenta.Text = "Seleccionar";
             this.BtnGenerarVenta.UseVisualStyleBackColor = true;
             this.BtnGenerarVenta.Click += new System.EventHandler(this.BtnGenerarVenta_Click);
             // 
             // TxtIdVenta
             // 
             this.TxtIdVenta.Enabled = false;
-            this.TxtIdVenta.Location = new System.Drawing.Point(148, 24);
+            this.TxtIdVenta.Location = new System.Drawing.Point(158, 53);
             this.TxtIdVenta.Name = "TxtIdVenta";
             this.TxtIdVenta.Size = new System.Drawing.Size(71, 22);
             this.TxtIdVenta.TabIndex = 6;
@@ -98,7 +98,7 @@ namespace Interfaz_GUI
             // LblNVenta
             // 
             this.LblNVenta.AutoSize = true;
-            this.LblNVenta.Location = new System.Drawing.Point(27, 27);
+            this.LblNVenta.Location = new System.Drawing.Point(37, 56);
             this.LblNVenta.Name = "LblNVenta";
             this.LblNVenta.Size = new System.Drawing.Size(119, 17);
             this.LblNVenta.TabIndex = 5;
@@ -112,13 +112,14 @@ namespace Interfaz_GUI
             this.groupBox1.Controls.Add(this.TxtTotal);
             this.groupBox1.Controls.Add(this.dateTimePickerFecha);
             this.groupBox1.Controls.Add(this.CmbNombreClientes);
+            this.groupBox1.Controls.Add(this.BtnGenerarVenta);
             this.groupBox1.Controls.Add(this.CmbDNICliente);
             this.groupBox1.Controls.Add(this.LblTotal);
             this.groupBox1.Controls.Add(this.LblFecha);
             this.groupBox1.Controls.Add(this.LblCliente);
-            this.groupBox1.Location = new System.Drawing.Point(30, 86);
+            this.groupBox1.Location = new System.Drawing.Point(30, 99);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(470, 284);
+            this.groupBox1.Size = new System.Drawing.Size(490, 270);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Tag = "Venta";
@@ -126,7 +127,7 @@ namespace Interfaz_GUI
             // 
             // BtnEditarDetalle
             // 
-            this.BtnEditarDetalle.Location = new System.Drawing.Point(301, 232);
+            this.BtnEditarDetalle.Location = new System.Drawing.Point(356, 215);
             this.BtnEditarDetalle.Name = "BtnEditarDetalle";
             this.BtnEditarDetalle.Size = new System.Drawing.Size(128, 34);
             this.BtnEditarDetalle.TabIndex = 9;
@@ -137,7 +138,7 @@ namespace Interfaz_GUI
             // 
             // BtnCargarDetalle
             // 
-            this.BtnCargarDetalle.Location = new System.Drawing.Point(9, 232);
+            this.BtnCargarDetalle.Location = new System.Drawing.Point(356, 164);
             this.BtnCargarDetalle.Name = "BtnCargarDetalle";
             this.BtnCargarDetalle.Size = new System.Drawing.Size(128, 34);
             this.BtnCargarDetalle.TabIndex = 8;
@@ -149,14 +150,15 @@ namespace Interfaz_GUI
             // TxtTotal
             // 
             this.TxtTotal.Enabled = false;
-            this.TxtTotal.Location = new System.Drawing.Point(95, 145);
+            this.TxtTotal.Location = new System.Drawing.Point(104, 135);
             this.TxtTotal.Name = "TxtTotal";
             this.TxtTotal.Size = new System.Drawing.Size(121, 22);
             this.TxtTotal.TabIndex = 5;
             // 
             // dateTimePickerFecha
             // 
-            this.dateTimePickerFecha.Location = new System.Drawing.Point(95, 99);
+            this.dateTimePickerFecha.Enabled = false;
+            this.dateTimePickerFecha.Location = new System.Drawing.Point(104, 89);
             this.dateTimePickerFecha.Name = "dateTimePickerFecha";
             this.dateTimePickerFecha.Size = new System.Drawing.Size(234, 22);
             this.dateTimePickerFecha.TabIndex = 7;
@@ -165,7 +167,7 @@ namespace Interfaz_GUI
             // 
             this.CmbNombreClientes.DisplayMember = "IdCliente";
             this.CmbNombreClientes.FormattingEnabled = true;
-            this.CmbNombreClientes.Location = new System.Drawing.Point(222, 52);
+            this.CmbNombreClientes.Location = new System.Drawing.Point(231, 42);
             this.CmbNombreClientes.Name = "CmbNombreClientes";
             this.CmbNombreClientes.Size = new System.Drawing.Size(207, 24);
             this.CmbNombreClientes.TabIndex = 6;
@@ -175,7 +177,7 @@ namespace Interfaz_GUI
             // 
             this.CmbDNICliente.DisplayMember = "IdCliente";
             this.CmbDNICliente.FormattingEnabled = true;
-            this.CmbDNICliente.Location = new System.Drawing.Point(95, 52);
+            this.CmbDNICliente.Location = new System.Drawing.Point(104, 42);
             this.CmbDNICliente.Name = "CmbDNICliente";
             this.CmbDNICliente.Size = new System.Drawing.Size(121, 24);
             this.CmbDNICliente.TabIndex = 5;
@@ -184,7 +186,7 @@ namespace Interfaz_GUI
             // LblTotal
             // 
             this.LblTotal.AutoSize = true;
-            this.LblTotal.Location = new System.Drawing.Point(6, 145);
+            this.LblTotal.Location = new System.Drawing.Point(15, 135);
             this.LblTotal.Name = "LblTotal";
             this.LblTotal.Size = new System.Drawing.Size(40, 17);
             this.LblTotal.TabIndex = 2;
@@ -194,7 +196,7 @@ namespace Interfaz_GUI
             // LblFecha
             // 
             this.LblFecha.AutoSize = true;
-            this.LblFecha.Location = new System.Drawing.Point(6, 99);
+            this.LblFecha.Location = new System.Drawing.Point(15, 89);
             this.LblFecha.Name = "LblFecha";
             this.LblFecha.Size = new System.Drawing.Size(47, 17);
             this.LblFecha.TabIndex = 1;
@@ -204,7 +206,7 @@ namespace Interfaz_GUI
             // LblCliente
             // 
             this.LblCliente.AutoSize = true;
-            this.LblCliente.Location = new System.Drawing.Point(6, 55);
+            this.LblCliente.Location = new System.Drawing.Point(15, 45);
             this.LblCliente.Name = "LblCliente";
             this.LblCliente.Size = new System.Drawing.Size(51, 17);
             this.LblCliente.TabIndex = 0;
@@ -260,8 +262,8 @@ namespace Interfaz_GUI
             this.BtnBajaDetalle.Name = "BtnBajaDetalle";
             this.BtnBajaDetalle.Size = new System.Drawing.Size(88, 34);
             this.BtnBajaDetalle.TabIndex = 17;
-            this.BtnBajaDetalle.Tag = "Baja";
-            this.BtnBajaDetalle.Text = "Baja";
+            this.BtnBajaDetalle.Tag = "Borrar";
+            this.BtnBajaDetalle.Text = "Borrar";
             this.BtnBajaDetalle.UseVisualStyleBackColor = true;
             this.BtnBajaDetalle.Click += new System.EventHandler(this.BtnBajaDetalle_Click);
             // 
@@ -282,8 +284,8 @@ namespace Interfaz_GUI
             this.BtnAltaDetalle.Name = "BtnAltaDetalle";
             this.BtnAltaDetalle.Size = new System.Drawing.Size(88, 32);
             this.BtnAltaDetalle.TabIndex = 5;
-            this.BtnAltaDetalle.Tag = "Alta";
-            this.BtnAltaDetalle.Text = "Alta";
+            this.BtnAltaDetalle.Tag = "Cargar";
+            this.BtnAltaDetalle.Text = "Cargar";
             this.BtnAltaDetalle.UseVisualStyleBackColor = true;
             this.BtnAltaDetalle.Click += new System.EventHandler(this.BtnAltaDetalle_Click);
             // 
@@ -405,9 +407,9 @@ namespace Interfaz_GUI
             this.groupBox3.Controls.Add(this.LblClienteNombre);
             this.groupBox3.Controls.Add(this.labelNumeroVentaNombre);
             this.groupBox3.Controls.Add(this.LABELVENTA);
-            this.groupBox3.Location = new System.Drawing.Point(526, 86);
+            this.groupBox3.Location = new System.Drawing.Point(526, 56);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(658, 635);
+            this.groupBox3.Size = new System.Drawing.Size(658, 665);
             this.groupBox3.TabIndex = 12;
             this.groupBox3.TabStop = false;
             this.groupBox3.Tag = "Factura";
@@ -508,7 +510,6 @@ namespace Interfaz_GUI
             this.Controls.Add(this.BtnCerrarDetalle);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.BtnGenerarVenta);
             this.Controls.Add(this.TxtIdVenta);
             this.Controls.Add(this.LblNVenta);
             this.Name = "Venta";
