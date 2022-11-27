@@ -84,9 +84,6 @@
   </Class>
   <Class Name="Interfaz_GUI.Compra" BaseTypeListCollapsed="true">
     <Position X="6" Y="4.75" Width="2" />
-    <Compartments>
-      <Compartment Name="Methods" Collapsed="true" />
-    </Compartments>
     <TypeIdentifier>
       <HashCode>ikKEQ5QAEmBwgDFEJCSAEFKXIFGCFBEEEGhAEYsBEBQ=</HashCode>
       <FileName>Compra.cs</FileName>

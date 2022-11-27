@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Propiedades_BE.Articulo">
+    <Position X="4.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BEABQIABAACACAAEAQAAyABBhACAAAAACABAAAIAAAA=</HashCode>
+      <FileName>Articulo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Propiedades_BE.Bitacora">
+    <Position X="6.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAFAAQAAAAABAEEBAKAAAABAIAAEAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Bitacora.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Propiedades_BE.Cliente">
+    <Position X="8.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAoAAAgAQEAAAAiQAABAEAAACAAAAQBQIAAAA=</HashCode>
+      <FileName>Cliente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Propiedades_BE.Componente" Collapsed="true">
+    <Position X="1.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAgAAAAIAAAEAABAgAAABAAIAAAQAAAAAAAAAAI=</HashCode>
+      <FileName>Componente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Propiedades_BE.Compra">
+    <Position X="13.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAANQAAACAAAgAEAAAAAABEIAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Compra.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Propiedades_BE.ControlCambioProveedor">
+    <Position X="2.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAQAqAAAgAQEBAEAiBAAABIUAAAAAAAQAQKAAAA=</HashCode>
+      <FileName>ControlCambioProveedor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Propiedades_BE.Detalle_Compra">
+    <Position X="27.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAFQEAhBAAACAAEBQCAAABBAAAAAAAAAQBAAAAAAAA=</HashCode>
+      <FileName>Detalle_Compra.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Propiedades_BE.Detalle_Venta">
+    <Position X="12" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABABAEAhBAAACAAABSCAAAFAAAAAAAgAAQBAAAAAAAA=</HashCode>
+      <FileName>Detalle_Venta.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Propiedades_BE.Familia" Collapsed="true">
+    <Position X="2.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAoAAEAAAAAAAAAAAAIAAAAAAAAAEAAAAI=</HashCode>
+      <FileName>Familia.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Propiedades_BE.Idioma">
+    <Position X="15.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAQAAAAACBAAAAAQAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Idioma.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Propiedades_BE.Localidad">
+    <Position X="24.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAIAAQAAAAAAEAAAAiAABBACAAAAAAAACAAIABAA=</HashCode>
+      <FileName>Localidad.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Propiedades_BE.Patente" Collapsed="true">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAIAAAAAAAAAAAAAAAIAAAAAAAAAEAAAAI=</HashCode>
+      <FileName>Patente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Propiedades_BE.Pedido">
+    <Position X="26" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEBAAAAgAQAAAAAgABAAgAQAAAAAABAAAAIAAA=</HashCode>
+      <FileName>Pedido.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Propiedades_BE.Producto">
+    <Position X="10.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BEABQIABAACACAAEAQAAyABBhACAAAAACABAAAIAAAA=</HashCode>
+      <FileName>Producto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Propiedades_BE.Proveedor">
+    <Position X="19" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAqAAAgAQEAAAAiBAABAAEAAAAAAAQAQIAAAA=</HashCode>
+      <FileName>Proveedor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Propiedades_BE.SingletonLogIn">
+    <Position X="0.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAIAEAEDBAAAAAAAgAAAQAABAQEABAAAAACAAAAAAA=</HashCode>
+      <FileName>SingletonLogIn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Propiedades_BE.Traduccion">
+    <Position X="22.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAECAAACEAAQAAAAAAhAAAAAAAAAEAAAAAAAAACw=</HashCode>
+      <FileName>Traduccion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Propiedades_BE.Usuario">
+    <Position X="20.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAABARAAIAAAAaEBgCAjAAAJBIQAAgAAQAAAQIAAAo=</HashCode>
+      <FileName>Usuario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Propiedades_BE.Venta">
+    <Position X="17.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIABAAAAAAAAIAEAAAAAAAEIAAUAAAiAAAAABAAAAAA=</HashCode>
+      <FileName>Venta.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Propiedades_BE.TipoPermiso" Collapsed="true">
+    <Position X="29.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAABAAQAAgAAAIAAAEAAAgAACMBAAxQAAQAQAIAABAA=</HashCode>
+      <FileName>TipoPermiso.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

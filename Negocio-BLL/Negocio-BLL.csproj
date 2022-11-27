@@ -104,6 +104,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagramBLL.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
