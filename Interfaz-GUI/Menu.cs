@@ -322,5 +322,20 @@ namespace Interfaz_GUI
             vv.MdiParent = this;
             vv.Show();
         }
+
+        private void menuStrip1_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+
+            
+        }
+
+        private void Menu_HelpRequested(object sender, HelpEventArgs hlpevent)
+        {
+            string path = AppDomain.CurrentDomain.BaseDirectory + @"help\Help.chm";
+            #if DEBUG
+            path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + @"\help\Help.chm";
+            #endif
+            Help.ShowHelp(this, path);
+        }
     }
 }

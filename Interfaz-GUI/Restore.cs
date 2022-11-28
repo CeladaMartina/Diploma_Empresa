@@ -137,6 +137,7 @@ namespace Interfaz_GUI
             try
             {                
                 txtRestore.Clear();
+                BtnAgregarPartes.Enabled = true;
             }
             catch (Exception)
             {

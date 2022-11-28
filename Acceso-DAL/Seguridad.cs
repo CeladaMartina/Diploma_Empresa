@@ -98,6 +98,8 @@ namespace Acceso_DAL
 
         #region DigitoVerificador
 
+        long AsciiHorizontal;
+
         public DataSet EjecutarConsultaDSTabla(string Consulta, string Tabla)
         {
             DataSet Ds = new DataSet();

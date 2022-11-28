@@ -62,3 +62,4 @@ C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Propiedades-BE\obj\Debug\Pro
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Propiedades-BE\obj\Debug\Propiedades-BE.csproj.CopyComplete
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Propiedades-BE\obj\Debug\Propiedades-BE.dll
 C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Propiedades-BE\obj\Debug\Propiedades-BE.pdb
+C:\Users\mcelada\source\repos\Diploma_Empresa_Final\Propiedades-BE\obj\Debug\Propiedades-BE.csproj.AssemblyReference.cache
