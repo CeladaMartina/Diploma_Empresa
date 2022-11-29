@@ -65,7 +65,6 @@ namespace Interfaz_GUI
             this.TxtTablas.Size = new System.Drawing.Size(192, 22);
             this.TxtTablas.TabIndex = 2;
             this.TxtTablas.Tag = "TxtUsuario";
-            this.TxtTablas.Text = "ERROR";
             // 
             // BtnRecalcularDVV
             // 
