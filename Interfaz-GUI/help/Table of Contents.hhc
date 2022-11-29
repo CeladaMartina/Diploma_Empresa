@@ -5,6 +5,7 @@
 <!-- Sitemap 1.0 -->
 </HEAD><BODY>
 <OBJECT type="text/site properties">
+	<param name="FrameName" value="ConexionBD">
 	<param name="ImageType" value="Folder">
 </OBJECT>
 <UL>
@@ -15,6 +16,10 @@
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="LogIn">
 		<param name="Local" value="LogIn.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Conexion">
+		<param name="Local" value="ConexionBD.htm">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Menu">
@@ -107,6 +112,10 @@
 			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="Administrar Usuario">
 				<param name="Local" value="Administrar Usuario.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Administrar usuario familia patente">
+				<param name="Local" value="Administrar usuario familia patente.htm">
 				</OBJECT>
 			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="Bitacora">

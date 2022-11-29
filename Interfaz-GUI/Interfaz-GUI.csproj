@@ -351,6 +351,7 @@
     <Content Include="help\Administrar Idioma.htm" />
     <Content Include="help\Administrar Permisos.htm" />
     <Content Include="help\Administrar Traduccion.htm" />
+    <Content Include="help\Administrar usuario familia patente.htm" />
     <Content Include="help\Administrar Usuario.htm" />
     <Content Include="help\Articulo.htm" />
     <Content Include="help\BackUp.htm" />
@@ -360,11 +361,13 @@
     <Content Include="help\Cliente.htm" />
     <Content Include="help\Compra.htm" />
     <Content Include="help\Comprar.htm" />
+    <Content Include="help\ConexionBD.htm" />
     <Content Include="help\Control Cambio Proveedor.htm" />
     <Content Include="help\Generar Contraseña.htm" />
     <Content Include="help\Idioma.htm" />
     <Content Include="help\Localidad.htm" />
     <Content Include="help\LogIn.htm" />
+    <Content Include="help\LogoTP.png" />
     <Content Include="help\Menu.htm" />
     <Content Include="help\Pedido Compra.htm" />
     <Content Include="help\Proveedor.htm" />
@@ -372,6 +375,7 @@
     <Content Include="help\Restore.htm" />
     <Content Include="help\Salir.htm" />
     <Content Include="help\Seguridad.htm" />
+    <Content Include="help\Untitled2.htm" />
     <Content Include="help\Vender.htm" />
     <Content Include="help\Venta.htm" />
     <Content Include="help\Visualizar Compras.htm" />
