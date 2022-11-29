@@ -331,7 +331,7 @@ namespace Interfaz_GUI
 
         private void Menu_HelpRequested(object sender, HelpEventArgs hlpevent)
         {
-            string path = AppDomain.CurrentDomain.BaseDirectory + @"help\Help.chm";
+            string path = AppDomain.CurrentDomain.BaseDirectory + @"help\Help.chm.chm";
             #if DEBUG
             path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + @"\help\Help.chm";
             #endif
