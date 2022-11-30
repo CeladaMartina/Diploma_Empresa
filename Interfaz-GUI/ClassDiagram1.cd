@@ -83,16 +83,19 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="Interfaz_GUI.Compra" BaseTypeListCollapsed="true">
-    <Position X="6" Y="4.75" Width="2" />
+    <Position X="5.75" Y="4.75" Width="2" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>ikKEQ5QAEmBwgDFEJCSAEFKXIFGCFBEEEGhAEYsBEBQ=</HashCode>
       <FileName>Compra.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="GestorArticulo" />
+      <Field Name="GestorCompra" />
       <Field Name="GestorDC" />
       <Field Name="GestorProveedor" />
-      <Field Name="GestorCompra" />
       <Field Name="GestorPedido" />
     </ShowAsAssociation>
     <Lollipop Position="0.2" Collapsed="true" />
@@ -138,7 +141,7 @@
   <Class Name="Interfaz_GUI.Menu" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="5.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AcQAKABxBCkAQEKKCAGcKIgHBAGBMIKuwAAAJgAIBII=</HashCode>
+      <HashCode>gcQAOABxBCkAQEKKCAGcKIgHBAGBMIKuwAAAJgAIBII=</HashCode>
       <FileName>Menu.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
@@ -249,7 +252,7 @@
     <TypeIdentifier />
   </Class>
   <Class Name="Negocio_BLL.Pedido">
-    <Position X="8.75" Y="8" Width="1.5" />
+    <Position X="8.75" Y="8" Width="1.75" />
     <TypeIdentifier />
   </Class>
   <Interface Name="Diploma_Empresa_Final.IObserver" Collapsed="true">
