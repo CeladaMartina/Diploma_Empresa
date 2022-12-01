@@ -186,6 +186,7 @@ namespace Acceso_DAL
                 DV.IdVenta = int.Parse(R["IdVenta"].ToString());
                 DV.IdDetalle = int.Parse(R["IdDetalle"].ToString());
                 DV.IdArticulo = int.Parse(R["IdArticulo"].ToString());
+                DV.Descrip = R["Nombre"].ToString();
                 DV.PUnit = decimal.Parse(R["PUnit"].ToString());
                 DV.Cant = int.Parse(R["Cant"].ToString());
                 DV.DVH = int.Parse(R["DVH"].ToString());
@@ -209,6 +210,7 @@ namespace Acceso_DAL
                 string IdVenta = Dv.IdVenta.ToString();
                 string IdDetalle = Dv.IdDetalle.ToString();
                 string IdArticulo = Dv.IdArticulo.ToString();
+                string nombre = Dv.Descrip;
                 string Cant = Dv.Cant.ToString();
                 string punit = Dv.PUnit.ToString();
                 string dvh = Dv.DVH.ToString();
@@ -216,11 +218,12 @@ namespace Acceso_DAL
                 long IdVentaDV = Seguridad.ObtenerAscii(IdVenta);
                 long IdDetalleDV = Seguridad.ObtenerAscii(IdDetalle);
                 long IdArticuloDV = Seguridad.ObtenerAscii(IdArticulo);
+                long nombreDV = Seguridad.ObtenerAscii(nombre);
                 long CantDV = Seguridad.ObtenerAscii(Cant);
                 long pu = Seguridad.ObtenerAscii(punit);
                 long dvhDV = long.Parse(dvh);
 
-                Suma = IdVentaDV + IdDetalleDV + IdArticuloDV + CantDV + pu;
+                Suma = IdVentaDV + IdDetalleDV + IdArticuloDV + nombreDV + CantDV + pu;
                 DVH += Suma;
 
                 if (dvhDV == Suma)
@@ -266,6 +269,7 @@ namespace Acceso_DAL
                 string IdVenta = Det_Ven.IdVenta.ToString();
                 string IdDetalle = Det_Ven.IdDetalle.ToString();
                 string IdArticulo = Det_Ven.IdArticulo.ToString();
+                string Nombre = Det_Ven.Descrip;
                 string Cant = Det_Ven.Cant.ToString();
                 string punit = Det_Ven.PUnit.ToString();
                 string dvh = Det_Ven.DVH.ToString();
@@ -273,11 +277,12 @@ namespace Acceso_DAL
                 long IdVentaDC = Seguridad.ObtenerAscii(IdVenta);
                 long IdDetalleDV = Seguridad.ObtenerAscii(IdDetalle);
                 long IdArticuloDv = Seguridad.ObtenerAscii(IdArticulo);
+                long NombreDV = Seguridad.ObtenerAscii(Nombre);
                 long CantDv = Seguridad.ObtenerAscii(Cant);
                 long pu = Seguridad.ObtenerAscii(punit);
                 long dvhDv = long.Parse(dvh);
 
-                suma = IdVentaDC + IdDetalleDV + IdArticuloDv + CantDv + pu;
+                suma = IdVentaDC + IdDetalleDV + IdArticuloDv + NombreDV + CantDv + pu;
                 Acceso.EjecutarConsulta("Update Detalle_Venta set DVH = " + suma + " where IdDetalle = " + IdDetalle + "");
             }
         }
