@@ -331,8 +331,8 @@ namespace Interfaz_GUI
 
         private void Menu_HelpRequested(object sender, HelpEventArgs hlpevent)
         {
-            string path = AppDomain.CurrentDomain.BaseDirectory + @"help\Help.chm";
-            Help.ShowHelp(this, path);
+            string path = System.AppDomain.CurrentDomain.BaseDirectory + @"help\Help.chm";
+            Help.ShowHelp((Control)sender, path);
         }
     }
 }
