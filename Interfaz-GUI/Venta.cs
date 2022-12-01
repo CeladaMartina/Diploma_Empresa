@@ -636,6 +636,7 @@ namespace Interfaz_GUI
                     string ruta = folderBrowserDialog1.SelectedPath;
                     PDF(ruta, int.Parse(TxtIdVenta.Text), CmbNombreClientes.Text, DateTime.Now.ToShortDateString(), decimal.Parse(TxtTotal.Text));                    
                     Seguridad.CargarBitacora(Propiedades_BE.SingletonLogIn.GlobalIdUsuario, DateTime.Now, "Venta Realizada", "Baja", 0);
+                    Seguridad.ActualizarDVV("Detalle_Venta", Seguridad.SumaDVV("Detalle_Venta"));
                     dataGridViewDV.DataSource = null;
                     BtnEditarDetalle.Enabled = false;
                     BtnVender.Enabled = false;
@@ -697,10 +698,7 @@ namespace Interfaz_GUI
 
         private void Venta_HelpRequested(object sender, HelpEventArgs hlpevent)
         {
-            string path = AppDomain.CurrentDomain.BaseDirectory + @"help\Help.chm.chm";
-        #if DEBUG
-            path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + @"\help\Help.chm";
-        #endif
+            string path = AppDomain.CurrentDomain.BaseDirectory + @"help\Help.chm";      
             Help.ShowHelp(this, path);
         }
     }
